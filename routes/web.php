@@ -18,7 +18,7 @@ Route::get('/admin', 'PagesController@admin');
 
 Route::get('/about', function () {
 
-    $about = DB::table('about')->get();
+    $about = DB::table('about')->take(1)->get();
 
     return view('about', ['about' => $about]);
 });

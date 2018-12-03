@@ -10,7 +10,11 @@
 
       <h1>{{ $about->title }}</h1>
 
-      <p>{{ $about->content }}</p>
+      <p>
+        @markdown
+        {{  $about->content }}
+        @endmarkdown
+      </p>
 
     </div>
   </div>

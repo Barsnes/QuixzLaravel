@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PagesController extends Migration
+class CreatePagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class PagesController extends Migration
      */
     public function up()
     {
-      Schema::create('about', function (Blueprint $table) {
-          $table->string('title')->default('About Us');
-          $table->string('content');
-      });
+        Schema::create('about', function (Blueprint $table) {
+            $table->string('title');
+            $table->longText('content');
+        });
     }
 
     /**
