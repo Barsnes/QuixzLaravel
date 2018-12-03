@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', 'PagesController@home');
+// Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
+Route::get('/admin', 'PagesController@admin');
+
+Route::get('/about', function () {
+
+    $about = DB::table('about')->get();
+
+    return view('about', ['about' => $about]);
 });
