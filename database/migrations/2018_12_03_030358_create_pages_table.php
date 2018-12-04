@@ -17,6 +17,11 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->longText('content');
         });
+
+        Schema::create('index', function (Blueprint $table) {
+            $table->string('title')->default('Home');
+            $table->longText('aboutContent');
+        });
     }
 
     /**

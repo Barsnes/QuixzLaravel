@@ -22,3 +22,7 @@ Route::get('/about', function () {
 
     return view('about', ['about' => $about]);
 });
+
+Route::get('{url}', function ($url) {
+    return app(App\Http\Controllers\Cms\PagesController::class)->show($url);
+})->where('url', '([A-z\d-\/_.]+)?');

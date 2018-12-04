@@ -1,5 +1,5 @@
 @extends('layouts.default')
-@section('title', 'About')
+@section('title', 'About Us')
 
 @section('content')
 
@@ -12,7 +12,7 @@
 
       <p>
         @markdown
-        {{  $about->content }}
+        {{ $about->content }}
         @endmarkdown
       </p>
 

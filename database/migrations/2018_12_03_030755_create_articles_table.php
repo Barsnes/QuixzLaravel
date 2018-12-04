@@ -19,8 +19,8 @@ class CreateArticlesTable extends Migration
             $table->longText('content');
             $table->date('postDate');
             $table->string('author');
-            $table->blob('image');
-            $table->datetime('editDate')->default(0);
+            $table->string('image');
+            $table->datetime('editDate');
             $table->timestamps();
         });
     }
