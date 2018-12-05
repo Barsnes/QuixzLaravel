@@ -17,6 +17,8 @@ Route::get('/contact', 'PagesController@contact');
 Route::get('/news', 'PagesController@news');
 Route::get('/admin', 'PagesController@admin');
 
+Route::get('/downloads', 'PagesController@downloads');
+
 // Route::get('/about', function () {
 //
 //     $about = DB::table('about')->take(1)->get();

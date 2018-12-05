@@ -30,4 +30,8 @@ class PagesController extends Controller
     return view('admin.index');
   }
 
+  public function downloads() {
+    return view('downloads');
+  }
+
 }
