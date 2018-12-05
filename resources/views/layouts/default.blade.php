@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>@php echo Config::get('app.name'); @endphp - @yield('title') </title>
-  <link REL="SHORTCUT ICON" HREF="SHORTCUTICON.png">
+  <link REL="SHORTCUT ICON" HREF="/SHORTCUTICON.png">
   <meta name="google-site-verification" content="x7yK7kt6bcjL-iz3Vw9X0BDJlCR8mjrBVt_rDVekI04" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/master.css">
   <link href="/assets/css/fontawesome/css/all.css" rel="stylesheet">
+  @yield('stylesheets')
   <!-- Scrips -->
   <link href="/js/md2html.js">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="header">
-    <a href="/"><img src="assets/image/logo/logo_500.png" alt="Quixz eSports logo"></a>
+    <a href="/"><img src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo"></a>
     <nav>
       <div class="toggle">
         <i class="fas fa-bars menu" aria-hidden="true"></i>
@@ -36,7 +38,7 @@
     <li>Copyright © 2018 Quixz eSports All Rights Reserved.</li>
     <li style="color:#F8B52A;"></li>
   </ul>
-  <img class="footer_logo" src="assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+  <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">
 
   <div class="links">
     <a href="/downloads"><h3>Downloads</h3></a>

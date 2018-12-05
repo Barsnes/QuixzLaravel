@@ -23,7 +23,7 @@ class PagesController extends Controller
   }
 
   public function news() {
-    return view('news');
+    return view('news.index');
   }
 
   public function admin() {

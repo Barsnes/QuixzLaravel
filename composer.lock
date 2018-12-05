@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b945cbb2a3120f1332bef6baa68dacd1",
+    "content-hash": "e7548f01abb4d5aec80645b6d1370bf9",
     "packages": [
         {
             "name": "andreasindal/laravel-markdown",
