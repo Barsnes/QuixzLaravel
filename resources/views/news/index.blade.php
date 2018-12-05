@@ -6,7 +6,7 @@
   @foreach ($articles as $article)
 
     <div class="article_list">
-      <a href="/news/{{ $article->id }}"><img src="https://unsplash.it/1200/600" alt="Dummy desc" og:image></a>
+      <a href="/news/{{ $article->id }}"><img src="{{ $article->image }}" alt="Dummy desc" og:image></a>
       <h1><a href="/news/{{ $article->id }}">{{ $article->title }}</a></h1>
       <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
       <p>{{ substr($article->body, 0, 60) }}...</p>

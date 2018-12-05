@@ -10,7 +10,8 @@ class PagesController extends Controller
 {
 
   public function home() {
-    return view('index');
+    $articles = Article::get()->reverse();
+    return view('index', ['articles' => $articles]);
   }
 
   public function about() {
@@ -24,7 +25,7 @@ class PagesController extends Controller
   }
 
   public function news() {
-    $articles = Article::get();
+    $articles = Article::get()->reverse();
     return view('news.index', ['articles' => $articles]);
 
   }

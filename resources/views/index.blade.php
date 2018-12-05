@@ -29,16 +29,22 @@
   <div class="news__section" id="news">
     <h1>Recent News</h1>
     <div class="news">
+      <?php $articleCount = 0 ?>
+      @foreach ($articles as $article)
+      <?php $articleCount++ ?>
+      @if ($articleCount <= 2)
+
       <div class="article_list">
 
-        <a href="/"><img src="https://unsplash.it/1200/600" alt="some dummy text" og:image></a>
-        <h1><a href="/">Some dummy title</a></h1>
-        <h5>Yesterday</h5>
-        <p class="news__desc">Some dummy content</p>
-        <a href="/" class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
+        <a href="/news/{{ $article->id }}"><img src="{{ $article->image }}" alt="some dummy text" og:image></a>
+        <h1><a href="/">{{ $article->title }}</a></h1>
+        <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
+        <p class="news__desc">{{ substr($article->body, 0, 60) }}...</p>
+        <a href="/news/{{ $article->id }}" class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
         <hr>
-
-      </div>
+              </div>
+        @endif
+      @endforeach
     </div>
   </div>
 
