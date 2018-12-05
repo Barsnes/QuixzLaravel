@@ -28,6 +28,3 @@ class AuthServiceProvider extends ServiceProvider
         //
     }
 }
-Gate::define('cms', function ($user) {
-return ($user->roles->first()->name === 'admin');
-});
