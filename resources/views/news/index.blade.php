@@ -3,20 +3,19 @@
 
 @section('content')
 <div class="article_body">
+  @foreach ($articles as $article)
 
     <div class="article_list">
-
-      <a href="#"><img src="https://unsplash.it/1200/600" alt="Dummy desc" og:image></a>
-      <h1><a href="#">A dummy title</a></h1>
-      <h5>23 November 2018</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco...</p>
-      <a href="#" class="article_readmore"><p>Read more...</p></a>
+      <a href="/news/{{ $article->id }}"><img src="https://unsplash.it/1200/600" alt="Dummy desc" og:image></a>
+      <h1><a href="/news/{{ $article->id }}">{{ $article->title }}</a></h1>
+      <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
+      <p>{{ substr($article->body, 0, 60) }}...</p>
+      <a href="/news/{{ $article->id }}" class="article_readmore"><p>Read more...</p></a>
       <hr>
-
     </div>
+  @endforeach
 
     <div style="clear: both;"></div>
-
 </div>
 <style>
 

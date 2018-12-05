@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Article;
 
 class PagesController extends Controller
 {
@@ -23,7 +24,9 @@ class PagesController extends Controller
   }
 
   public function news() {
-    return view('news.index');
+    $articles = Article::get();
+    return view('news.index', ['articles' => $articles]);
+
   }
 
   public function admin() {
