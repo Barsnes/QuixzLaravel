@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title'){{ $article->title }}@endsection
+
 @section('stylesheets')
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 @endsection
@@ -24,8 +26,13 @@
     {{ Form::label('body', 'Body:')}}
     {{ Form::textarea('body', null, array('class' => 'form-control')) }}
 
-    {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
+    {{ Form::submit('Update', array('class' => 'btn btn-success btn-block')) }}
   {!! Form::close() !!}
+
+  {!! Form::model($article, array('route' => array('news.destroy', $article->id), 'files' => true, 'method' => 'DELETE')) !!}﻿
+  {{ Form::submit('Delete', array('class' => 'btn btn-danger btn-block')) }}
+  {!! Form::close() !!}
+  <a class="btn btn-block btn-secondary" href="/news" style="color: #fff">Cancel</a>
 </div>
 
 <style>

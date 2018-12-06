@@ -13,6 +13,7 @@
   @markdown
     {{ $article->body }}
   @endmarkdown
+  <h3><a style="background-color: #fff; padding: .4rem 1rem" href="/admin/news/{{ $article->id }}/edit">Edit Post</a></h3>
 </div>
 
 <style>

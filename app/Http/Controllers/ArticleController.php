@@ -108,7 +108,7 @@ class ArticleController extends Controller
         $article->body = $request->body;
 
         $article->save();
-        
+
         // Redirect
         return redirect()->route('news.show', [$article->id]);
     }
@@ -121,7 +121,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Article::destroy($id);
+
+      return redirect('/news');
     }
 
 
