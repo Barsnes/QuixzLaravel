@@ -7,7 +7,8 @@
   <meta name="google-site-verification" content="x7yK7kt6bcjL-iz3Vw9X0BDJlCR8mjrBVt_rDVekI04" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/master.css">
+  {{ Html::style('css/master.css') }}
+  {{ Html::style('css/fontawesome/css/all.css') }}
   <link href="/assets/css/fontawesome/css/all.css" rel="stylesheet">
   @yield('stylesheets')
   <!-- Scrips -->

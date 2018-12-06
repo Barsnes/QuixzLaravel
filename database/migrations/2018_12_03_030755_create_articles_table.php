@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->longText('body');
             $table->string('author');
-            $table->string('image')->default('/assets/images/logo/logo500.png');
+            $table->string('image')->default('https://unsplash.it/1200/600/?random');
             $table->timestamps();
         });
     }

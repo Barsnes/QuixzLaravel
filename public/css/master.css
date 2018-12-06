@@ -1,12 +1,12 @@
 @charset "UTF-8";
 @font-face {
   font-family: Raleway;
-  src:   url("../fonts/raleway/raleway-extrabold.woff") format('woff');
+  src:   url("../assets/fonts/raleway/raleway-extrabold.woff") format('woff');
 }
 @font-face {
   font-family: Lato;
-  src:  url('../fonts/lato/lato-regular.woff2') format('woff2'),
-        url('../fonts/lato/lato-regular.woff') format('woff');
+  src:  url('../assets/fonts/lato/lato-regular.woff2') format('woff2'),
+        url('../assets/fonts/lato/lato-regular.woff') format('woff');
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 
 .background_top {
   height: 80vh;
-  background-image: url(../image/backgrounds/header.png);
+  background-image: url(../assets/image/backgrounds/header.png);
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
@@ -161,7 +161,7 @@ body {
   padding: 0;
   padding-bottom: 3rem;
   height: auto;
-  background-image: url(../image/backgrounds/matches.png);
+  background-image: url(../assets/image/backgrounds/matches.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
