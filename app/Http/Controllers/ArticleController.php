@@ -39,6 +39,7 @@ class ArticleController extends Controller
       $this->validate($request, array(
           'title' => 'required|min:5',
           'author' => 'required|min:5',
+          'image' => 'required',
           'body' => 'required|min:50'
         ));
 
@@ -47,12 +48,13 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->author = $request->author;
+        $article->image = $request->image;
         $article->body = $request->body;
 
         $article->save();
 
         // Redirect
-        return redirect()->route('news.index');
+        return redirect()->route('news.show', [$article->id]);
     }
 
     /**
@@ -76,7 +78,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+
+        return view('news.edit', compact('article'));
     }
 
     /**
@@ -88,7 +92,25 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // Validate data
+      $this->validate($request, array(
+          'title' => 'required|min:5',
+          'author' => 'required|min:5',
+          'image' => 'required',
+          'body' => 'required|min:50'
+        ));
+
+        $article = Article::find($id);
+
+        $article->title = $request->title;
+        $article->author = $request->author;
+        $article->image = $request->image;
+        $article->body = $request->body;
+
+        $article->save();
+        
+        // Redirect
+        return redirect()->route('news.show', [$article->id]);
     }
 
     /**

@@ -15,14 +15,6 @@
   @endmarkdown
 </div>
 
-<div class="comments">
-  <div
-  class="just-comments"
-  data-apikey="35043f7d-0c9b-4bc8-8cf5-73f1c94f0489">
-  </div>
-</div>
-
-
 <style>
 
   body {
@@ -69,16 +61,6 @@
     color: #F8B52A
   }
 
-
-  .comments {
-    width: 650px;
-    margin: 0 calc((100% - 650px) / 2);
-  }
-
-  .comments a {
-    color: #F8B52A;
-  }
-
 @media (max-width:1050px) {
 
   .article {
@@ -101,13 +83,7 @@
   .article hr {
     margin: .5em;
   }
-
-  .comments {
-    width: 100%;
-    margin: 0;
-  }
 }
-
 
 </style>
 
