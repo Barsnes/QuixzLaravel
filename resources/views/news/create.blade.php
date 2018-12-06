@@ -21,6 +21,9 @@
       {{ Form::label('author', 'Author:') }}
       {{ Form::text('author', '', array('class' => 'form-control')) }}
 
+      {{ Form::label('image', 'Image:') }}
+      {{ Form::text('image', '', array('class' => 'form-control')) }}
+
       {{ Form::label('body', 'Body:')}}
       {{ Form::textarea('body', '', array('class' => 'form-control')) }}
 
