@@ -20,6 +20,8 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "markdown": "^0.5.0"
+        "jquery-slugify": "^1.2.5",
+        "markdown": "^0.5.0",
+        "speakingurl": "^14.0.1"
     }
 }

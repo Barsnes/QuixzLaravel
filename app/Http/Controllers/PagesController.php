@@ -38,4 +38,12 @@ class PagesController extends Controller
     return view('downloads');
   }
 
+  public function getSingle($slug) {
+
+    // $article = Article::where('created_at', '=', $year)->get();
+    $article = Article::where('slug', '=', $slug)->first();
+
+    return view('news.show')->withArticle($article);
+  }
+
 }

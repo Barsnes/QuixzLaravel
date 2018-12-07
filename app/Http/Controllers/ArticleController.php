@@ -37,10 +37,10 @@ class ArticleController extends Controller
     {
       // Validate data
       $this->validate($request, array(
-          'title' => 'required|min:5',
-          'author' => 'required|min:5',
-          'image' => 'required',
-          'body' => 'required|min:50'
+          'title' => 'required|min:5|max:255|unique:articles,title',
+          'author' => 'required|min:5|max:255',
+          'image' => 'required|max:255',
+          'body' => 'required'
         ));
 
         // Store in DB
@@ -50,6 +50,9 @@ class ArticleController extends Controller
         $article->author = $request->author;
         $article->image = $request->image;
         $article->body = $request->body;
+
+        $value = $article->title;
+        $article->slug = str_slug($value);
 
         $article->save();
 
@@ -94,7 +97,7 @@ class ArticleController extends Controller
     {
       // Validate data
       $this->validate($request, array(
-          'title' => 'required|min:5',
+          'title' => 'required|min:5|unique:articles,title',
           'author' => 'required|min:5',
           'image' => 'required',
           'body' => 'required|min:50'

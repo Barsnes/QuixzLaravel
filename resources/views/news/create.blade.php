@@ -31,7 +31,17 @@
     {!! Form::close() !!}
     <hr>
   </div>
-
 </div>
+
+<script>
+jQuery(function($) {
+  $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
+  $('#slug-target').slugify('#slug-source'); // Type as you slug
+
+  $("#slug-target").slugify("#slug-source", {
+  	separator: '_' // If you want to change separator from hyphen (-) to underscore (_).
+  });
+});
+</script>
 
 @endsection

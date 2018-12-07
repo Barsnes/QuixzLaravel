@@ -22,7 +22,9 @@ Route::get('/downloads', 'PagesController@downloads');
 
 Route::resource('/admin/news', 'ArticleController');
 Route::get('/news', 'PagesController@news');
-Route::get('/news/{news}', 'ArticleController@show');
+Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
+// Route::get('/news/{news}', 'ArticleController@show');
+
 
 // Route::get('/about', function () {
 //

@@ -36,11 +36,11 @@
 
       <div class="article_list">
 
-        <a href="/news/{{ $article->id }}"><img src="{{ $article->image }}" alt="some dummy text" og:image></a>
-        <h1><a href="/">{{ $article->title }}</a></h1>
+        <a href=" {{ url('/news', $article->slug) }} "><img src="{{ $article->image }}" alt="some dummy text" og:image></a>
+        <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
         <p class="news__desc">{{ substr($article->body, 0, 60) }}...</p>
-        <a href="/news/{{ $article->id }}" class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
+        <a href=" {{ url('/news', $article->slug) }} " class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
         <hr>
               </div>
         @endif

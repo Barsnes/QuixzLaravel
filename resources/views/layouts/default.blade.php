@@ -12,7 +12,8 @@
   <link href="/assets/css/fontawesome/css/all.css" rel="stylesheet">
   @yield('stylesheets')
   <!-- Scrips -->
-  <link href="/js/md2html.js">
+  {{ Html::style('js/jquery.js') }}
+  {{ Html::style('js/md2html.js') }}
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
