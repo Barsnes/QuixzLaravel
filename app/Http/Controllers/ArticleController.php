@@ -57,7 +57,7 @@ class ArticleController extends Controller
         $article->save();
 
         // Redirect
-        return redirect()->route('news.show', [$article->id]);
+        return redirect()->route('article.single', [$article->slug]);
     }
 
     /**
@@ -97,7 +97,7 @@ class ArticleController extends Controller
     {
       // Validate data
       $this->validate($request, array(
-          'title' => 'required|min:5|unique:articles,title',
+          'title' => 'required|min:5',
           'author' => 'required|min:5',
           'image' => 'required',
           'body' => 'required|min:50'
@@ -110,10 +110,13 @@ class ArticleController extends Controller
         $article->image = $request->image;
         $article->body = $request->body;
 
+        $value = $article->title;
+        $article->slug = str_slug($value);
+
         $article->save();
 
         // Redirect
-        return redirect()->route('news.show', [$article->id]);
+        return redirect()->route('article.single', [$article->slug]);
     }
 
     /**
