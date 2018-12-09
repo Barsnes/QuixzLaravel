@@ -14,12 +14,19 @@
                         </div>
                     @endif
 
-                    You are logged in
+                    You are logged in as {{ $role }}
                     @if($role == 'Admin')
-                      as an admin
+                      as an admin <br>
 
-                      <div class="col-md-12">
-                        <a href="register"> <h1>Register new account</h1></a>
+                      <div class="col-md-8">
+                        <ul>
+                          <li><a href="/register"><h3>Register new account</h3></a></li>
+                          <li><a href="/admin/news/create"><h3>Create a new news post</h3></a></li>
+                        </ul>
+                      </div>
+
+                      <div class="">
+
                       </div>
                     @endif
 

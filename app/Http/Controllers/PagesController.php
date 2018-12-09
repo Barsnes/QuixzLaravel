@@ -41,13 +41,7 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $article = Article::where('slug', '=', $slug)->first();
 
-    if( Auth::check() ){
-        $role = Auth::user()->role;
-        return view('news.show')->withArticle($article)->withRole($role);
-      }
-      else{
-          return view('news.show')->withArticle($article)->withRole('');
-      }
+      return view('news.show')->withArticle($article);
 
   }
 

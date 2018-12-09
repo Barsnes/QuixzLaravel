@@ -42,6 +42,11 @@
         <p class="news__desc">{{ substr($article->body, 0, 60) }}...</p>
         <a href=" {{ url('/news', $article->slug) }} " class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
         <hr>
+        @if ($role == 'Admin')
+          <div class="">
+            <h1><a href=" {{ url('admin/news/' . $article->id . '/edit') }} ">Edit</a></h1>
+          </div>
+        @endif
               </div>
         @endif
       @endforeach
