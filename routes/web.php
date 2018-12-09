@@ -24,9 +24,6 @@ Route::resource('/admin/news', 'ArticleController');
 Route::get('/news', 'PagesController@news');
 Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
 
-Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-Route::get('/admin', 'Auth\AdminLoginController@index')->name('admin.dashboard');
 // Route::get('/news/{news}', 'ArticleController@show');
 
 
