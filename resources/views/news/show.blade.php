@@ -9,6 +9,7 @@
   <h1>{{ $article->title }}</h1>
   <h5 style="font-size:.9em; color:#FFF; letter-spacing:1px">Written by {{ $article->author }}</h5>
   <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
+  <h5>Category: {{ $article->category->name ?? ''}}</h5>
   <hr>
   @markdown
     {{ $article->body }}

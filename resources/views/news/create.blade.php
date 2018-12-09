@@ -16,11 +16,21 @@
       {{ Form::text('title', '', array('class' => 'form-control')) }}
 
       {{ Form::label('author', 'Author:') }}
-      {{ Form::text('author', '', array('class' => 'form-control')) }}
+      {{ Form::text('author', $name, array('class' => 'form-control')) }}
 
       {{ Form::label('image', 'Image:') }}
       {{ Form::text('image', '', array('class' => 'form-control')) }}
 
+      {{ Form::label('category_id', 'Category:') }}
+      {{ Form::select('category_id', [
+          '1' => 'Counter Strike',
+          '2' => 'Rocket League',
+          '3' => 'League of Legends',
+          '4' => 'News',
+          '5' => 'Overwatch',
+          '6' => 'Hearthstone'
+        ]) }}
+        <br>
       {{ Form::label('body', 'Body:')}}
       {{ Form::textarea('body', '', array('class' => 'form-control')) }}
 

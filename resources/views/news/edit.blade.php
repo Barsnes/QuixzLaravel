@@ -23,6 +23,17 @@
     {{ Form::label('image', 'Image:') }}
     {{ Form::text('image', null, array('class' => 'form-control')) }}
 
+    {{ Form::label('category_id', 'Category:') }}
+    {{ Form::select('category_id', [
+        '1' => 'Counter Strike',
+        '2' => 'Rocket League',
+        '3' => 'League of Legends',
+        '4' => 'News',
+        '5' => 'Overwatch',
+        '6' => 'Hearthstone'
+      ]) }}
+      <br>
+
     {{ Form::label('body', 'Body:')}}
     {{ Form::textarea('body', null, array('class' => 'form-control')) }}
 

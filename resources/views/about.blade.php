@@ -9,10 +9,10 @@
       <h1>{{ $about->title }}</h1>
 
       <p>
-        @markdown($about->content)
-        {{-- @markdown
+        {{-- @markdown($about->content) --}}
+        @markdown
           {!! $about->content !!}
-        @endmarkdown --}}
+        @endmarkdown
       </p>
 
     </div>

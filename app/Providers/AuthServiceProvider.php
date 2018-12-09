@@ -30,5 +30,9 @@ class AuthServiceProvider extends ServiceProvider
         view()->composer('*', function($view){
           $view->with('role', Auth::user()->role ?? '');
         });
+
+        view()->composer('*', function($view){
+          $view->with('name', Auth::user()->name ?? '');
+        });
     }
 }

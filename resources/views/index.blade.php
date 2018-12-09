@@ -27,7 +27,11 @@
   </div>
 
   <div class="news__section" id="news">
-    <h1>Recent News</h1>
+    <h1>Recent News</h1>@if ($role == 'Admin')
+      <div class="">
+        <h1><a style="text-decoration:none;color:#2B63AF" href="/admin/news/create">Create new article</a></h1>
+      </div>
+    @endif
     <div class="news">
       <?php $articleCount = 0 ?>
       @foreach ($articles as $article)
@@ -41,12 +45,12 @@
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
         <p class="news__desc">{{ substr($article->body, 0, 60) }}...</p>
         <a href=" {{ url('/news', $article->slug) }} " class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
-        <hr>
         @if ($role == 'Admin')
           <div class="">
-            <h1><a href=" {{ url('admin/news/' . $article->id . '/edit') }} ">Edit</a></h1>
+            <h1 style="text-align:right"><a style="color:#2B63AF" href=" {{ url('admin/news/' . $article->id . '/edit') }} ">Edit</a></h1>
           </div>
         @endif
+        <hr>
               </div>
         @endif
       @endforeach
@@ -77,7 +81,7 @@
               <div style="margin: auto">
                 <h3>VS</h3>
                 <h6>CSGO</h6>
-                <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">#</h3></a>
+                <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
               </div>
               <h2></h2>
             <img src="https://unsplash.it/500" alt="Logo of opposing team"></img>
@@ -93,7 +97,7 @@
               <div style="margin: auto">
                 <h3>VS</h3>
                 <h6>Rocket League</h6>
-                <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Overwatch</h3></a>
+                <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
               </div>
               <h2>0</h2>
             <img src="https://unsplash.it/500" alt="Logo of opposing team"></img>
@@ -111,7 +115,7 @@
           <h2>24 December 2018</h2>
             <div style="margin: auto">
               <h3>Hearthstone</h3>
-              <a href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">Match</h3></a>
+              <a href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
             </div>
       </div>
 
@@ -121,7 +125,7 @@
           <h2>23 December 2018</h2>
             <div style="margin: auto">
               <h3>Counter Strike</h3>
-              <a href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">Tournament</h3></a>
+              <a href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
             </div>
       </div>
   </div>

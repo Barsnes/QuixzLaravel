@@ -47,6 +47,7 @@ class ArticleController extends Controller
           'title' => 'required|min:5|max:255|unique:articles,title',
           'author' => 'required|min:5|max:255',
           'image' => 'required|max:255',
+          'category_id' => 'required',
           'body' => 'required'
         ));
 
@@ -56,6 +57,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->author = $request->author;
         $article->image = $request->image;
+        $article->category_id = $request->category_id;
         $article->body = $request->body;
 
         $value = $article->title;
@@ -76,7 +78,7 @@ class ArticleController extends Controller
     public function show($id)
     {
       $article = Article::find($id);
-    
+
       return view('news.show', compact('article'));
     }
 
@@ -108,6 +110,7 @@ class ArticleController extends Controller
           'title' => 'required|min:5',
           'author' => 'required|min:5',
           'image' => 'required',
+          'category_id' => 'required',
           'body' => 'required|min:50'
         ));
 
@@ -116,6 +119,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->author = $request->author;
         $article->image = $request->image;
+        $article->category_id = $request->category_id;
         $article->body = $request->body;
 
         $value = $article->title;
