@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in as {{ $role }}
+                    You are logged in as
                     @if($role == 'Admin')
                       as an admin <br>
 
