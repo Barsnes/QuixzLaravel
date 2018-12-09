@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Article;
+use Auth;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -43,7 +45,14 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $article = Article::where('slug', '=', $slug)->first();
 
-    return view('news.show')->withArticle($article);
+    if( Auth::check() ){
+        $role = Auth::user()->role;
+        return view('news.show')->withArticle($article)->withRole($role);
+      }
+      else{
+          return view('news.show')->withArticle($article)->withRole('');
+      }
+
   }
 
 }

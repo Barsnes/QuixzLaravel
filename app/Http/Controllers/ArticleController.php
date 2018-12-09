@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use Auth;
+use App\User;
 
 class ArticleController extends Controller
 {
 
   public function __construct() {
-    $this->middleware('auth:admin');
+    $this->middleware('admin');
+
   }
     /**
      * Display a listing of the resource.
@@ -73,7 +76,7 @@ class ArticleController extends Controller
     public function show($id)
     {
       $article = Article::find($id);
-
+    
       return view('news.show', compact('article'));
     }
 
@@ -88,6 +91,7 @@ class ArticleController extends Controller
         $article = Article::find($id);
 
         return view('news.edit', compact('article'));
+        // return view('news.edit', compact('article'));
     }
 
     /**

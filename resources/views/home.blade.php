@@ -14,7 +14,19 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in
+                    @if($role == 'Admin')
+                      as an admin
+
+                      <div class="col-md-12">
+                        <a href="register"> <h1>Register new account</h1></a>
+                      </div>
+                    @endif
+
+
+                    @if($role == 'Player')
+                      as a player
+                    @endif
                 </div>
             </div>
         </div>
