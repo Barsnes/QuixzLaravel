@@ -11,7 +11,8 @@ Route::get('/downloads', 'PagesController@downloads');
 Route::resource('/admin/news', 'ArticleController');
 Route::get('/news', 'PagesController@news');
 Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
+Route::get('/admin/users', 'AdminController@users');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');

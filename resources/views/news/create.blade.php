@@ -1,8 +1,5 @@
-@extends('layouts.default')
-@section('title', 'Create News')
-@section('stylesheets')
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-@endsection
+@extends('layouts.app')
+
 @section('content')
 <div class="row">
   <div class="col-md-8 offset-2">
