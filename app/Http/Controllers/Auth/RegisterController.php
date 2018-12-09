@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -59,5 +60,13 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => $data['role'],
         ]);
+
+        Mail::send('emails.welcome', $data, function($message) use ($data)
+            {
+                $message->from('contact@quixz.eu', "Quixz eSports");
+                $message->subject("Welcome to Quixz eSports");
+                $message->to($data['email']);
+            });
+
     }
 }
