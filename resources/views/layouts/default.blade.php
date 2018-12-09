@@ -9,11 +9,10 @@
   <!-- Stylesheets -->
   {{ Html::style('css/master.css') }}
   {{ Html::style('css/fontawesome/css/all.css') }}
-  <link href="/assets/css/fontawesome/css/all.css" rel="stylesheet">
   @yield('stylesheets')
   <!-- Scrips -->
-  {{ Html::style('js/jquery.js') }}
-  {{ Html::style('js/md2html.js') }}
+  <script src="{{ asset('js/jquery.js') }}"></script>
+  {{-- <script src="{{ asset('js/md2html.js') }}"></script> --}}
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
