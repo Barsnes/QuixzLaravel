@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Category;
 use Auth;
 use App\User;
 
@@ -31,7 +32,11 @@ class ArticleController extends Controller
      */
     public function create()
     {
-      return view('news.create');
+      $categories = Category::get();
+
+      // $categories = $category->id + '=>' + $category->name;
+
+      return view('news.create')->withCategories($categories);
     }
 
     /**
