@@ -17,7 +17,8 @@
   </div>
 </div>
 
-<div class="article">
+<div class="row">
+  <div class="col-md-8 offset-2">
   {!! Form::model($article, array('route' => array('news.update', $article->id), 'files' => true, 'method' => 'PUT')) !!}﻿
     {{ Form::label('title', 'Title:') }}
     {{ Form::text('title', null, array('class' => 'form-control')) }}
@@ -49,4 +50,5 @@
   {{ Form::submit('Delete', array('class' => 'btn btn-danger btn-block')) }}
   {!! Form::close() !!}
   <a class="btn btn-block btn-secondary" href="/news" style="color: #fff">Cancel</a>
+ </div>
 </div>
