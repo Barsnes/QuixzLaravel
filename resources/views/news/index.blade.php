@@ -9,7 +9,7 @@
       <a href=" {{ url('/news', $article->slug) }} "><img src="{{ $article->image }}" alt="Dummy desc" og:image></a>
       <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
       <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
-      <p>{{ substr($article->body, 0, 60) }}...</p>
+      <p>{!! substr($article->body, 0, 60) !!}...</p>
       <a href=" {{ url('/news', $article->slug) }} " class="article_readmore"><p>Read more...</p></a>
       <hr>
     </div>
