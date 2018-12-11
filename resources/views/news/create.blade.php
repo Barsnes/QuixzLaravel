@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('script')
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>
+  tinymce.init({ selector:'textarea',
+  plugins:'image link autolink code advlist imagetools spellchecker media'});
+</script>
+@endsection
+
 @section('content')
 <div class="row">
   <div class="col-md-8 offset-2">
