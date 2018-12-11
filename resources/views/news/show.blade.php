@@ -11,9 +11,7 @@
   <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
   <h5>Category: {{ $article->category->name ?? ''}}</h5>
   <hr>
-  @markdown
-    {{ $article->body }}
-  @endmarkdown
+    {!! $article->body !!}
 
   @if($role == 'Admin')
     <h3><a style="background-color: #fff; padding: .4rem 1rem" href="/admin/news/{{ $article->id }}/edit">Edit Post</a></h3>
