@@ -28,6 +28,7 @@
       {{ Form::text('author', $name, array('class' => 'form-control')) }}
 
       {{ Form::label('image', 'Image:') }}
+      {{ Form::file('image', array('class' => 'form-control')) }}
 
       {{-- {{ Form::label('category_id', 'Category:') }}
       {{ Form::select('category_id', [
