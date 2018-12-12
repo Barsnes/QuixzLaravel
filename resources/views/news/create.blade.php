@@ -4,7 +4,8 @@
   <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   <script>
   tinymce.init({ selector:'textarea',
-  plugins:'image link autolink code advlist imagetools spellchecker media'});
+  plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false
+});
 </script>
 @endsection
 
@@ -19,7 +20,7 @@
   <div class="col-md-8 offset-2">
     <h1>Create New Post</h1>
     <hr>
-    {!! Form::open(['route' => 'news.store']) !!}
+    {!! Form::open(['route' => 'news.store', 'files' => true]) !!}
       {{ Form::label('title', 'Title:') }}
       {{ Form::text('title', '', array('class' => 'form-control')) }}
 
@@ -27,7 +28,6 @@
       {{ Form::text('author', $name, array('class' => 'form-control')) }}
 
       {{ Form::label('image', 'Image:') }}
-      {{ Form::text('image', '', array('class' => 'form-control')) }}
 
       {{-- {{ Form::label('category_id', 'Category:') }}
       {{ Form::select('category_id', [

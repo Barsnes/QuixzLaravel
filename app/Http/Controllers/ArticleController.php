@@ -7,6 +7,7 @@ use App\Article;
 use App\Category;
 use Auth;
 use App\User;
+use Image;
 
 class ArticleController extends Controller
 {
@@ -38,7 +39,8 @@ class ArticleController extends Controller
           'author' => 'required|min:5|max:255',
           'image' => 'required|max:255',
           'category_id' => 'required',
-          'body' => 'required'
+          'body' => 'required',
+          'image' => 'required',
         ));
 
         // Store in DB
@@ -52,6 +54,14 @@ class ArticleController extends Controller
 
         $value = $article->title;
         $article->slug = str_slug($value);
+
+        // image
+        $image = $request->file('image');
+        $filename = time() . '.' . $image['extension'];
+        $location = public_path('images/' . $filename);
+        Image::make($image)->resize(1200, 600)->save($location);
+
+        $article->image = $filename;
 
         $article->save();
 
@@ -82,7 +92,8 @@ class ArticleController extends Controller
           'author' => 'required|min:5',
           'image' => 'required',
           'category_id' => 'required',
-          'body' => 'required|min:50'
+          'body' => 'required',
+          'image' => 'required',
         ));
 
         $article = Article::find($id);
@@ -95,6 +106,13 @@ class ArticleController extends Controller
 
         $value = $article->title;
         $article->slug = str_slug($value);
+
+        $image = $request->file('image');
+        $filename = time() . '.png';
+        $location = public_path('images/' . $filename);
+        Image::make($image)->resize(1200, 600)->save($location);
+
+        $article->image = '/images/' . $filename;
 
         $article->save();
 
