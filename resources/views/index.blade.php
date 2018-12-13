@@ -90,7 +90,7 @@
                     <h6>{{ $match->game->name }}</h6>
                     <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                     @if ($role == 'Admin')
-                      <a target="_blank" href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
                     @endif
                   </div>
                   <h2></h2>
@@ -122,7 +122,7 @@
                     <h6>{{ $match->game->name }}</h6>
                     <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                     @if ($role == 'Admin')
-                      <a target="_blank" href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
                     @endif
                   </div>
                   <h2>{{ $match->enemyScore }}</h2>
