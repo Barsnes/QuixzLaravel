@@ -25,19 +25,25 @@
 
     {{ Form::label('author', 'Author:') }}
     {{ Form::text('author', null, array('class' => 'form-control')) }}
-
+<div class="row">
+  <div class="col">
+    <h5>Current Image:</h5>
+    <img style="width: 100%" src=" {{ asset('images/' . $article->image) }} " alt=""> <br>
+  </div>
+  <div class="col">
     {{ Form::label('image', 'Image:') }}
     {{ Form::file('image', array('class' => 'form-control')) }}
+  </div>
 
-    {{ Form::label('category_id', 'Category:') }}
-    {{ Form::select('category_id', [
-        '1' => 'Counter Strike',
-        '2' => 'Rocket League',
-        '3' => 'League of Legends',
-        '4' => 'News',
-        '5' => 'Overwatch',
-        '6' => 'Hearthstone'
-      ]) }}
+</div>
+
+  <label for="category__id">Category:</label>
+  <select name="category_id" class="form-control">
+    <option value="{{ $article->category->id }}">{{ $article->category->name }}</option>
+    @foreach ($categories as $category)
+        <option value="{{ $category->id }}">{{ $category->name }}</option>
+    @endforeach
+  </select>
       <br>
 
     {{ Form::label('body', 'Body:')}}

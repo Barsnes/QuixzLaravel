@@ -80,9 +80,9 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
+        $categories = Category::get();
 
-        return view('news.edit', compact('article'));
-        // return view('news.edit', compact('article'));
+        return view('news.edit', compact('article', 'categories'));
     }
 
     public function update(Request $request, $id)

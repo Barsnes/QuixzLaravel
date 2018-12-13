@@ -55,6 +55,10 @@
   {{ Form::label('enemyLogo', 'Enemy Logo:') }}
   {{ Form::file('enemyLogo', array('class' => 'form-control')) }}
 </div>
+<div class="col">
+  <h5>Current Enemy Logo:</h5>
+  <img src=" {{ asset('images/' . $match->enemyLogo) }} " alt="">
+</div>
       </div>
 
       <label for="tournament_id">Tournament (optional)</label>
