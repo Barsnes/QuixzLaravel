@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>@php echo Config::get('app.name'); @endphp - @yield('title') </title>
-  <link REL="SHORTCUT ICON" HREF="/SHORTCUTICON.png">
+  <link REL="SHORTCUT ICON" HREF=" {{asset('/SHORTCUTICON.png')}}">
   <meta name="google-site-verification" content="x7yK7kt6bcjL-iz3Vw9X0BDJlCR8mjrBVt_rDVekI04" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->

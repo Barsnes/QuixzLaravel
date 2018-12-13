@@ -4,7 +4,41 @@
   <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
   <script>
   tinymce.init({ selector:'textarea',
-  plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false
+  plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false,
+  images_upload_url: 'localhost:8000/postAcceptor.php',
+  images_upload_base_path: 'public/images/',
+  images_upload_credentials: true,
+  convert_urls: false,
+  images_upload_handler: function (blobInfo, success, failure) {
+    var xhr, formData;
+
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.open('POST', 'localhost:8000/postAcceptor.php');
+
+    xhr.onload = function() {
+      var json;
+
+      if (xhr.status != 200) {
+        failure('HTTP Error: ' + xhr.status);
+        return;
+      }
+
+      json = JSON.parse(xhr.responseText);
+
+      if (!json || typeof json.location != 'string') {
+        failure('Invalid JSON: ' + xhr.responseText);
+        return;
+      }
+
+      success(json.location);
+    };
+
+    formData = new FormData();
+    formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+    xhr.send(formData);
+  }
 });
 </script>
 @endsection
@@ -57,9 +91,9 @@
 </div>
 
 <script>
-window.onbeforeunload = function (e) {
-  return 'Are you sure?';
-};
+// window.onbeforeunload = function (e) {
+//   return 'Are you sure?';
+// };
 </script>
 
 @endsection
