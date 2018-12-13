@@ -11,9 +11,12 @@
   <div class="col-md-8 offset-2">
     <h1>Create New Match</h1>
     <hr>
-    {!! Form::open(['route' => 'matches.store']) !!}
+    {!! Form::open(['route' => 'matches.store', 'files' => true]) !!}
       {{ Form::label('name', 'Name:') }}
       {{ Form::text('name', '', array('class' => 'form-control')) }}
+
+      {{ Form::label('link', 'Link:') }}
+      {{ Form::text('link', '', array('class' => 'form-control')) }}
 
       <label for="game_id">Game:</label>
       <select name="game_id" class="form-control">
@@ -40,8 +43,8 @@
         <input class="form-control" type="text" name="enemy">
 </div>
 <div class="col">
-        <label for="date">EnemyLogo:</label>
-        <input class="form-control" type="text" name="enemyLogo">
+  {{ Form::label('enemyLogo', 'Enemy Logo:') }}
+  {{ Form::file('enemyLogo', array('class' => 'form-control')) }}
 </div>
       </div>
 

@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="article">
-  <img src="{{ $article->image }}" alt="dummy text" og:image></img>
+  <img src="{{ asset('/images/' . $article->image) }}" alt="dummy text" og:image></img>
 
   <h1>{{ $article->title }}</h1>
   <h5 style="font-size:.9em; color:#FFF; letter-spacing:1px">Written by {{ $article->author }}</h5>

@@ -7,13 +7,16 @@ use Illuminate\Support\Facades\DB;
 use App\Article;
 use Auth;
 use App\User;
+use App\Match;
 
 class PagesController extends Controller
 {
 
   public function home() {
     $articles = Article::get()->reverse();
-    return view('index', ['articles' => $articles]);
+    $matches = Match::orderBy('date', 'ASC')->get();;
+    $matchesReverse = Match::orderBy('date', 'ASC')->get()->reverse();
+    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse]);
   }
 
   public function about() {

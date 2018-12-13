@@ -37,10 +37,9 @@ class ArticleController extends Controller
       $this->validate($request, array(
           'title' => 'required|min:5|max:255|unique:articles,title',
           'author' => 'required|min:5|max:255',
-          'image' => 'required|max:255',
+          'image' => 'required|image',
           'category_id' => 'required',
           'body' => 'required',
-          'image' => 'required',
         ));
 
         // Store in DB
@@ -57,7 +56,9 @@ class ArticleController extends Controller
 
         // image
         $image = $request->file('image');
-        $filename = time() . '.' . $image['extension'];
+        $info = getimagesize($image);
+        $extension = image_type_to_extension($info[2]);
+        $filename = time() . $extension;
         $location = public_path('images/' . $filename);
         Image::make($image)->resize(1200, 600)->save($location);
 
@@ -90,29 +91,30 @@ class ArticleController extends Controller
       $this->validate($request, array(
           'title' => 'required|min:5',
           'author' => 'required|min:5',
-          'image' => 'required',
           'category_id' => 'required',
           'body' => 'required',
-          'image' => 'required',
         ));
 
         $article = Article::find($id);
 
         $article->title = $request->title;
         $article->author = $request->author;
-        $article->image = $request->image;
         $article->category_id = $request->category_id;
         $article->body = $request->body;
 
         $value = $article->title;
         $article->slug = str_slug($value);
 
-        $image = $request->file('image');
-        $filename = time() . '.png';
-        $location = public_path('images/' . $filename);
-        Image::make($image)->resize(1200, 600)->save($location);
+        if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $info = getimagesize($image);
+          $extension = image_type_to_extension($info[2]);
+          $filename = time() . $extension;
+          $location = public_path('images/' . $filename);
+          Image::make($image)->resize(1200, 600)->save($location);
 
-        $article->image = '/images/' . $filename;
+          $article->image = $filename;
+        }
 
         $article->save();
 

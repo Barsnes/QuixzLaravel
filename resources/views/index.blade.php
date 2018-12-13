@@ -40,7 +40,7 @@
 
       <div class="article_list">
 
-        <a href=" {{ url('/news', $article->slug) }} "><img src="{{ $article->image }}" alt="some dummy text" og:image></a>
+        <a href=" {{ url('/news', $article->slug) }} "><img src="{{ asset('/images/' . $article->image) }}" alt="some dummy text" og:image></a>
         <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
         <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
@@ -74,34 +74,66 @@
 
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
-        <div class="match_body">
-            <h1>2 January 2020</h1>
-            <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-              <h2></h2>
-              <div style="margin: auto">
-                <h3>VS</h3>
-                <h6>CSGO</h6>
-                <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
-              </div>
-              <h2></h2>
-            <img src="https://unsplash.it/500" alt="Logo of opposing team"></img>
-        </div>
+      <?php $matchCount = 0; ?>
+      @foreach ($matches as $match)
+        <?php  $date_now = date("d M Y"); // this format is string comparable
+            $matchDate = date('d M Y', strtotime($match->date));
+        ?>
+        @if ($date_now < $matchDate && $matchCount < 3)
+          <?php $matchCount ++ ?>
+            <div class="match_body">
+                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
+                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                  <h2></h2>
+                  <div style="margin: auto">
+                    <h3>VS</h3>
+                    <h6>CSGO</h6>
+                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                    @if ($role == 'Admin')
+                      <a target="_blank" href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                    @endif
+                  </div>
+                  <h2></h2>
+                  @if ($match->enemyLogo != '')
+                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                  @else
+                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                  @endif
+            </div>
+            @endif
+      @endforeach
     </div>
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
-        <div class="match_body">
-            <h1>1 January 2019</h1>
-            <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-              <h2>16</h2>
-              <div style="margin: auto">
-                <h3>VS</h3>
-                <h6>Rocket League</h6>
-                <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
-              </div>
-              <h2>0</h2>
-            <img src="https://unsplash.it/500" alt="Logo of opposing team"></img>
-        </div>
+      @foreach ($matchesReverse as $match)
+        <?php  $date_now = date("d M Y"); // this format is string comparable
+            $matchDate = date('d M Y', strtotime($match->date));
+            $matchCount = 0;
+        ?>
+            @if ($date_now > $matchDate && $matchCount < 3)
+              <?php $matchCount ++ ?>
+            <div class="match_body">
+                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
+                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                  <h2>{{ $match->quixzScore }}</h2>
+                  <div style="margin: auto">
+                    <h3>VS</h3>
+                    <h6>CSGO</h6>
+                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                    @if ($role == 'Admin')
+                      <a target="_blank" href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                    @endif
+                  </div>
+                  <h2>{{ $match->enemyScore }}</h2>
+                  @if ($match->enemyLogo != '')
+                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                  @else
+                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                  @endif
+            </div>
+            @endif
+      @endforeach
     </div>
 
   </div>

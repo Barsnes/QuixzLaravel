@@ -11,6 +11,7 @@
   <div class="col-md-8 offset-2">
     <h1>Edit {{ $match->name }}</h1>
     <hr>
+  {!! Form::model($match, array('route' => array('matches.update', $match->id), 'files' => true, 'method' => 'PUT')) !!}﻿
     <div class="row" style="margin: 2rem 0 2rem 0; background-color: rgb(248, 181, 42); padding: 1rem 0 2rem 0; color: #fff; border-radius: 7px">
 
       <div class="col">
@@ -23,9 +24,11 @@
       </div>
 
     </div>
-    {!! Form::model($match, array('route' => array('matches.update', $match->id), 'files' => true, 'method' => 'PUT')) !!}﻿
       {{ Form::label('name', 'Name:') }}
       {{ Form::text('name', null, array('class' => 'form-control')) }}
+
+      {{ Form::label('link', 'Link:') }}
+      {{ Form::text('link', null, array('class' => 'form-control')) }}
 
       <label for="game_id">Game:</label>
       <select name="game_id" class="form-control">
@@ -49,8 +52,8 @@
         <input value="{{ $match->enemy }}" class="form-control" type="text" name="enemy">
 </div>
 <div class="col">
-        <label for="date">EnemyLogo:</label>
-        <input value="{{ $match->enemyLogo }}" class="form-control" type="text" name="enemyLogo">
+  {{ Form::label('enemyLogo', 'Enemy Logo:') }}
+  {{ Form::file('enemyLogo', array('class' => 'form-control')) }}
 </div>
       </div>
 

@@ -5,6 +5,7 @@ use App\Match;
 use App\Game;
 use Auth;
 use App\User;
+use Image;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +18,7 @@ class MatchController extends Controller
 
     public function index()
     {
-      $matches = Match::orderBy('date', 'ASC')->get();;
+      $matches = Match::orderBy('date', 'ASC')->get()->reverse();
       return view('admin.matches')->withMatches($matches);
     }
 
@@ -40,6 +41,7 @@ class MatchController extends Controller
           'date' => 'required',
           'time' => '',
           'tournament_id' => '',
+          'link' => '',
         ));
 
         // Store in DB
@@ -48,11 +50,22 @@ class MatchController extends Controller
         $match->name = $request->name;
         $match->game_id = $request->game_id;
         $match->enemy = $request->enemy;
-        $match->enemyLogo = $request->enemyLogo;
         $match->quixzScore = $request->quixzScore;
         $match->enemyScore = $request->enemyScore;
         $match->date = $request->date;
         $match->tournament_id = $request->tournament_id;
+        $match->link = $request->link;
+
+        if ($request->hasFile('enemyLogo')) {
+          $enemyLogo = $request->file('enemyLogo');
+          $info = getimagesize($enemyLogo);
+          $extension = image_type_to_extension($info[2]);
+          $filename = time() . $extension;
+          $location = public_path('images/' . $filename);
+          Image::make($enemyLogo)->resize(50, 50)->save($location);
+
+          $match->enemyLogo = $filename;
+        }
 
         $match->save();
 
@@ -86,6 +99,7 @@ class MatchController extends Controller
           'date' => 'required',
           'time' => '',
           'tournament_id' => '',
+          'link' => '',
         ));
 
         // Store in DB
@@ -94,11 +108,22 @@ class MatchController extends Controller
         $match->name = $request->name;
         $match->game_id = $request->game_id;
         $match->enemy = $request->enemy;
-        $match->enemyLogo = $request->enemyLogo;
         $match->quixzScore = $request->quixzScore;
         $match->enemyScore = $request->enemyScore;
         $match->date = $request->date;
         $match->tournament_id = $request->tournament_id;
+        $match->link = $request->link;
+
+        if ($request->hasFile('enemyLogo')) {
+          $enemyLogo = $request->file('enemyLogo');
+          $info = getimagesize($enemyLogo);
+          $extension = image_type_to_extension($info[2]);
+          $filename = time() . $extension;
+          $location = public_path('images/' . $filename);
+          Image::make($enemyLogo)->resize(150, 150)->save($location);
+
+          $match->enemyLogo = $filename;
+        }
 
         $match->save();
 
