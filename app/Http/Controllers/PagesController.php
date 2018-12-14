@@ -8,6 +8,7 @@ use App\Article;
 use Auth;
 use App\User;
 use App\Match;
+use App\Player;
 
 class PagesController extends Controller
 {
@@ -45,6 +46,15 @@ class PagesController extends Controller
     $article = Article::where('slug', '=', $slug)->first();
 
       return view('news.show')->withArticle($article);
+
+  }
+
+  public function getPlayer($slug) {
+
+    // $article = Article::where('created_at', '=', $year)->get();
+    $player = Player::where('playerName', '=', $slug)->first();
+
+      return view('players.show')->withPlayer($player);
 
   }
 

@@ -13,7 +13,10 @@ Route::get('/news', 'PagesController@news');
 Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
 Route::get('/admin/users', 'AdminController@users');
 
+Route::get('/player/{playerName}', ['as' => 'player.single', 'uses' => 'PagesController@getPlayer']);
+
 Route::resource('/admin/matches', 'MatchController');
+Route::resource('/admin/players', 'PlayerController');
 
 Auth::routes();
 
