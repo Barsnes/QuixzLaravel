@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('script')
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>
+  tinymce.init({ selector:'textarea',
+  plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false,
+  });
+  </script>
+@endsection
+
 @section('content')
 <div class="row">
   <div class="col-md-8 offset-2">
@@ -9,74 +18,91 @@
 
 <div class="row">
   <div class="col-md-8 offset-2">
-    <h1>Edit {{ $match->name }}</h1>
+    <h1>Edit {{ $player->playerName }}</h1>
     <hr>
-  {!! Form::model($match, array('route' => array('matches.update', $match->id), 'files' => true, 'method' => 'PUT')) !!}﻿
-    <div class="row" style="margin: 2rem 0 2rem 0; background-color: rgb(248, 181, 42); padding: 1rem 0 2rem 0; color: #fff; border-radius: 7px">
-
-    </div>
-      {{ Form::label('name', 'Name:') }}
-      {{ Form::text('name', null, array('class' => 'form-control')) }}
-
-      {{ Form::label('link', 'Link:') }}
-      {{ Form::text('link', null, array('class' => 'form-control')) }}
-
-      <label for="game_id">Game:</label>
-      <select name="game_id" class="form-control">
-        <option value="{{ $match->game_id }}">{{ $match->game->name }}</option>
-      </select>
-
-      <div class="row">
-<div class="col">
-        <label for="date">Date:</label>
-        <input value="{{ date('Y-m-d', strtotime($match->date)) }}" class="form-control" type="date" name="date">
-</div>
-<div class="col">
-        <label for="date">Time:</label>
-        <input class="form-control" type="time" name="time">
-</div>
+    {!! Form::model($player, array('route' => array('players.update', $player->id), 'files' => true, 'method' => 'PUT')) !!}﻿
+    <div class="row">
+      <div class="col">
+        <label for="firstName">First Name:</label>
+        <input value="{{ $player->firstName }}" class="form-control" type="text" name="firstName">
       </div>
-
-      <div class="row">
-<div class="col">
-        <label for="enemy">Enemy:</label>
-        <input value="{{ $match->enemy }}" class="form-control" type="text" name="enemy">
-</div>
-<div class="col">
-  {{ Form::label('enemyLogo', 'Enemy Logo:') }}
-  {{ Form::file('enemyLogo', array('class' => 'form-control')) }}
-</div>
-<div class="col">
-  <h5>Current Enemy Logo:</h5>
-  <img src=" {{ asset('images/' . $match->enemyLogo) }} " alt="">
-</div>
+      <div class="col">
+        <label for="playerName">Player Name:</label>
+        <input value="{{ $player->playerName }}" class="form-control" type="text" name="playerName">
       </div>
-
-      <label for="tournament_id">Tournament (optional)</label>
-      <input value="{{ $match->tournament_id }}" class="form-control" type="text" name="tournament_id">
-      <div class="row" style="margin-top:2rem;">
-
-      {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
-    {!! Form::close() !!}
-
-    {!! Form::model($match, array('route' => array('matches.destroy', $match->id), 'files' => true, 'method' => 'DELETE')) !!}﻿
-    {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-    {!! Form::close() !!}
-    <a class="btn btn-secondary" href="/admin/matches" style="color: #fff">Cancel</a>
+      <div class="col">
+            <label for="lastName">Last Name:</label>
+            <input value="{{ $player->lastName }}" class="form-control" type="text" name="lastName">
     </div>
-    <hr>
+</div>
+<div class="row">
+  <div class="col">
+    <label for="game_id">Game:</label>
+    <select name="game_id" class="form-control">
+      <option value="{{ $player->game->id }}">{{ $player->game->name }}</option>
+      @foreach ($games as $game)
+          <option value="{{ $game->id }}">{{ $game->name }}</option>
+      @endforeach
+    </select>
+  </div>
+  <div class="col">
+    {{ Form::label('image', 'Image:') }}
+    {{ Form::file('image', array('class' => 'form-control')) }}
+  </div>
+  <div class="col">
+    <h5>Current image:</h5>
+    <img src="{{ asset('images/' . $player->image) }}" style="width:100%" class="mx-auto d-block">
+  </div>
+  <div class="col">
+    <label for="active">Active</label>
+    <select class="form-control" name="active">
+      <option value="true">Active</option>
+      <option value="false">Inactive</option>
+    </select>
   </div>
 </div>
 
-<script>
-jQuery(function($) {
-  $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
-  $('#slug-target').slugify('#slug-source'); // Type as you slug
 
-  $("#slug-target").slugify("#slug-source", {
-  	separator: '_' // If you want to change separator from hyphen (-) to underscore (_).
-  });
-});
-</script>
+        <div class="row" style="margin-top:2rem">
+          <div class="col">
+            <h2>Social Media:</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="date">Steam:</label>
+            <input value="{{ $player->steam }}" class="form-control" type="text" name="steam">
+          </div>
+          <div class="col">
+            <label for="date">Twitter:</label>
+            <input value="{{ $player->twitter }}" class="form-control" type="text" name="twitter">
+          </div>
+          <div class="col">
+            <label for="date">Youtube:</label>
+            <input value="{{ $player->youtube }}" class="form-control" type="text" name="youtube">
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:2rem">
+          <div class="col">
+            <label for="date">Twitch:</label>
+            <input value="{{ $player->twitch }}" class="form-control" type="text" name="twitch">
+          </div>
+          <div class="col">
+            <label for="date">Instagram:</label>
+            <input value="{{ $player->instagram }}" class="form-control" type="text" name="instagram">
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col">
+            <label for="body">About Player</label>
+            <textarea name="body"class="form-control">{{ $player->body }}</textarea>
+          </div>
+        </div>
+
+      {{ Form::submit('Publish', array('class' => 'btn btn-success')) }}
+    {!! Form::close() !!}
+    <hr>
+  </div>
+</div>
 @endsection

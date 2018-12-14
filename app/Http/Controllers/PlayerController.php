@@ -82,16 +82,63 @@ class PlayerController extends Controller
 
     public function edit($id)
     {
-        //
+      $player = Player::find($id);
+      $games = Game::get();
+
+      return view('players.edit', compact('player', 'games'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, array(
+          'firstName' => 'required|max:20',
+          'playerName' => 'required|max:20',
+          'lastName' => 'required|max:20',
+          'image' => 'image',
+          'body' => '',
+          'active' => 'required',
+          'game_id' => 'required|max:20|integer',
+        ));
+
+        // Store in DB
+        $player = Player::find($id);
+
+        $player->firstName = $request->firstName;
+        $player->playerName = $request->playerName;
+        $player->lastName = $request->lastName;
+        $player->body = $request->body;
+        $player->steam = $request->steam;
+        $player->instagram = $request->instagram;
+        $player->twitter = $request->twitter;
+        $player->youtube = $request->youtube;
+        $player->twitch = $request->twitch;
+        $player->active = $request->active;
+        $player->game_id = $request->game_id;
+
+
+        if ($request->hasFile('image')) {
+          $image = $request->file('image');
+          $info = getimagesize($image);
+          $extension = image_type_to_extension($info[2]);
+          $filename = time() . $extension;
+          $location = public_path('images/' . $filename);
+          Image::make($image)->resize(500, 500)->save($location);
+
+          $player->image = $filename;
+        } else {
+          $player->image = 'avatar.png';
+        }
+
+        $player->save();
+
+        // Redirect
+        return redirect()->route('players.index');
     }
 
     public function destroy($id)
     {
-        //
+      Player::destroy($id);
+
+      return redirect('/admin/players');
     }
 }

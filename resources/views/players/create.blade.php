@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('script')
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>
+  tinymce.init({ selector:'textarea',
+  plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false,
+  });
+  </script>
+@endsection
+
 @section('content')
 <div class="row">
   <div class="col-md-8 offset-2">
@@ -78,6 +87,13 @@
           <div class="col">
             <label for="date">Instagram:</label>
             <input class="form-control" type="text" name="instagram">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="body">About Player</label>
+            <textarea name="body"class="form-control"></textarea>
           </div>
         </div>
 

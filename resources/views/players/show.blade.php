@@ -45,6 +45,10 @@
     @endif
   </div>
 </div>
+
+@if ($role == 'Admin')
+<h2><a class="matchButton" href="/admin/players/{{ $player->id }}/edit" class="btn btn-warning btn-sm">Edit</a></h2>
+@endif
 </div>
 
   <div class="player__text">
@@ -56,12 +60,28 @@
 
 <style>
 
+.matchButton {
+  border: 2px solid #F8B52A;
+  padding: .2rem .4rem;
+  background: #ffffff00;
+  -webkit-transition: background ease-in-out 150ms;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.matchButton:hover {
+  background: #F8B52A;
+  color: #FFF;
+  -webkit-transition: background ease-in-out 150ms;
+}
+
 .player {
   background-color: #2B63AF;
   min-height: 100vh;
   padding-top: 1rem;
   text-align: center;
-  width: 100vw
+  width: 100vw;
+  overflow-y: scroll;
 }
 
 .player__profile {

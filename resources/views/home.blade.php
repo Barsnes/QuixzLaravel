@@ -24,6 +24,7 @@
                           <li><a href="/admin/news/create"><h3>Create a new news post</h3></a></li>
                           <li><a href="/admin/users"><h3>View all users</h3></a></li>
                           <li><a href="/admin/matches"><h3>View all matches</h3></a></li>
+                          <li><a href="/admin/players"><h3>View all players</h3></a></li>
                         </ul>
                       </div>
 
