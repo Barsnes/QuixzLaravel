@@ -131,7 +131,6 @@ class PlayerController extends Controller
 
         $player->save();
 
-        // Redirect
         return redirect()->route('players.index');
     }
 
