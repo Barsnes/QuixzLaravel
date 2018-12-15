@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in as
+                    You are logged in
                     @if($role == 'Admin')
                       as an admin <br>
 
