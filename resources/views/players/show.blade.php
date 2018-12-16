@@ -12,10 +12,13 @@
   <div class="player_info">
     <div class="player_name">
       <h1>{{ $player->firstName }} <b style="color:#F8B52A">{{ $player->playerName }}</b> {{ $player->lastName }}</h1>
+      @if ($role == 'Admin')
+         <a style="color:#FFF; text-decoration: none" href="/admin/players/{{ $team->id }}/edit" class="matchButton">Edit</a>
+      @endif
     </div>
 
     <div class="player_game">
-      <p>{{ $player->team->name }}</p>
+      <p><a style="text-decoration:none; color: #FFF" href="/team/{{ $player->team->slug }}">{{ $player->team->name }}</a></p>
     </div>
 
   <div class="social-media">

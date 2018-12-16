@@ -11,7 +11,7 @@
             <div class="card-body">
               <h5 class="card-title">{{ $match->title }}</h5>
               <h5 class="card-title">{{ date('d F Y', strtotime($match->date)) }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ $match->game->name }}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{ $match->team->name }}</h6>
               <h5>Enemy: {{ $match->enemy }}</h5>
               <a href="/admin/matches/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
             </div>

@@ -86,7 +86,7 @@
                   <h2></h2>
                   <div style="margin: auto">
                     <h3>VS</h3>
-                    <h6>{{ $match->game->name }}</h6>
+                    <h6>{{ $match->team->name }}</h6>
                     <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                     @if ($role == 'Admin')
                       <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
@@ -118,7 +118,7 @@
                   <h2>{{ $match->quixzScore }}</h2>
                   <div style="margin: auto">
                     <h3>VS</h3>
-                    <h6>{{ $match->game->name }}</h6>
+                    <h6>{{ $match->team->name }}</h6>
                     <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                     @if ($role == 'Admin')
                       <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>

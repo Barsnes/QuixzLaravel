@@ -3,7 +3,11 @@
 
 @section('content')
   <div class="teamHeader">
-  <h1>{{ $team->name }}</h1>
+  <h1>{{ $team->name }}
+@if ($role == 'Admin')
+   <a style="color:#FFF; text-decoration: none" href="/admin/teams/{{ $team->id }}/edit" class="matchButton">Edit</a>
+@endif
+   </h1>
   </div>
 
   <div class="team">
@@ -25,52 +29,100 @@
     @endforeach
   </div>
 
-  {{-- <div class="teamMatches">
+@if ($team->match == '[]')
+
+@else
+  <div class="teamMatches">
 
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
-        <div class="match_body">
-            <h1>{{ item.matchdate | date: '%B %d, %Y' }}</h1>
-            <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-              <h2>{{ item.score.quixzScore }}</h2>
-              <div style="margin: auto">
-                <h3>VS</h3>
-                <a target="_blank" href="{{ item.matchlink }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">{{ item.matchType}}</h3></a>
-              </div>
-              <h2>{{ item.score.opponentScore }}</h2>
-            <img src="{{ item.image }}" alt="Logo of opposing team"></img>
-        </div>
+      <?php $matchCount = 0; ?>
+      @foreach ($team->match as $match)
+        <?php  $date_now = date("d M Y"); // this format is string comparable
+            $matchDate = date('d M Y', strtotime($match->date));
+        ?>
+        @if ($date_now < $matchDate && $matchCount < 3)
+          <?php $matchCount ++ ?>
+            <div class="match_body">
+                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
+                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                  <h2></h2>
+                  <div style="margin: auto">
+                    <h3>VS</h3>
+                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                    @if ($role == 'Admin')
+                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                    @endif
+                  </div>
+                  <h2></h2>
+                  @if ($match->enemyLogo != '')
+                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                  @else
+                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                  @endif
+            </div>
+            @endif
+      @endforeach
     </div>
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
-        <div class="match_body">
-            <h1>{{ item.matchdate | date: '%B %d, %Y' }}</h1>
-            <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-              <h2>{{ item.score.quixzScore }}</h2>
-              <div style="margin: auto">
-                <h4>VS</h4>
-                <a target="_blank" href="{{ item.matchlink }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">{{ item.matchType }}</h3></a>
-              </div>
-              <h2>{{ item.score.opponentScore }}</h2>
-            <img src="{{ item.image }}" alt="Logo of opposing team"></img>
-        </div>
+      <?php $matchCount = 0; ?>
+      @foreach ($team->match as $match)
+        <?php  $date_now = date("d M Y"); // this format is string comparable
+            $matchDate = date('d M Y', strtotime($match->date));
+        ?>
+            @if ($date_now > $matchDate && $matchCount < 3)
+              <?php $matchCount ++ ?>
+            <div class="match_body">
+                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
+                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                  <h2>{{ $match->quixzScore }}</h2>
+                  <div style="margin: auto">
+                    <h3>VS</h3>
+                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                    @if ($role == 'Admin')
+                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                    @endif
+                  </div>
+                  <h2>{{ $match->enemyScore }}</h2>
+                  @if ($match->enemyLogo != '')
+                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                  @else
+                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                  @endif
+            </div>
+            @endif
+      @endforeach
     </div>
 
-  </div> --}}
+  </div>
+@endif
 
+@if ($team->wins == '0' && $team->loss == '0')
+
+@else
   <div class="winRatio">
 
     <h1>Win/Loss Ratio</h1>
 
     <div class="ratioText">
 
-      <h2>Wins <b>{{ $team->wins }} / {{ $team->wins }}</b> Losses</h2>
+      <h2>Wins <b>{{ $team->wins }} / {{ $team->loss }}</b> Losses</h2>
       <h2>Win ratio:</h2> <h2 id="ratio"></h2>
 
     </div>
 
   </div>
+
+  <script type="text/javascript">
+
+    var ratio = ({{ $team->wins }} / ({{ $team->loss }} + {{ $team->wins }})) * 100;
+
+    document.getElementById("ratio").innerHTML = Math.round(ratio) + "%";
+
+  </script>
+@endif
 
   {{-- <div class="upcomingTournaments">
 
@@ -98,20 +150,20 @@
       </div>
   </div> --}}
 
-  <script type="text/javascript">
+@if ($team->body == '')
 
-    var ratio = ({{ $team->wins }} / ({{ $team->loss }} + {{ $team->wins }})) * 100;
-
-    document.getElementById("ratio").innerHTML = Math.round(ratio) + "%";
-
-  </script>
-
+@else
   <div class="teamAbout">
     <h1>History</h1>
     <div class="">
-        {{ $team->body }}
+        {!! $team->body !!}
     </div>
   </div>
+@endif
+
+@if ($team->article == '[]')
+
+@else
 
 <div class="teamArticles">
   <h1>Related Articles</h1>
@@ -136,6 +188,7 @@
     @endforeach
   </div>
 </div>
+@endif
 
   <style>
 

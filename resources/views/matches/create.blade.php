@@ -18,7 +18,7 @@
       {{ Form::label('link', 'Link:') }}
       {{ Form::text('link', '', array('class' => 'form-control')) }}
 
-      <label for="game_id">Game:</label>
+      <label for="team_id">Game:</label>
       <select name="team_id" class="form-control">
         <option value="">Choose One</option>
         @foreach ($teams as $team)

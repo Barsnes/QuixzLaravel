@@ -16,7 +16,7 @@ class CreateMatchesTable extends Migration
         Schema::create('matches', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('game_id');
+            $table->string('team_id');
             $table->string('enemy');
             $table->integer('quixzScore')->nullable()->unsigned()->default('0');
             $table->integer('enemyScore')->nullable()->unsigned()->default('0');

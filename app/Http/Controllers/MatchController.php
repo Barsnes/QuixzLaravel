@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Match;
-use App\Game;
+use App\Team;
 use Auth;
 use App\User;
 use Image;
@@ -24,16 +24,16 @@ class MatchController extends Controller
 
     public function create()
     {
-      $games = Game::get();
-      return view('matches.create')->withGames($games);
+      $teams = Team::get();
+      return view('matches.create')->withTeams($teams);
     }
 
     public function store(Request $request)
     {
       // Validate data
       $this->validate($request, array(
-          'name' => 'required|min:5|max:255',
-          'game_id' => 'required|max:255',
+          'name' => 'required|min:3|max:255',
+          'team_id' => 'required|max:255',
           'enemy' => 'required|max:255',
           'quixzScore' => '',
           'enemyScore' => '',
@@ -48,7 +48,7 @@ class MatchController extends Controller
         $match = new Match;
 
         $match->name = $request->name;
-        $match->game_id = $request->game_id;
+        $match->team_id = $request->team_id;
         $match->enemy = $request->enemy;
         $match->quixzScore = $request->quixzScore;
         $match->enemyScore = $request->enemyScore;
@@ -81,17 +81,16 @@ class MatchController extends Controller
     public function edit($id)
     {
       $match = Match::find($id);
-      $games = Game::get();
+      $teams = Team::get();
 
-      return view('matches.edit', compact('match'))->withGames($games);
+      return view('matches.edit', compact('match'))->withTeams($teams);
     }
 
     public function update(Request $request, $id)
     {
       // Validate data
       $this->validate($request, array(
-          'name' => 'required|min:5|max:255',
-          'game_id' => 'required|max:255',
+          'name' => 'required|min:3|max:255',
           'enemy' => 'required|max:255',
           'quixzScore' => '',
           'enemyScore' => '',
@@ -106,7 +105,6 @@ class MatchController extends Controller
         $match = Match::find($id);
 
         $match->name = $request->name;
-        $match->game_id = $request->game_id;
         $match->enemy = $request->enemy;
         $match->quixzScore = $request->quixzScore;
         $match->enemyScore = $request->enemyScore;
