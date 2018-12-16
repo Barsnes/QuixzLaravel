@@ -39,7 +39,11 @@
 
   <label for="team_id">Category:</label>
   <select name="team_id" class="form-control">
-    <option value="{{ $article->team->id }}">{{ $article->team->name }}</option>
+    @if ($article->team_id == '')
+      <option value="">None</option>
+    @else
+      <option value="{{ $article->team->id }}">{{ $article->team->name }}</option>
+    @endif
     @foreach ($categories as $category)
         <option value="{{ $category->id }}">{{ $category->name }}</option>
     @endforeach

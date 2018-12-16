@@ -18,8 +18,8 @@
                   <h6 class="card-subtitle mb-2 text-muted">{{ $player->playerName }}</h6>
                 @endif
               @endforeach
-              <a href="/team/{{ $team->id }}" class="btn btn-info btn-sm">View</a>
-              <a href="/admin/team/{{ $team->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/team/{{ $team->slug }}" class="btn btn-info btn-sm">View</a>
+              <a href="/admin/teams/{{ $team->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
             </div>
           </div>
         @endforeach

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Article;
 use Auth;
+use App\Article;
 use App\User;
 use App\Match;
 use App\Player;
+use App\Team;
 
 class PagesController extends Controller
 {
@@ -17,13 +18,20 @@ class PagesController extends Controller
     $articles = Article::get()->reverse();
     $matches = Match::orderBy('date', 'ASC')->get();;
     $matchesReverse = Match::orderBy('date', 'ASC')->get()->reverse();
-    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse]);
+    $teams = Team::get();
+    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams]);
   }
 
   public function about() {
     $about = DB::table('about')->select()->get()->get(0);
 
     return view("about")->with("about", $about);
+  }
+
+  public function teams() {
+    $teams = Team::get();
+
+    return view("teams")->with("teams", $teams);
   }
 
   public function contact() {
@@ -45,7 +53,7 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $article = Article::where('slug', '=', $slug)->first();
 
-      return view('news.show')->withArticle($article);
+    return view('news.show')->withArticle($article);
 
   }
 
@@ -54,7 +62,16 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $player = Player::where('playerName', '=', $slug)->first();
 
-      return view('players.show')->withPlayer($player);
+    return view('players.show')->withPlayer($player);
+
+  }
+
+  public function getTeam($slug) {
+
+    // $article = Article::where('created_at', '=', $year)->get();
+    $team = Team::where('slug', '=', $slug)->first();
+
+    return view('teams.show')->withTeam($team);
 
   }
 

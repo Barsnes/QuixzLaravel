@@ -10,6 +10,10 @@ class Team extends Model
     return $this->hasMany('App\Player');
   }
 
+  public function article(){
+    return $this->hasMany('App\Article');
+  }
+
   public function tournament(){
     return $this->hasMany('App\Tournament');
   }

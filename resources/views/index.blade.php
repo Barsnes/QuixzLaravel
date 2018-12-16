@@ -61,12 +61,11 @@
 
     <h1>Our Teams</h1>
 
-
-  <a class="team" href="/" style="background-image: url(https://unsplash.it/300); background-size: cover; background-position: center">
-
-      <h1>Counter Strike</h1>
-
+@foreach ($teams as $team)
+  <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
+      <h1>{{ $team->name }}</h1>
   </a>
+@endforeach
 
   </div>
 

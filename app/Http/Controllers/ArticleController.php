@@ -38,7 +38,7 @@ class ArticleController extends Controller
           'title' => 'required|min:5|max:255|unique:articles,title',
           'author' => 'required|min:5|max:255',
           'image' => 'required|image',
-          'category_id' => '',
+          'team_id' => '',
           'body' => 'required',
         ));
 
