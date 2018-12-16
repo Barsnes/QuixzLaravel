@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('script')
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=yt4c5s5px656mcfoeugpsdwuzv0ptqo62r4o394melqwn44x"></script>
   <script>
   tinymce.init({ selector:'textarea',
   plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false,
@@ -39,9 +39,10 @@
           '5' => 'Overwatch',
           '6' => 'Hearthstone'
         ]) }} --}}
-        <label for="category__id">Category:</label>
-        <select name="category_id" class="form-control">
+        <label for="team_id">Category:</label>
+        <select name="team_id" class="form-control">
           <option value="">Choose One</option>
+          <option value="">None</option>
           @foreach ($categories as $category)
               <option value="{{ $category->id }}">{{ $category->name }}</option>
           @endforeach

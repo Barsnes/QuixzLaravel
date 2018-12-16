@@ -15,7 +15,7 @@
     </div>
 
     <div class="player_game">
-      <p>{{ $player->game->name }}</p>
+      <p>{{ $player->team->name }}</p>
     </div>
 
   <div class="social-media">

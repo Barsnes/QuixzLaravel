@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCategoryIdToArticles extends Migration
+class AddSlugToTeams extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCategoryIdToArticles extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            $table->integer('category_id')->nullable()->after('slug')->unsigned();
+        Schema::table('teams', function (Blueprint $table) {
+          $table->string('slug')->after('body');
         });
     }
 
@@ -25,7 +25,7 @@ class AddCategoryIdToArticles extends Migration
      */
     public function down()
     {
-        Schema::table('articles', function (Blueprint $table) {
+        Schema::table('teams', function (Blueprint $table) {
             //
         });
     }

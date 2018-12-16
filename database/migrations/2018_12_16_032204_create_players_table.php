@@ -26,7 +26,6 @@ class CreatePlayersTable extends Migration
             $table->string('youtube')->nullable();
             $table->string('twitch')->nullable();
             $table->string('active')->default(false);
-            $table->integer('game_id');
             $table->integer('team_id')->nullable();
             $table->timestamps();
         });

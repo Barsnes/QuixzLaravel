@@ -25,7 +25,7 @@
                           <li><a href="/admin/users"><h3>View all users</h3></a></li>
                           <li><a href="/admin/matches"><h3>View all matches</h3></a></li>
                           <li><a href="/admin/players"><h3>View all players</h3></a></li>
-                          <li><a href="/admin/games"><h3>View all games</h3></a></li>
+                          <li><a href="/admin/teams"><h3>View all teams</h3></a></li>
                         </ul>
                       </div>
 

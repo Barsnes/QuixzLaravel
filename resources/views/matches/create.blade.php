@@ -19,10 +19,10 @@
       {{ Form::text('link', '', array('class' => 'form-control')) }}
 
       <label for="game_id">Game:</label>
-      <select name="game_id" class="form-control">
+      <select name="team_id" class="form-control">
         <option value="">Choose One</option>
-        @foreach ($games as $game)
-            <option value="{{ $game->id }}">{{ $game->name }}</option>
+        @foreach ($teams as $team)
+            <option value="{{ $team->id }}">{{ $team->name }}</option>
         @endforeach
       </select>
 

@@ -3,7 +3,7 @@
 @section('title'){{ $article->title }}@endsection
 
   @section('script')
-    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=yt4c5s5px656mcfoeugpsdwuzv0ptqo62r4o394melqwn44x"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
   @endsection
 
@@ -37,9 +37,9 @@
 
 </div>
 
-  <label for="category__id">Category:</label>
-  <select name="category_id" class="form-control">
-    <option value="{{ $article->category->id }}">{{ $article->category->name }}</option>
+  <label for="team_id">Category:</label>
+  <select name="team_id" class="form-control">
+    <option value="{{ $article->team->id }}">{{ $article->team->name }}</option>
     @foreach ($categories as $category)
         <option value="{{ $category->id }}">{{ $category->name }}</option>
     @endforeach

@@ -12,7 +12,7 @@
           <div class="card " style="width: 20rem;">
             <div class="card-body">
               <h5 class="card-title"><a href="/player/{{ $player->playerName }}">{{ $player->firstName }} "{{ $player->playerName }}" {{ $player->lastName }}</a></h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ $player->game->name }}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{ $player->team->name }}</h6>
               <a href="/player/{{ $player->playerName }}" class="btn btn-info btn-sm">View</a>
               <a href="/admin/players/{{ $player->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
             </div>
@@ -27,7 +27,7 @@
           <div class="card " style="width: 20rem;">
             <div class="card-body">
               <h5 class="card-title"><a href="/player/{{ $player->playerName }}">{{ $player->firstName }} "{{ $player->playerName }}" {{ $player->lastName }}</a></h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ $player->game->name }}</h6>
+              <h6 class="card-subtitle mb-2 text-muted">{{ $player->team->name }}</h6>
               <a href="/player/{{ $player->playerName }}" class="btn btn-info btn-sm">View</a>
               <a href="/admin/players/{{ $player->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
             </div>

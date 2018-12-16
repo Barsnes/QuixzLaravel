@@ -30,9 +30,9 @@
       {{ Form::label('link', 'Link:') }}
       {{ Form::text('link', null, array('class' => 'form-control')) }}
 
-      <label for="game_id">Game:</label>
-      <select name="game_id" class="form-control">
-        <option value="{{ $match->game_id }}">{{ $match->game->name }}</option>
+      <label for="team_id">Game:</label>
+      <select name="team_id" class="form-control">
+        <option value="{{ $match->$team_id }}">{{ $match->team->name }}</option>
       </select>
 
       <div class="row">

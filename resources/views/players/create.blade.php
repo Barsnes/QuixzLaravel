@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('script')
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=yt4c5s5px656mcfoeugpsdwuzv0ptqo62r4o394melqwn44x"></script>
   <script>
   tinymce.init({ selector:'textarea',
   plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false,
@@ -37,11 +37,11 @@
 </div>
 <div class="row">
   <div class="col">
-    <label for="game_id">Game:</label>
-    <select name="game_id" class="form-control">
+    <label for="team_id">Team:</label>
+    <select name="team_id" class="form-control">
       <option value="">Choose One</option>
-      @foreach ($games as $game)
-          <option value="{{ $game->id }}">{{ $game->name }}</option>
+      @foreach ($teams as $team)
+          <option value="{{ $team->id }}">{{ $team->name }}</option>
       @endforeach
     </select>
   </div>
@@ -52,7 +52,7 @@
   <div class="col">
     <label for="active">Active</label>
     <select class="form-control" name="active">
-      <option>Choose One</option>
+      <option value="true">Choose One</option>
       <option value="true">Active</option>
       <option value="false">Inactive</option>
     </select>

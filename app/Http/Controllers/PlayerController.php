@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Match;
-use App\Game;
 use App\Player;
 use Auth;
 use App\User;
 use Image;
+use App\Team;
 
 class PlayerController extends Controller
 {
@@ -25,8 +25,8 @@ class PlayerController extends Controller
 
     public function create()
     {
-      $games = Game::get();
-      return view('players.create')->withGames($games);
+      $teams = Team::get();
+      return view('players.create')->withTeams($teams);
     }
 
     public function store(Request $request)
@@ -38,7 +38,7 @@ class PlayerController extends Controller
           'image' => 'image',
           'body' => '',
           'active' => 'required',
-          'game_id' => 'required|max:20|integer',
+          'team_id' => 'required|max:20|integer',
         ));
 
         // Store in DB
@@ -55,7 +55,7 @@ class PlayerController extends Controller
         $player->youtube = $request->youtube;
         $player->twitch = $request->twitch;
         $player->active = $request->active;
-        $player->game_id = $request->game_id;
+        $player->team_id = $request->team_id;
 
 
         if ($request->hasFile('image')) {
@@ -83,9 +83,9 @@ class PlayerController extends Controller
     public function edit($id)
     {
       $player = Player::find($id);
-      $games = Game::get();
+      $teams = Team::get();
 
-      return view('players.edit', compact('player', 'games'));
+      return view('players.edit', compact('player', 'teams'));
     }
 
     public function update(Request $request, $id)
@@ -97,7 +97,7 @@ class PlayerController extends Controller
           'image' => 'image',
           'body' => '',
           'active' => 'required',
-          'game_id' => 'required|max:20|integer',
+          'team_id' => 'required|max:20|integer',
         ));
 
         // Store in DB
@@ -113,7 +113,7 @@ class PlayerController extends Controller
         $player->youtube = $request->youtube;
         $player->twitch = $request->twitch;
         $player->active = $request->active;
-        $player->game_id = $request->game_id;
+        $player->team_id = $request->team_id;
 
 
         if ($request->hasFile('image')) {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
-use App\Category;
+use App\Team;
 use Auth;
 use App\User;
 use Image;
@@ -24,7 +24,7 @@ class ArticleController extends Controller
 
     public function create()
     {
-      $categories = Category::get();
+      $categories = Team::get();
 
       // $categories = $category->id + '=>' + $category->name;
 
@@ -38,7 +38,7 @@ class ArticleController extends Controller
           'title' => 'required|min:5|max:255|unique:articles,title',
           'author' => 'required|min:5|max:255',
           'image' => 'required|image',
-          'category_id' => 'required',
+          'category_id' => '',
           'body' => 'required',
         ));
 
@@ -48,7 +48,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->author = $request->author;
         $article->image = $request->image;
-        $article->category_id = $request->category_id;
+        $article->team_id = $request->team_id;
         $article->body = $request->body;
 
         $value = $article->title;
@@ -80,7 +80,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        $categories = Category::get();
+        $categories = Team::get();
 
         return view('news.edit', compact('article', 'categories'));
     }
@@ -91,7 +91,7 @@ class ArticleController extends Controller
       $this->validate($request, array(
           'title' => 'required|min:5',
           'author' => 'required|min:5',
-          'category_id' => 'required',
+          'team_id' => '',
           'body' => 'required',
         ));
 
@@ -99,7 +99,7 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->author = $request->author;
-        $article->category_id = $request->category_id;
+        $article->team_id = $request->team_id;
         $article->body = $request->body;
 
         $value = $article->title;

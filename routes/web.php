@@ -18,6 +18,7 @@ Route::get('/player/{playerName}', ['as' => 'player.single', 'uses' => 'PagesCon
 Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
 Route::resource('/admin/games', 'GameController');
+Route::resource('/admin/teams', 'TeamController');
 
 Auth::routes();
 
