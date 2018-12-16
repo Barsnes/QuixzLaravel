@@ -7,8 +7,14 @@
   </div>
 
   <div class="team">
+    @php
+      $playerCount = 0;
+    @endphp
     @foreach ($team->player as $player)
-      @if ($player->active == 'true')
+      @if ($player->active == 'true' && $playerCount <= 5)
+        @php
+          $playerCount ++;
+        @endphp
         <div class="card">
           <img src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
           <div class="container">
@@ -110,16 +116,23 @@
 <div class="teamArticles">
   <h1>Related Articles</h1>
   <div class="news">
+    @php
+      $articleCount = 0;
+    @endphp
     @foreach ($team->article as $article)
-      <div class="article_list">
-        <a href=" {{ url('/news', $article->slug) }} "><img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image></a>
-        <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
-        <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
-        <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
-        <a href="{{ url('/news', $article->slug) }}" class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
-        <hr>
-
-      </div>
+      @php
+        $articleCount ++;
+      @endphp
+      @if ($articleCount < 2)
+        <div class="article_list">
+          <a href=" {{ url('/news', $article->slug) }} "><img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image></a>
+          <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
+          <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
+          <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
+          <a href="{{ url('/news', $article->slug) }}" class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
+          <hr>
+        </div>
+      @endif
     @endforeach
   </div>
 </div>
