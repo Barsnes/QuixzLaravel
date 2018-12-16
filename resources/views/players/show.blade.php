@@ -48,10 +48,6 @@
     @endif
   </div>
 </div>
-
-@if ($role == 'Admin')
-<h2><a class="matchButton" href="/admin/players/{{ $player->id }}/edit" class="btn btn-warning btn-sm">Edit</a></h2>
-@endif
 </div>
 
   <div class="player__text">
