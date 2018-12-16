@@ -106,10 +106,10 @@
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
+      <?php $matchCount = 0; ?>
       @foreach ($matchesReverse as $match)
         <?php  $date_now = date("d M Y"); // this format is string comparable
             $matchDate = date('d M Y', strtotime($match->date));
-            $matchCount = 0;
         ?>
             @if ($date_now > $matchDate && $matchCount < 3)
               <?php $matchCount ++ ?>
