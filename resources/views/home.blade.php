@@ -25,7 +25,7 @@
                     <div class="card-body">
                       <div class="list-group list-group-flush">
                         @foreach ($team->player as $player)
-                          <a class="list-group-item text-muted" href="/admin/players/{{ $team->id }}/edit">{{ $player->playerName }}</a>
+                          <a class="list-group-item text-muted" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
                         @endforeach
                       </div>
                     </div>
@@ -65,8 +65,8 @@
                   @endif
                 @endforeach
                 </div>
-              <a href="/admin/teams" class="btn btn-info btn-sm">View</a>
-              <a href="/admin/teams/create" class="btn btn-success btn-sm">Add</a>
+              <a href="/admin/news" class="btn btn-info btn-sm">View</a>
+              <a href="/admin/news/create" class="btn btn-success btn-sm">Add</a>
             </div>
           </div>
 

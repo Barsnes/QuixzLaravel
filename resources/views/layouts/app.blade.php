@@ -25,9 +25,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+              <a class="navbar-brand" href="{{ url('/') }}" style="color:#FFF">
+                <img src="{{ asset('/assets/image/logo/logo_500.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                  {{ config('app.name', 'Quixz eSports') }}
+              </a>
+
+              </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +43,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+
                         @guest
                         @else
                           <li>
@@ -49,12 +52,15 @@
                               </a>
                           </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:#FFF">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="/admin/news">News</a>
+                                    <a class="dropdown-item" href="/admin/teams">Teams</a>
+                                    <a class="dropdown-item" href="/admin/matches">Matches</a>
+                                  <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item active" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

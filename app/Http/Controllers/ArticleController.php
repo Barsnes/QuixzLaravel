@@ -19,7 +19,9 @@ class ArticleController extends Controller
 
     public function index()
     {
-      return redirect('/news');
+      $articles = Article::get();
+
+      return view('admin.news')->withArticles($articles);
     }
 
     public function create()
