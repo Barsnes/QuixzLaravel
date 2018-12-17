@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-Use App\User;
+use App\User;
+use App\Article;
+use App\Match;
+use App\Player;
+use App\Team;
 
 class HomeController extends Controller
 {
@@ -26,8 +30,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $role = Auth::user()->role;
-        // return view('home')->with('role', $role);
-        return view('home');
+      $articles = Article::get()->reverse();
+      $matches = Match::orderBy('date', 'ASC')->get();;
+      $teams = Team::get();
+      $players = Player::get();
+      return view('home', ['articles' => $articles, 'matches' => $matches, 'teams' => $teams, 'players' => $players]);
     }
 }
