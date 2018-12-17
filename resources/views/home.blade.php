@@ -43,17 +43,25 @@
               <h5 class="card-title"><a href="/admin/users">News posts</a></h5>
               <h6 class="card-subtitle mb-2 text-muted">Recent</h6>
                 <div class="row">
+                  @php
+                    $articleCount = 0;
+                  @endphp
                 @foreach ($articles as $article)
-                  <div class="col-sm-6" style="margin-bottom: 1rem">
-                  <a href="/admin/news/{{ $article->id }}/edit">
-                    <div class="card" style="width: 100%;">
-                      <img class="card-img-top" src=" {{ asset('/images/' . $article->image) }} " alt="Card image cap">
-                      <div class="card-body">
-                        <h6 class="card-text">{{ $article->title }}</h6>
+                  @if ($articleCount < 4)
+                  @php
+                    $articleCount ++;
+                  @endphp
+                    <div class="col-sm-6" style="margin-bottom: 1rem">
+                    <a href="/admin/news/{{ $article->id }}/edit">
+                      <div class="card" style="width: 100%;">
+                        <img class="card-img-top" src=" {{ asset('/images/' . $article->image) }} " alt="Card image cap">
+                        <div class="card-body">
+                          <h6 class="card-text">{{ $article->title }}</h6>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a>
+                    </a>
+                  @endif
                 @endforeach
                 </div>
               <a href="/admin/teams" class="btn btn-info btn-sm">View</a>
