@@ -87,9 +87,14 @@
                   <div style="margin: auto">
                     <h3>VS</h3>
                     <h6>{{ $match->team->name }}</h6>
-                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                     @if ($role == 'Admin')
-                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                        <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                    @else
+                      @if ($match->link == '')
+                      @else
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                      @endif
+
                     @endif
                   </div>
                   <h2></h2>
@@ -119,9 +124,14 @@
                   <div style="margin: auto">
                     <h3>VS</h3>
                     <h6>{{ $match->team->name }}</h6>
-                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                     @if ($role == 'Admin')
-                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                        <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                    @else
+                      @if ($match->link == '')
+                      @else
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                      @endif
+
                     @endif
                   </div>
                   <h2>{{ $match->enemyScore }}</h2>
