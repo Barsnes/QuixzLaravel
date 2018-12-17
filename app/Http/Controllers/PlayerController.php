@@ -14,7 +14,7 @@ class PlayerController extends Controller
 {
 
   public function __construct() {
-    $this->middleware('admin');
+    $this->middleware('auth');
   }
 
     public function index()
@@ -136,8 +136,15 @@ class PlayerController extends Controller
 
     public function destroy($id)
     {
-      Player::destroy($id);
 
-      return redirect('/admin/players');
-    }
+      if ( Auth::user()->role != 'Admin') {
+        return redirect('/');
+      }
+
+      if (Auth::user()->role == 'Admin') {
+        Player::destroy($id);
+
+        return redirect('/admin/players');
+      }
+  }
 }

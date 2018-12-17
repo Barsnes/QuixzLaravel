@@ -61,12 +61,7 @@ class RegisterController extends Controller
             'role' => $data['role'],
         ]);
 
-        Mail::send('emails.welcome', $data, function($message) use ($data)
-            {
-                $message->from('contact@quixz.eu', "Quixz eSports");
-                $message->subject("Welcome to Quixz eSports");
-                $message->to($data['email']);
-            });
+        Mail::to($user)->send(new Welcome($user));
 
     }
 }

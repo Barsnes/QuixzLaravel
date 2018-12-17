@@ -10,8 +10,8 @@
         @foreach ($teams as $team)
           <div class="card " style="width: 20rem;">
             <div class="card-body">
-              <h5 class="card-title"><a href="/team/{{ $team->name }}">{{ $team->name }}</a></h5>
-              <hr style="border: .3px solid #FFF">
+              <h5 class="card-title"><a href="/team/{{ $team->slug }}">{{ $team->name }}</a></h5>
+              <hr style="border: .4px solid #FFF">
               <h6 class="card-subtitle mb-2">Players:</h6>
               @foreach ($team->player as $player)
                 @if ($player->active == 'true')
@@ -20,6 +20,7 @@
               @endforeach
               <a href="/team/{{ $team->slug }}" class="btn btn-info btn-sm">View</a>
               <a href="/admin/teams/{{ $team->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/admin/players/create" class="btn btn-success btn-sm">Add Player</a>
             </div>
           </div>
         @endforeach

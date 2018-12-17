@@ -14,7 +14,7 @@ use App\Team;
 class TeamController extends Controller
 {
     public function __construct() {
-      $this->middleware('admin');
+      $this->middleware('auth');
     }
 
     public function index()
@@ -31,6 +31,12 @@ class TeamController extends Controller
 
     public function store(Request $request)
     {
+
+      if ( Auth::user()->role != 'Admin') {
+        return redirect('/');
+      }
+
+    if (Auth::user()->role == 'Admin') {
       $this->validate($request, array(
           'name' => 'required|max:20',
           'body' => 'max:1200',
@@ -61,7 +67,7 @@ class TeamController extends Controller
         }
 
         $team->save();
-
+      }
         // Redirect
         return redirect()->route('teams.index');
     }
