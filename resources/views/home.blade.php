@@ -23,10 +23,23 @@
                   <div class="card " style="width: 100%;">
                     <h5 class="card-header"><a href="/admin/teams/{{ $team->id }}/edit">{{ $team->name }}</a></h5>
                     <div class="card-body">
-                      <div class="list-group list-group-flush">
-                        @foreach ($team->player as $player)
-                          <a class="list-group-item text-muted" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
-                        @endforeach
+                      <div class="btn-group" role="group">
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Players
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              @foreach ($team->player as $player)
+                              <a class="dropdown-item" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
+                              @endforeach
+                            </div>
+                          </div>
+                            <a class="btn btn-secondary btn-sm" href="/team/{{ $team->slug }}">
+                              Team Page
+                            </a>
+                            <a class="btn btn-warning btn-sm" href="/admin/teams/{{ $team->id }}/edit">
+                              Edit
+                            </a>
                       </div>
                     </div>
                   </div>

@@ -58,6 +58,9 @@
                                     <a class="dropdown-item" href="/admin/news">News</a>
                                     <a class="dropdown-item" href="/admin/teams">Teams</a>
                                     <a class="dropdown-item" href="/admin/matches">Matches</a>
+                                    @if ($role == 'Admin')
+                                      <a class="dropdown-item" href="/admin/users">Users</a>
+                                    @endif
                                   <div class="dropdown-divider"></div>
                                     <a class="dropdown-item active" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
