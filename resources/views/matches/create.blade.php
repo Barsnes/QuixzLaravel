@@ -22,7 +22,7 @@
   </div>
   <div class="col">
     <label for="tournament_id">Tournament:</label>
-    <select name="ournament_id" class="form-control">
+    <select name="tournament_id" class="form-control">
       <option value="">Choose One</option>
       @php
         $tournCount = 0;
