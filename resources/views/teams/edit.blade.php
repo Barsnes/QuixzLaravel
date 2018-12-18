@@ -23,7 +23,7 @@
     {!! Form::model($team, array('route' => array('teams.update', $team->id), 'files' => true, 'method' => 'PUT')) !!}﻿
     <div class="row">
       <div class="col">
-        {{ Form::label('image', 'Background Image:') }}
+        <label for="image" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Background Image: <em class="text-muted">Keep under: 1920x1080</em></label>
         {{ Form::file('image', array('class' => 'form-control')) }}
       </div>
       <div class="col">

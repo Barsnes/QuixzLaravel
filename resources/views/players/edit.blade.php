@@ -46,7 +46,7 @@
     </select>
   </div>
   <div class="col">
-    {{ Form::label('image', 'Image:') }}
+    <label for="image" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Image: <em class="text-muted">Size: 150x150</em></label>
     {{ Form::file('image', array('class' => 'form-control')) }}
   </div>
   <div class="col">

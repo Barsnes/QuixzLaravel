@@ -27,8 +27,8 @@
       {{ Form::label('author', 'Author:') }}
       {{ Form::text('author', $name, array('class' => 'form-control')) }}
 
-      {{ Form::label('image', 'Image:') }}
-      {{ Form::file('image', array('class' => 'form-control')) }}
+      <label for="image" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Image: <em class="text-muted">Size: 1200x600</em></label>
+      <input type="file" name="image" value="image" class="form-control" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
 
       {{-- {{ Form::label('category_id', 'Category:') }}
       {{ Form::select('category_id', [
