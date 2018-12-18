@@ -151,24 +151,44 @@
 
     <h1>Tournaments</h1>
     <h2>Upcoming</h2>
-      <div class="tournamentBody">
-        <h1>Tournament</h1>
-          <h2>24 December 2018</h2>
-            <div style="margin: auto">
-              <h3>Hearthstone</h3>
-              <a href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
-            </div>
-      </div>
+    @php $tournCount = 0; @endphp
+    @foreach ($tournaments as $tourn)
+      @php
+        $date_now = date("d M Y"); // this format is string comparable
+        $tournDate = date('d M Y', strtotime($tourn->date));
+      @endphp
+      @if ($date_now < $tournDate && $tournCount < 2)
+        @php $tournCount ++ @endphp
+        <div class="tournamentBody">
+          <h1>{{ $tourn->name }}</h1>
+            <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
+              <div style="margin: auto">
+                <h3>{{ $tourn->team->name }}</h3>
+                  <a href="/tournaments/{{ $tourn->slug }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
+              </div>
+        </div>
+      @endif
+    @endforeach
 
   <h2>Past</h2>
+  @php $tournCount = 0; @endphp
+  @foreach ($tournaments as $tourn)
+    @php
+      $date_now = date("d M Y"); // this format is string comparable
+      $tournDate = date('d M Y', strtotime($tourn->date));
+    @endphp
+    @if ($date_now > $tournDate && $tournCount < 2)
+      @php $tournCount ++ @endphp
       <div class="tournamentBody">
-        <h1>Tournament</h1>
-          <h2>23 December 2018</h2>
+        <h1>{{ $tourn->name }}</h1>
+          <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
             <div style="margin: auto">
-              <h3>Counter Strike</h3>
-              <a href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
+              <h3>{{ $tourn->team->name }}</h3>
+                <a href="/tournaments/{{ $tourn->slug }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
             </div>
       </div>
+    @endif
+  @endforeach
   </div>
 
   <style>

@@ -6,6 +6,7 @@ use App\Team;
 use Auth;
 use App\User;
 use Image;
+use App\Tournament;
 
 use Illuminate\Http\Request;
 
@@ -13,7 +14,6 @@ class MatchController extends Controller
 {
     public function __construct() {
       $this->middleware('admin');
-
     }
 
     public function index()
@@ -25,7 +25,9 @@ class MatchController extends Controller
     public function create()
     {
       $teams = Team::get();
-      return view('matches.create')->withTeams($teams);
+      $tournaments = Tournament::get();
+
+      return view('matches.create')->withTeams($teams)->withTournaments($tournaments);
     }
 
     public function store(Request $request)

@@ -20,8 +20,8 @@ Route::get('/team/{slug}', ['as' => 'team.single', 'uses' => 'PagesController@ge
 
 Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
-Route::resource('/admin/games', 'GameController');
 Route::resource('/admin/teams', 'TeamController');
+Route::resource('/admin/tournaments', 'TournamentsController');
 
 Auth::routes();
 

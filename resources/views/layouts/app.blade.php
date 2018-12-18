@@ -56,8 +56,10 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/admin/news">News</a>
-                                    <a class="dropdown-item" href="/admin/teams">Teams</a>
                                     <a class="dropdown-item" href="/admin/matches">Matches</a>
+                                    <a class="dropdown-item" href="/admin/tournaments">Tournaments</a>
+                                    <a class="dropdown-item" href="/admin/players">Players</a>
+                                    <a class="dropdown-item" href="/admin/teams">Teams</a>
                                     @if ($role == 'Admin')
                                       <a class="dropdown-item" href="/admin/users">Users</a>
                                     @endif

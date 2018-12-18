@@ -15,8 +15,33 @@
       {{ Form::label('name', 'Name:') }}
       {{ Form::text('name', '', array('class' => 'form-control')) }}
 
-      {{ Form::label('link', 'Link:') }}
-      {{ Form::text('link', '', array('class' => 'form-control')) }}
+<div class="row">
+  <div class="col">
+    {{ Form::label('link', 'Link:') }}
+    {{ Form::text('link', '', array('class' => 'form-control')) }}
+  </div>
+  <div class="col">
+    <label for="tournament_id">Tournament:</label>
+    <select name="ournament_id" class="form-control">
+      <option value="">Choose One</option>
+      @php
+        $tournCount = 0;
+      @endphp
+      @foreach ($tournaments as $tourn)
+      @php
+        $date_now = date("d M Y"); // this format is string comparable
+        $tournDate = date('d M Y', strtotime($tourn->date));
+      @endphp
+        @if ($date_now < $tournDate && $tournCount < 3)
+          @php
+            $tournCount ++;
+          @endphp
+            <option value="{{ $tourn->id }}">{{ $tourn->name }}</option>
+        @endif
+      @endforeach
+    </select>
+  </div>
+</div>
 
       <label for="team_id">Game:</label>
       <select name="team_id" class="form-control">
@@ -47,9 +72,6 @@
   {{ Form::file('enemyLogo', array('class' => 'form-control')) }}
 </div>
       </div>
-
-      <label for="tournament_id">Tournament (optional)</label>
-      <input class="form-control" type="text" name="tournament_id">
 
       <div class="row" style="margin: 2rem 0 2rem 0; background-color: rgb(248, 181, 42); padding: 1rem 0 2rem 0; color: #fff; border-radius: 7px">
 

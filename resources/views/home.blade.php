@@ -13,45 +13,6 @@
       @if($role == 'Admin')
         as an admin <br>
         <div class="row">
-          <div class="card " style="width: 100%; margin: .5rem; margin-bottom: 1.5rem;">
-            <div class="card-body">
-              <h5 class="card-title"><a href="/admin/teams">Teams</a></h5>
-              <h6 class="card-subtitle mb-2 text-muted">Current teams</h6>
-              <div class="row">
-                @foreach ($teams as $team)
-                <div class="col-sm-6" style="margin-bottom: 1rem">
-                  <div class="card " style="width: 100%;">
-                    <h5 class="card-header"><a href="/admin/teams/{{ $team->id }}/edit">{{ $team->name }}</a></h5>
-                    <div class="card-body">
-                      <div class="btn-group" role="group">
-                          <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Players
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              @foreach ($team->player as $player)
-                              <a class="dropdown-item" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
-                              @endforeach
-                            </div>
-                          </div>
-                            <a class="btn btn-secondary btn-sm" href="/team/{{ $team->slug }}">
-                              Team Page
-                            </a>
-                            <a class="btn btn-warning btn-sm" href="/admin/teams/{{ $team->id }}/edit">
-                              Edit
-                            </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </div>
-              <a href="/admin/teams" class="btn btn-info btn-sm">View</a>
-              <a href="/admin/players" class="btn btn-warning btn-sm">View Players</a>
-              <a href="/admin/teams/create" class="btn btn-success btn-sm">Add Team</a>
-            </div>
-          </div>
-
           <div class="card " style="width: calc(50% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
             <div class="card-body">
               <h5 class="card-title"><a href="/admin/news">News posts</a></h5>
@@ -114,14 +75,85 @@
             </div>
           </div>
 
-          <div class="card " style="width: calc(50% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
-            <div class="card-body">
-              <h5 class="card-title"><a href="/admin/users">Accounts</a></h5>
-              <h6 class="card-subtitle mb-2 text-muted"></h6>
-              <a href="/admin/users" class="btn btn-info btn-sm">View</a>
-              <a href="/register" class="btn btn-success btn-sm">Add</a>
-            </div>
+        </div>
+      </div>
+
+      <div class="card " style="width: 100%; margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/tournaments">Tournaments</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Upcoming</h6>
+          <div class="row">
+            @php $tournCount = 0; @endphp
+            @foreach ($tournaments as $tourn)
+              @php
+                $date_now = date("d M Y"); // this format is string comparable
+                $tournDate = date('d M Y', strtotime($tourn->date));
+              @endphp
+              @if ($date_now < $tournDate && $tournCount < 3)
+                @php $tournCount ++ @endphp
+                <div class="col-sm-6" style="margin-bottom: 1rem">
+                  <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $tourn->name }}</h5>
+                      <h7 class="card-text">{{ $tourn->team->name }}</h7> <br>
+                      <h7 class="card-text">{{ date('d M Y', strtotime($tourn->date)) }}</h7> <br>
+                      <a style="margin-top:.3rem" href="/admin/matches/{{ $tourn->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                    </div>
+                  </div>
+                </div>
+              @endif
+            @endforeach
           </div>
+          <a href="/admin/tournaments" class="btn btn-info btn-sm">View</a>
+          <a href="/admin/tournaments/create" class="btn btn-success btn-sm">Add</a>
+        </div>
+      </div>
+
+      <div class="card " style="width: 100%; margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/teams">Teams</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted">Current teams</h6>
+          <div class="row">
+            @foreach ($teams as $team)
+            <div class="col-sm-6" style="margin-bottom: 1rem">
+              <div class="card " style="width: 100%;">
+                <h5 class="card-header"><a href="/admin/teams/{{ $team->id }}/edit">{{ $team->name }}</a></h5>
+                <div class="card-body">
+                  <div class="btn-group" role="group">
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Players
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          @foreach ($team->player as $player)
+                          <a class="dropdown-item" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
+                          @endforeach
+                        </div>
+                      </div>
+                        <a class="btn btn-secondary btn-sm" href="/team/{{ $team->slug }}">
+                          Team Page
+                        </a>
+                        <a class="btn btn-warning btn-sm" href="/admin/teams/{{ $team->id }}/edit">
+                          Edit
+                        </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <a href="/admin/teams" class="btn btn-info btn-sm">View</a>
+          <a href="/admin/players" class="btn btn-warning btn-sm">View Players</a>
+          <a href="/admin/teams/create" class="btn btn-success btn-sm">Add Team</a>
+        </div>
+      </div>
+
+      <div class="card " style="width: calc(50% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/users">Accounts</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <a href="/admin/users" class="btn btn-info btn-sm">View</a>
+          <a href="/register" class="btn btn-success btn-sm">Add</a>
         </div>
       </div>
       @endif

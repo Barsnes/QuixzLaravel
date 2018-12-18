@@ -9,6 +9,7 @@ use App\Article;
 use App\Match;
 use App\Player;
 use App\Team;
+use App\Tournament;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,7 @@ class HomeController extends Controller
       $matches = Match::orderBy('date', 'ASC')->get();;
       $teams = Team::get();
       $players = Player::get();
-      return view('home', ['articles' => $articles, 'matches' => $matches, 'teams' => $teams, 'players' => $players]);
+      $tournaments = Tournament::get();
+      return view('home', ['articles' => $articles, 'matches' => $matches, 'teams' => $teams, 'players' => $players, 'tournaments' => $tournaments]);
     }
 }

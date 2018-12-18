@@ -10,6 +10,7 @@ use App\User;
 use App\Match;
 use App\Player;
 use App\Team;
+use App\Tournament;
 
 class PagesController extends Controller
 {
@@ -19,7 +20,8 @@ class PagesController extends Controller
     $matches = Match::orderBy('date', 'ASC')->get();;
     $matchesReverse = Match::orderBy('date', 'ASC')->get()->reverse();
     $teams = Team::get();
-    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams]);
+    $tournaments = Tournament::get();
+    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams, 'tournaments' => $tournaments]);
   }
 
   public function about() {
