@@ -93,10 +93,19 @@
                 <div class="col-sm-6" style="margin-bottom: 1rem">
                   <div class="card" style="width: 100%;">
                     <div class="card-body">
-                      <h5 class="card-title">{{ $tourn->name }}</h5>
+                      <h5 class="card-title"><a href="/admin/tournaments/{{ $tourn->id }}">{{ $tourn->name }}</a></h5>
                       <h7 class="card-text">{{ $tourn->team->name }}</h7> <br>
                       <h7 class="card-text">{{ date('d M Y', strtotime($tourn->date)) }}</h7> <br>
-                      <a style="margin-top:.3rem" href="/admin/matches/{{ $tourn->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                      @php
+                        $numMatches = 0;
+                      @endphp
+                      @foreach ($tourn->match as $match)
+                          @php
+                            $numMatches ++;
+                          @endphp
+                      @endforeach
+                      <h6 class="card-title">Matches: {{ $numMatches }}</h6>
+                      <a style="margin-top:.3rem" href="/admin/tournaments/{{ $tourn->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                     </div>
                   </div>
                 </div>

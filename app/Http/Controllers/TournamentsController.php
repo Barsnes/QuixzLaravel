@@ -22,14 +22,12 @@ class TournamentsController extends Controller
     public function index()
     {
       $tournaments = Tournament::get();
-
       return view('admin.tournaments')->withTournaments($tournaments);
     }
 
     public function create()
     {
       $teams = Team::get();
-
       return view('tournaments.create')->withTeams($teams);
     }
 
@@ -85,16 +83,57 @@ if ($request->hasFile('image')) {
 
     public function edit($id)
     {
-        //
+      $tournament = Tournament::find($id);
+      return view('tournaments.edit')->withTournament($tournament);
     }
 
     public function update(Request $request, $id)
     {
-        //
+      // Validate data
+      $this->validate($request, array(
+          'name' => 'required|min:5|max:255',
+          'image' => 'image',
+          'team_id' => 'required',
+          'date' => 'required',
+          'time' => '',
+          'format' => '',
+          'link' => '',
+        ));
+
+        // Store in DB
+        $tourn = Tournament::find($id);
+
+        $tourn->name = $request->name;
+        $tourn->team_id = $request->team_id;
+        $tourn->date = $request->date;
+        $tourn->time = $request->time;
+        $tourn->format = $request->format;
+        $tourn->link = $request->link;
+
+
+        $value = $tourn->name;
+        $tourn->slug = str_slug($value);
+
+if ($request->hasFile('image')) {
+        // image
+        $image = $request->file('image');
+        $info = getimagesize($image);
+        $extension = image_type_to_extension($info[2]);
+        $filename = time() . $extension;
+        $location = public_path('images/' . $filename);
+        Image::make($image)->resize(300, 300)->save($location);
+
+        $tourn->image = $filename;
+      }
+        $tourn->save();
+
+        // Redirect
+        return redirect()->route('home');
     }
 
     public function destroy($id)
     {
-        //
+      Tournament::destroy($id);
+      return redirect()->route('home');
     }
 }

@@ -160,6 +160,9 @@
               <div style="margin: auto">
                 <h3>{{ $tourn->team->name }}</h3>
                   <a href="/tournaments/{{ $tourn->slug }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
+                  @if ($role == 'Admin')
+                    <a href="/admin/tournaments/{{ $tourn->id }}/edit" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">Edit</h3></a>
+                  @endif
               </div>
         </div>
       @endif
@@ -184,6 +187,9 @@
             <div style="margin: auto">
               <h3>{{ $tourn->team->name }}</h3>
                 <a href="/tournaments/{{ $tourn->slug }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">View</h3></a>
+                @if ($role == 'Admin')
+                  <a href="/admin/tournaments/{{ $tourn->id }}/edit" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">Edit</h3></a>
+                @endif
             </div>
       </div>
     @endif
