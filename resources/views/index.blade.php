@@ -163,6 +163,10 @@
               </div>
         </div>
       @endif
+      @if ($tournCount == 0)
+        @php $tournCount ++ @endphp
+        <h4>No upcoming tournaments</h4>
+      @endif
     @endforeach
 
   <h2>Past</h2>
@@ -184,6 +188,10 @@
       </div>
     @endif
   @endforeach
+  @if ($tournCount == 0)
+    @php $tournCount ++ @endphp
+    <h4>No past tournaments</h4>
+  @endif
   </div>
 
   <style>
