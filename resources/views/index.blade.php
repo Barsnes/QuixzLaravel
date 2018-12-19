@@ -17,12 +17,7 @@
       <img src="assets/image/logo/logo_500.png" alt="Quixz eSports logo">
       <div class="about_text">
         <h1>About Us</h1>
-        <p>Quixz eSports is an organization located in Europe. We started as a group of
-        friends in 2014, and have grown bigger with time. Our goal is to make the
-        esports scene better for everyone, and that players can have someone to have
-        their back. Currently we are looking for teams and players in various games,
-        and hope to grow big. We live in a time when the community is growing
-        everyday, and we hope to help the growth.</p>
+        <p>{{ $index->aboutContent }}</p>
       </div>
   </div>
 

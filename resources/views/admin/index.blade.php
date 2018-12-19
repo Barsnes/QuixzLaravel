@@ -11,37 +11,40 @@
   <div class="col-md-8 offset-2">
     <h1>Edit Index & Social Media</h1>
     <hr>
-  {!! Form::model($social, array('route' => array('index.update', '1'), 'method' => 'PUT')) !!}﻿
+  {!! Form::model($index, array('route' => array('index.update', '1'), 'method' => 'PUT')) !!}﻿
+  <label for="aboutContent">About <em class="text-muted">(front page)</em>:</label>
+  <textarea class="form-control" name="aboutContent" rows="8" cols="80">{{ $index->aboutContent }}</textarea>
+
     <div class="row">
       <div class="col">
         <label for="youtube">Youtube:</label>
-        <input type="text" class="form-control" name="youtube" value="{{ $social->youtube }}">
+        <input type="text" class="form-control" name="youtube" value="{{ $index->youtube }}">
       </div>
       <div class="col">
         <label for="youtube">Twitch:</label>
-        <input type="text" class="form-control" name="twitch" value="{{ $social->twitch }}">
+        <input type="text" class="form-control" name="twitch" value="{{ $index->twitch }}">
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <label for="youtube">Discord:</label>
-        <input type="text" class="form-control" name="discord" value="{{ $social->discord }}">
+        <input type="text" class="form-control" name="discord" value="{{ $index->discord }}">
       </div>
       <div class="col">
         <label for="youtube">Steam:</label>
-        <input type="text" class="form-control" name="steam" value="{{ $social->steam }}">
+        <input type="text" class="form-control" name="steam" value="{{ $index->steam }}">
       </div>
     </div>
 
 <div class="row" style="margin-bottom:1rem">
     <div class="col">
       <label for="youtube">Twitter:</label>
-      <input type="text" class="form-control" name="twitter" value="{{ $social->twitter }}">
+      <input type="text" class="form-control" name="twitter" value="{{ $index->twitter }}">
     </div>
     <div class="col">
       <label for="youtube">Facebook:</label>
-      <input type="text" class="form-control" name="facebook" value="{{ $social->facebook }}">
+      <input type="text" class="form-control" name="facebook" value="{{ $index->facebook }}">
     </div>
 </div>
       {{ Form::submit('Update', array('class' => 'btn btn-success')) }}

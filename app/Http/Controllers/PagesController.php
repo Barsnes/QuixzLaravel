@@ -21,7 +21,8 @@ class PagesController extends Controller
     $matchesReverse = Match::orderBy('date', 'ASC')->get()->reverse();
     $teams = Team::get();
     $tournaments = Tournament::get();
-    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams, 'tournaments' => $tournaments]);
+    $index = DB::table('index')->where('id', '1')->get()->get(0);
+    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams, 'tournaments' => $tournaments, 'index' => $index]);
   }
 
   public function about() {

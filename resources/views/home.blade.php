@@ -161,16 +161,16 @@
       </div>
       <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
         <div class="card-body">
-          <h5 class="card-title"><a href="/admin/users">About</a></h5>
+          <h5 class="card-title"><a href="/admin/about">About</a></h5>
           <h6 class="card-subtitle mb-2 text-muted"></h6>
           <a href="/admin/about" class="btn btn-warning btn-sm">Edit</a>
         </div>
       </div>
       <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
         <div class="card-body">
-          <h5 class="card-title"><a href="/admin/users">Index & Social Media</a></h5>
+          <h5 class="card-title"><a href="/admin/index/1/edit">Index & Social Media</a></h5>
           <h6 class="card-subtitle mb-2 text-muted"></h6>
-          <a href="/admin/about" class="btn btn-warning btn-sm">Edit</a>
+          <a href="/admin/index/1/edit" class="btn btn-warning btn-sm">Edit</a>
         </div>
       </div>
   </div>

@@ -31,14 +31,15 @@ class IndexController extends Controller
 
     public function edit($id)
     {
-      $social = DB::table('index')->where('id', $id)->get()->get(0);
+      $index = DB::table('index')->where('id', $id)->get()->get(0);
 
-      return view('admin.socialmedia')->withSocial($social);
+      return view('admin.index')->withIndex($index);
     }
 
     public function update(Request $request)
     {
       $this->validate($request, array(
+          'aboutContent' => 'required',
           'youtube' => 'required',
           'steam' => 'required',
           'discord' => 'required',
@@ -48,6 +49,7 @@ class IndexController extends Controller
         ));
 
         DB::table('index')->where('id', '1')->update([
+          'aboutContent' => $request->aboutContent,
           'youtube' => $request->youtube,
           'steam' => $request->steam,
           'discord' => $request->discord,
