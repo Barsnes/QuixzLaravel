@@ -50,12 +50,12 @@
   </div>
 
     <div class="media--links">
-        <a class="fab fa-youtube-square" href="https://www.youtube.com/channel/UChgzQGcnVEn_nqdSfnggkcw" target="_blank"></a>
-        <a class="fab fa-facebook-square" href="https://www.facebook.com/quixzesports" target="_blank"></a>
-        <a class="fab fa-twitter-square" href="https://twitter.com/QuixzeSports" target="_blank"></a>
-        <a class="fab fa-steam-square" href="https://steamcommunity.com/groups/QuixzFan" target="_blank"></a>
-        <a class="fab fa-discord" href="https://quixz.eu/discord" target="_blank"></a>
-        <a class="fab fa-twitch" href="https://www.twitch.tv/quixzesports" target="_blank"></a>
+        <a class="fab fa-youtube-square" href="{{ $social->youtube }}" target="_blank"></a>
+        <a class="fab fa-facebook-square" href="{{ $social->facebook }}" target="_blank"></a>
+        <a class="fab fa-twitter-square" href="{{ $social->twitter }}" target="_blank"></a>
+        <a class="fab fa-steam-square" href="{{ $social->steam }}" target="_blank"></a>
+        <a class="fab fa-discord" href="{{ $social->discord }}" target="_blank"></a>
+        <a class="fab fa-twitch" href="{{ $social->twitch }}" target="_blank"></a>
     </div>
 </div>
 

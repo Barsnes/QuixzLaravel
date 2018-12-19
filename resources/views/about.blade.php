@@ -10,13 +10,20 @@
 
       <p>
         {{-- @markdown($about->content) --}}
-        @markdown
+
           {!! $about->content !!}
-        @endmarkdown
+
       </p>
 
     </div>
   </div>
 
+
+<style media="screen">
+  .about_content img {
+    width: 100%;
+    height: 100%
+  }
+</style>
 
 @endsection

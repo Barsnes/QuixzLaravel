@@ -76,8 +76,7 @@
           </div>
 
         </div>
-      </div>
-
+<div class="row">
       <div class="card " style="width: 100%; margin: .5rem; margin-bottom: 1.5rem;">
         <div class="card-body">
           <h5 class="card-title"><a href="/admin/tournaments">Tournaments</a></h5>
@@ -108,7 +107,9 @@
           <a href="/admin/tournaments/create" class="btn btn-success btn-sm">Add</a>
         </div>
       </div>
+</div>
 
+<div class="row">
       <div class="card " style="width: 100%; margin: .5rem; margin-bottom: 1.5rem;">
         <div class="card-body">
           <h5 class="card-title"><a href="/admin/teams">Teams</a></h5>
@@ -147,8 +148,10 @@
           <a href="/admin/teams/create" class="btn btn-success btn-sm">Add Team</a>
         </div>
       </div>
+</div>
 
-      <div class="card " style="width: calc(50% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+  <div class="row">
+      <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
         <div class="card-body">
           <h5 class="card-title"><a href="/admin/users">Accounts</a></h5>
           <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -156,6 +159,22 @@
           <a href="/register" class="btn btn-success btn-sm">Add</a>
         </div>
       </div>
+      <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/users">About</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <a href="/admin/about" class="btn btn-warning btn-sm">Edit</a>
+        </div>
+      </div>
+      <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/users">Index & Social Media</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <a href="/admin/about" class="btn btn-warning btn-sm">Edit</a>
+        </div>
+      </div>
+  </div>
+</div>
       @endif
 
 

@@ -22,6 +22,8 @@ Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
 Route::resource('/admin/teams', 'TeamController');
 Route::resource('/admin/tournaments', 'TournamentsController');
+Route::resource('/admin/about', 'AboutController');
+Route::resource('/admin/index', 'IndexController');
 
 Auth::routes();
 
