@@ -18,12 +18,15 @@ Route::get('/player/{playerName}', ['as' => 'player.single', 'uses' => 'PagesCon
 
 Route::get('/team/{slug}', ['as' => 'team.single', 'uses' => 'PagesController@getTeam']);
 
+Route::get('/tournaments/{slug}', ['as' => 'tournament.single', 'uses' => 'PagesController@getTournament']);
+
 Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
 Route::resource('/admin/teams', 'TeamController');
 Route::resource('/admin/tournaments', 'TournamentsController');
 Route::resource('/admin/about', 'AboutController');
 Route::resource('/admin/index', 'IndexController');
+Route::resource('/admin/tourn-match', 'TournamentMatchController');
 
 Auth::routes();
 

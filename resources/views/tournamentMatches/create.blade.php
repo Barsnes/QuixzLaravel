@@ -10,23 +10,26 @@
 
 <div class="row">
   <div class="col-md-8 offset-2">
-    <h1>Create New Match</h1>
+    <h1>Create New Match for Tournament</h1>
     <hr>
-    {!! Form::open(['route' => 'matches.store', 'files' => true, 'id' => 'form']) !!}
-      {{ Form::label('name', 'Name:') }}
-      {{ Form::text('name', '', array('class' => 'form-control')) }}
-
+{!! Form::open(['route' => 'tourn-match.store', 'files' => true, 'id' => 'form']) !!}
 <div class="row">
   <div class="col">
-    {{ Form::label('link', 'Link:') }}
-    {{ Form::text('link', '', array('class' => 'form-control')) }}
+    <label for="match_num">Match Number:</label>
+    <input class="form-control" type="number" min="0" value="0" name="match_num">
   </div>
   <div class="col">
-      <label for="team_id">Game:</label>
-      <select name="team_id" class="form-control">
+      <label for="tournament_id">Tournament:</label>
+      <select name="tournament_id" class="form-control">
         <option value="">Choose One</option>
-        @foreach ($teams as $team)
-            <option value="{{ $team->id }}">{{ $team->name }}</option>
+        @foreach ($tournaments as $tournament)
+          @php
+            $date_now = date("d M Y"); // this format is string comparable
+            $tournDate = date('d M Y', strtotime($tournament->date));
+          @endphp
+          @if ($date_now < $tournDate)
+            <option value="{{ $tournament->id }}">{{ $tournament->name }}</option>
+          @endif
         @endforeach
       </select>
   </div>
@@ -35,18 +38,18 @@
       <div class="row">
 <div class="col">
         <label for="date">Date:</label>
-        <input class="form-control" type="date" name="date">
+        <input class="form-control" type="date" name="date" value="">
 </div>
 <div class="col">
         <label for="date">Time:</label>
-        <input class="form-control" type="time" name="time">
+        <input class="form-control" type="time" name="time" value="">
 </div>
       </div>
 
       <div class="row">
 <div class="col">
         <label for="enemy">Enemy:</label>
-        <input class="form-control" type="text" name="enemy">
+        <input class="form-control" type="text" name="enemy" value="">
 </div>
 <div class="col">
   {{ Form::label('enemyLogo', 'Enemy Logo:') }}
@@ -57,11 +60,11 @@
       <div class="row" style="margin: 2rem 0 2rem 0; background-color: rgb(248, 181, 42); padding: 1rem 0 2rem 0; color: #fff; border-radius: 7px">
 
         <div class="col">
-          <label for="date">Quixz Score:</label>
+          <label for="quixzScore">Quixz Score:</label>
           <input class="form-control" type="number" min="0" value="0" name="quixzScore">
         </div>
         <div class="col">
-          <label for="date">Enemy Score:</label>
+          <label for="enemyScore">Enemy Score:</label>
           <input class="form-control" type="number" min="0" value="0" name="enemyScore">
         </div>
 
@@ -72,16 +75,4 @@
     <hr>
   </div>
 </div>
-
-<script>
-jQuery(function($) {
-  $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
-  $('#slug-target').slugify('#slug-source'); // Type as you slug
-
-  $("#slug-target").slugify("#slug-source", {
-  	separator: '_' // If you want to change separator from hyphen (-) to underscore (_).
-  });
-});
-</script>
-
 @endsection

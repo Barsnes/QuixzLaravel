@@ -2,9 +2,6 @@
 
 @section('content')
   <div class="col-md-10">
-    <a class="btn btn-block btn-success col-md-2 offset-2" href="/admin/tournaments/create">Add tournament</a>
-  </div>
-  <div class="col-md-10">
     <div class="row-md-2 offset-2" style="margin-top:2rem;">
           <div class="card" style="width:100%">
             <div class="card-body">
@@ -18,21 +15,19 @@
                     $date_now = date("d M Y"); // this format is string comparable
                     $matchDate = date('d M Y', strtotime($match->date));
                   @endphp
-                  @if ($date_now < $matchDate && $matchCount < 3)
                     @php $matchCount ++ @endphp
                       <div class="card" style="width: 50%">
                         <div class="card-body">
-                          <h7 class="card-text">{{ $match->team->name }}</h7> <br>
                           <h7 class="card-text">{{ date('d M Y', strtotime($match->date)) }}</h7> <br>
                           <h7 class="card-text text-muted">VS {{ $match->enemy }}</h7> <br>
-                          <a style="margin-top:.3rem" href="/admin/matches/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                          <a style="margin-top:.3rem" href="/admin/tourn-match/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                         </div>
                       </div>
-                  @endif
                 @endforeach
               </div>
-              <a href="/admin/tournaments/{{ $tournament->id }}" class="btn btn-info btn-sm">View</a>
+              <a href="/tournaments/{{ $tournament->slug }}" class="btn btn-info btn-sm">View</a>
               <a href="/admin/tournaments/{{ $tournament->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+              <a href="/admin/tourn-match/create" class="btn btn-success btn-sm">Add Match</a>
             </div>
           </div>
     </div>

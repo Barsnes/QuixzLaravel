@@ -42,7 +42,6 @@ class MatchController extends Controller
           'enemyLogo' => 'image',
           'date' => 'required',
           'time' => '',
-          'tournament_id' => '',
           'link' => '',
         ));
 
@@ -55,7 +54,6 @@ class MatchController extends Controller
         $match->quixzScore = $request->quixzScore;
         $match->enemyScore = $request->enemyScore;
         $match->date = $request->date;
-        $match->tournament_id = $request->tournament_id;
         $match->link = $request->link;
 
         if ($request->hasFile('enemyLogo')) {

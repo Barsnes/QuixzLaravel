@@ -78,4 +78,10 @@ class PagesController extends Controller
 
   }
 
+  public function getTournament($slug){
+    $tourn = Tournament::where('slug', '=', $slug)->first();
+
+    return view('tournaments')->withTourn($tourn);
+  }
+
 }

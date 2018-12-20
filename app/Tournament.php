@@ -11,6 +11,6 @@ class Tournament extends Model
   }
 
   public function match(){
-    return $this->hasMany('App\Match');
+    return $this->hasMany('App\TournamentMatch');
   }
 }

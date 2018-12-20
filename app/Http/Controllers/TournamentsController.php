@@ -10,6 +10,7 @@ use App\User;
 use Image;
 use App\Team;
 use App\Tournament;
+use App\TournamentMatch;
 
 
 class TournamentsController extends Controller

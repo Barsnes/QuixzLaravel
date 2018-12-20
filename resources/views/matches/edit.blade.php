@@ -56,8 +56,6 @@
 </div>
       </div>
 
-      <label for="tournament_id">Tournament (optional)</label>
-      <input value="{{ $match->tournament_id }}" class="form-control" type="text" name="tournament_id">
       <div class="row" style="margin-top:2rem;">
 
       {{ Form::submit('Update', array('class' => 'btn btn-success')) }}
@@ -71,16 +69,5 @@
     <hr>
   </div>
 </div>
-
-<script>
-jQuery(function($) {
-  $.slugify("Ätschi Bätschi"); // "aetschi-baetschi"
-  $('#slug-target').slugify('#slug-source'); // Type as you slug
-
-  $("#slug-target").slugify("#slug-source", {
-  	separator: '_' // If you want to change separator from hyphen (-) to underscore (_).
-  });
-});
-</script>
 
 @endsection
