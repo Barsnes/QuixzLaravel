@@ -31,7 +31,7 @@
             @else <option value="" disabled selected>Select one
             @endif </option>
           <option value="1">Active</option>
-          <option value="o">Inactive</option>
+          <option value="0">Inactive</option>
         </select>
       </div>
     </div>
