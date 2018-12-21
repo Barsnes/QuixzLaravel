@@ -97,7 +97,7 @@ class PlayerController extends Controller
           'image' => 'image',
           'body' => '',
           'active' => 'required',
-          'team_id' => 'required|max:20|integer',
+          'team_id' => '',
         ));
 
         // Store in DB
