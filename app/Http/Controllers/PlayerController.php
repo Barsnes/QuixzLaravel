@@ -125,8 +125,6 @@ class PlayerController extends Controller
           Image::make($image)->resize(500, 500)->save($location);
 
           $player->image = $filename;
-        } else {
-          $player->image = 'avatar.png';
         }
 
         $player->save();
