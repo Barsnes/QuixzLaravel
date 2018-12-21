@@ -175,7 +175,7 @@
       @php
         $articleCount ++;
       @endphp
-      @if ($articleCount < 2)
+      @if ($articleCount <= 2)
         <div class="article_list">
           <a href=" {{ url('/news', $article->slug) }} "><img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image></a>
           <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
