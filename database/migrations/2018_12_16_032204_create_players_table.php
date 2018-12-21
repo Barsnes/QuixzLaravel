@@ -19,7 +19,7 @@ class CreatePlayersTable extends Migration
             $table->string('playerName');
             $table->string('lastName');
             $table->string('image')->default('avatar-png')->nullable();
-            $table->string('body')->nullable();
+            $table->longText('body')->nullable();
             $table->string('steam')->nullable();
             $table->string('instagram')->nullable();
             $table->string('twitter')->nullable();

@@ -1,4 +1,6 @@
 <?php
+use Spatie\Sitemap\SitemapGenerator;
+
 
 Route::get('/', 'PagesController@home');
 Route::get('/index', 'PagesController@home');

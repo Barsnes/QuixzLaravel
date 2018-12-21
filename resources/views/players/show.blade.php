@@ -103,7 +103,7 @@
   <div class="player__text">
     <h1 class="title">About {{ $player->playerName }}</h1>
 
-    {{ $player->body }}
+    {!! $player->body !!}
   </div>
 </div>
 
