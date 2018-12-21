@@ -3,13 +3,13 @@
 
 @section('content')
   <div class="teams">
-
+    
   @foreach ($teams as $team)
-    <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
-
-        <h1>{{ $team->name }}</h1>
-
-    </a>
+    @if ($team->active == '1')
+      <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
+          <h1>{{ $team->name }}</h1>
+      </a>
+    @endif
   @endforeach
 
   </div>

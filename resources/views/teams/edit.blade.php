@@ -23,6 +23,20 @@
     {!! Form::model($team, array('route' => array('teams.update', $team->id), 'files' => true, 'method' => 'PUT')) !!}﻿
     <div class="row">
       <div class="col">
+        <select class="form-control" name="active">
+            @if ($team->active == '1')
+              <option value="" disabled selected>Select one, current is ACTIVE
+            @elseif ($team->active == '0' )
+              <option value="" disabled selected>Select one, current is INACTIVE
+            @else <option value="" disabled selected>Select one
+            @endif </option>
+          <option value="1">Active</option>
+          <option value="o">Inactive</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <label for="image" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Background Image: <em class="text-muted">Keep under: 1920x1080</em></label>
         {{ Form::file('image', array('class' => 'form-control')) }}
       </div>
