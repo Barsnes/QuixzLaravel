@@ -51,6 +51,7 @@ class TeamController extends Controller
         $team->body = $request->body;
         $team->wins = $request->wins;
         $team->loss = $request->loss;
+        $team->active = '1';
 
         $value = $team->name;
         $team->slug = str_slug($value);
@@ -98,6 +99,7 @@ class TeamController extends Controller
         $team->body = $request->body;
         $team->wins = $request->wins;
         $team->loss = $request->loss;
+        $team->active = $request->active;
 
 
         if ($request->hasFile('image')) {
