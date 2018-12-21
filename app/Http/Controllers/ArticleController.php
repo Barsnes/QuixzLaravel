@@ -49,7 +49,11 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->author = $request->author;
         $article->image = $request->image;
-        $article->team_id = $request->team_id;
+        if ($request->team_id == '') {
+          $article->team_id = '';
+        } else {
+          $article->team_id = $request->team_id;
+        }
         $article->body = $request->body;
 
         $value = $article->title;
