@@ -1,6 +1,12 @@
 <?php
 use Spatie\Sitemap\SitemapGenerator;
 
+Route::get('sitemap', function() {
+
+  SitemapGenerator::create('https://quixz.eu/')->writeToFile('sitemap.xml');
+  return('sitemap created');
+
+});
 
 Route::get('/', 'PagesController@home');
 Route::get('/index', 'PagesController@home');
