@@ -31,7 +31,9 @@
         <li><a href="/news">News</a></li>
         <li><a href="/teams">Teams</a></li>
         <li><a href="/servers">Servers</a></li>
-        @if ($role == 'Admin' or 'Player')
+        @if ($role == 'Admin')
+          <li><a href="/admin">Admin Dashboard</a></li>
+        @elseif ($role == 'Player')
           <li><a href="/admin">Admin Dashboard</a></li>
         @endif
       </ul>
