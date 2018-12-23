@@ -703,6 +703,10 @@ body {
   .media--links {
     grid-column: 1 / 4;
   }
+
+  .media--links a {
+    font-size: 2rem
+  }
 }
 
 @media (max-width:700px) {
@@ -717,7 +721,8 @@ body {
   }
 
   .about {
-    height: 60vh;
+    height: 100%;
+    padding: 1rem 0;
     font-size: .8em
   }
 
@@ -753,11 +758,6 @@ body {
   .arrow {
     font-size: 2em;
     top: 80vh;
-  }
-
-  .about {
-    height: 60vh;
-    font-size: .8em
   }
 
   ul {
