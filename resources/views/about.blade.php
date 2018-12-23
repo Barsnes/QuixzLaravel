@@ -4,20 +4,20 @@
 @section('seo')
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - About">
-  <meta itemprop="description" content="{!! strip_tags(substr($about->content)) !!}">
+  <meta itemprop="description" content="{!! strip_tags(substr($about->content, 0, 100)) !!}">
   <meta itemprop="image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://quixz.eu">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - About">
-  <meta property="og:description" content="{!! strip_tags(substr($about->content)) !!}">
+  <meta property="og:description" content="{!! strip_tags(substr($about->content, 0, 100)) !!}">
   <meta property="og:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@php echo Config::get('app.name'); @endphp - About">
-  <meta name="twitter:description" content="{!! strip_tags(substr($about->content)) !!}">
+  <meta name="twitter:description" content="{!! strip_tags(substr($about->content, 0, 100)) !!}">
   <meta name="twitter:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Google Strucutred Data -->
