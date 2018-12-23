@@ -18,13 +18,13 @@
 
 <div class="row">
   <div class="col-md-8 offset-2">
-    <h1>Add new player</h1>
+    <h1>Edit {{ $person->name }}</h1>
     <hr>
-    {!! Form::open(['route' => 'management.store', 'files' => true]) !!}
+    {!! Form::model($person, array('route' => array('management.update', $person->id), 'files' => true, 'method' => 'PUT')) !!}﻿
     <div class="row">
       <div class="col">
         <label for="name">Name:</label>
-        <input class="form-control" type="text" name="name">
+        <input class="form-control" type="text" name="name" value="{{ $person->name }}">
       </div>
 </div>
 <div class="row">
@@ -34,8 +34,13 @@
   </div>
 
   <div class="col">
+    <label for="">Current Image</label> <br>
+    <img style="width:50%" src="{{ asset('/images/' . $person->image) }}" alt="">
+  </div>
+
+  <div class="col">
     <label for="date">Email:</label>
-    <input class="form-control" type="email" name="email">
+    <input value="{{ $person->email }}" class="form-control" type="email" name="email">
   </div>
 </div>
 
@@ -48,32 +53,32 @@
         <div class="row">
           <div class="col">
             <label for="date">Steam:</label>
-            <input class="form-control" type="text" name="steam">
+            <input value="{{ $person->steam }}" class="form-control" type="text" name="steam">
           </div>
           <div class="col">
             <label for="date">Twitter:</label>
-            <input class="form-control" type="text" name="twitter">
+            <input value="{{ $person->twitch }}" class="form-control" type="text" name="twitter">
           </div>
           <div class="col">
             <label for="date">Youtube:</label>
-            <input class="form-control" type="text" name="youtube">
+            <input value="{{ $person->youtube }}" class="form-control" type="text" name="youtube">
           </div>
         </div>
         <div class="row" style="margin-bottom:2rem">
           <div class="col">
             <label for="date">Twitch:</label>
-            <input class="form-control" type="text" name="twitch">
+            <input value="{{ $person->twitch }}" class="form-control" type="text" name="twitch">
           </div>
           <div class="col">
             <label for="date">Instagram:</label>
-            <input class="form-control" type="text" name="instagram">
+            <input value="{{ $person->instagram }}" class="form-control" type="text" name="instagram">
           </div>
         </div>
 
         <div class="row">
           <div class="col">
             <label for="body">About</label>
-            <textarea name="body"class="form-control" rows="6"></textarea>
+            <textarea name="body"class="form-control" rows="6">{{ $person->body }}</textarea>
           </div>
         </div>
 

@@ -11,6 +11,7 @@ use App\Match;
 use App\Player;
 use App\Team;
 use App\Tournament;
+use App\Management;
 
 class PagesController extends Controller
 {
@@ -51,6 +52,11 @@ class PagesController extends Controller
     return view('downloads');
   }
 
+  public function management(){
+    $players = Management::get()->all();
+    return view('management')->withPlayers($players);
+  }
+
   public function getSingle($slug) {
 
     // $article = Article::where('created_at', '=', $year)->get();
@@ -82,6 +88,12 @@ class PagesController extends Controller
     $tourn = Tournament::where('slug', '=', $slug)->first();
 
     return view('tournaments')->withTourn($tourn);
+  }
+
+  public function getManagementPerson($slug){
+    $person = Management::where('slug', '=', $slug)->first();
+
+    return view('management.show')->withPlayer($person);
   }
 
 }

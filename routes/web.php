@@ -15,6 +15,7 @@ Route::get('/teams', 'PagesController@teams');
 Route::get('/contact', 'PagesController@contact');
 
 Route::get('/downloads', 'PagesController@downloads');
+Route::get('/management', 'PagesController@management');
 
 
 Route::resource('/admin/news', 'ArticleController');
@@ -27,6 +28,12 @@ Route::get('/player/{playerName}', ['as' => 'player.single', 'uses' => 'PagesCon
 Route::get('/team/{slug}', ['as' => 'team.single', 'uses' => 'PagesController@getTeam']);
 
 Route::get('/tournaments/{slug}', ['as' => 'tournament.single', 'uses' => 'PagesController@getTournament']);
+
+Route::get('/management/{slug}', ['as' => 'management.person', 'uses' => 'PagesController@getManagementPerson']);
+
+
+
+
 
 Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
