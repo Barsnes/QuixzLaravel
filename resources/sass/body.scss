@@ -1,0 +1,20 @@
+$yellow: #F8B52A;
+$white: #FFF;
+$blue: #2B63AF;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+  color: #FFF;
+  overflow-x: hidden;
+}
+
+*::selection {
+  background: $yellow;
+	color: $white;
+}
+*::-moz-selection {
+  background: $yellow;
+	color: $white;
+}

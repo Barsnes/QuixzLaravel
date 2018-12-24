@@ -1,0 +1,45 @@
+/* Servers */
+
+.server {
+  column-count: 2;
+  column-gap: 3rem;
+  -webkit-column-count: 2;
+  -webkit-column-gap:   3rem;
+  -moz-column-count:    2;
+  -moz-column-gap:      3rem;
+  text-align: center;
+  background-color: $blue;
+  min-height: 100vh;
+  padding: 1rem .5rem;
+  h4 {
+    column-span: all;
+    -webkit-column-span: all;
+    -moz-column-span: all;
+    font-size: 3rem;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem
+  }
+
+  .server_content {
+    width: 100%;
+    font-size: 2rem;
+    column-span: 1;
+    -webkit-column-span: 1;
+    -moz-column-span: 1;
+    margin: 0;
+    font-family: "Lato";
+    padding: 1.3rem auto;
+    display: block;
+
+    h1 {
+      font-size: 2em;
+      margin: .5rem;
+    }
+
+    h2 {
+      margin: .5rem;
+      font-size: 1em;
+    }
+  }
+}

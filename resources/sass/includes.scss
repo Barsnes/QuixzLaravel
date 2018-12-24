@@ -1,0 +1,143 @@
+// Header 
+
+.header {
+  height: 6em;
+  width: 100%;
+  font-family: "Lato";
+  text-decoration: none;
+  background-color: $yellow;
+  width: 100%;
+  color: $white;
+  display: grid;
+  grid-template-columns: 20% 15% 60% 5%;
+  grid-template-rows: 6em;
+  align-items: center;
+
+  img {
+    height: 80%;
+    grid-column: 1 / 2;
+    margin: 0 auto;
+  }
+
+  nav {
+    text-align: right;
+    grid-column: 3 / 4;
+    height: 100%
+  }
+
+  ul {
+    margin: 0;
+    height: 100%;
+    text-align: right;
+    justify-items: end;
+  }
+
+  li {
+    display: inline-block;
+    height: 100%
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    grid-column: 1 / 2;
+    height: 100%;
+    display: grid;
+    align-items: center;
+  }
+}
+.toggle {
+  display: none;
+  width: 100%;
+  font-size: 2rem;
+  margin: 0;
+  height: 100%;
+  line-height: 3em;
+}
+
+// Footer
+
+.footer {
+  height: auto;
+  background: #232323;
+  color: $white;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  grid-template-rows: 6rem repeat(2, 1fr);
+  font-family: "Lato";
+}
+
+.footer_logo {
+  grid-column: 3 / 5;
+  grid-row: 1 / 4;
+  height: 100%;
+  align-items: right;
+  margin: auto 0 auto auto;
+}
+  ul {
+    display: inline-block;
+    grid-column: 1 / 3;
+    text-align: left;
+    justify-items: start;
+    padding: 0;
+    margin: auto 0;
+  }
+
+  li {
+    display: block;
+    justify-items: start;
+  }
+
+  hr {
+    grid-column: 1 / 5;
+    border: solid .5px $white;
+    width: 90%
+  }
+
+  .links {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .media--links {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    display: block;
+  }
+
+  .links h3 {
+    margin: 0
+  }
+
+  .links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    color: $yellow;
+    padding-right: .5rem;
+    margin: auto 0;
+  }
+
+  .media--links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+    color: $yellow;
+    padding-right: .5rem;
+    margin: .1rem;
+  }
+
+  .media--links a:nth-child(1) {
+    margin: .1rem .1rem .1rem 0;
+  }
+
+  .links a:hover, .media--links a:hover {
+    color: $white
+  }

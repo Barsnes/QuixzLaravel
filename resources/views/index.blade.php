@@ -61,8 +61,6 @@
     <a class="fas fa-angle-down arrow_button" href="#about"></a>
   </div>
 
-  </div>
-
   <div class="about" id="about">
       <img src="assets/image/logo/logo_500.png" alt="Quixz eSports logo">
       <div class="about_text">
@@ -117,7 +115,6 @@
   </div>
 
   <div class="teamMatches">
-
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
       <?php $matchCount = 0; ?>

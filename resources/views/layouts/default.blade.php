@@ -11,7 +11,7 @@
   {{ Html::style('css/fontawesome/css/all.css') }}
   @yield('stylesheets')
   <!-- Scrips -->
-  <script async src="{{ asset('js/jquery.js') }}"></script>
+  <script src="{{ asset('js/jquery.js') }}"></script>
   {{-- <script src="{{ asset('js/md2html.js') }}"></script> --}}
   <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
@@ -21,7 +21,7 @@
 <body>
 <div class="header">
     <a href="/"><img src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo"></a>
-    <nav>
+    <nav class="navbar">
       <div class="toggle">
         <i class="fas fa-bars menu" aria-hidden="true"></i>
       </div>

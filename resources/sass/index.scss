@@ -1,0 +1,68 @@
+/* Index */
+
+.background_top {
+  height: 80vh;
+  background-image: url(../assets/image/backgrounds/header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  h1 {
+    text-align: center;
+    padding-top: 10%;
+    font-size: 5em;
+    text-shadow: 0 0 30px #000;
+    margin: 0;
+  }
+  span {
+    display: block;
+    color: $yellow;
+    line-height: .5em;
+  }
+}
+
+.arrow {
+  position: absolute;
+  font-size: 4em;
+  top: 70vh;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  .arrow_button {
+    text-decoration: none;
+    color: $yellow;
+    text-shadow:  0 0 20px #000
+  }
+}
+
+.about {
+  height: 25vh;
+  background-color: $blue;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+
+  img {
+    grid-column: 2 / 3;
+    height: 80%;
+    margin: auto;
+  }
+
+  .about_text {
+    grid-column: 3 / 5;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0;
+    padding-bottom: .5rem;
+    margin: auto;
+  }
+
+  p {
+    font-family: "Lato";
+    font-size: 1em;
+    margin: auto;
+  }
+}
