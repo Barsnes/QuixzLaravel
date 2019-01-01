@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->
   {{ Html::style('css/master.css') }}
-  {{ Html::style('css/fontawesome/css/all.css') }}
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
   @yield('stylesheets')
   <!-- Scrips -->
   <script src="{{ asset('js/jquery.js') }}"></script>
@@ -44,7 +44,7 @@
 
 <div class="footer">
   <ul>
-    <li>Copyright © 2018 Quixz eSports All Rights Reserved.</li>
+    <li>Copyright © {{ date("Y") }} Quixz eSports All Rights Reserved.</li>
     <li style="color:#F8B52A;"></li>
   </ul>
   <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">

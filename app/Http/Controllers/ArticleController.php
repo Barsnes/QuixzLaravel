@@ -8,6 +8,7 @@ use App\Team;
 use Auth;
 use App\User;
 use Image;
+use WebP;
 
 class ArticleController extends Controller
 {
