@@ -20,4 +20,4 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
-Redirect /discord https://discord.gg/6QxSnV5
+Redirect 301 /discord https://discord.gg/6QxSnV5
