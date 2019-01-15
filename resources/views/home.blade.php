@@ -190,6 +190,22 @@
           <a href="/admin/index/1/edit" class="btn btn-warning btn-sm">Edit</a>
         </div>
       </div>
+      <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/players">Players</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <a href="/admin/players" class="btn btn-info btn-sm">View</a>
+          <a href="/admin/players/create" class="btn btn-success btn-sm">Add</a>
+        </div>
+      </div>
+      <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/servers">Servers</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <a href="/admin/servers" class="btn btn-info btn-sm">View</a>
+          <a href="/admin/servers/create" class="btn btn-success btn-sm">Add</a>
+        </div>
+      </div>
   </div>
 </div>
       @endif
