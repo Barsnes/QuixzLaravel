@@ -2,11 +2,7 @@
 
 @section('script')
   <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=yt4c5s5px656mcfoeugpsdwuzv0ptqo62r4o394melqwn44x"></script>
-  <script>
-  tinymce.init({ selector:'textarea',
-  plugins:'image link autolink code advlist imagetools spellchecker media', automatic_uploads: true, menubar: false,
-});
-</script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 @endsection
 
 @section('content')
