@@ -16,6 +16,8 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
+        "laravelium/feed": "^3.0",
+        "spatie/laravel-feed": "^2.1",
         "spatie/laravel-sitemap": "^5.2"
     },
     "require-dev": {
