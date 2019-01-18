@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 class AboutController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function index()
     {
       $about = DB::table('about')->where('id', '1')->get()->get(0);
