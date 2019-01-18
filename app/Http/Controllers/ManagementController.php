@@ -92,7 +92,6 @@ class ManagementController extends Controller
 
       $person = Management::find($id);
 
-      $person->name = $request->name;
       $person->email = $request->email;
       $person->body = $request->body;
       $person->job_title = $request->job_title;

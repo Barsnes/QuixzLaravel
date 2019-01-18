@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col">
         <label for="name">Name:</label>
-        <input class="form-control" type="text" name="name" value="{{ $person->name }}">
+        <input disabled class="form-control" type="text" name="name" value="{{ $person->name }}">
       </div>
       <div class="col">
         <label for="job_title">Job Title:</label>
