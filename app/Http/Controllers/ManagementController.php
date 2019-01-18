@@ -83,7 +83,7 @@ class ManagementController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, array(
-          'name' => 'required|min:7|unique:management,name',
+          'name' => 'required|min:7',
           'email' => 'required|email',
           'job_title' => 'required',
           'image' => 'image',
