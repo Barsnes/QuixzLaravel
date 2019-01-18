@@ -28,8 +28,9 @@ class ManagementController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, array(
-          'name' => 'required|min:7',
+          'name' => 'required|min:7|unique:management,name',
           'email' => 'required|email',
+          'job_title' => 'required',
           'image' => 'image',
           'body' => '',
         ));
@@ -41,6 +42,7 @@ class ManagementController extends Controller
         $person->image = 'avatar.png';
         $person->email = $request->email;
         $person->body = $request->body;
+        $person->job_title = $request->job_title;
         $person->steam = $request->steam;
         $person->instagram = $request->instagram;
         $person->twitter = $request->twitter;
@@ -81,8 +83,9 @@ class ManagementController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, array(
-          'name' => 'required|min:7',
+          'name' => 'required|min:7|unique:management,name',
           'email' => 'required|email',
+          'job_title' => 'required',
           'image' => 'image',
           'body' => '',
         ));

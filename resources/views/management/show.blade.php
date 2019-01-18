@@ -68,7 +68,7 @@
     </div>
 
     <div class="player_game">
-      <p>Management</p>
+      <p>{{ $player->job_title }}</p>
     </div>
 
   <div class="social-media">

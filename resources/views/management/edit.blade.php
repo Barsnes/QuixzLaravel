@@ -26,7 +26,11 @@
         <label for="name">Name:</label>
         <input class="form-control" type="text" name="name" value="{{ $person->name }}">
       </div>
-</div>
+      <div class="col">
+        <label for="job_title">Job Title:</label>
+        <input class="form-control" type="text" name="job_title" value="{{ $person->job_title }}">
+      </div>
+    </div>
 <div class="row">
   <div class="col">
     <label for="image" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Image: <em class="text-muted">Size: 150x150</em></label>
