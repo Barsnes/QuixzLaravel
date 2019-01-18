@@ -95,6 +95,7 @@ class ManagementController extends Controller
       $person->name = $request->name;
       $person->email = $request->email;
       $person->body = $request->body;
+      $person->job_title = $request->job_title;
       $person->steam = $request->steam;
       $person->instagram = $request->instagram;
       $person->twitter = $request->twitter;
