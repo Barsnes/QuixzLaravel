@@ -12,6 +12,7 @@ This is the Github repo containing all source code for[ Quixz eSports website.](
 * Forge Laravel
 * HTML/CSS/JS
 * MySql (InnoDB)
+* Bootstrap
 
 
 ## Functionalities
