@@ -24,6 +24,7 @@ This is the Github repo containing all source code for[ Quixz eSports website.](
 * Server Listing
 * About Section
 * Admin and Player users
+* Admin Dashboard
 
 
 ### Extra
