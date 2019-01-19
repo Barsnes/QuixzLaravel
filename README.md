@@ -4,5 +4,29 @@
 
 This is the Github repo containing all source code for[ Quixz eSports website.](https://quixz.eu " Quixz eSports website.")
 
-The goal was to have a full fledged esports website that has accounts for players and admins.
 
+## Tools Used
+
+	
+* Laravel
+* Forge Laravel
+* HTML/CSS/JS
+* MySql (InnoDB)
+
+
+## Functionalities
+
+* Articles
+* Matches
+* Tournaments
+* Player Profiles and Pages
+* Team Profiles and Pages
+* Server Listing
+* About Section
+* Admin and Player users
+
+
+### Extra
+This project does not include comments explaining what is happening. It is not made as a project that was intended to be redistributed as a template, but you are free to do so.
+
+If you fork this project, make sure your read [ Quixz' rules](https://quixz.eu/downloads " Quixz eSports website.") on using their logo and graphics.
