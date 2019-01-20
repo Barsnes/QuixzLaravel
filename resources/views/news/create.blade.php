@@ -42,7 +42,7 @@ plugins:'image link autolink code advlist imagetools spellchecker media', automa
         <label for="team_id">Category:</label>
         <select name="team_id" class="form-control">
           <option value="">Choose One</option>
-          <option value="">None</option>
+          <option value="null">None</option>
           @foreach ($categories as $category)
               <option value="{{ $category->id }}">{{ $category->name }}</option>
           @endforeach

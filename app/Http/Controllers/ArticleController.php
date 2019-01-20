@@ -50,7 +50,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->author = $request->author;
         $article->image = $request->image;
-        if ($request->team_id == '') {
+        if ($request->team_id == 'null') {
           $article->team_id = '';
         } else {
           $article->team_id = $request->team_id;
@@ -105,7 +105,7 @@ class ArticleController extends Controller
 
         $article->title = $request->title;
         $article->author = $request->author;
-        if ($request->team_id == '') {
+        if ($request->team_id == 'null') {
           $article->team_id = '';
         } else {
           $article->team_id = $request->team_id;
