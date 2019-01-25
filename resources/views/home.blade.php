@@ -136,7 +136,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                           @foreach ($team->player as $player)
-                            @if ($player->active = 'false') @else
+                            @if ($player->active == 'false') @else
                               <a class="dropdown-item" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
                             @endif
                           @endforeach
