@@ -9,7 +9,7 @@
   <!-- Stylesheets -->
   {{ Html::style('css/master.css') }}
   {{-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous"> --}}
-  <link href="/fonts/fontawesome/all.css" rel="preload" as="style">
+  {{ Html::style('fonts/fontawesome/all.css') }}
   @yield('stylesheets')
   <!-- Scrips -->
   <script src="{{ asset('js/jquery.js') }}"></script>
