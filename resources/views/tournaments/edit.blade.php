@@ -56,8 +56,12 @@
         <input value="{{ date('Y-m-d', strtotime($tournament->date)) }}" class="form-control" type="date" name="date">
       </div>
       <div class="col">
-            <label for="date">Time:</label>
-            <input class="form-control" type="time" name="time">
+        <label for="finished">Finished:</label>
+        <select class="form-control" name="finished">
+          <option @if ($tournament->finished == '0')selected @endif value="0">Not Finished</option>
+          <option @if ($tournament->finished == '1')selected @endif value="1">Finished</option>
+          <option @if ($tournament->finished == '2')selected @endif value="2">Not Started</option>
+        </select>
       </div>
     </div>
 

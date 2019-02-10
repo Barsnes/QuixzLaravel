@@ -52,8 +52,12 @@
             <input class="form-control" type="date" name="date">
       </div>
       <div class="col">
-            <label for="date">Time:</label>
-            <input class="form-control" type="time" name="time">
+        <label for="finished">Finished:</label>
+        <select class="form-control" name="finished">
+          <option value="0">Not Finished</option>
+          <option value="1">Finished</option>
+          <option value="2">Not Started</option>
+        </select>
       </div>
     </div>
 

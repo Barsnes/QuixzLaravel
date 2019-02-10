@@ -25,11 +25,17 @@
     </div>
   @endif
 
-  @if ($tourn->placement != '')
-    <div class="tournamentPlacement">
+  <div class="tournamentPlacement">
+    @if ($tourn->placement != '')
       <h2>Placement: {{ $tourn->placement }}</h2>
-    </div>
-  @endif
+    @elseif ($tourn->finished == '0')
+      <h2>Not Finished</h2>
+    @elseif ($tourn->finished == '1')
+      <h2>Finished</h2>
+    @else
+      <h2>Not Started</h2>
+    @endif
+  </div>
 </div>
 
 <div class="matches">
