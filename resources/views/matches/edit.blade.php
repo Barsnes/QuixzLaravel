@@ -24,8 +24,25 @@
       </div>
 
     </div>
-      {{ Form::label('name', 'Name:') }}
-      {{ Form::text('name', null, array('class' => 'form-control')) }}
+      <div class="row">
+        <div class="col">
+          {{ Form::label('name', 'Name:') }}
+          {{ Form::text('name', null, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="col">
+          <label for="">Tournaments</label>
+          <select class="form-control" name="tournament_id">
+            @foreach ($tournaments as $tournament)
+              @if ($tournament->id === $match->tournament_id)
+                <option selected value="{{ $tournament->id }}">{{ $tournament->name }}</option>
+              @else
+                <option value="{{ $tournament->id }}">{{ $tournament->name }}</option>
+              @endif
+            @endforeach
+          </select>
+        </div>
+      </div>
 
       {{ Form::label('link', 'Link:') }}
       {{ Form::text('link', null, array('class' => 'form-control')) }}

@@ -13,8 +13,20 @@
     <h1>Create New Match</h1>
     <hr>
     {!! Form::open(['route' => 'matches.store', 'files' => true, 'id' => 'form']) !!}
-      {{ Form::label('name', 'Name:') }}
-      {{ Form::text('name', '', array('class' => 'form-control')) }}
+    <div class="row">
+      <div class="col">
+        {{ Form::label('name', 'Name:') }}
+        {{ Form::text('name', '', array('class' => 'form-control')) }}
+      </div>
+      <div class="col">
+        <label for="">Tournaments</label>
+        <select class="form-control" name="tournament_id">
+          @foreach ($tournaments as $tournament)
+            <option value="{{ $tournament->id }}">{{ $tournament->name }}</option>
+          @endforeach
+        </select>
+      </div>
+    </div>
 
 <div class="row">
   <div class="col">

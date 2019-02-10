@@ -5,67 +5,82 @@
 @section('content')
 <div class="tournament">
 <div class="tournamentInfo">
-
-<div class="general">
-  <h1>{{ $tourn->name }}</h1>
-  <h2>{{ $tourn->game }}</h2>
-</div>
-<div class="additional">
-  <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
-  <h2>{{ $tourn->format }}</h2>
-</div>
-  <img src="{{ asset('/images/' . $tourn->image) }}" alt="">
-
-@if ($tourn->link != '')
-  <div class="buttonContainer">
-    <a target="_blank" href="{{ $tourn->link }}"><h1 class="button">Link to tournament</h1></a>
+  <div class="general">
+    <h1>{{ $tourn->name }}</h1>
+    <h2>{{ $tourn->team->name }}</h2>
   </div>
-@endif
-
-@if ($tourn->placement != '')
-  <div class="tournamentPlacement">
-
-    <h2>Placement: {{ $tourn->placement }}</h2>
-
+  <div class="additional">
+    <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
+    <h2>{{ $tourn->format }}</h2>
   </div>
-@else
-  <div class="tournamentPlacement">
+  @if ($tourn->image != '')
+    <img src="{{ asset('/images/' . $tourn->image) }}" alt="Tournament image">
+  @else
+    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Tournament image"></img>
+  @endif
 
-    <h2>Not finished</h2>
+  @if ($tourn->link != '')
+    <div class="buttonContainer">
+      <a target="_blank" href="{{ $tourn->link }}"><h1 class="button">Link to tournament</h1></a>
+    </div>
+  @endif
 
-  </div>
-@endif
-
+  @if ($tourn->placement != '')
+    <div class="tournamentPlacement">
+      <h2>Placement: {{ $tourn->placement }}</h2>
+    </div>
+  @endif
 </div>
 
 <div class="matches">
-    @php
-      $matchCount = 0;
-    @endphp
+    <h2>Upcoming</h2>
     <div class="match">
     @foreach ($tourn->match as $match)
-      @php
-        $matchCount ++;
-      @endphp
+      @if ($match->quixzScore == '0' && $match->enemyScore == '0')
+        <div class="matchCard">
+                <div class="match_body">
+                    <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                      <h2></h2>
+                      <div style="margin: auto">
+                        <h6>{{ date('d M Y', strtotime($match->date)) }}</h6>
+                        <h3>VS</h3>
+                          @if ($role == 'Admin')
+                              <a href=" {{ url('admin/tourn-match/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                          @elseif ($match->link != '')
+                              <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                          @else
+                          @endif
+                      </div>
+                      <h2></h2>
+                      @if ($match->enemyLogo != '')
+                        <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                      @else
+                        <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                      @endif
+                </div>
+        </div>
+      @endif
+    @endforeach
+  </div>
+  <h2>Finished</h2>
+  <div class="match">
+  @foreach ($tourn->match as $match)
+    @if ($match->quixzScore != '0' || $match->enemyScore != '0')
       <div class="matchCard">
-        <h2>Match {{ $match->match_num }}</h2>
               <div class="match_body">
                   <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-                    <h2></h2>
+                    <h2>{{ $match->quixzScore }}</h2>
                     <div style="margin: auto">
                       <h6>{{ date('d M Y', strtotime($match->date)) }}</h6>
                       <h3>VS</h3>
-                      @if ($role == 'Admin')
-                          <a href=" {{ url('admin/tourn-match/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
-                      @else
-                        @if ($match->link == '')
+                        @if ($role == 'Admin')
+                            <a href=" {{ url('admin/tourn-match/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
+                        @elseif ($match->link != '')
+                            <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                         @else
-                          <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                         @endif
-
-                      @endif
                     </div>
-                    <h2></h2>
+                    <h2>{{ $match->enemyScore }}</h2>
                     @if ($match->enemyLogo != '')
                       <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
                     @else
@@ -73,10 +88,12 @@
                     @endif
               </div>
       </div>
-    @endforeach
-  </div>
+    @endif
+  @endforeach
+</div>
 </div>
 
+@if ($tourn->stream != '')
   <div class="media">
     <h1>Livestreams</h1>
 
@@ -89,6 +106,8 @@
         allowfullscreen="true">
     </iframe>
   </div>
+@endif
+
 
 </div>
 

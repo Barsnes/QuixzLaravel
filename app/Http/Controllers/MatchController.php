@@ -43,6 +43,7 @@ class MatchController extends Controller
           'date' => 'required',
           'time' => '',
           'link' => '',
+          'tournament_id' => 'required|integer',
         ));
 
         // Store in DB
@@ -55,6 +56,7 @@ class MatchController extends Controller
         $match->enemyScore = $request->enemyScore;
         $match->date = $request->date;
         $match->link = $request->link;
+        $match->tournament_id = $request->tournament_id;
 
         if ($request->hasFile('enemyLogo')) {
           $enemyLogo = $request->file('enemyLogo');
@@ -82,8 +84,9 @@ class MatchController extends Controller
     {
       $match = Match::find($id);
       $teams = Team::get();
+      $tournaments = Tournament::get();
 
-      return view('matches.edit', compact('match'))->withTeams($teams);
+      return view('matches.edit', compact('match'))->withTeams($teams)->withTournaments($tournaments);
     }
 
     public function update(Request $request, $id)
@@ -97,7 +100,7 @@ class MatchController extends Controller
           'enemyLogo' => 'image',
           'date' => 'required',
           'time' => '',
-          'tournament_id' => '',
+          'tournament_id' => 'required|integer',
           'link' => '',
         ));
 
