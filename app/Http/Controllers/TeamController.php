@@ -26,7 +26,8 @@ class TeamController extends Controller
 
     public function create()
     {
-      return view('teams.create');
+      $games = Game::get();
+      return view('teams.create')->withGames($games);
     }
 
     public function store(Request $request)
@@ -42,6 +43,7 @@ class TeamController extends Controller
           'body' => 'max:1200',
           'wins' => 'integer',
           'loss' => 'integer',
+          'game_id' => 'integer|required',
         ));
 
         // Store in DB
@@ -52,6 +54,7 @@ class TeamController extends Controller
         $team->wins = $request->wins;
         $team->loss = $request->loss;
         $team->active = '1';
+        $team->game_id = $request->game_id;
 
         $value = $team->name;
         $team->slug = str_slug($value);

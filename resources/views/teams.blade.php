@@ -3,15 +3,16 @@
 
 @section('content')
   <div class="teams">
-    
-  @foreach ($teams as $team)
-    @if ($team->active == '1')
-      <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
-          <h1>{{ $team->name }}</h1>
-      </a>
-    @endif
-  @endforeach
-
+    @foreach ($games as $game)
+      <h1 style="grid-column: 1/4;"><hr>{{ $game->name }}</h1>
+      @foreach ($game->team as $team)
+        @if ($team->active == '1')
+          <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
+              <h4>{{ $team->name }}</h4>
+          </a>
+        @endif
+      @endforeach
+    @endforeach
   </div>
 
   <style>
@@ -25,7 +26,7 @@
     display: grid;
     padding: 2rem 15%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 15rem 15rem;
+    grid-template-rows: auto;
     text-align: center;
   }
 
@@ -42,7 +43,7 @@
 
   .team h4 {
     margin: auto;
-    font-size: 70%
+    font-size: 1.4rem;
   }
 
   @media screen and (max-width: 650px) {

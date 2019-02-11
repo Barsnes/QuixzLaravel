@@ -23,12 +23,24 @@
     {!! Form::open(['route' => 'teams.store', 'files' => true]) !!}
     <div class="row">
       <div class="col">
-        <label for="name">Game:</label>
+        <label for="name">Name:</label>
         <input class="form-control" type="text" name="name">
       </div>
       <div class="col">
         <label for="image" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Background Image: <em class="text-muted">Keep under: 1920x1080</em></label>
         {{ Form::file('image', array('class' => 'form-control')) }}
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col">
+        <label for="game_id">Game</label>
+        <select class="form-control" name="game_id">
+          <option selected disabled>Choose one</option>
+          @foreach ($games as $game)
+            <option value="{{ $game->id }}">{{ $game->name }}</option>
+          @endforeach
+        </select>
       </div>
     </div>
 

@@ -12,6 +12,7 @@ use App\Player;
 use App\Team;
 use App\Tournament;
 use App\Management;
+use App\Game;
 
 class PagesController extends Controller
 {
@@ -21,9 +22,10 @@ class PagesController extends Controller
     $matches = Match::orderBy('date', 'ASC')->get();;
     $matchesReverse = Match::orderBy('date', 'ASC')->get()->reverse();
     $teams = Team::get();
+    $games = Game::get();
     $tournaments = Tournament::get();
     $index = DB::table('index')->where('id', '1')->get()->get(0);
-    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams, 'tournaments' => $tournaments, 'index' => $index]);
+    return view('index', ['articles' => $articles, 'matches' => $matches, 'matchesReverse' => $matchesReverse, 'teams' => $teams, 'tournaments' => $tournaments, 'index' => $index, 'games' => $games]);
   }
 
   public function about() {
@@ -34,8 +36,9 @@ class PagesController extends Controller
 
   public function teams() {
     $teams = Team::get();
+    $games = Game::get();
 
-    return view("teams")->with("teams", $teams);
+    return view("teams")->with("teams", $teams)->withGames($games);
   }
 
   public function contact() {

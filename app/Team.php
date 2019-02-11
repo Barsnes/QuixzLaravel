@@ -21,4 +21,8 @@ class Team extends Model
   public function match(){
     return $this->hasMany('App\Match');
   }
+
+  public function game(){
+    return $this->hasOne('App\Game');
+  }
 }

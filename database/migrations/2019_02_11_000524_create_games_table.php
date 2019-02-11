@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class RemoveTournamentIdFromMatchesTable extends Migration
+class CreateGamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class RemoveTournamentIdFromMatchesTable extends Migration
      */
     public function up()
     {
-          Schema::dropIfExists('matches.tournament_id');
+        Schema::create('games', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->boolean('active')->default(false);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,8 +28,6 @@ class RemoveTournamentIdFromMatchesTable extends Migration
      */
     public function down()
     {
-        Schema::table('matches', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('games');
     }
 }

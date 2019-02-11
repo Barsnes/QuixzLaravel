@@ -104,10 +104,9 @@
 
     <h1>Our Teams</h1>
 
-@foreach ($teams as $team)
-  @if ($team->active == '1')
-    <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
-        <h1>{{ $team->name }}</h1>
+@foreach ($games as $game)
+  @if ($game->active == '1')
+        <h3 class="team">{{ $game->name }}</h3>
     </a>
   @endif
 @endforeach
