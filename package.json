@@ -17,7 +17,11 @@
     "laravel-mix": "^4.0.14",
     "lodash": "^4.17.5",
     "popper.js": "^1.12",
-    "vue": "^2.5.17"
+    "resolve-url-loader": "2.3.1",
+    "sass": "^1.17.0",
+    "sass-loader": "7.*",
+    "vue": "^2.5.17",
+    "vue-template-compiler": "^2.6.6"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
