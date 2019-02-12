@@ -110,7 +110,12 @@
     }
 
     & h2 {
-      margin: .7rem 2rem 1rem 2rem;
+      margin: .5rem 2rem 1rem 2rem;
+    }
+
+    & h5 {
+      color: $yellow;
+      margin: .7rem 2rem .4rem 2rem;
     }
 
     & hr {
@@ -122,20 +127,17 @@
     }
 
     & p {
-      font-size: .7rem;
+      font-size: .8rem;
+      margin: .7rem 2rem .4rem 2rem;
     }
 
     &:nth-of-type(1) {
-      grid-column: 1 / 4;
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
 
       & h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
     }
   }
-}
-
-.article_body > div:first-of-type {
-  grid-column: 1 / 3;
-  margin: 0;
 }
