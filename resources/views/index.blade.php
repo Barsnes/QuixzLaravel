@@ -96,7 +96,7 @@
 
 @foreach ($teams as $team)
   @if ($team->active == '1')
-    <a class="team" href="/teams/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-repeat: no-repeat; background-size: cover;)">
+    <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-repeat: no-repeat; background-size: cover;)">
         <h3>{{ $team->name }}</h3>
         <div class="teamTint">
 
