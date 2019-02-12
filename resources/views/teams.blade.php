@@ -4,6 +4,9 @@
 @section('content')
   <div class="teams">
     @foreach ($games as $game)
+      @if ($game->active != '1')
+        @continue
+      @endif
       <h1 style="grid-column: 1/4;"><hr>{{ $game->name }}</h1>
       @foreach ($game->team as $team)
         @if ($team->active == '1')

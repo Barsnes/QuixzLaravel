@@ -1,4 +1,4 @@
-// Header 
+// Header
 
 .header {
   height: 6em;
@@ -69,6 +69,7 @@
   grid-gap: 1rem;
   grid-template-rows: 6rem repeat(2, 1fr);
   font-family: "Lato";
+  border-top: 1px solid #FFF;
 }
 
 .footer_logo {
