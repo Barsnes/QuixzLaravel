@@ -14,19 +14,14 @@
     "bootstrap": "^4.0.0",
     "cross-env": "^5.1",
     "jquery": "^3.2",
-    "laravel-mix": "git+https://github.com/JeffreyWay/laravel-mix.git",
+    "laravel-mix": "^2.0",
     "lodash": "^4.17.5",
     "popper.js": "^1.12",
-    "resolve-url-loader": "2.3.1",
-    "sass": "^1.17.0",
-    "sass-loader": "7.*",
-    "vue": "^2.5.17",
-    "vue-template-compiler": "^2.6.5"
+    "vue": "^2.5.17"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
-    "gulp": "^4.0.0",
     "jquery-slugify": "^1.2.5",
     "markdown": "^0.5.0",
     "speakingurl": "^14.0.1",
