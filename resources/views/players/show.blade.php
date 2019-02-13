@@ -62,9 +62,6 @@
   <div class="player_info">
     <div class="player_name">
       <h1>{{ $player->firstName }} <b style="color:#F8B52A">{{ $player->playerName }}</b> {{ $player->lastName }}</h1>
-      @if ($role == 'Admin')
-         <a style="color:#FFF; text-decoration: none" href="/admin/players/{{ $player->id }}/edit" class="matchButton">Edit</a>
-      @endif
     </div>
 
     <div class="player_game">
@@ -100,129 +97,105 @@
 </div>
 </div>
 
+@if ($player->body != '')
   <div class="player__text">
     <h1 class="title">About {{ $player->playerName }}</h1>
 
     {!! $player->body !!}
   </div>
+@endif
+
+@if ($player->team->match == '[]')
+
+@else
+  <div class="teamMatches">
+    <div class="upcomingMatches">
+      <h1>Upcoming Matches</h1>
+      <?php $matchCount = 0; ?>
+      @foreach ($player->team->match as $match)
+        <?php  $date_now = date("d M Y"); // this format is string comparable
+            $matchDate = date('d M Y', strtotime($match->date));
+        ?>
+        @if ($date_now < $matchDate && $matchCount < 3)
+          <?php $matchCount ++ ?>
+            <div class="match_body">
+                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
+                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                  <h2></h2>
+                  <div style="margin: auto">
+                    <h3>VS</h3>
+                      @if ($match->link == '')
+                      @else
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                      @endif
+                  </div>
+                  <h2></h2>
+                  @if ($match->enemyLogo != '')
+                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                  @else
+                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                  @endif
+            </div>
+            @endif
+      @endforeach
+    </div>
+
+    <div class="recentMatches">
+      <h1>Recent Matches</h1>
+      <?php $matchCount = 0; ?>
+      @foreach ($player->team->match as $match)
+        <?php  $date_now = date("d M Y"); // this format is string comparable
+            $matchDate = date('d M Y', strtotime($match->date));
+        ?>
+            @if ($date_now > $matchDate && $matchCount < 3)
+              <?php $matchCount ++ ?>
+            <div class="match_body">
+                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
+                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                  <h2>{{ $match->quixzScore }}</h2>
+                  <div style="margin: auto">
+                    <h3>VS</h3>
+                      @if ($match->link == '')
+                      @else
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                      @endif
+                  </div>
+                  <h2>{{ $match->enemyScore }}</h2>
+                  @if ($match->enemyLogo != '')
+                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                  @else
+                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                  @endif
+            </div>
+            @endif
+      @endforeach
+    </div>
+  </div>
+@endif
+
+  <div class="teamArticles">
+    <h1 class="title">Related Articles</h1>
+    <div class="news">
+      @php
+        $articleCount = 0;
+      @endphp
+      @foreach ($player->team->article->reverse() as $article)
+        @php
+          $articleCount ++;
+        @endphp
+        @if ($articleCount <= 2)
+          <a href=" {{ url('/news', $article->slug) }} " class="article_list">
+            <img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image>
+            <h1>{{ $article->title }}</h1>
+            <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
+            <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
+            <p>Read more...</p>
+            <hr>
+          </a>
+        @endif
+      @endforeach
+    </div>
+  </div>
 </div>
-
-<style>
-
-.matchButton {
-  border: 2px solid #F8B52A;
-  padding: .2rem .4rem;
-  background: #ffffff00;
-  -webkit-transition: background ease-in-out 150ms;
-  text-decoration: none;
-  color: #FFF;
-}
-
-.matchButton:hover {
-  background: #F8B52A;
-  color: #FFF;
-  -webkit-transition: background ease-in-out 150ms;
-}
-
-.player {
-  background-color: #2B63AF;
-  min-height: 100vh;
-  padding-top: 1rem;
-  text-align: center;
-  width: 100vw;
-  overflow-y: scroll;
-}
-
-.player__profile {
-  width: 50%;
-  height: auto;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: 2fr 4fr;
-  grid-template-rows: auto;
-  padding: 2rem 0;
-  margin: 0 auto;
-  text-align: left;
-  margin: 1rem 25%;
-  background-color: #FFFFFF20;
-  box-shadow: 0 0 50px #00000020;
-}
-
-.player_info {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  width: 100%;
-  height: 100%
-}
-
-.player_image img {
-  width: 100%;
-  height: auto;
-}
-
-.player_name {
-  width: 100%
-}
-
-.social-media {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 12%
-}
-
-.social-media a {
-  color: #FFF;
-  text-decoration: none;
-  font-size: 2rem;
-  grid-column: span 1;
-}
-
-.player__text {
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  font-family: "Lato"
-}
-
-.player__text .title {
-  text-align: center;
-  font-family: "Raleway"
-}
-
-@media screen and (max-width: 650px) {
-
-  .player__profile {
-    width: calc(100vw - 2rem);
-    height: auto;
-    display: grid;
-    grid-gap: .5em;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    padding: 2rem 0;
-    margin: 0 auto;
-    text-align: left;
-    margin: 1rem 1rem;
-  }
-
-  .social-media {
-    width: 100%;
-    text-align: center;
-  }
-
-  .player__text {
-    width: 80%;
-  }
-
-  .player_info {
-    grid-column: 1 / 2;
-    grid-row: 2 / 2;
-    padding: 1rem;
-    width: calc(100% - 2rem)
-  }
-}
-</style>
 
 @endsection

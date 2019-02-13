@@ -107,7 +107,7 @@
   <div class="upcomingTournaments">
     <h1>Ongoing Tournaments</h1>
     @php $tournCount = 0; @endphp
-    @foreach ($tournaments as $tourn)
+    @foreach ($tournaments->reverse() as $tourn)
       @php
         $date_now = date("d M Y"); // this format is string comparable
         $tournDate = date('d M Y', strtotime($tourn->date));
