@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 yarn-error.log
 yarn.lock
+mix-manifest.json
 
 # Laravel 4 specific
 bootstrap/compiled.php
