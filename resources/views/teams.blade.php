@@ -12,6 +12,7 @@
         @if ($team->active == '1')
           <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-size: cover; background-position: center">
               <h4>{{ $team->name }}</h4>
+              <div class="teamTint"></div>
           </a>
         @endif
       @endforeach

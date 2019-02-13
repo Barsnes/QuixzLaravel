@@ -11,12 +11,19 @@
   color: $white;
   font-family: Lato;
   cursor: pointer;
-}
+  transform: scale(1);
+  transition: transform 150ms ease;
 
-.tournamentBody img {
-  height: 100%;
-  margin: auto;
-  margin-left: 0;
+  &:hover {
+    transform: scale(1.01);
+    transition: transform 150ms ease;
+  }
+
+  & img {
+    height: 100%;
+    margin: auto;
+    margin-left: 0;
+  }
 }
 
 .upcomingTournaments {
@@ -37,4 +44,48 @@
 
 .tournamentInfoRight {
   text-align: right;
+}
+
+@media screen and (max-width: 650px) {
+
+  .upcomingTournaments {
+    background-color: #232323;
+    display: grid;
+    padding: 1rem 5%;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+
+    & h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .tournamentBody {
+    background-color: $blue;
+    grid-column: span 1;
+    padding: .4rem;
+    height: 8rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    text-decoration: none;
+    color: $white;
+    font-family: Lato;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 150ms ease;
+
+    &:hover {
+      transform: scale(1.01);
+      transition: transform 150ms ease;
+    }
+
+    & img {
+      display: none;
+    }
+  }
 }

@@ -61,29 +61,23 @@
 @endsection
 
 @section('content')
-  <div class="teamHeader">
+  <div class="teamHeader" style="background-image: url({{asset('images/' . $team->image) }});">
   <h1>{{ $team->name }}
-@if ($role == 'Admin')
-   <a style="color:#FFF; text-decoration: none" href="/admin/teams/{{ $team->id }}/edit" class="matchButton">Edit</a>
-@endif
    </h1>
   </div>
 
-  <div class="team">
-    @php
-      $playerCount = 0;
-    @endphp
+  <div class="teamBody">
+    <div class="title">
+      <h1>Active Roster</h1>
+    </div>
     @foreach ($team->player as $player)
-      @if ($player->active == 'true' && $playerCount <= 5)
-        @php
-          $playerCount ++;
-        @endphp
-        <div class="card">
+      @if ($player->active == 'true')
+        <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF" class="card">
           <img src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
           <div class="container">
-            <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF"><h2>{{ $player->firstName }} <b style="color: #F8B52A">{{ $player->playerName }}</b> {{ $player->lastName }}</h2></a>
+            <h2>{{ $player->firstName }} <b style="color: #F8B52A">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
           </div>
-        </div>
+        </a>
       @endif
     @endforeach
   </div>
@@ -92,7 +86,6 @@
 
 @else
   <div class="teamMatches">
-
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
       <?php $matchCount = 0; ?>
@@ -108,10 +101,10 @@
                   <h2></h2>
                   <div style="margin: auto">
                     <h3>VS</h3>
-                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
-                    @if ($role == 'Admin')
-                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
-                    @endif
+                      @if ($match->link == '')
+                      @else
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                      @endif
                   </div>
                   <h2></h2>
                   @if ($match->enemyLogo != '')
@@ -139,10 +132,10 @@
                   <h2>{{ $match->quixzScore }}</h2>
                   <div style="margin: auto">
                     <h3>VS</h3>
-                    <a target="_blank" href="/" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
-                    @if ($role == 'Admin')
-                      <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
-                    @endif
+                      @if ($match->link == '')
+                      @else
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                      @endif
                   </div>
                   <h2>{{ $match->enemyScore }}</h2>
                   @if ($match->enemyLogo != '')
@@ -154,7 +147,6 @@
             @endif
       @endforeach
     </div>
-
   </div>
 @endif
 
@@ -183,40 +175,50 @@
   </script>
 @endif
 
-  {{-- <div class="upcomingTournaments">
-
-    <h1>Tournaments</h1>
-    <h2>Upcoming</h2>
-      <div class="tournamentBody">
-        <h1>{{ item.title }}</h1>
-          <h2>{{ item.matchdate | date: '%B %d, %Y' }}</h2>
-            <div style="margin: auto">
-              <h3>{{ item.game }}</h3>
-              <a href="{{ item.url }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">{{ item.matchType }}</h3></a>
-            </div>
-      </div>
-  </div>
-
-  <div class="upcomingTournaments">
-    <h2>Past</h2>
-      <div class="tournamentBody">
-        <h1>{{ item.title }}</h1>
-          <h2>{{ item.matchdate | date: '%B %d, %Y' }}</h2>
-            <div style="margin: auto">
-              <h3>{{ item.game }}</h3>
-              <a href="{{ item.url }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton" style="width: 40%; margin: auto">{{ item.matchType }}</h3></a>
-            </div>
-      </div>
-  </div> --}}
-
 @if ($team->body == '')
 
 @else
   <div class="teamAbout">
-    <h1>History</h1>
+    <h1>About the team</h1>
     <div class="">
         {!! $team->body !!}
     </div>
+  </div>
+@endif
+
+@php $checkTourn = 0; @endphp
+@foreach ($team->tournament as $tourn)
+  @php
+    $date_now = date("d M Y"); // this format is string comparable
+    $tournDate = date('d M Y', strtotime($tourn->date));
+  @endphp
+  @if ($date_now < $tournDate && $tourn->finished == '0')
+    @php $checkTourn ++ @endphp
+  @endif
+@endforeach
+
+@if ($checkTourn != '0')
+  <div class="upcomingTournaments">
+    <h1>Ongoing Tournaments</h1>
+    @foreach ($team->tournament->reverse() as $tourn)
+      @php
+        $date_now = date("d M Y"); // this format is string comparable
+        $tournDate = date('d M Y', strtotime($tourn->date));
+      @endphp
+      @if ($date_now < $tournDate  && $tourn->finished == '0')
+          <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
+            <img src="{{ asset('images/' . $tourn->image) }}" alt="">
+            <div class="tournamentInfoLeft">
+              <h2>{{ $tourn->name }}</h2>
+              <h3>{{ $tourn->team->name }}</h3>
+            </div>
+            <div class="tournamentInfoRight">
+              <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
+              <h3>Not Finished</h3>
+            </div>
+          </a>
+      @endif
+    @endforeach
   </div>
 @endif
 
@@ -225,241 +227,27 @@
 @else
 
 <div class="teamArticles">
-  <h1>Related Articles</h1>
+  <h1 class="title">Related Articles</h1>
   <div class="news">
     @php
       $articleCount = 0;
     @endphp
-    @foreach ($team->article as $article)
+    @foreach ($team->article->reverse() as $article)
       @php
         $articleCount ++;
       @endphp
       @if ($articleCount <= 2)
-        <div class="article_list">
-          <a href=" {{ url('/news', $article->slug) }} "><img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image></a>
-          <h1><a href=" {{ url('/news', $article->slug) }} ">{{ $article->title }}</a></h1>
+        <a href=" {{ url('/news', $article->slug) }} " class="article_list">
+          <img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image>
+          <h1>{{ $article->title }}</h1>
           <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
           <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
-          <a href="{{ url('/news', $article->slug) }}" class="article_readmore" style="color: #2B63AF"><p>Read more...</p></a>
+          <p>Read more...</p>
           <hr>
-        </div>
+        </a>
       @endif
     @endforeach
   </div>
 </div>
 @endif
-
-  <style>
-
-  body {
-    background-color: #232323;
-    box-sizing: border-box;
-  }
-
-  .tournamentBody {
-    text-align: center;
-    width: calc(100% - 1rem);
-    background-color: #2B63AF;
-    margin: auto;
-    padding: .5rem;
-    font-family: Lato
-  }
-
-  .tournamentBody h1, .tournamentBody h2 {
-    margin: .1rem auto;
-  }
-
-  .upcomingTournaments h1, .upcomingTournaments h2 {
-    grid-column: 1 / 3;
-    margin: 0;
-  }
-
-  .tournamentBody h1 {
-    color: #F8B52A
-  }
-
-  .upcomingTournaments {
-    background-color: #F8B52A;
-    display: grid;
-    padding: 1rem 15%;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1rem;
-  }
-
-  .teamHeader {
-    width: 100%;
-    height: 15rem;
-    text-align: center;
-    background-image: url({{asset('images/' . $team->image) }});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    display: grid;
-  }
-
-  .teamHeader h1 {
-    margin: auto;
-  }
-
-  .team {
-    width: 50%;
-    padding: 0 25%;
-    margin-top: 1em;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 1rem;
-    margin-bottom: 2rem
-  }
-
-  .card {
-    grid-column: span 1;
-    width: 100%;
-    padding: .2rem
-  }
-
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-
-  .card a {
-    font-size: .8rem
-  }
-
-  .teamMatches {
-    display: grid;
-    grid-template-columns: repeat(2, calc(50% - 1rem));
-    grid-gap: 2rem;
-    width: 70%;
-    padding: 0 15% 0 15%;
-    background-color: #F8B52A
-  }
-
-  .recentMatches, .upcomingMatches {
-    width: 100%;
-    grid-column: span 1
-  }
-
-  .match_body {
-    width: 100%;
-    background-color: #2B63AF;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    height: 8rem;
-    grid-template-rows: 2rem 5rem;
-    text-align: center;
-    font-family: Lato;
-    margin-bottom: .5rem
-  }
-
-  .match_body h1 {
-    grid-column: 1 / 6;
-    font-size: 1rem
-  }
-
-  .match_body img {
-    width: 80%;
-    height: auto;
-    margin: auto;
-  }
-
-  .match_body h2, .match_body h3, .match_body h6 {
-    margin: auto;
-  }
-
-  .match_body h4 {
-    margin-bottom: .5rem;
-    font-size: 1.1rem
-  }
-
-  .matchButton {
-    border: 2px solid #F8B52A;
-    padding: .2rem .4rem;
-    background: #ffffff00;
-    -webkit-transition: background ease-in-out 150ms;
-  }
-
-  .matchButton:hover {
-    background: #F8B52A;
-    color: #FFF;
-    -webkit-transition: background ease-in-out 150ms;
-  }
-
-  .winRatio {
-    text-align: center;
-    font-family: "Lato";
-    background-color: #2B63AF;
-    margin: 0;
-    padding: 1rem;
-  }
-
-  .ratioText b {
-    color: #F8B52A;
-  }
-
-  .match_body h2, .match_body h3 {
-    margin: auto;
-  }
-
-  .teamAbout {
-    width: 60%;
-    font-family: Lato;
-    margin: auto;
-    min-height: 15rem;
-  }
-
-  .teamAbout h1 {
-    text-align: center;
-    font-family: Raleway
-  }
-
-  .teamGallery {
-    width: 100%;
-    min-height: 15rem;
-    font-family: Lato;
-    margin: auto;
-  }
-
-  .teamImages {
-    width: 60%
-  }
-
-  .teamGallery h1 {
-    text-align: center;
-    font-family: Raleway;
-  }
-
-  .teamArticles {
-    background-color: #F8B52A;
-    text-align: center;
-    padding-top: 1rem;
-  }
-
-  @media screen and (max-width: 650px) {
-    .teamMatches {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-gap: .5rem;
-      width: 90%;
-      padding: 0 5%;
-    }
-
-    .team {
-      width: 90%;
-      padding: 0 5%;
-      margin-top: 1em;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1rem;
-      margin-bottom: 2rem
-    }
-
-    .teamAbout, .teamImages {
-      width: 90%
-    }
-  }
-
-  </style>
-
-
 @endsection

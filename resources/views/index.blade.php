@@ -82,7 +82,7 @@
         <h1>{{ $article->title }}</h1>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
         <p class="news__desc">{!! strip_tags(substr($article->body, 0, 100)) !!}...</p>
-        <p>Read more...</p>
+        <p class="readMore">Read more...</p>
         <hr>
       </a>
         @endif
@@ -98,16 +98,13 @@
   @if ($team->active == '1')
     <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-repeat: no-repeat; background-size: cover;)">
         <h3>{{ $team->name }}</h3>
-        <div class="teamTint">
-
-        </div>
+        <div class="teamTint"></div>
     </a>
   @endif
 @endforeach
   </div>
 
   <div class="upcomingTournaments">
-
     <h1>Ongoing Tournaments</h1>
     @php $tournCount = 0; @endphp
     @foreach ($tournaments as $tourn)
@@ -153,15 +150,10 @@
                   <div style="margin: auto">
                     <h3>VS</h3>
                     <h6>{{ $match->team->name }}</h6>
-                    @if ($role == 'Admin')
-                        <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
-                    @else
                       @if ($match->link == '')
                       @else
                         <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                       @endif
-
-                    @endif
                   </div>
                   <h2></h2>
                   @if ($match->enemyLogo != '')
@@ -190,15 +182,10 @@
                   <div style="margin: auto">
                     <h3>VS</h3>
                     <h6>{{ $match->team->name }}</h6>
-                    @if ($role == 'Admin')
-                        <a href=" {{ url('admin/matches/' . $match->id . '/edit') }} " style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">Edit</h3></a>
-                    @else
                       @if ($match->link == '')
                       @else
                         <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
                       @endif
-
-                    @endif
                   </div>
                   <h2>{{ $match->enemyScore }}</h2>
                   @if ($match->enemyLogo != '')
@@ -210,7 +197,6 @@
             @endif
       @endforeach
     </div>
-
   </div>
 
   </body>
