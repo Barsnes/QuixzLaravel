@@ -201,11 +201,11 @@
   font-family: "Lato";
   padding: 0;
   margin: 0 .1rem;
-  color: #F8B52A;
+  color: $yellow;
 }
 
 .article strong {
-  color: #F8B52A
+  color: $yellow
 }
 
 @media (max-width:1050px) {
