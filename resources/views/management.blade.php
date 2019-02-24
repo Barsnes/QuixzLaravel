@@ -54,92 +54,19 @@
 @section('content')
 
 <div class="teamHeader">
-<h1>Management</h1>
+  <h1>Management</h1>
 </div>
 
-<div class="team">
 
-@foreach ($players as $player)
-  <div class="card">
-    <img src="{{ asset('/images/' . $player->image) }}" alt="" style="width:100%">
-    <div class="container">
-      <a href="/management/{{ $player->slug }}" style="text-decoration: none; color: #FFF"><h2>{{ $player->name }}</h2></a>
-    </div>
-  </div>
-@endforeach
-
+<div class="teamBody">
+  @foreach ($players as $player)
+    <a style="text-decoration:none; color:#FFF" class="card" href="/management/{{ $player->slug }}">
+      <img src="{{ asset('/images/' . $player->image) }}" alt="" style="width:100%">
+      <div class="container">
+        <h2 syle="text-decoration: none; color: #FFF">{{ $player->name }}</h2>
+      </div>
+    </a>
+  @endforeach
 </div>
-
-<style>
-
-body {
-  background-color: #232323;
-  box-sizing: border-box;
-}
-
-.teamHeader {
-  width: 100%;
-  height: 6rem;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  display: grid;
-}
-
-.teamHeader h1 {
-  margin: auto;
-}
-
-.team {
-  width: 50%;
-  padding: 0 25%;
-  margin-top: 1em;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.card {
-  grid-column: span 1;
-  width: 100%;
-  padding: .2rem
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card a {
-  font-size: .8rem
-}
-
-@media screen and (max-width: 650px) {
-  .teamMatches {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-gap: .5rem;
-    width: 90%;
-    padding: 0 5%;
-  }
-
-  .team {
-    width: 90%;
-    padding: 0 5%;
-    margin-top: 1em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    margin-bottom: 2rem
-  }
-
-  .teamAbout, .teamImages {
-    width: 90%
-  }
-}
-
-</style>
 
 @endsection
