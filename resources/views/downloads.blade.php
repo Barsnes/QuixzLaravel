@@ -19,7 +19,7 @@
   <style>
 
     body {
-      background-color: #2B63AF;
+      background-color: #232323;
     }
 
     .downloads {
