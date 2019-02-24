@@ -25,9 +25,9 @@
       <div class="col">
         <select class="form-control" name="active">
             @if ($team->active == '1')
-              <option value="" disabled selected>Select one, current is ACTIVE
+              <option value="" disabled selected>Active
             @elseif ($team->active == '0' )
-              <option value="" disabled selected>Select one, current is INACTIVE
+              <option value="" disabled selected>Inactive
             @else <option value="" disabled selected>Select one
             @endif </option>
           <option value="1">Active</option>

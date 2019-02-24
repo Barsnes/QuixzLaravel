@@ -56,6 +56,11 @@
   <div class="col">
     <label for="active">Active</label>
     <select class="form-control" name="active">
+      @if ($player->active == 'true')
+        <option value="true" disabled selected>Active</option>
+      @else
+        <option value="false" disabled selected>Inactive</option>
+      @endif
       <option value="true">Active</option>
       <option value="false">Inactive</option>
     </select>
