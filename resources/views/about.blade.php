@@ -59,7 +59,6 @@
       <h1>{{ $about->title }}</h1>
 
       <p>
-        {{-- @markdown($about->content) --}}
 
           {!! $about->content !!}
 
