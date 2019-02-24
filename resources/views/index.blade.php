@@ -73,9 +73,9 @@
     <h1>Recent News</h1>@if ($role == 'Admin')
     @endif
     <div class="news">
-      <?php $articleCount = 0 ?>
+      @php $articleCount = 0 @endphp
       @foreach ($articles as $article)
-      <?php $articleCount++ ?>
+      @php $articleCount++ @endphp
       @if ($articleCount <= 2)
       <a class="article_list" href=" {{ url('/news', $article->slug) }}">
         <img src="{{ asset('/images/' . $article->image) }}" alt="some dummy text" og:image>
@@ -109,8 +109,8 @@
     @php $tournCount = 0; @endphp
     @foreach ($tournaments->reverse() as $tourn)
       @php
-        $date_now = date("d M Y"); // this format is string comparable
-        $tournDate = date('d M Y', strtotime($tourn->date));
+        $tournDate = new DateTime($tourn['date']);
+        $date_now = new DateTime();
       @endphp
       @if ($date_now < $tournDate && $tournCount < 2 && $tourn->finished == '0')
         @php $tournCount ++ @endphp
@@ -128,7 +128,7 @@
       @endif
       @if ($tournCount == 0)
         @php $tournCount ++ @endphp
-        <h4>No upcoming tournaments</h4>
+        <h4>No ongoing tournaments</h4>
       @endif
     @endforeach
   </div>
@@ -136,13 +136,14 @@
   <div class="teamMatches">
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
-      <?php $matchCount = 0; ?>
+      @php $matchCount = 0; @endphp
       @foreach ($matches as $match)
-        <?php  $date_now = date("d M Y"); // this format is string comparable
-            $matchDate = date('d M Y', strtotime($match->date));
-        ?>
+        @php
+            $matchDate = new DateTime($match['date']);
+            $date_now = new DateTime();
+        @endphp
         @if ($date_now < $matchDate && $matchCount < 3)
-          <?php $matchCount ++ ?>
+          @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
@@ -164,17 +165,22 @@
             </div>
             @endif
       @endforeach
+      @if ($matchCount == '0')
+        @php $matchCount ++; @endphp
+        <h4>No upcoming matches</h4>
+      @endif
     </div>
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
-      <?php $matchCount = 0; ?>
+      @php $matchCount = 0; @endphp
       @foreach ($matchesReverse as $match)
-        <?php  $date_now = date("d M Y"); // this format is string comparable
-            $matchDate = date('d M Y', strtotime($match->date));
-        ?>
+        @php
+            $matchDate = new DateTime($match['date']);
+            $date_now = new DateTime();
+        @endphp
             @if ($date_now > $matchDate && $matchCount < 3)
-              <?php $matchCount ++ ?>
+              @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
