@@ -111,13 +111,13 @@
   <div class="teamMatches">
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
-      <?php $matchCount = 0; ?>
+      @php $matchCount = 0; @endphp
       @foreach ($player->team->match as $match)
-        <?php  $date_now = date("d M Y"); // this format is string comparable
+        @php  $date_now = date("d M Y"); // this format is string comparable
             $matchDate = date('d M Y', strtotime($match->date));
-        ?>
+        @endphp
         @if ($date_now < $matchDate && $matchCount < 3)
-          <?php $matchCount ++ ?>
+          @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
@@ -142,13 +142,13 @@
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
-      <?php $matchCount = 0; ?>
+      @php $matchCount = 0; @endphp
       @foreach ($player->team->match as $match)
-        <?php  $date_now = date("d M Y"); // this format is string comparable
+        @php  $date_now = date("d M Y"); // this format is string comparable
             $matchDate = date('d M Y', strtotime($match->date));
-        ?>
+        @endphp
             @if ($date_now > $matchDate && $matchCount < 3)
-              <?php $matchCount ++ ?>
+              @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
@@ -202,8 +202,11 @@
       <div class="title">
         <h1>Teammates</h1>
       </div>
+      @php
+        $currPlayer = $player->playerName;
+      @endphp
       @foreach ($player->team->player as $player)
-        @if ($player->active == 'true')
+        @if ($player->active == 'true' && $player->playerName != $currPlayer)
           <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF" class="card">
             <img src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
             <div class="container">
