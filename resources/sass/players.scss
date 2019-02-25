@@ -39,18 +39,27 @@
 
 .social-media {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: inline-block;
   margin: 0 auto;
-  text-align: center;
   margin-top: 12%
 }
 
 .social-media a {
   color: #FFF;
+  text-align: left;
   text-decoration: none;
+  margin-left: 1rem;
   font-size: 2rem;
-  grid-column: span 1;
+  transition: color 150ms ease;
+
+  &:nth-of-type(1){
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: $yellow;
+    transition: color 150ms ease;
+  }
 }
 
 .player__text {
