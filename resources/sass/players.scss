@@ -68,10 +68,17 @@
   text-align: left;
   font-family: "Lato";
   padding: 2rem 0 7rem 0;
+  display: grid;
+  grid-template-rows: 1fr;
 
   & .title {
     text-align: left;
     font-family: "Raleway"
+  }
+
+  & img {
+    width: 75%;
+    margin: 1rem auto;
   }
 }
 
