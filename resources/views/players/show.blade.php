@@ -196,6 +196,24 @@
       @endforeach
     </div>
   </div>
+
+  <div class="playerTeam">
+    <div class="teamBody">
+      <div class="title">
+        <h1>Teammates</h1>
+      </div>
+      @foreach ($player->team->player as $player)
+        @if ($player->active == 'true')
+          <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF" class="card">
+            <img src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
+            <div class="container">
+              <h2>{{ $player->firstName }} <b style="color: #F8B52A">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
+            </div>
+          </a>
+        @endif
+      @endforeach
+    </div>
+  </div>
 </div>
 
 @endsection
