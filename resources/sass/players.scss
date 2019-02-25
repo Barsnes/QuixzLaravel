@@ -54,15 +54,16 @@
 }
 
 .player__text {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   text-align: left;
-  font-family: "Lato"
-}
+  font-family: "Lato";
+  padding: 2rem 0 7rem 0;
 
-.player__text .title {
-  text-align: center;
-  font-family: "Raleway"
+  & .title {
+    text-align: left;
+    font-family: "Raleway"
+  }
 }
 
 @media screen and (max-width: 650px) {
