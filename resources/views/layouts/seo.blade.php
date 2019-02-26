@@ -3,6 +3,16 @@
 <meta itemprop="description" content="{{ page.description }}">
 <meta itemprop="image" content="https://quixz.eu{{ page.image }}">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110310303-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110310303-3');
+</script>
+
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://quixz.eu">
 <meta property="og:type" content="website">
