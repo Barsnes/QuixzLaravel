@@ -10,6 +10,8 @@ This project does not include comments explaining what is happening. It is not m
 
 If you fork this project, make sure your read [ Quixz' rules](https://quixz.eu/downloads " Quixz eSports website.") on using their logo and graphics.
 
+If you have any questions or concerns, please create an issue or email me at [tobiasbarsnes@gmail.com](mailto:tobiasbarsnes@gmail.com "tobiasbarsnes@gmail.com")
+
 
 ## Tools Used
 
