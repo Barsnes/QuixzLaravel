@@ -91,7 +91,7 @@ class TeamController extends Controller
     public function update(Request $request, $id)
     {
       $this->validate($request, array(
-          'body' => 'max:1200',
+          'body' => 'max:10000',
           'wins' => 'integer',
           'loss' => 'integer',
         ));
