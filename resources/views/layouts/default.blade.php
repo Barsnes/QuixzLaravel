@@ -57,7 +57,9 @@
 <div class="sponsors">
   <h3>Sponsored by</h3>
   @foreach ($sponsors as $sponsor)
-    <a href="{{ $sponsor->website }}"><img src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
+    @if ($sponsor->active != 0)
+      <a target="_blank" href="{{ $sponsor->website }}"><img src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
+    @endif
   @endforeach
 </div>
 
