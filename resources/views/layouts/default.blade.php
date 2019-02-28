@@ -54,6 +54,13 @@
 
 @yield('content')
 
+<div class="sponsors">
+  <h3>Sponsored by</h3>
+  @foreach ($sponsors as $sponsor)
+    <a href="{{ $sponsor->website }}"><img src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
+  @endforeach
+</div>
+
 <div class="footer">
   <ul>
     <li>Copyright © {{ date("Y") }} Quixz eSports All Rights Reserved.</li>
@@ -65,7 +72,6 @@
     <a href="/downloads"><h3>Downloads</h3></a>
     <a href="/management"><h3>Management</h3></a>
   </div>
-
     <div class="media--links">
         <a class="fab fa-youtube-square" href="{{ $social->youtube }}" target="_blank"></a>
         <a class="fab fa-facebook-square" href="{{ $social->facebook }}" target="_blank"></a>

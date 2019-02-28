@@ -59,6 +59,22 @@
 
 // Footer
 
+.sponsors {
+  padding: 2rem;
+  grid-gap: 1rem;
+  display: grid;
+  border-top: 1px solid #FFF;
+  grid-template-columns: repeat(4, 1fr);
+
+  & a {
+    margin: auto;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
 .footer {
   height: auto;
   background: #232323;

@@ -45,6 +45,7 @@ Route::resource('/admin/index', 'IndexController');
 Route::resource('/admin/tourn-match', 'TournamentMatchController');
 Route::resource('/admin/management', 'ManagementController');
 Route::resource('/admin/servers', 'ServerController');
+Route::resource('/admin/sponsors', 'SponsorsController');
 
 Auth::routes();
 

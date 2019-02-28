@@ -187,6 +187,14 @@
     grid-row-end: 4;
   }
 
+  .sponsors {
+    grid-template-columns: repeat(2, 1fr);
+
+    & a {
+      margin: auto;
+    }
+  }
+
   .footer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto auto auto 10rem;
