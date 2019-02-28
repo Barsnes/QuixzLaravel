@@ -125,12 +125,13 @@
               <h3>Not Finished</h3>
             </div>
           </a>
-      @endif
-      @if ($tournCount == 0)
-        @php $tournCount ++ @endphp
-        <h4>No ongoing tournaments</h4>
+          @continue
       @endif
     @endforeach
+    @if ($tournCount == 0)
+      @php $tournCount ++ @endphp
+      <h4>No ongoing tournaments</h4>
+    @endif
   </div>
 
   <div class="teamMatches">
