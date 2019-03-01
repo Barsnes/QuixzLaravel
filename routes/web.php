@@ -1,5 +1,6 @@
 <?php
 use Spatie\Sitemap\SitemapGenerator;
+use App\Player;
 
 Route::get('sitemap', function() {
 
@@ -55,7 +56,6 @@ Route::get('/discord', function(){
   $url = 'https://discord.gg/6QxSnV5';
   return Redirect::to($url);
 });
-
 
 Route::get('feed', function(){
 

@@ -13,6 +13,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('script')
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -50,6 +54,7 @@
                                   Dashboard
                               </a>
                           </li>
+                          @if ($role == 'Admin')
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:#FFF">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -60,21 +65,21 @@
                                     <a class="dropdown-item" href="/admin/tournaments">Tournaments</a>
                                     <a class="dropdown-item" href="/admin/players">Players</a>
                                     <a class="dropdown-item" href="/admin/teams">Teams</a>
-                                    @if ($role == 'Admin')
-                                      <a class="dropdown-item" href="/admin/users">Users</a>
-                                    @endif
-                                  <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item active" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                    <a class="dropdown-item" href="/admin/users">Users</a>
                                 </div>
                             </li>
+                          @endif
+                        <div class="form-inline">
+                          <a class="btn btn-warning my-2 my-sm-0" href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
+                        </div>
                         @endguest
                     </ul>
                 </div>

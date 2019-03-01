@@ -90,46 +90,53 @@ class PlayerController extends Controller
 
     public function update(Request $request, $id)
     {
-      $this->validate($request, array(
-          'firstName' => 'required|max:20',
-          'playerName' => 'required|max:20',
-          'lastName' => 'required|max:20',
-          'image' => 'image',
-          'body' => '',
-          'active' => 'required',
-          'team_id' => '',
-        ));
 
-        // Store in DB
-        $player = Player::find($id);
+      $player = Player::find($id);
 
-        $player->firstName = $request->firstName;
-        $player->playerName = $request->playerName;
-        $player->lastName = $request->lastName;
-        $player->body = $request->body;
-        $player->steam = $request->steam;
-        $player->instagram = $request->instagram;
-        $player->twitter = $request->twitter;
-        $player->youtube = $request->youtube;
-        $player->twitch = $request->twitch;
-        $player->active = $request->active;
-        $player->team_id = $request->team_id;
+      if ((Auth::user()->role == 'Player' && Auth::user()->player->id == $player->id) || Auth::user()->role == 'Admin') {
+        $this->validate($request, array(
+            'firstName' => 'required|max:20',
+            'playerName' => 'required|max:20',
+            'lastName' => 'required|max:20',
+            'image' => 'image',
+            'body' => '',
+            'active' => 'required',
+            'team_id' => '',
+          ));
+
+          // Store in DB
+          $player = Player::find($id);
+
+          $player->firstName = $request->firstName;
+          $player->playerName = $request->playerName;
+          $player->lastName = $request->lastName;
+          $player->body = $request->body;
+          $player->steam = $request->steam;
+          $player->instagram = $request->instagram;
+          $player->twitter = $request->twitter;
+          $player->youtube = $request->youtube;
+          $player->twitch = $request->twitch;
+          $player->active = $request->active;
 
 
-        if ($request->hasFile('image')) {
-          $image = $request->file('image');
-          $info = getimagesize($image);
-          $extension = image_type_to_extension($info[2]);
-          $filename = time() . $extension;
-          $location = public_path('images/' . $filename);
-          Image::make($image)->resize(500, 500)->save($location);
+          if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $info = getimagesize($image);
+            $extension = image_type_to_extension($info[2]);
+            $filename = time() . $extension;
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(500, 500)->save($location);
 
-          $player->image = $filename;
-        }
+            $player->image = $filename;
+          }
 
-        $player->save();
+          $player->save();
 
-        return redirect()->route('players.index');
+          return back();
+      } else {
+        return back();
+      }
+
     }
 
     public function destroy($id)

@@ -61,11 +61,37 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                          <select name="role">
-                            <option value="Admin">Admin</option>
-                            <option value="Player">Player</option>
-                          </select>
+                        <div class="form-group row">
+                          <label class="col-md-4 col-form-label text-md-right">Role</label>
+                          <div class="col-md-6">
+                            <select id="role" name="role" class="form-control" required>
+                              <option value="Admin">Admin</option>
+                              <option value="Captain">Captain</option>
+                              <option value="Player">Player</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div id="player" class="form-group row">
+                          <label class="col-md-4 col-form-label text-md-right">Player</label>
+                          <div class="col-md-6">
+                            <select name="player_id" class="form-control">
+                              @foreach ($players as $player)
+                                <option value="{{ $player->id }}">{{ $player->playerName }}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                        </div>
+
+                        <div id="captain" class="form-group row">
+                          <label class="col-md-4 col-form-label text-md-right">Team</label>
+                          <div class="col-md-6">
+                            <select name="team_id" class="form-control">
+                              @foreach ($teams as $team)
+                                <option value="{{ $team->id }}">{{ $team->name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
                         </div>
 
                         <div class="form-group row mb-0">
@@ -81,4 +107,28 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function checkPlayerRole(){
+    $("#player").css("display","none");
+      $("#role").change(function(){
+        if ($( "#role option:selected" ).val() == "Player" || $( "#role option:selected" ).val() == 'Captain' ) {
+            $("#player").slideDown("fast"); //Slide Down Effect
+        } else {
+            $("#player").slideUp("fast");  //Slide Up Effect
+        }
+     });
+});
+
+$(document).ready(function checkCaptainRole(){
+    $("#captain").css("display","none");
+      $("#role").change(function(){
+        if ($( "#role option:selected" ).val() == "Captain" ) {
+            $("#captain").slideDown("fast"); //Slide Down Effect
+        } else {
+            $("#captain").slideUp("fast");  //Slide Up Effect
+        }
+     });
+});
+</script>
 @endsection
