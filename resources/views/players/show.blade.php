@@ -197,6 +197,7 @@
     </div>
   </div>
 
+@if ($player->team->player != [])
   <div class="playerTeam">
     <div class="teamBody">
       <div class="title">
@@ -217,6 +218,7 @@
       @endforeach
     </div>
   </div>
+@endif
 </div>
 
 @endsection
