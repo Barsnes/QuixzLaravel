@@ -197,7 +197,7 @@
     </div>
   </div>
 
-@if ($player->team->player != [])
+@if ($player->team->player->count() != '1')
   <div class="playerTeam">
     <div class="teamBody">
       <div class="title">
