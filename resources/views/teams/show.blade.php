@@ -88,19 +88,21 @@
   <div class="teamMatches">
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
-      <?php $matchCount = 0; ?>
+      @php $matchCount = 0; @endphp
       @foreach ($team->match as $match)
-        <?php  $date_now = date("d M Y"); // this format is string comparable
-            $matchDate = date('d M Y', strtotime($match->date));
-        ?>
+        @php
+            $matchDate = new DateTime($match['date']);
+            $date_now = new DateTime();
+        @endphp
         @if ($date_now < $matchDate && $matchCount < 3)
-          <?php $matchCount ++ ?>
+          @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
                   <h2></h2>
                   <div style="margin: auto">
                     <h3>VS</h3>
+                    <h6>{{ $match->team->name }}</h6>
                       @if ($match->link == '')
                       @else
                         <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
@@ -115,23 +117,29 @@
             </div>
             @endif
       @endforeach
+      @if ($matchCount == '0')
+        @php $matchCount ++; @endphp
+        <h4 style="font-family: 'Lato'">No upcoming matches</h4>
+      @endif
     </div>
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
-      <?php $matchCount = 0; ?>
-      @foreach ($team->match as $match)
-        <?php  $date_now = date("d M Y"); // this format is string comparable
-            $matchDate = date('d M Y', strtotime($match->date));
-        ?>
+      @php $matchCount = 0; @endphp
+      @foreach ($team->match->reverse() as $match)
+        @php
+            $matchDate = new DateTime($match['date']);
+            $date_now = new DateTime();
+        @endphp
             @if ($date_now > $matchDate && $matchCount < 3)
-              <?php $matchCount ++ ?>
+              @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
                   <h2>{{ $match->quixzScore }}</h2>
                   <div style="margin: auto">
                     <h3>VS</h3>
+                    <h6>{{ $match->team->name }}</h6>
                       @if ($match->link == '')
                       @else
                         <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
