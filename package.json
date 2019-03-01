@@ -11,17 +11,17 @@
   },
   "devDependencies": {
     "axios": "^0.18",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "cross-env": "^5.1",
     "jquery": "^3.2",
     "laravel-mix": "^4.0.14",
     "lodash": "^4.17.5",
-    "popper.js": "^1.12",
+    "popper.js": "^1.14.7",
     "resolve-url-loader": "2.3.1",
-    "sass": "^1.17.0",
+    "sass": "^1.17.2",
     "sass-loader": "7.*",
-    "vue": "^2.6.6",
-    "vue-template-compiler": "^2.6.6"
+    "vue": "^2.6.7",
+    "vue-template-compiler": "^2.6.7"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -32,7 +32,7 @@
     "node-sass": "^4.11.0",
     "speakingurl": "^14.0.1",
     "util": "^0.11.1",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.6"
   },
   "name": "QuixzLaravel",
   "description": "[![Build Status](https://travis-ci.org/Barsnes/QuixzLaravel.svg?branch=master)](https://travis-ci.org/Barsnes/QuixzLaravel)",

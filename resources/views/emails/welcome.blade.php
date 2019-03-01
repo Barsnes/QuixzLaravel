@@ -8,10 +8,9 @@
 
     <h1>Welcome to Quixz eSports!</h1>
     <hr>
-    <p>You have been registered as an {{ $user->role }}</p>
-    <p>You can access the admin panel <a href="/admin/">here</a></p>
+    <p>Please request a password reset, <a href="https://quixz.eu/password/reset">here</a>, to change your default password!</p>
     <hr>
-    <p>If you need more help, please contact us, and we'll get back to you asap!</p>
+    <p>If you need any help, please contact anyone in management on Discord!</p>
 
   </body>
 </html>

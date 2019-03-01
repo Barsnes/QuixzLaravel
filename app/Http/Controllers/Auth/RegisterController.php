@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Mail\Welcome;
 use Mail;
 use App\Player;
 use App\Team;
@@ -36,6 +37,7 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        $user = $data;
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -43,10 +45,8 @@ class RegisterController extends Controller
             'role' => $data['role'],
             'player_id' => $data['player_id'],
             'team_id' => $data['team_id'],
+            Mail::to($user['email'])->send(new Welcome($user)),
         ]);
-
-        Mail::to($user->email)->send(new Welcome($user));
-
     }
 
     public function showRegistrationForm() {
