@@ -29,14 +29,14 @@
           <option value="{{ $tournament->team->id }}">{{ $tournament->team->name }}</option>
         </select>
       </div>
-      <div class="col">
+      {{-- <div class="col">
         <label for="format">Format</label>
         <select class="form-control" name="format">
           <option value="{{ $tournament->format }}">{{ $tournament->format }}</option>
           <option value="Best of One">Best of One</option>
           <option value="Best of Three">Best of Three</option>
         </select>
-      </div>
+      </div> --}}
     </div>
 
   <div class="row">
@@ -58,9 +58,9 @@
       <div class="col">
         <label for="finished">Finished:</label>
         <select class="form-control" name="finished">
-          <option @if ($tournament->finished == '0')selected @endif value="0">Not Finished</option>
+          <option @if ($tournament->finished == '0')selected @endif value="0">Upcoming</option>
           <option @if ($tournament->finished == '1')selected @endif value="1">Finished</option>
-          <option @if ($tournament->finished == '2')selected @endif value="2">Not Started</option>
+          <option @if ($tournament->finished == '2')selected @endif value="2">Ongoing</option>
         </select>
       </div>
     </div>

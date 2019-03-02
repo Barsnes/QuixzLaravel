@@ -22,6 +22,5 @@ class Tournament extends Model
     } else {
       return 'Ongoing';
     }
-
   }
 }

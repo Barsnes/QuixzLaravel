@@ -54,7 +54,7 @@
       <div class="col">
         <label for="finished">Finished:</label>
         <select class="form-control" name="finished">
-          <option value="0">Not Finished</option>
+          <option value="0">Upcoming</option>
           <option value="1">Finished</option>
           <option value="2">Ongoing</option>
         </select>
