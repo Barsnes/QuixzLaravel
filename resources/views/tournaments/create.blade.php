@@ -36,14 +36,14 @@
         <label for="image">Size: 300x300</em></label>
         {{ Form::file('image', array('class' => 'form-control')) }}
       </div>
-      <div class="col">
+      {{-- <div class="col">
         <label for="format">Format</label>
         <select class="form-control" name="format">
           <option value="">Choose One</option>
           <option value="">Best of One</option>
           <option value="">Best of Three</option>
         </select>
-      </div>
+      </div> --}}
     </div>
 
     <div class="row">
@@ -56,7 +56,7 @@
         <select class="form-control" name="finished">
           <option value="0">Not Finished</option>
           <option value="1">Finished</option>
-          <option value="2">Not Started</option>
+          <option value="2">Ongoing</option>
         </select>
       </div>
     </div>

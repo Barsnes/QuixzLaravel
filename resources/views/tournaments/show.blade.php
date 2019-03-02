@@ -20,14 +20,14 @@
                         <div class="card-body">
                           <h7 class="card-text">{{ date('d M Y', strtotime($match->date)) }}</h7> <br>
                           <h7 class="card-text text-muted">VS {{ $match->enemy }}</h7> <br>
-                          <a style="margin-top:.3rem" href="/admin/tourn-match/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                          <a style="margin-top:.3rem" href="/admin/matches/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                         </div>
                       </div>
                 @endforeach
               </div>
               <a href="/tournaments/{{ $tournament->slug }}" class="btn btn-info btn-sm">View</a>
               <a href="/admin/tournaments/{{ $tournament->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
-              <a href="/admin/tourn-match/create" class="btn btn-success btn-sm">Add Match</a>
+              <a href="/admin/matches/create" class="btn btn-success btn-sm">Add Match</a>
             </div>
           </div>
     </div>

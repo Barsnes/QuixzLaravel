@@ -96,25 +96,30 @@
         @endphp
         @if ($date_now < $matchDate && $matchCount < 3)
           @php $matchCount ++ @endphp
-            <div class="match_body">
-                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
-                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-                  <h2></h2>
-                  <div style="margin: auto">
-                    <h3>VS</h3>
-                    <h6>{{ $match->team->name }}</h6>
-                      @if ($match->link == '')
-                      @else
-                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
-                      @endif
-                  </div>
-                  <h2></h2>
-                  @if ($match->enemyLogo != '')
-                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+          <div class="match_body">
+              <h1>{{ date('d M Y', strtotime($match->date)) }}    -
+                  @if ($match->link == '')
                   @else
-                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                    <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
                   @endif
-            </div>
+              </h1>
+              <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
+                <div class="matchEnemy" style="margin: auto">
+                  <div class="matchEnemy__quixz">
+                    <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                    <h6>{{ $match->team->name }}</h6>
+                  </div>
+                  <h3>VS</h3>
+                  <div class="matchEnemy__info">
+                    <h6>{{ $match->enemy }}</h6>
+                    @if ($match->enemyLogo != '')
+                      <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                    @else
+                      <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                    @endif
+                  </div>
+                </div>
+          </div>
             @endif
       @endforeach
       @if ($matchCount == '0')
@@ -133,25 +138,33 @@
         @endphp
             @if ($date_now > $matchDate && $matchCount < 3)
               @php $matchCount ++ @endphp
-            <div class="match_body">
-                <h1>{{ date('d M Y', strtotime($match->date)) }}</h1>
-                <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-                  <h2>{{ $match->quixzScore }}</h2>
-                  <div style="margin: auto">
-                    <h3>VS</h3>
-                    <h6>{{ $match->team->name }}</h6>
+              <div class="match_body">
+                  <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                       @if ($match->link == '')
                       @else
-                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none"><h3 class="matchButton">View</h3></a>
+                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
                       @endif
-                  </div>
-                  <h2>{{ $match->enemyScore }}</h2>
-                  @if ($match->enemyLogo != '')
-                    <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
-                  @else
-                    <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
-                  @endif
-            </div>
+                  </h1>
+                  <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
+                    <div class="matchEnemy" style="margin: auto">
+                      <div class="matchEnemy__quixz">
+                        <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                        <h6>{{ $match->team->name }}</h6>
+                      </div>
+                      <h3>VS</h3>
+                      <div class="matchEnemy__info">
+                        <h6>{{ $match->enemy }}</h6>
+                        @if ($match->enemyLogo != '')
+                          <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                        @else
+                          <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="matchScore">
+                      <h2>{{ $match->quixzScore }} : {{ $match->enemyScore }}</h2>
+                    </div>
+              </div>
             @endif
       @endforeach
     </div>

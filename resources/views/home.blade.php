@@ -69,8 +69,8 @@
                 @php $matchCount = 0; @endphp
                 @foreach ($matches as $match)
                   @php
-                    $date_now = date("d M Y"); // this format is string comparable
-                    $matchDate = date('d M Y', strtotime($match->date));
+                    $matchDate = new DateTime($match['date']);
+                    $date_now = new DateTime();
                   @endphp
                   @if ($date_now < $matchDate && $matchCount < 3)
                     @php $matchCount ++ @endphp
@@ -101,16 +101,12 @@
           <div class="row">
             @php $tournCount = 0; @endphp
             @foreach ($tournaments as $tourn)
-              @php
-                $date_now = date("d M Y"); // this format is string comparable
-                $tournDate = date('d M Y', strtotime($tourn->date));
-              @endphp
-              @if ($date_now < $tournDate && $tournCount < 3)
+              @if ($tourn->finished == '0' || '2' && $tournCount < 3)
                 @php $tournCount ++ @endphp
                 <div class="col-sm-6" style="margin-bottom: 1rem">
                   <div class="card" style="width: 100%;">
                     <div class="card-body">
-                      <h5 class="card-title"><a href="/admin/tournaments/{{ $tourn->id }}">{{ $tourn->name }}</a></h5>
+                      <h5 class="card-title"><a href="/admin/tournaments/{{ $tourn->id }}">{{ $tourn->name }}</a><span style="font-size: .8rem"> - {{ $tourn->getFinished() }}</span></h5>
                       <h7 class="card-text">{{ $tourn->team->name }}</h7> <br>
                       <h7 class="card-text">{{ date('d M Y', strtotime($tourn->date)) }}</h7> <br>
                       @php

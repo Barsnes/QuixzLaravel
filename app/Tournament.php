@@ -13,4 +13,15 @@ class Tournament extends Model
   public function match(){
     return $this->hasMany('App\Match');
   }
+
+  function getFinished(){
+    if ($this->finished == '0') {
+      return 'Not Finished';
+    } elseif ($this->finished == '1'){
+      return 'Finished';
+    } else {
+      return 'Ongoing';
+    }
+
+  }
 }

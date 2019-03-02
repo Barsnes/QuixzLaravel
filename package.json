@@ -12,7 +12,7 @@
   "devDependencies": {
     "axios": "^0.18",
     "bootstrap": "^4.3.1",
-    "cross-env": "^5.1",
+    "cross-env": "^5.2.0",
     "jquery": "^3.2",
     "laravel-mix": "^4.0.14",
     "lodash": "^4.17.5",
@@ -20,8 +20,8 @@
     "resolve-url-loader": "2.3.1",
     "sass": "^1.17.2",
     "sass-loader": "7.*",
-    "vue": "^2.6.7",
-    "vue-template-compiler": "^2.6.7"
+    "vue": "^2.6.8",
+    "vue-template-compiler": "^2.6.8"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -29,6 +29,8 @@
     "jquery-slugify": "^1.2.5",
     "laravel-elixir-vue-2": "^0.3.0",
     "markdown": "^0.5.0",
+    "mix": "0.0.1",
+    "node": "^10.15.2",
     "node-sass": "^4.11.0",
     "speakingurl": "^14.0.1",
     "util": "^0.11.1",
