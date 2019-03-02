@@ -101,7 +101,7 @@
           <div class="row">
             @php $tournCount = 0; @endphp
             @foreach ($tournaments as $tourn)
-              @if ($tourn->finished == '0' || '2' && $tournCount < 3)
+              @if ($tourn->finished == '0' || $tourn->finished == '2' && $tournCount < 3)
                 @php $tournCount ++ @endphp
                 <div class="col-sm-6" style="margin-bottom: 1rem">
                   <div class="card" style="width: 100%;">
