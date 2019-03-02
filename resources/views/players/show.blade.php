@@ -113,8 +113,9 @@
       <h1>Upcoming Matches</h1>
       @php $matchCount = 0; @endphp
       @foreach ($player->team->match as $match)
-        @php  $date_now = date("d M Y"); // this format is string comparable
-            $matchDate = date('d M Y', strtotime($match->date));
+        @php
+          $matchDate = new DateTime($match['date']);
+          $date_now = new DateTime();
         @endphp
         @if ($date_now < $matchDate && $matchCount < 3)
           @php $matchCount ++ @endphp
@@ -138,14 +139,19 @@
             </div>
             @endif
       @endforeach
+      @if ($matchCount == '0')
+        @php $matchCount ++; @endphp
+        <h4 style="font-family:'Lato'">No upcoming matches</h4>
+      @endif
     </div>
 
     <div class="recentMatches">
       <h1>Recent Matches</h1>
       @php $matchCount = 0; @endphp
       @foreach ($player->team->match as $match)
-        @php  $date_now = date("d M Y"); // this format is string comparable
-            $matchDate = date('d M Y', strtotime($match->date));
+        @php
+          $matchDate = new DateTime($match['date']);
+          $date_now = new DateTime();
         @endphp
             @if ($date_now > $matchDate && $matchCount < 3)
               @php $matchCount ++ @endphp

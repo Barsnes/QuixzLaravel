@@ -168,7 +168,7 @@
       @endforeach
       @if ($matchCount == '0')
         @php $matchCount ++; @endphp
-        <h4>No upcoming matches</h4>
+        <h4 style="font-family:'Lato'">No upcoming matches</h4>
       @endif
     </div>
 
