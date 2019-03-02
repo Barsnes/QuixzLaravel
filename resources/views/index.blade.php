@@ -107,7 +107,7 @@
   <div class="upcomingTournaments">
     <div class="title">
       <h1>Tournaments</h1>
-      <a target="_blank" href="/tournaments" style="color: #F8B52A; text-decoration: none; font-family: Lato; font-size: .8rem; margin-top: -2rem">View All</a>
+      <a href="/tournaments" style="color: #F8B52A; text-decoration: none; font-family: Lato; font-size: .8rem; margin-top: -2rem">View All</a>
     </div>
     @php $tournCount = 0; @endphp
     @foreach ($tournaments->reverse() as $tourn)

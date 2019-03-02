@@ -15,6 +15,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/teams', 'PagesController@teams');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/servers', 'ServerController@servers');
+Route::get('/tournaments', 'TournamentsController@allTournaments');
 
 Route::get('/downloads', 'PagesController@downloads');
 Route::get('/management', 'PagesController@management');

@@ -16,7 +16,7 @@ class Tournament extends Model
 
   function getFinished(){
     if ($this->finished == '0') {
-      return 'Not Finished';
+      return 'Upcoming';
     } elseif ($this->finished == '1'){
       return 'Finished';
     } else {

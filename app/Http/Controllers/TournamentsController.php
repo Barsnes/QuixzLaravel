@@ -11,6 +11,7 @@ use Image;
 use App\Team;
 use App\Tournament;
 use App\TournamentMatch;
+use App\Sponsor;
 
 
 class TournamentsController extends Controller
@@ -19,6 +20,13 @@ class TournamentsController extends Controller
   public function __construct() {
     $this->middleware('auth');
   }
+
+    public function allTournaments(){
+      $tournaments = Tournament::get()->reverse();
+      $sponsors = Sponsor::get();
+
+      return view('allTournaments')->withTournaments($tournaments)->withSponsors($sponsors);
+    }
 
     public function index()
     {
