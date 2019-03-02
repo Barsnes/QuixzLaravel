@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Server;
 use Illuminate\Http\Request;
+use App\Sponsor;
 
 class ServerController extends Controller
 {
@@ -14,7 +15,9 @@ class ServerController extends Controller
   // Show Servers
   public function servers(){
     $servers = Server::get();
-    return view('servers.show')->withServers($servers);
+    $sponsors = Sponsor::get();
+
+    return view('servers.show')->withServers($servers)->withSponsors($sponsors);
   }
 
     public function index()
