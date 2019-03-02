@@ -100,6 +100,7 @@
       grid-column: 1 / 2;
       font-size: .7rem;
       text-align: left;
+      margin-top: 0;
     }
 
     & a {
@@ -139,7 +140,7 @@
       }
 
       &__quixz {
-        
+
         & h6 {
           text-align: left;
           margin: auto .3rem;
