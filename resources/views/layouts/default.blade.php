@@ -42,7 +42,7 @@
         <li><a href="/about">About</a></li>
         <li><a href="/news">News</a></li>
         <li><a href="/teams">Teams</a></li>
-        <li><a href="/servers">Servers</a></li>
+        <li><a href="/tournaments">Tournaments</a></li>
         @if ($role == 'Admin')
           <li><a href="/admin">Admin Dashboard</a></li>
         @elseif ($role == 'Player')
@@ -73,6 +73,7 @@
   <div class="links">
     <a href="/downloads"><h3>Downloads</h3></a>
     <a href="/management"><h3>Management</h3></a>
+    <a href="/servers"><h3>Servers</h3></a>
   </div>
     <div class="media--links">
         <a class="fab fa-youtube-square" href="{{ $social->youtube }}" target="_blank"></a>

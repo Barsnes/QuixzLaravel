@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Downloads')
+@section('title', 'Tournaments')
 
 @section('content')
 
