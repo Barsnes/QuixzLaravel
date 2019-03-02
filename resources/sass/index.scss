@@ -140,6 +140,7 @@
       }
 
       &__quixz {
+        grid-template-columns: 1fr 2fr;
 
         & h6 {
           text-align: left;
