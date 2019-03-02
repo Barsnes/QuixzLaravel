@@ -13,6 +13,7 @@ use App\Team;
 use App\Tournament;
 use App\Management;
 use App\Game;
+use App\Server;
 
 class PagesController extends Controller
 {
@@ -97,6 +98,19 @@ class PagesController extends Controller
     $person = Management::where('slug', '=', $slug)->first();
 
     return view('management.show')->withPlayer($person);
+  }
+
+  // Show Servers
+  public function servers(){
+    $servers = Server::get();
+
+    return view('servers.show')->withServers($servers);
+  }
+
+  public function tournaments(){
+    $tournaments = Tournament::get()->reverse();
+
+    return view('allTournaments')->withTournaments($tournaments);
   }
 
 }

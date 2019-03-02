@@ -12,14 +12,6 @@ class ServerController extends Controller
     $this->middleware('auth');
   }
 
-  // Show Servers
-  public function servers(){
-    $servers = Server::get();
-    $sponsors = Sponsor::get();
-
-    return view('servers.show')->withServers($servers)->withSponsors($sponsors);
-  }
-
     public function index()
     {
       $servers = Server::get();
