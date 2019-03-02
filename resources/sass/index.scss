@@ -133,7 +133,16 @@
 
         & img {
           height: 100%;
+          min-height: 3.5rem;
           margin: auto;
+        }
+      }
+
+      &__quixz {
+        
+        & h6 {
+          text-align: left;
+          margin: auto .3rem;
         }
       }
     }
