@@ -283,7 +283,6 @@
                   <option value="false" selected>Inactive</option>
                   <option value="true">Active</option>
                 @endif
-
               </select>
             </div>
           </div>

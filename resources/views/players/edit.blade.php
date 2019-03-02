@@ -57,12 +57,12 @@
     <label for="active">Active</label>
     <select class="form-control" name="active">
       @if ($player->active == 'true')
-        <option value="true" disabled selected>Active</option>
+        <option value="true" selected>Active</option>
+        <option value="false">Inactive</option>
       @else
-        <option value="false" disabled selected>Inactive</option>
+        <option value="false" selected>Inactive</option>
+        <option value="true">Active</option>
       @endif
-      <option value="true">Active</option>
-      <option value="false">Inactive</option>
     </select>
   </div>
 </div>
