@@ -222,10 +222,23 @@
 
       .links {
         grid-column: 1 / 4;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        & a {
+          display: block;
+        }
       }
 
       .media--links {
         grid-column: 1 / 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+
+        & a {
+          
+        }
       }
 
       .media--links a {
