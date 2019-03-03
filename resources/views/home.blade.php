@@ -67,12 +67,12 @@
               <h6 class="card-subtitle mb-2 text-muted">Upcoming</h6>
               <div class="row">
                 @php $matchCount = 0; @endphp
-                @foreach ($matches as $match)
+                @foreach ($matches->reverse() as $match)
                   @php
                     $matchDate = new DateTime($match['date']);
                     $date_now = new DateTime();
                   @endphp
-                  @if ($date_now < $matchDate && $matchCount < 3)
+                  @if ($date_now < $matchDate && $matchCount < 4)
                     @php $matchCount ++ @endphp
                     <div class="col-sm-6" style="margin-bottom: 1rem">
                       <div class="card" style="width: 100%;">
