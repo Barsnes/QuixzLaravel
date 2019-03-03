@@ -14,7 +14,7 @@
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
       @endphp
-      @if ($tournCount < 2 && $tourn->finished == '2')
+      @if ($tourn->finished == '2')
         @php $tournCount ++ @endphp
           <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
             <img src="{{ asset('images/' . $tourn->image) }}" alt="">
@@ -46,7 +46,7 @@
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
       @endphp
-      @if ($tournCount < 2 && $tourn->finished == '0')
+      @if ($tourn->finished == '0')
         @php $tournCount ++ @endphp
           <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
             <img src="{{ asset('images/' . $tourn->image) }}" alt="">
