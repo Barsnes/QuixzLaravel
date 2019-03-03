@@ -31,8 +31,9 @@ class PagesController extends Controller
 
   public function about() {
     $about = DB::table('about')->select()->get()->get(0);
+    $players = Management::get();
 
-    return view("about")->with("about", $about);
+    return view("about")->with('about', $about)->withPlayers($players);
   }
 
   public function teams() {

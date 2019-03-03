@@ -57,7 +57,6 @@
   <h1>Management</h1>
 </div>
 
-
 <div class="teamBody">
   @foreach ($players as $player)
     <a style="text-decoration:none; color:#FFF" class="card" href="/management/{{ $player->slug }}">

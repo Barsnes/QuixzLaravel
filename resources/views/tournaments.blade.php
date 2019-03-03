@@ -41,7 +41,7 @@
                 @endif
             </h1>
             <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
-              <div class="matchEnemy" style="margin: auto">
+              <div class="matchEnemy">
                 <div class="matchEnemy__quixz">
                   <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
                   <h6>{{ $match->team->name }}</h6>
@@ -70,7 +70,7 @@
               @endif
           </h1>
           <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
-            <div class="matchEnemy" style="margin: auto">
+            <div class="matchEnemy">
               <div class="matchEnemy__quixz">
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
                 <h6>{{ $match->team->name }}</h6>

@@ -67,6 +67,21 @@
     </div>
   </div>
 
+  <div class="teamHeader">
+    <h1>Management</h1>
+  </div>
+
+  <div class="teamBody">
+    @foreach ($players as $player)
+      <a style="text-decoration:none; color:#FFF" class="card" href="/management/{{ $player->slug }}">
+        <img src="{{ asset('/images/' . $player->image) }}" alt="" style="width:100%">
+        <div class="container">
+          <h2 syle="text-decoration: none; color: #FFF">{{ $player->name }}</h2>
+        </div>
+      </a>
+    @endforeach
+  </div>
+
 
 <style media="screen">
   .about_content img {
