@@ -67,7 +67,7 @@
               <h6 class="card-subtitle mb-2 text-muted">Upcoming</h6>
               <div class="row">
                 @php $matchCount = 0; @endphp
-                @foreach ($matches->reverse() as $match)
+                @foreach ($matches as $match)
                   @php
                     $matchDate = new DateTime($match['date']);
                     $date_now = new DateTime();
