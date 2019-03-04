@@ -113,7 +113,7 @@
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();
         @endphp
-        @if ($date_now < $matchDate && $matchCount < 3)
+        @if ($date_now < $matchDate && $matchCount < 4)
           @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}    -
