@@ -44,7 +44,7 @@ class TournamentsController extends Controller
           'time' => '',
           'format' => '',
           'link' => '',
-          'finished' => '',
+          'finished' => 'required|integer',
         ));
 
         // Store in DB
@@ -56,10 +56,7 @@ class TournamentsController extends Controller
         $tourn->time = $request->time;
         $tourn->format = $request->format;
         $tourn->link = $request->link;
-        if (isset($request->finished)) {
-          $tourn->finished = $request->finished;
-        };
-
+        $tourn->finished = $request->finished;
         $value = $tourn->name;
         $tourn->slug = str_slug($value);
 
@@ -103,6 +100,7 @@ if ($request->hasFile('image')) {
           'time' => '',
           'format' => '',
           'link' => '',
+          'finished' => 'required|integer',
         ));
 
         // Store in DB
@@ -114,6 +112,7 @@ if ($request->hasFile('image')) {
         $tourn->time = $request->time;
         $tourn->format = $request->format;
         $tourn->link = $request->link;
+        $tourn->finished = $request->finished;
 
 
         $value = $tourn->name;
