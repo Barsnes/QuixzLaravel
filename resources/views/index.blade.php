@@ -104,39 +104,6 @@
 @endforeach
   </div>
 
-  <div class="upcomingTournaments">
-    <div class="title">
-      <h1>Tournaments</h1>
-      <a href="/tournaments" style="color: #F8B52A; text-decoration: none; font-family: Lato; font-size: .8rem; margin-top: -2rem">View All</a>
-    </div>
-    @php $tournCount = 0; @endphp
-    @foreach ($tournaments->sortBy('date') as $tourn)
-      @php
-        $tournDate = new DateTime($tourn['date']);
-        $date_now = new DateTime();
-      @endphp
-      @if ($tournCount < 2 && $tourn->finished == '2')
-        @php $tournCount ++ @endphp
-          <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
-            <img src="{{ asset('images/' . $tourn->image) }}" alt="">
-            <div class="tournamentInfoLeft">
-              <h2>{{ $tourn->name }}</h2>
-              <h3>{{ $tourn->team->name }}</h3>
-            </div>
-            <div class="tournamentInfoRight">
-              <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
-              <h3>{{ $tourn->getFinished() }}</h3>
-            </div>
-          </a>
-          @continue
-      @endif
-    @endforeach
-    @if ($tournCount == 0)
-      @php $tournCount ++ @endphp
-      <h4>No ongoing tournaments</h4>
-    @endif
-  </div>
-
   <div class="teamMatches">
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
@@ -220,6 +187,39 @@
             @endif
       @endforeach
     </div>
+  </div>
+
+  <div class="upcomingTournaments">
+    <div class="title">
+      <h1>Tournaments</h1>
+      <a href="/tournaments" style="color: #F8B52A; text-decoration: none; font-family: Lato; font-size: .8rem; margin-top: -2rem">View All</a>
+    </div>
+    @php $tournCount = 0; @endphp
+    @foreach ($tournaments->sortBy('date') as $tourn)
+      @php
+        $tournDate = new DateTime($tourn['date']);
+        $date_now = new DateTime();
+      @endphp
+      @if ($tournCount < 2 && $tourn->finished == '2')
+        @php $tournCount ++ @endphp
+          <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
+            <img src="{{ asset('images/' . $tourn->image) }}" alt="">
+            <div class="tournamentInfoLeft">
+              <h2>{{ $tourn->name }}</h2>
+              <h3>{{ $tourn->team->name }}</h3>
+            </div>
+            <div class="tournamentInfoRight">
+              <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
+              <h3>{{ $tourn->getFinished() }}</h3>
+            </div>
+          </a>
+          @continue
+      @endif
+    @endforeach
+    @if ($tournCount == 0)
+      @php $tournCount ++ @endphp
+      <h4>No ongoing tournaments</h4>
+    @endif
   </div>
 
   </body>
