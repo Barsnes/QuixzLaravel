@@ -90,6 +90,17 @@
           </div>
         </div>
 
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nationality">Nationality <span class="text-muted">ISO 3166-1 alpha-2</span> </label>
+            <input class="form-control" type="text" name="nationality" value="">
+          </div>
+          <div class="col">
+            <label for="role">Role</label>
+            <input class="form-control" type="text" name="role" value="">
+          </div>
+        </div>
+
         <div class="row">
           <div class="col">
             <label for="body">About Player</label>

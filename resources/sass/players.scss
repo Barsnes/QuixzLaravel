@@ -19,6 +19,15 @@
   margin: 1rem 15%;
   background-color: $blue;
   box-shadow: 0 0 50px #00000020;
+
+  & p {
+    font-family: 'Lato';
+
+    & a {
+      color: $yellow;
+      text-decoration: none;
+    }
+  }
 }
 
 .player_info {

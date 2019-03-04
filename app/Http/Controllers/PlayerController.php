@@ -39,6 +39,8 @@ class PlayerController extends Controller
           'body' => '',
           'active' => 'required',
           'team_id' => 'required|max:20|integer',
+          'nationality' => '',
+          'role' => '',
         ));
 
         // Store in DB
@@ -56,6 +58,8 @@ class PlayerController extends Controller
         $player->twitch = $request->twitch;
         $player->active = $request->active;
         $player->team_id = $request->team_id;
+        $player->nationality = strtolower($request->nationality);
+        $player->role = $request->role;
 
 
         if ($request->hasFile('image')) {
@@ -102,6 +106,8 @@ class PlayerController extends Controller
             'body' => '',
             'active' => 'required',
             'team_id' => '',
+            'nationality' => '',
+            'role' => '',
           ));
 
           // Store in DB
@@ -117,6 +123,8 @@ class PlayerController extends Controller
           $player->youtube = $request->youtube;
           $player->twitch = $request->twitch;
           $player->active = $request->active;
+          $player->nationality = strtolower($request->nationality);
+          $player->role = $request->role;
 
 
           if ($request->hasFile('image')) {

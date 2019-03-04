@@ -2,6 +2,8 @@
 @section('title'){{ $player->playerName }}@endsection
 
 @section('seo')
+  <link rel="stylesheet" href="{{ asset('css/flags.css') }}">
+
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - {{ $player->playerName }}">
   <meta itemprop="description" content="{{ $player->firstName }} '{{ $player->playerName }}' {{ $player->lastName }}, is a player for Quixz eSports' {{ $player->team->name }} team! Click if you want to learn more about {{ $player->firstName }}">
@@ -61,36 +63,41 @@
 
   <div class="player_info">
     <div class="player_name">
-      <h1>{{ $player->firstName }} <b style="color:#F8B52A">{{ $player->playerName }}</b> {{ $player->lastName }}</h1>
+      <h1>
+        @if ($player->nationality != '')
+          <img src="{{ asset('assets/blank.gif') }}" class="flag flag-{{ $player->nationality }}" />
+        @endif
+        {{ $player->firstName }} <b style="color:#F8B52A">{{ $player->playerName }}</b> {{ $player->lastName }}
+      </h1>
     </div>
 
     <div class="player_game">
-      <p><a style="text-decoration:none; color: #FFF" href="/team/{{ $player->team->slug }}">{{ $player->team->name }}</a></p>
+      <p>
+        Team: <a href="/team/{{ $player->team->slug }}">{{ $player->team->name }}</a>
+      </p>
+      @if ($player->role != '')
+        <p>Role: {{ $player->role }}</p>
+      @endif
     </div>
 
   <div class="social-media">
-    @if ($player->twitch == NULL)
-    @else
+    @if ($player->twitch != NULL)
       <a href="{{ $player->twitch }}" target="_blank"><i class="fab fa-twitch"></i></a>
     @endif
 
-    @if ($player->twitter == NULL)
-    @else
+    @if ($player->twitter != NULL)
       <a href="{{ $player->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
     @endif
 
-    @if ($player->youtube == NULL)
-    @else
+    @if ($player->youtube != NULL)
       <a href="{{ $player->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
     @endif
 
-    @if ($player->steam == NULL)
-    @else
+    @if ($player->steam != NULL)
       <a href="{{ $player->steam }}" target="_blank"><i class="fab fa-steam"></i></a>
     @endif
 
-    @if ($player->instagram == NULL)
-    @else
+    @if ($player->instagram != NULL)
       <a href="{{ $player->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
     @endif
   </div>
@@ -105,9 +112,7 @@
   </div>
 @endif
 
-@if ($player->team->match == '[]')
-
-@else
+@if ($player->team->match!= '[]')
   <div class="teamMatches">
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
@@ -194,6 +199,7 @@
   </div>
 @endif
 
+@if ($player->team->article != '[]')
   <div class="teamArticles">
     <h1 class="title">Related Articles</h1>
     <div class="news">
@@ -217,6 +223,7 @@
       @endforeach
     </div>
   </div>
+@endif
 
 @if ($player->team->player->count() != '1')
   <div class="playerTeam">
