@@ -31,7 +31,7 @@
 
 <div class="teamMatches" style="background-color: #F8B52A">
     <h2 style="grid-column: 1 / 3;">Upcoming</h2>
-    @foreach ($tourn->match as $match)
+    @foreach ($tourn->match->sortBy('date') as $match)
       @if ($match->quixzScore == '0' && $match->enemyScore == '0')
         <div class="match_body">
             <h1>{{ date('d M Y', strtotime($match->date)) }}    -
@@ -60,7 +60,7 @@
       @endif
     @endforeach
   <h2 style="grid-column: 1 / 3;">Finished</h2>
-  @foreach ($tourn->match as $match)
+  @foreach ($tourn->match->sortBy('date')->reverse() as $match)
     @if ($match->quixzScore != '0' || $match->enemyScore != '0')
       <div class="match_body">
           <h1>{{ date('d M Y', strtotime($match->date)) }}    -

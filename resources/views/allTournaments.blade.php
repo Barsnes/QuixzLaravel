@@ -9,7 +9,7 @@
       <h1>Ongoing Tournaments</h1>
     </div>
     @php $tournCount = 0; @endphp
-    @foreach ($tournaments->reverse() as $tourn)
+    @foreach ($tournaments->sortBy('date') as $tourn)
       @php
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
@@ -41,7 +41,7 @@
       <h1>Upcoming Tournaments</h1>
     </div>
     @php $tournCount = 0; @endphp
-    @foreach ($tournaments->reverse() as $tourn)
+    @foreach ($tournaments->sortBy('date') as $tourn)
       @php
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
@@ -73,7 +73,7 @@
       <h1>Finished Tournaments</h1>
     </div>
     @php $tournCount = 0; @endphp
-    @foreach ($tournaments->reverse() as $tourn)
+    @foreach ($tournaments->sortBy('date') as $tourn)
       @php
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();

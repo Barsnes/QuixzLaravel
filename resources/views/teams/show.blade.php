@@ -89,7 +89,7 @@
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
       @php $matchCount = 0; @endphp
-      @foreach ($team->match as $match)
+      @foreach ($team->match->sortBy('date') as $match)
         @php
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();
@@ -131,7 +131,7 @@
     <div class="recentMatches">
       <h1>Recent Matches</h1>
       @php $matchCount = 0; @endphp
-      @foreach ($team->match->reverse() as $match)
+      @foreach ($team->match->sortBy('date')->reverse() as $match)
         @php
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();

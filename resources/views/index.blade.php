@@ -110,7 +110,7 @@
       <a href="/tournaments" style="color: #F8B52A; text-decoration: none; font-family: Lato; font-size: .8rem; margin-top: -2rem">View All</a>
     </div>
     @php $tournCount = 0; @endphp
-    @foreach ($tournaments->reverse() as $tourn)
+    @foreach ($tournaments->sortBy('date') as $tourn)
       @php
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
@@ -141,7 +141,7 @@
     <div class="upcomingMatches">
       <h1>Upcoming Matches</h1>
       @php $matchCount = 0; @endphp
-      @foreach ($matches as $match)
+      @foreach ($matches->sortBy('date') as $match)
         @php
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();
@@ -183,7 +183,7 @@
     <div class="recentMatches">
       <h1>Recent Matches</h1>
       @php $matchCount = 0; @endphp
-      @foreach ($matchesReverse as $match)
+      @foreach ($matches->sortBy('date')->reverse() as $match)
         @php
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();

@@ -10,7 +10,7 @@
               <h6 class="card-subtitle mb-2 text-muted">{{ $tournament->team->name }}</h6>
               <div class="col-12" style="margin-bottom: 1rem; width:100%">
                 @php $matchCount = 0; @endphp
-                @foreach ($tournament->match as $match)
+                @foreach ($tournament->match->sortBy('date') as $match)
                   @php
                     $date_now = date("d M Y"); // this format is string comparable
                     $matchDate = date('d M Y', strtotime($match->date));
