@@ -22,6 +22,9 @@
         <label for="">Tournaments</label>
         <select class="form-control" name="tournament_id">
           @foreach ($tournaments as $tournament)
+            @if ($tournament->finished == '1')
+              @continue
+            @endif
             <option value="{{ $tournament->id }}">{{ $tournament->name }}</option>
           @endforeach
         </select>
