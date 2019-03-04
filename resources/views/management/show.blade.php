@@ -62,9 +62,6 @@
   <div class="player_info">
     <div class="player_name">
       <h1>{{ $player->name }}</h1>
-      @if ($role == 'Admin')
-         <a style="color:#FFF; text-decoration: none" href="/admin/management/{{ $player->id }}/edit" class="matchButton">Edit</a>
-      @endif
     </div>
 
     <div class="player_game">
@@ -72,28 +69,23 @@
     </div>
 
   <div class="social-media">
-    @if ($player->twitch == NULL)
-    @else
+    @if ($player->twitch != NULL)
       <a href="{{ $player->twitch }}" target="_blank"><i class="fab fa-twitch"></i></a>
     @endif
 
-    @if ($player->twitter == NULL)
-    @else
+    @if ($player->twitter != NULL)
       <a href="{{ $player->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
     @endif
 
-    @if ($player->youtube == NULL)
-    @else
+    @if ($player->youtube != NULL)
       <a href="{{ $player->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a>
     @endif
 
-    @if ($player->steam == NULL)
-    @else
+    @if ($player->steam != NULL)
       <a href="{{ $player->steam }}" target="_blank"><i class="fab fa-steam"></i></a>
     @endif
 
-    @if ($player->instagram == NULL)
-    @else
+    @if ($player->instagram != NULL)
       <a href="{{ $player->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
     @endif
   </div>
