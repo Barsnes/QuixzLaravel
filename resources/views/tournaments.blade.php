@@ -75,7 +75,10 @@
                 <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
                 <h6>{{ $match->team->name }}</h6>
               </div>
-              <h3>VS</h3>
+              <div class="matchMiddle">
+                <h3>VS</h3>
+                <h2>{{ $match->quixzScore }} : {{ $match->enemyScore }}</h2>
+              </div>
               <div class="matchEnemy__info">
                 <h6>{{ $match->enemy }}</h6>
                 @if ($match->enemyLogo != '')
@@ -84,9 +87,6 @@
                   <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
                 @endif
               </div>
-            </div>
-            <div class="matchScore">
-              <h2>{{ $match->quixzScore }} : {{ $match->enemyScore }}</h2>
             </div>
       </div>
     @endif
