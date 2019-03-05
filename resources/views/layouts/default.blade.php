@@ -38,11 +38,11 @@
         <i class="fas fa-bars menu" aria-hidden="true"></i>
       </div>
       <ul class="navlist">
-        <li><a href="/index">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/news">News</a></li>
-        <li><a href="/teams">Teams</a></li>
-        <li><a href="/tournaments">Tournaments</a></li>
+        <li><a class="{{ (Request::is('index') || Request::is('/') ? 'onSite' : '') }}" href="/">Home</a></li>
+        <li><a class="{{ (Request::is('about') || Request::is('about/*') ? 'onSite' : '') }}" href="/about">About</a></li>
+        <li><a class="{{ (Request::is('news') || Request::is('news/*') ? 'onSite' : '') }}" href="/news">News</a></li>
+        <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'onSite' : '') }}" href="/teams">Teams</a></li>
+        <li><a class="{{ (Request::is('tournaments') || Request::is('tournaments/*') ? 'onSite' : '') }}" href="/tournaments">Tournaments</a></li>
         @if ($role == 'Admin')
           <li><a href="/admin">Admin Dashboard</a></li>
         @elseif ($role == 'Player')

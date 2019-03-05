@@ -232,10 +232,38 @@
 
 @media screen and (max-width: 650px) {
 
-  .news {
+  .article--body {
     padding: 2rem 5%;
     width: calc(100% - 10%);
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+
+    &__card {
+      background-color: $blue;
+      padding: 0;
+      text-decoration: none;
+      height: auto;
+      color: #FFF;
+      font-family: "Lato";
+      box-shadow: 0 0 15px #00000000;
+      transform: scale(1);
+      transition: all 150ms ease;
+      text-decoration: none;
+
+      &:nth-of-type(1) {
+        grid-column: 1 / 2;
+
+        & h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      & p {
+        display: none;
+      }
+
+      & h2 {
+        font-size: 1.5rem;
+      }
+    }
   }
 }
