@@ -64,7 +64,7 @@ class MatchController extends Controller
           $extension = image_type_to_extension($info[2]);
           $filename = time() . $extension;
           $location = public_path('images/' . $filename);
-          Image::make($enemyLogo)->resize(50, 50)->save($location);
+          Image::make($enemyLogo)->resize(300, 300)->save($location);
 
           $match->enemyLogo = $filename;
         }
@@ -121,7 +121,7 @@ class MatchController extends Controller
           $extension = image_type_to_extension($info[2]);
           $filename = time() . $extension;
           $location = public_path('images/' . $filename);
-          Image::make($enemyLogo)->resize(150, 150)->save($location);
+          Image::make($enemyLogo)->resize(300, 300)->save($location);
 
           $match->enemyLogo = $filename;
         }
