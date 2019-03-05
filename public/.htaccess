@@ -21,3 +21,4 @@
 </IfModule>
 
 Redirect 301 /discord https://discord.gg/6QxSnV5
+Redirect 301 /index /
