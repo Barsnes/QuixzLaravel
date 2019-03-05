@@ -77,7 +77,7 @@
       @foreach ($articles as $article)
       @php $articleCount++ @endphp
       @if ($articleCount <= 2)
-      <a style="grid-column: 2 / 6;" class="article_list" href=" {{ url('/news', $article->slug) }}">
+      <a class="article_list" href=" {{ url('/news', $article->slug) }}">
         <img src="{{ asset('/images/' . $article->image) }}" alt="some dummy text" og:image>
         <h1>{{ $article->title }}</h1>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>

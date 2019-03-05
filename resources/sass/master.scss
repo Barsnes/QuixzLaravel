@@ -172,20 +172,6 @@
     }
   }
 
-  .article_list:nth-of-type(1) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-
-  .article_list:nth-of-type(2) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 4;
-  }
-
   .sponsors {
     grid-template-columns: repeat(2, 1fr);
 
@@ -237,7 +223,7 @@
         grid-gap: 1rem;
 
         & a {
-          
+
         }
       }
 

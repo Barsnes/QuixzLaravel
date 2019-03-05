@@ -232,6 +232,27 @@
 
 @media screen and (max-width: 650px) {
 
+  .news {
+    grid-template-columns: calc(15% - 1rem) 1fr calc(15% - 1rem);
+    grid-template-rows: repeat(2, 1fr);
+
+    & .article_list {
+      grid-column: 2 / 3;
+
+      & h1 {
+        font-size: 1.5rem;
+      }
+
+      & p {
+        display: none;
+      }
+    }
+
+    & .article_list:nth-of-type(2) {
+      grid-row: 2;
+    }
+  }
+
   .article--body {
     padding: 2rem 5%;
     width: calc(100% - 10%);
