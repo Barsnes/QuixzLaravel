@@ -113,7 +113,7 @@
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();
         @endphp
-        @if ($date_now < $matchDate && $matchCount < 3)
+        @if ($match->quixzScore == '0' && $match->enemyScore == '0' && $matchCount < 3)
           @php $matchCount ++ @endphp
             <div class="match_body">
                 <h1>{{ date('d M Y', strtotime($match->date)) }}    -
@@ -155,7 +155,10 @@
             $matchDate = new DateTime($match['date']);
             $date_now = new DateTime();
         @endphp
-            @if ($date_now > $matchDate && $matchCount < 3 || $match->quixzScore != '0' && $match->enemyScore != '0')
+            @if ($match->quixzScore != '0' || $match->enemyScore != '0')
+              @if ($matchCount >= 3)
+                @continue
+              @endif
               @php $matchCount ++ @endphp
               <div class="match_body">
                   <h1>{{ date('d M Y', strtotime($match->date)) }}    -
