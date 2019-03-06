@@ -65,8 +65,10 @@
         <p style="font-family: 'Lato'; margin-top: 0;">No upcoming matches</p>
       @endif
   <h2>Finished</h2>
+  @php $matchCount = 0 @endphp
   @foreach ($tourn->match->sortBy('date')->reverse() as $match)
     @if ($match->quixzScore != '0' || $match->enemyScore != '0')
+      @php $matchCount++ @endphp
       <div class="match_body">
           <h1>{{ date('d M Y', strtotime($match->date)) }}    -
               @if ($match->link == '')
@@ -96,6 +98,9 @@
       </div>
     @endif
   @endforeach
+  @if ($matchCount == '0')
+    <p style="font-family: 'Lato'; margin-top: 0;">No finished matches</p>
+  @endif
 </div>
 
 @if ($tourn->stream != '')
