@@ -7,21 +7,20 @@
 <div class="tournamentInfo">
   <div class="general">
     <h1>{{ $tourn->name }}</h1>
-    <h2>{{ $tourn->team->name }}</h2>
+    <a href="/team/{{ $tourn->team->slug }}"><h2>{{ $tourn->team->name }}</h2></a>
   </div>
   <div class="additional">
     <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
+    @if ($tourn->link != '')
+      <div class="buttonContainer">
+        <a target="_blank" href="{{ $tourn->link }}"><h3 class="">View</h3></a>
+      </div>
+    @endif
   </div>
   @if ($tourn->image != '')
     <img src="{{ asset('/images/' . $tourn->image) }}" alt="Tournament image">
   @else
     <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Tournament image"></img>
-  @endif
-
-  @if ($tourn->link != '')
-    <div class="buttonContainer">
-      <a target="_blank" href="{{ $tourn->link }}"><h1 class="button">Link to tournament</h1></a>
-    </div>
   @endif
 
   <div class="tournamentPlacement">

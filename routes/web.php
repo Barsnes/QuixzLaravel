@@ -19,6 +19,7 @@ Route::get('/tournaments', 'PagesController@tournaments');
 
 Route::get('/downloads', 'PagesController@downloads');
 Route::get('/management', 'PagesController@management');
+Route::get('/form/club', 'ClubFormController@showForm');
 
 
 Route::resource('/admin/news', 'ArticleController');
@@ -48,6 +49,7 @@ Route::resource('/admin/tourn-match', 'TournamentMatchController');
 Route::resource('/admin/management', 'ManagementController');
 Route::resource('/admin/servers', 'ServerController');
 Route::resource('/admin/sponsors', 'SponsorsController');
+Route::resource('/admin/club', 'ClubFormController');
 
 Auth::routes();
 

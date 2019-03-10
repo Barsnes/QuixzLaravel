@@ -5,7 +5,7 @@
   height: 8rem;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1.5fr 5fr 2fr;
   grid-gap: 1rem;
   text-decoration: none;
   color: $white;
@@ -68,26 +68,37 @@ iframe {
 .tournamentInfo {
   display: grid;
   padding: 1rem 17.5% 0 17.5%;
-  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 1rem;
   grid-template-rows: 15rem;
   font-family: Lato;
+
+  & img {
+    width: 80%;
+    margin: auto 0 auto auto;
+  }
 }
 
 .general {
   grid-column: 1 / 2;
   margin: auto 0;
+
+  & a {
+    text-decoration: none;
+    color: $yellow;
+  }
 }
 
 .additional {
   grid-column: 2 / 3;
   margin: auto 0;
   text-align: right;
-}
 
-.tournamentInfo img {
-  height: 50%;
-  margin: auto 0 auto auto;
+  & a {
+    text-decoration: none;
+    color: $yellow;
+    text-align: right;
+  }
 }
 
 .buttonContainer, .tournamentPlacement {
@@ -112,12 +123,12 @@ iframe {
   color: #FFF;
   width: 50%;
   margin: auto;
-}
 
-.button:hover {
-  background: $yellow;
-  color: #FFF;
-  -webkit-transition: background ease-in-out 150ms;
+  &:hover {
+    background: $yellow;
+    color: #FFF;
+    -webkit-transition: background ease-in-out 150ms;
+  }
 }
 
 .matches {

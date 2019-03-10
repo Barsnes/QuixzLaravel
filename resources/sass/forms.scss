@@ -1,0 +1,72 @@
+.club {
+  min-height: 75vh;
+
+  & h1 {
+    margin-right: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+    width: 50%;
+  }
+}
+
+.clubForm {
+  display: grid;
+  font-family: 'Lato';
+  grid-gap: 1rem;
+
+  & .top {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  & .bottom {
+    width: 70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  & label {
+    display: block;
+    margin-bottom: .4rem;
+  }
+
+  & input {
+    width: calc(100% - 1rem);
+    margin: auto auto auto 0;
+    border: 0;
+    border-radius: 5px;
+    height: 1rem;;
+    padding: .5rem;;
+  }
+
+  & .formButton {
+    width: 70%;
+    margin: auto;
+    margin-top: 1rem;
+    display: grid;
+
+    & .submitButton {
+      width: 6rem;
+      margin: auto auto auto 0;
+      height: 2rem;
+      background: none;
+      border: 1px solid $yellow;
+      border-radius: 0;
+      color: #FFF;
+      transition: background-color 150ms ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $yellow;
+        transition: background-color 150ms ease;
+      }
+    }
+  }
+}
