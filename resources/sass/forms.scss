@@ -15,6 +15,22 @@
   font-family: 'Lato';
   grid-gap: 1rem;
 
+  & .alert {
+    width: calc(70% - 2rem);
+    margin: auto;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  & .error {
+    background-color: #FA3E3E;
+  }
+
+  & .success {
+    background-color: #4BB543;
+  }
+
   & .top {
     width: 70%;
     margin: auto;
@@ -43,7 +59,7 @@
     border: 0;
     border-radius: 5px;
     height: 1rem;;
-    padding: .5rem;;
+    padding: .5rem;
   }
 
   & .formButton {
@@ -51,6 +67,25 @@
     margin: auto;
     margin-top: 1rem;
     display: grid;
+
+    & .agreeButtons {
+
+      & input {
+        display: inline-block;
+        width: 3%;
+      }
+
+      & label {
+        display: inline-block;
+        margin-bottom: .2rem;
+        width: 10%;
+      }
+    }
+
+    & p {
+      margin: 0;
+      margin-bottom: .5rem
+    }
 
     & .submitButton {
       width: 6rem;
@@ -68,5 +103,14 @@
         transition: background-color 150ms ease;
       }
     }
+  }
+
+  & select {
+    width: calc(100%);
+    margin: auto auto auto 0;
+    border: 0;
+    border-radius: 5px;
+    height: 2rem;
+    padding: .5rem;
   }
 }
