@@ -18,7 +18,7 @@ class AddInfoToClubFormTable extends Migration
             $table->integer('zip_code')->after('country');
             $table->string('city')->after('zip_code');
             $table->string('street')->after('city');
-            $table->varchar('phone')->after('street');
+            $table->bigInteger('phone')->after('street');
             $table->date('date_of_birth')->after('phone');
         });
     }
