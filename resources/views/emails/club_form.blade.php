@@ -15,7 +15,7 @@
     @endif
     <p><b>DOB:</b> {{ $form->date_of_birth }}</p>
     <p><b>Country:</b> {{ $form->country }}</p>
-    <p><b>city:</b> {{ $form->city }}</p>
+    <p><b>City:</b> {{ $form->city }}</p>
     <p><b>Zip:</b> {{ $form->zip_code }}</p>
     <p><b>Street:</b> {{ $form->street }}</p>
 

@@ -178,6 +178,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Buglinjo\LaravelWebp\LaravelWebpServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'WebP' => Buglinjo\LaravelWebp\Facades\LaravelWebp::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

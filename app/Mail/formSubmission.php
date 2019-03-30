@@ -17,10 +17,11 @@ class formSubmission extends Mailable
     public function __construct(ClubForm $form)
     {
       $this->form = $form;
+      $this->pdf = $form->first_name . '-' . $form->last_name . '.pdf';
     }
 
     public function build()
     {
-        return $this->view('emails.club_form')->withForm($this->form);
+        return $this->view('emails.club_form')->withForm($this->form)->attach('pdf/' . $this->pdf);
     }
 }

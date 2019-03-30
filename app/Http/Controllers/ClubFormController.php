@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ClubForm;
 use App\Mail\formSubmission;
 use Mail;
+use PDF;
 
 class ClubFormController extends Controller
 {
@@ -48,6 +49,14 @@ class ClubFormController extends Controller
         $form->city = $request->city;
         $form->zip_code = $request->zip;
         $form->street = $request->street;
+
+        $data = $request;
+
+        $pdf = PDF::loadView('pdf.form', $data);
+        $pdf->save('pdf/' . $request->first_name . '-' . $request->last_name . '.pdf');
+        $pdf->stream();
+
+        $form->pdf = $request->first_name . '-' . $request->last_name . '.pdf';
 
         $form->save();
 
