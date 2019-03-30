@@ -69,16 +69,18 @@
     display: grid;
 
     & .agreeButtons {
+      display: grid;
+      grid-template-columns: 1fr 25fr;
 
       & input {
         display: inline-block;
-        width: 3%;
+        margin: auto;
+        margin-left: 0;
       }
 
       & label {
         display: inline-block;
         margin-bottom: .2rem;
-        width: 10%;
       }
     }
 

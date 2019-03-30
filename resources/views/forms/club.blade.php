@@ -320,7 +320,7 @@
     <div class="formButton">
       <div class="agreeButtons">
         <input required type="checkbox" name="agree" value="true">
-        <label for="agree">I agree</label>
+        <label for="agree">I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label>
       </div>
       <p><span style="color:red">*</span>Required</p>
       {{ Form::submit('Submit', array('class' => 'submitButton')) }}
