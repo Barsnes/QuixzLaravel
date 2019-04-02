@@ -6,7 +6,7 @@ This is the Github repo containing all source code for[ Quixz eSports website.](
 
 
 ### Disclaimer
-This project does not include comments explaining what is happening. It is not made as a project that was intended to be redistributed as a template, but you are free to do so.
+This project does not include comments explaining what is happening. It is not made as a project that was intended to be redistributed as a template, but you are free to use it.
 
 It is not finished, and there might be bugs, or bad code. If you find any, feel free to make an issue, and I'll look into it.
 
