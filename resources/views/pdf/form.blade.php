@@ -24,11 +24,10 @@
 <style media="screen">
 
   * {
-    color: #FFF;
+    color: #000;
   }
 
   body {
-    background-color: #232323;
     margin: 0;
     padding: 0 2rem;
     font-family: 'Arial';
