@@ -14,13 +14,14 @@
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110310303-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'UA-110310303-3');
-  </script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="85f2f803-6554-42c4-9c8b-234e6e2e6425" type="text/javascript" async></script>
+
+  <script type="text/plain" data-cookieconsent="statistics">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-110310303-3', 'auto');
+    ga('send', 'pageview');
+</script>
 
   <!-- Scrips -->
   <script src="{{ asset('js/jquery.js') }}"></script>
