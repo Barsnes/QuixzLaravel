@@ -73,6 +73,7 @@
     <li>6850 Dornbirn, Austria</li>
     <li>ZVR-Zahl 1373981873</li>
   </ul>
+  
   <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">
 
   <div class="links">

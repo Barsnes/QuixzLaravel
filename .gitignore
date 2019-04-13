@@ -18,3 +18,4 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 public/.DS_Store
+*.icloud
