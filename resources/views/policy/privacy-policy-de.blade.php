@@ -90,11 +90,14 @@ Datenschutzbehörde beschweren.</p>
 
     .policy p {
       margin-left: 2rem;
+      margin-top: .2rem;
     }
 
     .policy span {
       display: block;
-      margin: 1rem 0;
+      margin-top: 1rem;
+      margin-bottom: 0;
+      font-size: 1.3rem;
     }
 
     .policy a {
