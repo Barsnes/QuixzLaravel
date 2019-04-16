@@ -114,4 +114,8 @@ class PagesController extends Controller
     return view('allTournaments')->withTournaments($tournaments);
   }
 
+  public function policy_de(){
+    return view('policy.privacy-policy-de');
+  }
+
 }

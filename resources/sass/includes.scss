@@ -161,26 +161,30 @@ hr {
   grid-row: 2 / 3;
   display: inline-block;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+
+  & h3 {
+    margin: 0
+  }
+
+  & a {
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    color: $yellow;
+    padding-right: .5rem;
+    margin: auto 0;
+
+    &:hover, .media--links a:hover {
+      color: $white
+    }
+  }
 }
 
 .media--links {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   display: block;
-}
-
-.links h3 {
-  margin: 0
-}
-
-.links a {
-  text-decoration: none;
-  font-size: 1.2rem;
-  display: inline-block;
-  color: $yellow;
-  padding-right: .5rem;
-  margin: auto 0;
 }
 
 .media--links a {
@@ -194,10 +198,6 @@ hr {
 
 .media--links a:nth-child(1) {
   margin: .1rem .1rem .1rem 0;
-}
-
-.links a:hover, .media--links a:hover {
-  color: $white
 }
 
 @media screen and (max-width: 650px) {
