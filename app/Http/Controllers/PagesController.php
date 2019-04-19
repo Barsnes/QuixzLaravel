@@ -118,4 +118,8 @@ class PagesController extends Controller
     return view('policy.privacy-policy-de');
   }
 
+  public function statutes_de(){
+    return view('policy.statutes');
+  }
+
 }

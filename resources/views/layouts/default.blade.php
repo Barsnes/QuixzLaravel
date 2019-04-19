@@ -81,6 +81,7 @@
     <a href="/management"><h3>Management</h3></a>
     <a href="/servers"><h3>Servers</h3></a>
     <a href="/privacy-policy-de"><h3>Privacy Policy (DE)</h3></a>
+    <a href="/statutes-de"><h3>Statutes (DE)</h3></a>
   </div>
     <div class="media--links">
         <a class="fab fa-youtube-square" href="{{ $social->youtube }}" target="_blank"></a>

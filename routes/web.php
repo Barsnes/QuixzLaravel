@@ -20,6 +20,7 @@ Route::get('/tournaments', 'PagesController@tournaments');
 Route::get('/downloads', 'PagesController@downloads');
 Route::get('/management', 'PagesController@management');
 Route::get('/privacy-policy-de', 'PagesController@policy_de');
+Route::get('/statutes-de', 'PagesController@statutes_de');
 Route::get('/form/club', 'ClubFormController@showForm');
 
 
