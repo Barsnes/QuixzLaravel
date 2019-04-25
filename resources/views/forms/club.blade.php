@@ -320,9 +320,22 @@
     <div class="formButton">
       <div class="agreeButtons">
         <input required type="checkbox" name="agree" value="true">
-        <label for="agree">I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label>
+        <label for="agree"><span style="color:red">*</span> I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label>
+
+        <input required type="checkbox" name="statutes" value="true">
+        <label for="statutes"><span style="color:red">*</span> I have read, and agree to the  <a href="/statutes-de">Statutes</a></label>
+
+        <input required type="checkbox" name="privacy-policy" value="true">
+        <label for="privacy-policy"><span style="color:red">*</span> I consent to the processing of my data under the <a href="/privacy-policy-de">Privacy Policy</a></label>
+
+        <input required type="checkbox" name="join" value="true">
+        <label for="join"><span style="color:red">*</span> I would like to join the club 'Quixz eSports'</label>
+
+        <input required type="checkbox" name="member" value="true">
+        <label for="member"><span style="color:red">*</span> I agree to regularly set one of the General Assembly
+To pay membership fee (Currently no membership fee is set)</label>
       </div>
-      <p><span style="color:red">*</span>Required</p>
+      <p style="margin-top: 1rem"><span style="color:red">*</span>Required</p>
       {{ Form::submit('Submit', array('class' => 'submitButton')) }}
     {!! Form::close() !!}
     </div>

@@ -18,7 +18,7 @@ class ClubFormController extends Controller
     public function store(Request $request)
     {
       if ($request->agree != true) {
-        $error = 'You have to agree to the terms.';
+        $error = 'You have to agree to all the terms.';
         return back()->withError($error);
       } else {
 

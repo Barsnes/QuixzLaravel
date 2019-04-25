@@ -89,10 +89,15 @@
       margin-bottom: .5rem
     }
 
+    a {
+      text-decoration: none;
+      color: #F8B52A
+    }
+
     & .submitButton {
-      width: 6rem;
-      margin: auto auto auto 0;
-      height: 2rem;
+      width: 8rem;
+      margin: 2rem auto;
+      height: 3rem;
       background: none;
       border: 1px solid $yellow;
       border-radius: 0;
