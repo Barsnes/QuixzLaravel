@@ -73,7 +73,7 @@
       <h1>Finished Tournaments</h1>
     </div>
     @php $tournCount = 0; @endphp
-    @foreach ($tournaments->sortBy('date') as $tourn)
+    @foreach ($tournaments->sortBy('date')->reverse() as $tourn)
       @php
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
