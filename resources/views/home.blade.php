@@ -72,7 +72,7 @@
                     $matchDate = new DateTime($match['date']);
                     $date_now = new DateTime();
                   @endphp
-                  @if ($date_now < $matchDate && $matchCount < 4)
+                  @if ($match->team->active != '0' && $match->quixzScore == '0' && $match->enemyScore == '0')
                     @php $matchCount ++ @endphp
                     <div class="col-sm-6" style="margin-bottom: 1rem">
                       <div class="card" style="width: 100%;">
@@ -219,6 +219,14 @@
           <h6 class="card-subtitle mb-2 text-muted"></h6>
           <a href="/admin/servers" class="btn btn-info btn-sm">View</a>
           <a href="/admin/servers/create" class="btn btn-success btn-sm">Add</a>
+        </div>
+      </div>
+      <div class="card" style="width: calc(33.333% - 1rem); margin: .5rem; margin-bottom: 1.5rem;">
+        <div class="card-body">
+          <h5 class="card-title"><a href="/admin/servers">Sponsors</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <a href="/admin/sponsors" class="btn btn-info btn-sm">View</a>
+          <a href="/admin/sponsors/create" class="btn btn-success btn-sm">Add</a>
         </div>
       </div>
   </div>
