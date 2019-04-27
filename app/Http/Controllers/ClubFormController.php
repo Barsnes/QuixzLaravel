@@ -11,7 +11,7 @@ use PDF;
 class ClubFormController extends Controller
 {
 
-    public function showForm(){
+    public function showForm() {
       return view('forms.club');
     }
 
