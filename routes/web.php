@@ -23,7 +23,6 @@ Route::get('/privacy-policy-de', 'PagesController@policy_de');
 Route::get('/statutes-de', 'PagesController@statutes_de');
 Route::get('/form/club', 'ClubFormController@showForm');
 
-
 Route::resource('/admin/news', 'ArticleController');
 Route::get('/news', 'PagesController@news');
 Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
@@ -36,10 +35,6 @@ Route::get('/team/{slug}', ['as' => 'team.single', 'uses' => 'PagesController@ge
 Route::get('/tournaments/{slug}', ['as' => 'tournament.single', 'uses' => 'PagesController@getTournament']);
 
 Route::get('/management/{slug}', ['as' => 'management.person', 'uses' => 'PagesController@getManagementPerson']);
-
-
-
-
 
 Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
