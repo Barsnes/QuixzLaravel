@@ -26,10 +26,10 @@
   <label for="agree">I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label><br>
 
   <input checked required type="checkbox" name="statutes" value="true">
-  <label for="statutes">I have read, and agree to the  <a href="/statutes-de">Statutes</a></label><br>
+  <label for="statutes">I have read, and agree to the  <a href="https://quixz.eu/statutes-de">Statutes</a></label><br>
 
   <input checked required type="checkbox" name="privacy-policy" value="true">
-  <label for="privacy-policy">I consent to the processing of my data under the <a href="/privacy-policy-de">Privacy Policy</a></label><br>
+  <label for="privacy-policy">I consent to the processing of my data under the <a href="https://quixz.eu/privacy-policy-de">Privacy Policy</a></label><br>
 
   <input checked required type="checkbox" name="join" value="true">
   <label for="join">I would like to join the club 'Quixz eSports'</label><br>

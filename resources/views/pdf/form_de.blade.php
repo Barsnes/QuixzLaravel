@@ -27,10 +27,10 @@
 Mitgliedsbeitrag zu bezahlen. Aktuell ist kein Mitgliedsbeitrag festgelegt.</label><br>
 
   <input checked required type="checkbox" name="statutes" value="true">
-  <label for="statutes">Ich habe die <a href="/statutes-de">Statuen</a> gelesen und stimme ihnen zu.</label><br>
+  <label for="statutes">Ich habe die <a href="https://quixz.eu/statutes-de">Statuen</a> gelesen und stimme ihnen zu.</label><br>
 
   <input checked required type="checkbox" name="privacy-policy" value="true">
-  <label for="privacy-policy">Ich stimme der Verarbeitung meiner Daten im Rahmen der <a href="/privacy-policy-de">Datenschutzrichtlinie</a> zu. Meine
+  <label for="privacy-policy">Ich stimme der Verarbeitung meiner Daten im Rahmen der <a href="https://quixz.eu/privacy-policy-de">Datenschutzrichtlinie</a> zu. Meine
 Emailadresse darf für wichtige Informationen zum Verein, wie zum Beispiel Einladungen zu
 Mitgliederversammlungen verwendet werden.</label><br>
 
