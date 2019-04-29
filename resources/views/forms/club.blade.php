@@ -23,17 +23,17 @@
     {!! Form::open(['route' => 'club.store']) !!}
     <div class="top">
       <div class="">
-        <label for="first_name">First Name<span style="color:red">*</span></label>
+        <label for="first_name">Vorname (First Name)<span style="color:red">*</span></label>
         <input type="text" name="first_name" placeholder="John">
       </div>
 
       <div class="">
-        <label for="last_name">Last Name<span style="color:red">*</span></label>
+        <label for="last_name">Nachname (Last Name)<span style="color:red">*</span></label>
         <input type="text" name="last_name" placeholder="Doe">
       </div>
 
       <div class="">
-        <label for="player_name">Player Name<span style="color:red">*</span></label>
+        <label for="player_name">Nickname<span style="color:red">*</span></label>
         <input type="text" name="player_name" placeholder="DoeJohn23">
       </div>
 
@@ -48,14 +48,14 @@
       </div>
 
       <div class="">
-        <label for="date_of_birth">Date of Birth<span style="color:red">*</span></label>
+        <label for="date_of_birth">Geburtsdatum (Date of Birth)<span style="color:red">*</span></label>
         <input type="date" name="date_of_birth" placeholder="20-09-2015">
       </div>
     </div>
     <div class="bottom">
 
       <div class="">
-        <label for="country">Country<span style="color:red">*</span></label>
+        <label for="country">Staat (Country)<span style="color:red">*</span></label>
         <select name="country">
           <option disabled selected>Choose One</option>
           <option value="Afghanistan">Afghanistan</option>
@@ -301,17 +301,17 @@
       </div>
 
       <div class="">
-        <label for="city">City<span style="color:red">*</span></label>
+        <label for="city">Stadt (City)<span style="color:red">*</span></label>
         <input type="text" name="city" placeholder="New York">
       </div>
 
       <div class="">
-        <label for="zip_code">Zip Code<span style="color:red">*</span></label>
+        <label for="zip_code">Postleitzahl (Zip Code)<span style="color:red">*</span></label>
         <input type="text" name="zip" placeholder="1001">
       </div>
 
       <div class="">
-        <label for="street">Street<span style="color:red">*</span></label>
+        <label for="street">Straße + Hausnummer (Street)<span style="color:red">*</span></label>
         <input type="text" name="street" placeholder="Manhattan Blv. 23">
       </div>
 
