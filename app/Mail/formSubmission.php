@@ -18,10 +18,12 @@ class formSubmission extends Mailable
     {
       $this->form = $form;
       $this->pdf = $form->first_name . '-' . $form->last_name . '.pdf';
+
+      $this->pdf_de = $form->first_name . '-' . $form->last_name . '_de' . '.pdf';
     }
 
     public function build()
     {
-        return $this->view('emails.club_form')->withForm($this->form)->attach('pdf/' . $this->pdf);
+        return $this->view('emails.club_form')->withForm($this->form)->attach('pdf/' . $this->pdf)->attach('pdf/' . $this->pdf_de);
     }
 }
