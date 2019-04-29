@@ -56,6 +56,10 @@ class ClubFormController extends Controller
         $pdf->save('pdf/' . $request->first_name . '-' . $request->last_name . '.pdf');
         $pdf->stream();
 
+        $pdf_de = PDF::loadView('pdf.form_de', $data);
+        $pdf_de->save('pdf/' . $request->first_name . '-' . $request->last_name . '_de' . '.pdf');
+        $pdf_de->stream();
+
         $form->pdf = $request->first_name . '-' . $request->last_name . '.pdf';
 
         $form->save();
