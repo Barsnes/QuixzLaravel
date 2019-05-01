@@ -320,20 +320,30 @@
     <div class="formButton">
       <div class="agreeButtons">
         <input required type="checkbox" name="agree" value="true">
-        <label for="agree"><span style="color:red">*</span> I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label>
+        <label for="agree"><span style="color:red">*</span>Ich bin damit einverstanden, regelmäßig einen von der Mitgliederversammlung festgelegten
+      Mitgliedsbeitrag zu bezahlen. Aktuell ist kein Mitgliedsbeitrag festgelegt.</label><label style="grid-column: 2 / 3"> I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label>
+
+        <hr style="grid-column: 1 /3;">
 
         <input required type="checkbox" name="statutes" value="true">
-        <label for="statutes"><span style="color:red">*</span> I have read, and agree to the  <a href="/statutes-de">Statutes</a></label>
+        <label for="statutes"><span style="color:red">*</span>Ich habe die <a href="https://quixz.eu/statutes-de">Statuen</a> gelesen und stimme ihnen zu.</label><label style="grid-column: 2 / 3"> I have read, and agree to the  <a href="/statutes-de">Statutes</a></label>
+
+        <hr style="grid-column: 1 /3;">
 
         <input required type="checkbox" name="privacy-policy" value="true">
-        <label for="privacy-policy"><span style="color:red">*</span> I consent to the processing of my data under the <a href="/privacy-policy-de">Privacy Policy</a></label>
+        <label for="privacy-policy"><span style="color:red">*</span>Ich stimme der Verarbeitung meiner Daten im Rahmen der <a href="https://quixz.eu/privacy-policy-de">Datenschutzrichtlinie</a> zu. Meine
+      Emailadresse darf für wichtige Informationen zum Verein, wie zum Beispiel Einladungen zu
+      Mitgliederversammlungen verwendet werden.</label><label style="grid-column: 2 / 3"> I consent to the processing of my data under the <a href="/privacy-policy-de">Privacy Policy</a></label>
+
+        <hr style="grid-column: 1 /3;">
 
         <input required type="checkbox" name="join" value="true">
-        <label for="join"><span style="color:red">*</span> I would like to join the club 'Quixz eSports'</label>
-
+        <label for="join"><span style="color:red">*</span>Ich möchte dem Verein ‚Quixz esports‘ beitreten.</label> <label style="grid-column: 2 / 3">I would like to join the club 'Quixz eSports'</label>
+        <hr style="grid-column: 1 /3;">
         <input required type="checkbox" name="member" value="true">
-        <label for="member"><span style="color:red">*</span> I agree to regularly set one of the General Assembly
-To pay membership fee (Currently no membership fee is set)</label>
+        <label for="member"><span style="color:red">*</span>Ich bin damit einverstanden, regelmäßig einen von der Mitgliederversammlung festgelegten
+      Mitgliedsbeitrag zu bezahlen. Aktuell ist kein Mitgliedsbeitrag festgelegt. </label><label style="grid-column: 2 / 3">(I agree to regularly set one of the General Assembly
+To pay membership fee (Currently no membership fee is set))</label>
       </div>
       <p style="margin-top: 1rem"><span style="color:red">*</span>Required</p>
       {{ Form::submit('Submit', array('class' => 'submitButton')) }}
