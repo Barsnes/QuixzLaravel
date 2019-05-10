@@ -181,58 +181,6 @@
     }
   }
 
-  .footer {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto 10rem;
-
-      ul {
-        grid-column: 1 / 4;
-      }
-
-      .footer_logo {
-        grid-row: 4 / 5;
-        grid-column: 1 / 4;
-        margin: auto auto auto 0;
-      }
-
-      hr {
-        grid-column: 1 / 4;
-      }
-
-      h1 {
-        grid-column: 1 / 4;
-      }
-
-      .partner {
-        grid-column: 1 / 4;
-      }
-
-      .links {
-        grid-column: 1 / 4;
-        display: grid;
-        grid-template-columns: 1fr;
-
-        & a {
-          display: block;
-        }
-      }
-
-      .media--links {
-        grid-column: 1 / 4;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1rem;
-
-        & a {
-
-        }
-      }
-
-      .media--links a {
-        font-size: 2rem
-      }
-  }
-
   .background_top h1 {
     font-size: 5em;
   }

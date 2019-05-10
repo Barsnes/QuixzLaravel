@@ -65,32 +65,49 @@
 </div>
 
 <div class="footer">
-  <ul>
-    <li>Copyright © {{ date("Y") }} Quixz eSports All Rights Reserved.</li>
-    <li style="color:#F8B52A;"></li>
-    <li style="margin-top: 1rem"><a target="_blank" href="//www.dmca.com/Protection/Status.aspx?ID=784f56d8-7fd5-4c76-b3c3-8d791736ad0e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_26_120.png?ID=784f56d8-7fd5-4c76-b3c3-8d791736ad0e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script></li>
-    <li>Quixz eSports</li>
-    <li>6850 Dornbirn, Austria</li>
-    <li>ZVR-Zahl 1373981873</li>
+
+  <div class="footer--left">
+    <ul>
+      <li>Quixz eSports<br>
+      6850 Dornbirn, Austria<br>
+      ZVR-Zahl 1373981873</li>
+      <li style="margin-top: 1rem"><a target="_blank" href="//www.dmca.com/Protection/Status.aspx?ID=784f56d8-7fd5-4c76-b3c3-8d791736ad0e" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_26_120.png?ID=784f56d8-7fd5-4c76-b3c3-8d791736ad0e"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script></li>
+    </ul>
+  </div>
+
+  <div class="footer--middle">
+    <ul>
+      <li class="title">Links</li>
+      <li><a href="/downloads">Downloads</a></li>
+      <li><a href="/management">Management</a></li>
+      <li><a href="/servers">Servers</a></li>
+    </ul>
+  </div>
+
+  <div class="footer--middle">
+    <ul>
+      <li class="title">Legal</li>
+      <li><a href="/privacy-policy-de">Privacy Policy (DE)</a></li>
+      <li><a href="/statutes-de">Statutes (DE)</a></li>
+    </ul>
+  </div>
+
+  <div class="footer--right">
+    <ul>
+      <li>Copyright © {{ date("Y") }} Quixz eSports All Rights Reserved.</li>
+    </ul>
+  </div>
+
+  <ul class="social">
+      <li><a class="fab fa-youtube-square" href="{{ $social->youtube }}" target="_blank"></a></li>
+      <li><a class="fab fa-facebook-square" href="{{ $social->facebook }}" target="_blank"></a></li>
+      <li><a class="fab fa-twitter-square" href="{{ $social->twitter }}" target="_blank"></a></li>
+      <li><a class="fab fa-steam-square" href="{{ $social->steam }}" target="_blank"></a></li>
+      <li><a class="fab fa-discord" href="{{ $social->discord }}" target="_blank"></a></li>
+      <li><a class="fab fa-twitch" href="{{ $social->twitch }}" target="_blank"></a></li>
   </ul>
 
-  <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">
-
-  <div class="links">
-    <a href="/downloads"><h3>Downloads</h3></a>
-    <a href="/management"><h3>Management</h3></a>
-    <a href="/servers"><h3>Servers</h3></a>
-    <a href="/privacy-policy-de"><h3>Privacy Policy (DE)</h3></a>
-    <a href="/statutes-de"><h3>Statutes (DE)</h3></a>
-  </div>
-    <div class="media--links">
-        <a class="fab fa-youtube-square" href="{{ $social->youtube }}" target="_blank"></a>
-        <a class="fab fa-facebook-square" href="{{ $social->facebook }}" target="_blank"></a>
-        <a class="fab fa-twitter-square" href="{{ $social->twitter }}" target="_blank"></a>
-        <a class="fab fa-steam-square" href="{{ $social->steam }}" target="_blank"></a>
-        <a class="fab fa-discord" href="{{ $social->discord }}" target="_blank"></a>
-        <a class="fab fa-twitch" href="{{ $social->twitch }}" target="_blank"></a>
-    </div>
+    <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">
 </div>
 
 <!-- Hamburger Menu -->
