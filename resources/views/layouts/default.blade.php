@@ -110,8 +110,6 @@
     <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">
 </div>
 
-<!-- Hamburger Menu -->
-
   <script type="text/javascript">
       $(document).ready(function(){
         $('.menu').click(function(){
@@ -120,8 +118,6 @@
         })
       })
   </script>
-
-<!-- Smooth Scroll -->
 
   <script>
    $(document).ready(function(){
