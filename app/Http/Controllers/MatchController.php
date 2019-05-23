@@ -72,7 +72,7 @@ class MatchController extends Controller
         $match->save();
 
         // Redirect
-        return redirect()->route('home);
+        return redirect()->route('home');
     }
 
     public function show($id)

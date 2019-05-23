@@ -44,9 +44,7 @@
         <li><a class="{{ (Request::is('news') || Request::is('news/*') ? 'onSite' : '') }}" href="/news">News</a></li>
         <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'onSite' : '') }}" href="/teams">Teams</a></li>
         <li><a class="{{ (Request::is('tournaments') || Request::is('tournaments/*') ? 'onSite' : '') }}" href="/tournaments">Tournaments</a></li>
-        @if ($role == 'Admin')
-          <li><a href="/admin">Admin Dashboard</a></li>
-        @elseif ($role == 'Player')
+        @if ($role == 'Admin' || $role == 'Player' || $role == 'Captain')
           <li><a href="/admin">Admin Dashboard</a></li>
         @endif
       </ul>
