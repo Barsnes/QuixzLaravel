@@ -10,9 +10,9 @@ This project does not include comments explaining what is happening. It is not m
 
 It is not finished, and there might be bugs, or bad code. If you find any, feel free to make an issue, and I'll look into it.
 
-If you fork this project, make sure your read [ Quixz' rules](https://quixz.eu/downloads " Quixz eSports website.") on using their logo and graphics.
+If you fork this project, make sure your read [ Quixz' rules](https://quixz.eu/downloads " Quixz eSports website.") on using their logo and graphics. If you have any questions or concerns, please create an issue or email me at [tobiasbarsnes@gmail.com](mailto:tobiasbarsnes@gmail.com "tobiasbarsnes@gmail.com")
 
-If you have any questions or concerns, please create an issue or email me at [tobiasbarsnes@gmail.com](mailto:tobiasbarsnes@gmail.com "tobiasbarsnes@gmail.com")
+You WILL need to seed the database manually with some values manually. Please see errors thrown when rendering a view.
 
 
 ## Tools Used
