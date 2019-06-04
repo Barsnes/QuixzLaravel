@@ -24,8 +24,8 @@
   <script type="application/ld+json">
    { "@context": "http://schema.org",
    "@type": "Organization",
-   "name": "Quixz eSports",
-   "legalName" : "Quixz eSports",
+   "name": "Quixz Esports",
+   "legalName" : "Quixz Esports",
    "url": "https://quixz.eu",
    "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
    "foundingDate": "2015",
@@ -42,7 +42,7 @@
    "telephone": "+47 913 65 195"
    },
    "sameAs": [
-   "https://twitter.com/QuixzeSports",
+   "https://twitter.com/QuixzEsports",
    "https://www.facebook.com/quixzesports",
    "https://www.gamer.no/klubber/quixz-esports/43274/lag/43275",
    "https://www.youtube.com/channel/UChgzQGcnVEn_nqdSfnggkcw"
@@ -54,7 +54,7 @@
 @section('content')
 
   <div class="background_top">
-    <h1>Quixz<span>eSports</span></h1>
+    <h1>Quixz<span>Esports</span></h1>
   </div>
 
   <div class="arrow">
@@ -62,7 +62,7 @@
   </div>
 
   <div class="about" id="about">
-      <img src="assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+      <img src="assets/image/logo/logo_500.png" alt="Quixz Esports logo">
       <div class="about_text">
         <h1>About Us</h1>
         <p>{{ $index->aboutContent }}</p>
@@ -125,7 +125,7 @@
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                   <div class="matchEnemy">
                     <div class="matchEnemy__quixz">
-                      <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                      <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
                       <h6>{{ $match->team->name }}</h6>
                     </div>
                     <h3>VS</h3>
@@ -170,7 +170,7 @@
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                     <div class="matchEnemy">
                       <div class="matchEnemy__quixz">
-                        <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                        <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
                         <h6>{{ $match->team->name }}</h6>
                       </div>
                       <div class="matchMiddle">
