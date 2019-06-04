@@ -20,8 +20,8 @@
 <script type="application/ld+json">
  { "@context": "http://schema.org",
  "@type": "Organization",
- "name": "Quixz eSports",
- "legalName" : "Quixz eSports",
+ "name": "Quixz Esports",
+ "legalName" : "Quixz Esports",
  "url": "https://quixz.eu",
  "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
  "foundingDate": "2015",
@@ -37,7 +37,7 @@
  "telephone": "+47 913 65 195"
  },
  "sameAs": [
- "https://twitter.com/QuixzeSports",
+ "https://twitter.com/QuixzEsports",
  "https://www.facebook.com/quixzesports",
  "https://www.gamer.no/klubber/quixz-esports/43274/lag/43275",
  "https://www.youtube.com/channel/UChgzQGcnVEn_nqdSfnggkcw"

@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="header">
-    <a href="/"><img src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo"></a>
+    <a href="/"><img src="/assets/image/logo/logo_500.png" alt="Quixz Esports logo"></a>
     <nav class="navbar">
       <div class="toggle">
         <i class="fas fa-bars menu" aria-hidden="true"></i>
@@ -66,7 +66,7 @@
 
   <div class="footer--left">
     <ul>
-      <li>Copyright © {{ date("Y") }} Quixz eSports All Rights Reserved.</li>
+      <li>Copyright © {{ date("Y") }} Quixz Esports All Rights Reserved.</li>
     </ul>
   </div>
 
@@ -105,7 +105,7 @@
       <li><a class="fab fa-twitch" href="{{ $social->twitch }}" target="_blank"></a></li>
   </ul>
 
-    <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+    <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz Esports logo">
 </div>
 
   <script type="text/javascript">
