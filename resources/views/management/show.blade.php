@@ -4,28 +4,28 @@
 @section('seo')
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - {{ $player->name }}">
-  <meta itemprop="description" content="{{ $player->name }} , a part of the management for Quixz eSports! Click if you want to learn more about {{ $player->name }}">
+  <meta itemprop="description" content="{{ $player->name }} , a part of the management for Quixz Esports! Click if you want to learn more about {{ $player->name }}">
   <meta itemprop="image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://quixz.eu">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - {{ $player->name }}">
-  <meta property="og:description" content="{{ $player->name }} , a part of the management for Quixz eSports! Click if you want to learn more about {{ $player->name }}">
+  <meta property="og:description" content="{{ $player->name }} , a part of the management for Quixz Esports! Click if you want to learn more about {{ $player->name }}">
   <meta property="og:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@php echo Config::get('app.name'); @endphp - {{ $player->name }}">
-  <meta name="twitter:description" content="{{ $player->name }} , a part of the management for Quixz eSports! Click if you want to learn more about {{ $player->name }}">
+  <meta name="twitter:description" content="{{ $player->name }} , a part of the management for Quixz Esports! Click if you want to learn more about {{ $player->name }}">
   <meta name="twitter:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Google Strucutred Data -->
   <script type="application/ld+json">
    { "@context": "http://schema.org",
    "@type": "Organization",
-   "name": "Quixz eSports",
-   "legalName" : "Quixz eSports",
+   "name": "Quixz Esports",
+   "legalName" : "Quixz Esports",
    "url": "https://quixz.eu",
    "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
    "foundingDate": "2015",
@@ -42,7 +42,7 @@
    "telephone": "+47 913 65 195"
    },
    "sameAs": [
-   "https://twitter.com/QuixzeSports",
+   "https://twitter.com/QuixzEsports",
    "https://www.facebook.com/quixzesports",
    "https://www.gamer.no/klubber/quixz-esports/43274/lag/43275",
    "https://www.youtube.com/channel/UChgzQGcnVEn_nqdSfnggkcw"

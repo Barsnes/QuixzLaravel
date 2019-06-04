@@ -13,28 +13,28 @@
   @endforeach
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - {{ $team->name }}">
-  <meta itemprop="description" content="Quixz eSports' {{ $team->name }} team has {{ $playerCounter }} players. Click to learn more!">
+  <meta itemprop="description" content="Quixz Esports' {{ $team->name }} team has {{ $playerCounter }} players. Click to learn more!">
   <meta itemprop="image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://quixz.eu">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - {{ $team->name }}">
-  <meta property="og:description" content="Quixz eSports' {{ $team->name }} team has {{ $playerCounter }} players. Click to learn more!">
+  <meta property="og:description" content="Quixz Esports' {{ $team->name }} team has {{ $playerCounter }} players. Click to learn more!">
   <meta property="og:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@php echo Config::get('app.name'); @endphp - {{ $team->name }}">
-  <meta name="twitter:description" content="Quixz eSports' {{ $team->name }} team has {{ $playerCounter }} players. Click to learn more!">
+  <meta name="twitter:description" content="Quixz Esports' {{ $team->name }} team has {{ $playerCounter }} players. Click to learn more!">
   <meta name="twitter:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
 
   <!-- Google Strucutred Data -->
   <script type="application/ld+json">
    { "@context": "http://schema.org",
    "@type": "Organization",
-   "name": "Quixz eSports",
-   "legalName" : "Quixz eSports",
+   "name": "Quixz Esports",
+   "legalName" : "Quixz Esports",
    "url": "https://quixz.eu",
    "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
    "foundingDate": "2015",
@@ -51,7 +51,7 @@
    "telephone": "+47 913 65 195"
    },
    "sameAs": [
-   "https://twitter.com/QuixzeSports",
+   "https://twitter.com/QuixzEsports",
    "https://www.facebook.com/quixzesports",
    "https://www.gamer.no/klubber/quixz-esports/43274/lag/43275",
    "https://www.youtube.com/channel/UChgzQGcnVEn_nqdSfnggkcw"
@@ -104,7 +104,7 @@
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                   <div class="matchEnemy">
                     <div class="matchEnemy__quixz">
-                      <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                      <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
                       <h6>{{ $match->team->name }}</h6>
                     </div>
                     <h3>VS</h3>
@@ -149,7 +149,7 @@
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                     <div class="matchEnemy">
                       <div class="matchEnemy__quixz">
-                        <img src="../assets/image/logo/logo_500.png" alt="Quixz eSports logo">
+                        <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
                         <h6>{{ $match->team->name }}</h6>
                       </div>
                       <div class="matchMiddle">

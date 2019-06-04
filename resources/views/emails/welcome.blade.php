@@ -6,7 +6,7 @@
   </head>
   <body>
 
-    <h1>Welcome to Quixz eSports!</h1>
+    <h1>Welcome to Quixz Esports!</h1>
     <hr>
     <p>Please request a password reset, <a href="https://quixz.eu/password/reset">here</a>, to change your default password!</p>
     <hr>
