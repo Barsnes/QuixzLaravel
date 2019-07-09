@@ -22,7 +22,7 @@ class ClubFormController extends Controller
         return back()->withError($error);
       } else {
 
-        $this->validate($request, array(
+        $this->validate($request, [
           'first_name' => 'required',
           'last_name' => 'required',
           'player_name' => 'required',
@@ -33,7 +33,7 @@ class ClubFormController extends Controller
           'city' => 'required',
           'zip' => 'required|integer',
           'street' => 'required',
-        ));
+        ]);
 
         $form = new ClubForm;
 
