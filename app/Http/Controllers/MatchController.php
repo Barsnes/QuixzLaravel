@@ -128,13 +128,13 @@ class MatchController extends Controller
 
         $match->save();
 
-        return redirect('/admin/matches');
+        return redirect('/admin');
     }
 
     public function destroy($id)
     {
       Match::destroy($id);
 
-      return redirect('/admin/matches');
+      return redirect('/admin');
     }
 }
