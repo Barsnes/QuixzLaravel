@@ -78,7 +78,7 @@
         $tournDate = new DateTime($tourn['date']);
         $date_now = new DateTime();
       @endphp
-      @if ($tournCount < 2 && $tourn->finished == '1')
+      @if ($tourn->finished == '1')
         @php $tournCount ++ @endphp
           <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
             <img src="{{ asset('images/' . $tourn->image) }}" alt="">
