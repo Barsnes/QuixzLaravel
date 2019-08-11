@@ -60,7 +60,7 @@
   <h5 style="font-size:.9em; color:#FFF; letter-spacing:1px">Written by {{ $article->author }}</h5>
   <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
   @if ($article->team_id == '')
-
+    <h5>Category: News</h5>
   @else
     <h5>Category: {{ $article->team->name }}</h5>
   @endif
