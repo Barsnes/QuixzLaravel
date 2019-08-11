@@ -6,16 +6,38 @@
   </div>
   <div class="col-md-12">
     <div class="row offset-2" style="margin-top:2rem;">
-        @foreach ($matches as $match)
-          <div class="card " style="width: 20rem;">
-            <div class="card-body">
-              <h5 class="card-title">{{ $match->title }}</h5>
-              <h5 class="card-title">{{ date('d F Y', strtotime($match->date)) }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">{{ $match->team->name }}</h6>
-              <h5>Enemy: {{ $match->enemy }}</h5>
-              <a href="/admin/matches/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+      <h2 class="col-md-12">Upcoming</h2>
+        @foreach ($matches->reverse() as $match)
+          @if ($match->quixzScore == '0' && $match->enemyScore == '0')
+            <div class="card " style="width: 20rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{ $match->title }}</h5>
+                <h5 class="card-title">{{ date('d F Y', strtotime($match->date)) }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ $match->team->name }}</h6>
+                <h6 style="color: #F8B52A" class="card-subtitle mb-2">{{ $match->tournament->name }}</h6>
+                <h5>Enemy: {{ $match->enemy }}</h5>
+                <a href="/admin/matches/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+              </div>
             </div>
-          </div>
+          @endif
+        @endforeach
+    </div>
+    <div class="row offset-2" style="margin-top:2rem;">
+      <h2 class="col-md-12">Finished</h2>
+        @foreach ($matches as $match)
+          @if ($match->quixzScore != '0' && $match->enemyScore != '0')
+            <div class="card " style="width: 20rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{ $match->title }}</h5>
+                <h5 class="card-title">{{ date('d F Y', strtotime($match->date)) }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ $match->team->name }}</h6>
+                <h6 style="color: #F8B52A" class="card-subtitle mb-2 text-muted">{{ $match->tournament->name }}</h6>
+                <h5>Enemy: {{ $match->enemy }}</h5>
+                <p>Score: {{ $match->quixzScore }} : {{ $match->enemyScore }}</p>
+                <a href="/admin/matches/{{ $match->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+              </div>
+            </div>
+          @endif
         @endforeach
     </div>
   </div>

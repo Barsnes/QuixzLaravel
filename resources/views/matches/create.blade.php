@@ -16,11 +16,11 @@
     <div class="row">
       <div class="col">
         {{ Form::label('name', 'Name:') }}
-        {{ Form::text('name', '', array('class' => 'form-control')) }}
+        {{ Form::text('name', '', array('class' => 'form-control', "required" => "true")) }}
       </div>
       <div class="col">
         <label for="">Tournaments</label>
-        <select class="form-control" name="tournament_id">
+        <select required class="form-control" name="tournament_id">
           @foreach ($tournaments as $tournament)
             @if ($tournament->finished == '1')
               @continue
@@ -37,24 +37,18 @@
     {{ Form::text('link', '', array('class' => 'form-control')) }}
   </div>
   <div class="col">
-      <label for="team_id">Game:</label>
-      <select name="team_id" class="form-control">
-        <option value="">Choose One</option>
-        @foreach ($teams as $team)
-            <option value="{{ $team->id }}">{{ $team->name }}</option>
-        @endforeach
-      </select>
+
   </div>
 </div>
 
       <div class="row">
 <div class="col">
         <label for="date">Date:</label>
-        <input class="form-control" type="date" name="date">
+        <input required class="form-control" type="date" name="date">
 </div>
 <div class="col">
         <label for="date">Time:</label>
-        <input class="form-control" type="time" name="time">
+        <input required class="form-control" type="time" name="time">
 </div>
       </div>
 

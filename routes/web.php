@@ -57,6 +57,11 @@ Route::get('/discord', function(){
   return Redirect::to($url);
 });
 
+Route::get('/shop', function(){
+  $url = 'https://xoose.de/produkt-kategorie/quixz/';
+  return Redirect::to($url);
+});
+
 Route::get('feed', function(){
 
     // create new feed

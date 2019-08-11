@@ -73,8 +73,8 @@
 
 .teamMatches {
   display: grid;
-  grid-template-columns: repeat(2, calc(50% - 1rem));
-  grid-gap: 2rem;
+  grid-template-columns: repeat(2, calc(50% - .5rem));
+  grid-gap: 1rem;
   width: 70%;
   padding: 2rem 15% 3rem 15%;
   background-color: #232323;
@@ -88,7 +88,10 @@
 
 .recentMatches, .upcomingMatches {
   width: 100%;
-  grid-column: span 1
+  grid-column: span 1;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1rem;
 }
 
 .match_body {
@@ -97,7 +100,6 @@
   grid-template-columns: 1fr 1fr;
   font-family: "Lato";
   padding: .2rem .4rem 1rem .4rem;
-  margin-bottom: 1rem;
   grid-row-gap: .5rem;
 
   & h1 {

@@ -35,7 +35,6 @@ class MatchController extends Controller
       // Validate data
       $this->validate($request, array(
           'name' => 'required|min:3|max:255',
-          'team_id' => 'required|max:255',
           'enemy' => 'required|max:255',
           'quixzScore' => '',
           'enemyScore' => '',
@@ -50,13 +49,16 @@ class MatchController extends Controller
         $match = new Match;
 
         $match->name = $request->name;
-        $match->team_id = $request->team_id;
         $match->enemy = $request->enemy;
         $match->quixzScore = $request->quixzScore;
         $match->enemyScore = $request->enemyScore;
         $match->date = $request->date;
         $match->link = $request->link;
         $match->tournament_id = $request->tournament_id;
+
+        $tournament = Tournament::find($request->tournament_id);
+
+        $match->team_id = $tournament->team_id;
 
         if ($request->hasFile('enemyLogo')) {
           $enemyLogo = $request->file('enemyLogo');

@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col">
         <label for="name">Name:</label>
-        <input class="form-control" type="text" name="name">
+        <input required class="form-control" type="text" name="name">
       </div>
       <div class="col">
         <label for="link">Tournament Link:</label>
@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col">
         <label for="team_id">Team:</label>
-        <select name="team_id" class="form-control">
+        <select required name="team_id" class="form-control">
           <option value="">Choose One</option>
           @foreach ($teams as $team)
               <option value="{{ $team->id }}">{{ $team->name }}</option>
@@ -36,20 +36,12 @@
         <label for="image">Size: 300x300</em></label>
         {{ Form::file('image', array('class' => 'form-control')) }}
       </div>
-      {{-- <div class="col">
-        <label for="format">Format</label>
-        <select class="form-control" name="format">
-          <option value="">Choose One</option>
-          <option value="">Best of One</option>
-          <option value="">Best of Three</option>
-        </select>
-      </div> --}}
     </div>
 
     <div class="row">
       <div class="col">
             <label for="date">Date:</label>
-            <input class="form-control" type="date" name="date">
+            <input required class="form-control" type="date" name="date">
       </div>
       <div class="col">
         <label for="finished">Finished:</label>
@@ -61,7 +53,7 @@
       </div>
     </div>
 
-      {{ Form::submit('Publish', array('class' => 'btn btn-success')) }}
+      {{ Form::submit('Publish', array('class' => 'btn btn-success mt-4')) }}
     {!! Form::close() !!}
     <hr>
   </div>
