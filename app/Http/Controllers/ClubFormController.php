@@ -34,7 +34,7 @@ class ClubFormController extends Controller
           'zip' => 'required',
           'street' => 'required',
           'steam_id' => '',
-          'discord' => ''
+          'discord' => '',
         ]);
 
         $form = new ClubForm;
