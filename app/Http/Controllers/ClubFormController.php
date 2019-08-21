@@ -41,18 +41,26 @@ class ClubFormController extends Controller
 
         $form->first_name = $request->first_name;
         $form->last_name = $request->last_name;
-        $form->player_name = $request->player_name;
+        if (isset($request->player_name)) {
+          $form->player_name = $request->player_name;
+        }
         $form->email = $request->email;
         if (isset($request->phone)) {
           $form->phone = $request->phone;
         }
         $form->date_of_birth = $request->date_of_birth;
-        $form->country = $request->country;
+        if (isset($request->country)) {
+          $form->country = $request->country;
+        }
         $form->city = $request->city;
         $form->zip_code = $request->zip;
         $form->street = $request->street;
-        $form->steam_id = $request->steam_id;
+        if (isset($request->steam_id)) {
+          $form->steam_id = $request->steam_id;
+        }
+        if (isset($request->discord)) {
         $form->discord = $request->discord;
+        }
 
         $data = $request;
 

@@ -329,7 +329,7 @@
 
     <div class="formButton">
       <div class="agreeButtons">
-        <input required type="checkbox" name="statutes" value="true">
+        <input required type="checkbox" name="agree" value="true">
         <label for="agree"><span style="color:red">*</span>Ich habe die <a href="https://quixz.eu/statutes-de">Statuten</a> gelesen und stimme ihnen zu.</label>
         <label style="grid-column: 2 / 3"><i style="opacity: 0.5">I have read the <a href="https://quixz.eu/statutes-de">statutes</a> and agree with them.</i></label>
 
