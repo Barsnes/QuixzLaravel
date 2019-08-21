@@ -25,14 +25,16 @@ class ClubFormController extends Controller
         $this->validate($request, [
           'first_name' => 'required',
           'last_name' => 'required',
-          'player_name' => 'required',
+          'player_name' => '',
           'email' => 'required|email|unique:club_form',
           'phone' => '',
           'date_of_birth' => 'required|date',
-          'country' => 'required',
+          'country' => '',
           'city' => 'required',
-          'zip' => 'required|integer',
+          'zip' => 'required',
           'street' => 'required',
+          'steam_id' => '',
+          'discord' => ''
         ]);
 
         $form = new ClubForm;
@@ -49,6 +51,8 @@ class ClubFormController extends Controller
         $form->city = $request->city;
         $form->zip_code = $request->zip;
         $form->street = $request->street;
+        $form->steam_id = $request->steam_id;
+        $form->discord = $request->discord;
 
         $data = $request;
 

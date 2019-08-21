@@ -24,22 +24,22 @@
     <div class="top">
       <div class="">
         <label for="first_name">Vorname (First Name)<span style="color:red">*</span></label>
-        <input type="text" name="first_name" placeholder="John">
+        <input required type="text" name="first_name" placeholder="John">
       </div>
 
       <div class="">
         <label for="last_name">Nachname (Last Name)<span style="color:red">*</span></label>
-        <input type="text" name="last_name" placeholder="Doe">
+        <input required type="text" name="last_name" placeholder="Doe">
       </div>
 
       <div class="">
-        <label for="player_name">Nickname<span style="color:red">*</span></label>
+        <label for="player_name">Nickname</label>
         <input type="text" name="player_name" placeholder="DoeJohn23">
       </div>
 
       <div class="">
         <label for="email">Email<span style="color:red">*</span></label>
-        <input type="email" name="email" placeholder="john.doe@email.com">
+        <input required type="email" name="email" placeholder="john.doe@email.com">
       </div>
 
       <div class="">
@@ -49,13 +49,13 @@
 
       <div class="">
         <label for="date_of_birth">Geburtsdatum (Date of Birth)<span style="color:red">*</span></label>
-        <input type="date" name="date_of_birth" placeholder="20-09-2015">
+        <input required type="date" name="date_of_birth" placeholder="20-09-2015">
       </div>
     </div>
     <div class="bottom">
 
       <div class="">
-        <label for="country">Staat (Country)<span style="color:red">*</span></label>
+        <label for="country">Staat (Country)</label>
         <select name="country">
           <option disabled selected>Choose One</option>
           <option value="Afghanistan">Afghanistan</option>
@@ -302,48 +302,65 @@
 
       <div class="">
         <label for="city">Stadt (City)<span style="color:red">*</span></label>
-        <input type="text" name="city" placeholder="New York">
+        <input required type="text" name="city" placeholder="New York">
       </div>
 
       <div class="">
         <label for="zip_code">Postleitzahl (Zip Code)<span style="color:red">*</span></label>
-        <input type="text" name="zip" placeholder="1001">
+        <input required type="text" name="zip" placeholder="1001">
       </div>
 
       <div class="">
         <label for="street">Straße + Hausnummer (Street)<span style="color:red">*</span></label>
-        <input type="text" name="street" placeholder="Manhattan Blv. 23">
+        <input required type="text" name="street" placeholder="Manhattan Blv. 23">
+      </div>
+
+      <div class="">
+        <label for="steam_id">Steam ID</label>
+        <input type="text" name="steam_id">
+      </div>
+
+      <div class="">
+        <label for="discord">Discord</label>
+        <input type="text" name="discord">
       </div>
 
     </div>
 
     <div class="formButton">
       <div class="agreeButtons">
-        <input required type="checkbox" name="agree" value="true">
-        <label for="agree"><span style="color:red">*</span>Ich bin damit einverstanden, regelmäßig einen von der Mitgliederversammlung festgelegten
-      Mitgliedsbeitrag zu bezahlen. Aktuell ist kein Mitgliedsbeitrag festgelegt.</label><label style="grid-column: 2 / 3"> I agree to actively help the club to pursue it's goals and will obey all rules set up by the board or the member assembly</label>
-
-        <hr style="grid-column: 1 /3;">
-
         <input required type="checkbox" name="statutes" value="true">
-        <label for="statutes"><span style="color:red">*</span>Ich habe die <a href="https://quixz.eu/statutes-de">Statuen</a> gelesen und stimme ihnen zu.</label><label style="grid-column: 2 / 3"> I have read, and agree to the  <a href="/statutes-de">Statutes</a></label>
+        <label for="agree"><span style="color:red">*</span>Ich habe die <a href="https://quixz.eu/statutes-de">Statuten</a> gelesen und stimme ihnen zu.</label>
+        <label style="grid-column: 2 / 3"><i style="opacity: 0.5">I have read the <a href="https://quixz.eu/statutes-de">statutes</a> and agree with them.</i></label>
 
-        <hr style="grid-column: 1 /3;">
+        <hr style="grid-column: 1 /3; width: 100%">
 
         <input required type="checkbox" name="privacy-policy" value="true">
-        <label for="privacy-policy"><span style="color:red">*</span>Ich stimme der Verarbeitung meiner Daten im Rahmen der <a href="https://quixz.eu/privacy-policy-de">Datenschutzrichtlinie</a> zu. Meine
-      Emailadresse darf für wichtige Informationen zum Verein, wie zum Beispiel Einladungen zu
-      Mitgliederversammlungen verwendet werden.</label><label style="grid-column: 2 / 3"> I consent to the processing of my data under the <a href="/privacy-policy-de">Privacy Policy</a></label>
+        <label for="privacy-policy"><span style="color:red">*</span>Ich stimme der Verarbeitung meiner Daten im Rahmen der <a href="https://quixz.eu/privacy-policy-de"> Datenschutzrichtlinie</a> zu.
+Meine Emailadresse darf für wichtige Informationen zum Verein, wie zum Beispiel
+Einladungen zu Mitgliederversammlungen verwendet werden.</label>
+<label style="grid-column: 2 / 3"><i style="opacity: 0.5">I consent to the usage of my personal data for the purposes stated in the <a href="https://quixz.eu/privacy-policy-de">Privacy
+Policy</a>. My email address may be used to send me important information about the
+club like invitations for member assemblies</i></label>
 
-        <hr style="grid-column: 1 /3;">
+        <hr style="grid-column: 1 /3; width: 100%">
 
         <input required type="checkbox" name="join" value="true">
-        <label for="join"><span style="color:red">*</span>Ich möchte dem Verein ‚Quixz esports‘ beitreten.</label> <label style="grid-column: 2 / 3">I would like to join the club 'Quixz eSports'</label>
-        <hr style="grid-column: 1 /3;">
+        <label for="join"><span style="color:red">*</span>Ich möchte dem Verein "Quixz Esports" beitreten.</label>
+        <label style="grid-column: 2 / 3"><i style="opacity: 0.5">I would like to join the club "Quixz Esports"</i></label>
+
+        <hr style="grid-column: 1 /3; width: 100%">
+
         <input required type="checkbox" name="member" value="true">
-        <label for="member"><span style="color:red">*</span>Ich bin damit einverstanden, regelmäßig einen von der Mitgliederversammlung festgelegten
-      Mitgliedsbeitrag zu bezahlen. Aktuell ist kein Mitgliedsbeitrag festgelegt. </label><label style="grid-column: 2 / 3">(I agree to regularly set one of the General Assembly
-To pay membership fee (Currently no membership fee is set))</label>
+        <label for="member"><span style="color:red">*</span>Ich nehme zur Kenntnis, dass die Mitgliederversammlung einen Mitgliedsbeitrag
+festsetzen kann. Bei erstmaliger Festsetzung eines Mitgliedsbeitrags wird Mitgliedern,
+die mit der Erhebung eines Mitgliedsbeitrags nicht einverstanden sind, ein
+Sonderkündigungsrecht ihrer Mitgliedschaft gewährt.</label>
+
+      <label style="grid-column: 2 / 3"><i style="opacity: 0.5">I am aware that the member assembly can set a mandatory membership fee. When a
+membership fee is set for the first time, all members who disagree with paying a
+membership fee are granted the right to immediately cancel their membership.</i></label>
+
       </div>
       <p style="margin-top: 1rem"><span style="color:red">*</span>Required</p>
       {{ Form::submit('Submit', array('class' => 'submitButton')) }}
