@@ -20,6 +20,13 @@
   <p><b>Stadt:</b> {{ $city }}</p>
   <p><b>Postleitzahl:</b> {{ $zip }}</p>
   <p><b>Straße + Hausnummer:</b> {{ $street }}</p>
+  @if (isset($steam_id))
+    <p><b>Steam Id:</b> {{ $steam_id }}</p>
+  @endif
+
+  @if (isset($discord))
+    <p><b>Discord:</b> {{ $discord }}</p>
+  @endif
 </div>
   <hr>
     <h4 style="color: #2B63AF">Wichtige Hinweise</h4>

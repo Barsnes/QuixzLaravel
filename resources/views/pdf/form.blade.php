@@ -9,28 +9,31 @@
 <hr>
 
 <div class="">
-  <p><b>Name:</b> {{ $form->first_name }}
-  @if (isset($form->player_name))
-      "<span style="color:#F8B52A">{{ $form->player_name }}</span>"
-  @endif {{ $form->last_name }}</p>
-  <p><b>Email:</b> {{ $form->email }}</p>
-  @if (isset($form->phone))
-    <p><b>Phone:</b> {{ $form->phone }}</p>
+  <p><b>Name:</b> {{ $first_name }}
+  @if (isset($player_name))
+      "<span style="color:#F8B52A">{{ $player_name }}</span>"
+  @endif {{ $last_name }}</p>
+  <p><b>Email:</b> {{ $email }}</p>
+  @if (isset($phone))
+    <p><b>Phone:</b> {{ $phone }}</p>
   @endif
-  <p><b>DOB:</b> {{ $form->date_of_birth }}</p>
-  @if (isset($form->country))
-    <p><b>Country:</b> {{ $form->country }}</p>
+  <p><b>DOB:</b> {{ $date_of_birth }}</p>
+  @if (isset($country))
+    <p><b>Country:</b> {{ $country }}</p>
   @endif
-  <p><b>City:</b> {{ $form->city }}</p>
-  <p><b>Zip:</b> {{ $form->zip_code }}</p>
-  <p><b>Street:</b> {{ $form->street }}</p>
-
-  @if (isset($form->steam_id))
-    <p><b>Steam Id:</b> {{ $form->steam_id }}</p>
+  <p><b>City:</b> {{ $city }}</p>
+  @if ($zip)
+      <p><b>Zip:</b> {{ $zip }}</p>
   @endif
 
-  @if (isset($form->discord))
-    <p><b>Discord:</b> {{ $form->discord }}</p>
+  <p><b>Street:</b> {{ $street }}</p>
+
+  @if (isset($steam_id))
+    <p><b>Steam Id:</b> {{ $steam_id }}</p>
+  @endif
+
+  @if (isset($discord))
+    <p><b>Discord:</b> {{ $discord }}</p>
   @endif
 </div>
 
