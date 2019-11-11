@@ -49,6 +49,9 @@
    ]}
   </script>
 
+  <!-- Load the Twitch embed script -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
 @endsection
 
 @section('content')
@@ -223,6 +226,24 @@
       @php $tournCount ++ @endphp
       <h4>No ongoing tournaments</h4>
     @endif
+  </div>
+
+  <div class="twitch">
+
+    <div id="twitch-embed" style="margin: auto"></div>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "quixzesports",
+        theme: "dark",
+        layout: "video",
+        muted: true
+      });
+    </script>
+
   </div>
 
   </body>
