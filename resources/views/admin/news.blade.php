@@ -11,7 +11,7 @@
       <h5 class="card-title"><a href="/admin/news">News posts</a></h5>
       <h6 class="card-subtitle mb-2 text-muted">Recent</h6>
         <div class="row">
-        @foreach ($articles as $article)
+        @foreach ($articles->reverse() as $article)
             <div class="col-sm-4" style="margin-bottom: 1rem">
               <a href="/admin/news/{{ $article->id }}/edit">
                 <div class="card" style="width: 100%;">

@@ -8,7 +8,7 @@
 @endphp
 
 <div class="article--body">
-  @foreach ($articles->reverse() as $article)
+  @foreach ($articles as $article)
     @php
       $articleCount ++;
     @endphp
