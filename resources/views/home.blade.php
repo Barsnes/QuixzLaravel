@@ -138,7 +138,7 @@
           <h6 class="card-subtitle mb-2 text-muted">Current teams</h6>
           <div class="row">
             @foreach ($teams as $team)
-              @if ($team->active == "0")
+              @if ($team->active == "1")
                 <div class="col-sm-6" style="margin-bottom: 1rem">
                   <div class="card " style="width: 100%;">
                     <h5 class="card-header"><a href="/admin/teams/{{ $team->id }}/edit">{{ $team->name }}</a></h5>
