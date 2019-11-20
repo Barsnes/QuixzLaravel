@@ -138,33 +138,35 @@
           <h6 class="card-subtitle mb-2 text-muted">Current teams</h6>
           <div class="row">
             @foreach ($teams as $team)
-            <div class="col-sm-6" style="margin-bottom: 1rem">
-              <div class="card " style="width: 100%;">
-                <h5 class="card-header"><a href="/admin/teams/{{ $team->id }}/edit">{{ $team->name }}</a></h5>
-                <div class="card-body">
-                  <div class="btn-group" role="group">
-                      <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Players
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          @foreach ($team->player as $player)
-                            @if ($player->active == 'false') @else
-                              <a class="dropdown-item" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
-                            @endif
-                          @endforeach
-                        </div>
+              @if ($team->active !== "false")
+                <div class="col-sm-6" style="margin-bottom: 1rem">
+                  <div class="card " style="width: 100%;">
+                    <h5 class="card-header"><a href="/admin/teams/{{ $team->id }}/edit">{{ $team->name }}</a></h5>
+                    <div class="card-body">
+                      <div class="btn-group" role="group">
+                          <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Players
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              @foreach ($team->player as $player)
+                                @if ($player->active == 'false') @else
+                                  <a class="dropdown-item" href="/admin/players/{{ $player->id }}/edit">{{ $player->playerName }}</a>
+                                @endif
+                              @endforeach
+                            </div>
+                          </div>
+                            <a class="btn btn-secondary btn-sm" href="/team/{{ $team->slug }}">
+                              Team Page
+                            </a>
+                            <a class="btn btn-warning btn-sm" href="/admin/teams/{{ $team->id }}/edit">
+                              Edit
+                            </a>
                       </div>
-                        <a class="btn btn-secondary btn-sm" href="/team/{{ $team->slug }}">
-                          Team Page
-                        </a>
-                        <a class="btn btn-warning btn-sm" href="/admin/teams/{{ $team->id }}/edit">
-                          Edit
-                        </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              @endif
             @endforeach
           </div>
           <a href="/admin/teams" class="btn btn-info btn-sm">View</a>
