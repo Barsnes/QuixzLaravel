@@ -125,6 +125,7 @@ class PlayerController extends Controller
           $player->active = $request->active;
           $player->nationality = strtolower($request->nationality);
           $player->role = $request->role;
+          $player->team_id = $request->team_id;
 
 
           if ($request->hasFile('image')) {
