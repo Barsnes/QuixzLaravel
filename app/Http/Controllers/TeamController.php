@@ -39,7 +39,7 @@ class TeamController extends Controller
 
     if (Auth::user()->role == 'Admin') {
       $this->validate($request, array(
-          'name' => 'required|max:20',
+          'name' => 'required|max:30',
           'body' => 'max:10000',
           'wins' => 'integer',
           'loss' => 'integer',
