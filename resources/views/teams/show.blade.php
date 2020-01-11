@@ -208,18 +208,14 @@
   </div>
 @endif
 
-@php $checkTourn = 0; @endphp
 @foreach ($team->tournament as $tourn)
   @php
     $date_now = date("d M Y"); // this format is string comparable
     $tournDate = date('d M Y', strtotime($tourn->date));
   @endphp
-  @if ($date_now < $tournDate && $tourn->finished == '2')
-    @php $checkTourn ++ @endphp
-  @endif
 @endforeach
 
-@if ($checkTourn != '0')
+@if ($checkTourn == '2')
   <div class="upcomingTournaments">
     <h1>Ongoing Tournaments</h1>
     @foreach ($team->tournament->reverse() as $tourn)
