@@ -214,7 +214,7 @@
     $date_now = date("d M Y"); // this format is string comparable
     $tournDate = date('d M Y', strtotime($tourn->date));
   @endphp
-  @if ($date_now < $tournDate && $tourn->finished == '0')
+  @if ($date_now < $tournDate && $tourn->finished == '2')
     @php $checkTourn ++ @endphp
   @endif
 @endforeach
