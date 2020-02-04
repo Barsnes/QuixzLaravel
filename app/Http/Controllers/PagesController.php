@@ -39,7 +39,7 @@ class PagesController extends Controller
   public function teams() {
     $teams = Team::get();
     $games = Game::get();
-
+      
     return view("teams")->with("teams", $teams)->withGames($games);
   }
 
@@ -75,8 +75,12 @@ class PagesController extends Controller
 
     // $article = Article::where('created_at', '=', $year)->get();
     $player = Player::where('playerName', '=', $slug)->first();
-
-    return view('players.show')->withPlayer($player);
+      
+    if ($player->active == "1") {
+        return view('players.show')->withPlayer($player);
+    } else {
+        return back();
+    }
 
   }
 
@@ -85,7 +89,11 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $team = Team::where('slug', '=', $slug)->first();
 
-    return view('teams.show')->withTeam($team);
+    if ($team->active == "1") {
+        return view('teams.show')->withTeam($team);
+    } else {
+        return back();
+    }
 
   }
 
