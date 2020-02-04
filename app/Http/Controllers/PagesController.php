@@ -78,7 +78,7 @@ class PagesController extends Controller
       
       dd($player);
       
-    if ($player->active == "1") {
+    if ($player->active) {
         return view('players.show')->withPlayer($player);
     } else {
         return redirect("/");
