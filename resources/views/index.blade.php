@@ -32,8 +32,7 @@
    "founders": [
    {
    "@type": "Person",
-   "name": "Tobias Barsnes",
-   "name": "Tim Strutzberg"
+   "name": "Tobias Barsnes"
    }],
    "contactPoint": {
    "@type": "ContactPoint",
