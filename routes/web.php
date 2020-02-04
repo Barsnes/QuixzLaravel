@@ -62,6 +62,11 @@ Route::get('/shop', function(){
   return Redirect::to($url);
 });
 
+Route::get('/twitch', function(){
+  $url = 'https://twitch.tv/quixzesports/';
+  return Redirect::to($url);
+});
+
 Route::get('feed', function(){
 
     // create new feed
@@ -80,8 +85,8 @@ Route::get('feed', function(){
        $posts = \DB::table('articles')->orderBy('created_at', 'desc')->take(20)->get();
 
        // set your feed's title, description, link, pubdate and language
-       $feed->title = 'Quixz eSports';
-       $feed->description = 'All articles posted to Quixz eSports';
+       $feed->title = 'Quixz Esports';
+       $feed->description = 'All articles posted to Quixz Esports';
        $feed->logo = 'https://quixz.eu/assets/image/logo/logo_500.png';
        $feed->link = url('feed');
        $feed->setDateFormat('datetime'); // 'datetime', 'timestamp' or 'carbon'
