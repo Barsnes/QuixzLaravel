@@ -43,7 +43,7 @@
    "sameAs": [
    "https://twitter.com/QuixzEsports",
    "https://www.facebook.com/quixzesports",
-   "https://www.gamer.no/klubber/quixz-esports/43274/lag/43275",
+   "https://twitch.tv/quixzesports",
    "https://www.youtube.com/channel/UChgzQGcnVEn_nqdSfnggkcw"
    ]}
   </script>
