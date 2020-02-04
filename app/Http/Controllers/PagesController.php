@@ -76,10 +76,12 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $player = Player::where('playerName', '=', $slug)->first();
       
+      dd($player);
+      
     if ($player->active == "1") {
         return view('players.show')->withPlayer($player);
     } else {
-        return back();
+        return redirect("/");
     }
 
   }
@@ -92,7 +94,7 @@ class PagesController extends Controller
     if ($team->active == "1") {
         return view('teams.show')->withTeam($team);
     } else {
-        return back();
+        return redirect("/");
     }
 
   }
