@@ -76,8 +76,6 @@ class PagesController extends Controller
     // $article = Article::where('created_at', '=', $year)->get();
     $player = Player::where('playerName', '=', $slug)->first();
       
-      dd($player);
-      
     if ($player->active) {
         return view('players.show')->withPlayer($player);
     } else {
