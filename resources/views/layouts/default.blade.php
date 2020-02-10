@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="x7yK7kt6bcjL-iz3Vw9X0BDJlCR8mjrBVt_rDVekI04" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ mix('/css/master.css') }}">
+  <link rel="stylesheet" href="/css/master.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
 
   @yield('stylesheets')
