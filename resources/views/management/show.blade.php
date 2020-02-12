@@ -90,7 +90,7 @@
     @endif
     
     @if ($player->email != NULL)
-      <a href="{{ $player->email }}" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:{{ $player->email }}" target="_blank"><i class="fas fa-envelope"></i></a>
     @endif
   </div>
 </div>
