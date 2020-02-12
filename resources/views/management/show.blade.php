@@ -88,6 +88,10 @@
     @if ($player->instagram != NULL)
       <a href="{{ $player->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
     @endif
+    
+    @if ($player->email != NULL)
+      <a href="{{ $player->email }}" target="_blank"><i class="fas fa-envelope"></i></a>
+    @endif
   </div>
 </div>
 </div>
@@ -100,4 +104,18 @@
     </div>
   </div>
 @endif
+
+<style>
+    a {
+        color: #f6b42a;
+        transition: color 200ms ease;
+    }
+    
+    a:hover {
+        color: #FFFFFF;
+        transition: color 200ms ease;
+    }
+    
+</style>
+
 @endsection
