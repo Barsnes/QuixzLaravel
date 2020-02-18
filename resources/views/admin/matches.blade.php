@@ -25,7 +25,7 @@
     <div class="row offset-2" style="margin-top:2rem;">
       <h2 class="col-md-12">Finished</h2>
         @foreach ($matches as $match)
-          @if ($match->quixzScore != '0' && $match->enemyScore != '0')
+          @if ($match->quixzScore != '0' || $match->enemyScore != '0')
             <div class="card " style="width: 20rem;">
               <div class="card-body">
                 <h5 class="card-title">{{ $match->title }}</h5>
