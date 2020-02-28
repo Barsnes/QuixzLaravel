@@ -53,7 +53,7 @@ Auth::routes();
 Route::get('/admin', 'HomeController@index')->name('home');
 
 Route::get('/discord', function(){
-  $url = 'https://discord.gg/6QxSnV5';
+  $url = 'https://discord.gg/7qAjEK3';
   return Redirect::to($url);
 });
 
