@@ -1,5 +1,4 @@
 .player {
-  background-color: #232323;
   min-height: 100vh;
   padding-top: 1rem;
   width: 100vw;
@@ -17,11 +16,11 @@
   margin: 0 auto;
   text-align: left;
   margin: 1rem 15%;
-  background-color: $blue;
-  box-shadow: 0 0 50px #00000020;
+  background-color: #FFF;
+  color: #121219;
 
   & p {
-    font-family: 'Lato';
+    font-family: 'Paralucent';
 
     & a {
       color: $yellow;

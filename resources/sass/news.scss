@@ -1,7 +1,12 @@
 .news__section {
-  background-color: #232323;
   text-align: left;
   padding-top: 2rem;
+  border-top: 2px solid white;
+
+  &--header_text {
+    font-weight: 300;
+    font-size: 4rem
+  }
 
   h1 {
     margin: 0;
@@ -15,12 +20,10 @@
   grid-gap: 1em;
   grid-template-columns: calc(15% - 1rem) repeat(4, 1fr) calc(15% - 1rem);
   grid-template-rows: repeat(1, 1fr);
-  padding: 2rem 0;
-  background-color: #232323;
-  font-family: "Lato";
+  padding: 1rem 0;
+  font-family: "Paralucent";
   margin: 0 auto;
   text-align: left;
-  padding-bottom: 5rem;
 
   img {
     width: 100%;
@@ -33,20 +36,16 @@
 }
 
 .article_list {
-  background-color: $blue;
+  background-color: #FFF;
   padding: 0;
   text-decoration: none;
   height: auto;
-  color: #FFF;
-  font-family: "Lato";
+  color: #121219;
   box-shadow: 0 0 15px #00000000;
   transform: scale(1);
   transition: all 150ms ease;
 
   &:hover {
-    box-shadow: 0 0 15px #00000070;
-    transform: scale(1.02);
-    transition: all 150ms ease;
 
     & h1 {
         text-decoration: underline;
@@ -101,28 +100,22 @@
 
 .article--body{
   height: auto;
-  background-color: #232323;
-  font-family: "Lato";
+  font-family: "Paralucent";
   padding: 1em 15% 5rem 15%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
 
   &__card {
-    background-color: $blue;
+    background-color: #FFF;
     padding: 0;
     text-decoration: none;
     height: auto;
-    color: #FFF;
-    font-family: "Lato";
-    box-shadow: 0 0 15px #00000000;
-    transform: scale(1);
-    transition: all 150ms ease;
+    color: #121219;
+    font-family: "Paralucent";
     text-decoration: none;
 
     &:hover {
-      box-shadow: 0 0 15px #00000070;
-      transform: scale(1.02);
       transition: all 150ms ease;
 
       & h2 {
@@ -174,7 +167,9 @@
   padding-top: 1em;
   color: #FFF;
   margin-bottom: 10em;
-  min-height: 100vh
+  min-height: 100vh;
+  font-family: "Paralucent";
+
 }
 
 .article img {
@@ -184,7 +179,8 @@
 }
 
 .article p {
-  font-family: "Lato"
+  font-family: "Paralucent";
+  font-weight: 200
 }
 
 .article a {
@@ -193,11 +189,12 @@
 }
 
 .article h1 {
-  margin-bottom: .2em
+  margin: .2em 0;
+  font-family: "Teko"
 }
 
 .article h5 {
-  font-family: "Lato";
+  font-family: "Paralucent";
   padding: 0;
   margin: 0 .1rem;
   color: $yellow;

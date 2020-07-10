@@ -9,7 +9,7 @@
   grid-gap: 1rem;
   text-decoration: none;
   color: $white;
-  font-family: Lato;
+  font-family: "Paralucent";
   cursor: pointer;
   transform: scale(1);
   transition: transform 150ms ease;
@@ -71,7 +71,7 @@ iframe {
   grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 1rem;
   grid-template-rows: 15rem;
-  font-family: Lato;
+  font-family: "Paralucent";
 
   & img {
     width: 80%;
@@ -107,7 +107,8 @@ iframe {
 }
 
 .tournamentPlacement {
-  background-color: $blue;
+  background-color: #FFF;
+  color: #121219
 }
 
 .buttonContainer a {

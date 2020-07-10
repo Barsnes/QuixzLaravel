@@ -13,8 +13,8 @@
 
 .about_body {
   width: 100%;
-  font-family: "Lato";
-  background-color: #232323;
+  font-family: "Paralucent";
+  font-weight: 300;
   min-height: 100vh;
   padding-top: 1rem
 }
@@ -25,8 +25,10 @@
   margin: 0 25%;
 
   h1 {
-    font-family: "Raleway";
-    font-size: 3em
+    font-family: "Teko";
+    font-size: 3em;
+    margin: 1rem 0 0 0;
+    text-decoration: underline;
   }
 
   img {
@@ -98,7 +100,6 @@
 .header {
   height: 6em;
   width: 100%;
-  font-family: "Lato";
   text-decoration: none;
   background-color: $yellow;
   width: 100%;

@@ -3,7 +3,7 @@
 @section('title', $tourn->name)
 
 @section('content')
-<div class="tournament">
+<div class="tournament" style="margin-bottom: 2rem">
 <div class="tournamentInfo">
   <div class="general">
     <h1>{{ $tourn->name }}</h1>
@@ -38,7 +38,7 @@
               <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                   @if ($match->link == '')
                   @else
-                    <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                    <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                   @endif
               </h1>
               <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
@@ -61,7 +61,7 @@
         @endif
       @endforeach
       @if ($matchCount == '0')
-        <p style="font-family: 'Lato'; margin-top: 0;">No upcoming matches</p>
+        <p style="font-family: 'Paralucent'; font-weight: 300; margin-top: 0;">No upcoming matches</p>
       @endif
   <h2>Finished</h2>
   @php $matchCount = 0 @endphp

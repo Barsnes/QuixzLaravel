@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="header">
-    <a href="/"><img src="/assets/image/logo/logo_500.png" alt="Quixz Esports logo"></a>
+    <a href="/"><img src="/assets/image/logo/mascot-500.png" alt="Quixz Esports logo"></a>
     <nav class="navbar">
       <div class="toggle">
         <i class="fas fa-bars menu" aria-hidden="true"></i>
@@ -43,7 +43,6 @@
         <li><a class="{{ (Request::is('about') || Request::is('about/*') ? 'onSite' : '') }}" href="/about">About</a></li>
         <li><a class="{{ (Request::is('news') || Request::is('news/*') ? 'onSite' : '') }}" href="/news">News</a></li>
         <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'onSite' : '') }}" href="/teams">Teams</a></li>
-        <li><a class="{{ (Request::is('tournaments') || Request::is('tournaments/*') ? 'onSite' : '') }}" href="/tournaments">Tournaments</a></li>
         <li><a target="_blank" href="/shop">Shop</a></li>
         @if ($role == 'Admin' || $role == 'Player' || $role == 'Captain')
           <li><a href="/admin">Admin Dashboard</a></li>
@@ -107,7 +106,7 @@
       <li><a class="fab fa-twitch" href="{{ $social->twitch }}" target="_blank"></a></li>
   </ul>
 
-    <img class="footer_logo" src="/assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+    <img class="footer_logo" src="/assets/image/logo/logo-1000.png" alt="Quixz Esports logo">
 </div>
 
   <script type="text/javascript">

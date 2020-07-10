@@ -57,34 +57,31 @@
 
   <div class="background_top">
     <h1>Quixz<span>Esports</span></h1>
-  </div>
 
-  <div class="arrow">
-    <a class="fas fa-angle-down arrow_button" href="#about"></a>
-  </div>
+    <div class="sponsors-top">
+      @foreach ($sponsors as $sponsor)
+        @if ($sponsor->active != 0)
+          <a target="_blank" href="{{ $sponsor->website }}"><img src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
+        @endif
+      @endforeach
+      <a target="_blank" href="https://syse.no"><img src="assets/image/syse.png" alt="Syse.no"></a>
+      <a target="_blank" href="https://syse.no"><img src="assets/image/syse.png" alt="Syse.no"></a>
+      <a target="_blank" href="https://syse.no"><img src="assets/image/syse.png" alt="Syse.no"></a>
+    </div>
 
-  <div class="about" id="about">
-      <img src="assets/image/logo/logo_500.png" alt="Quixz Esports logo">
-      <div class="about_text">
-        <h1>About Us</h1>
-        <p>{{ $index->aboutContent }}</p>
-      </div>
   </div>
 
   <div class="news__section" id="news">
-    <h1>Recent News</h1>@if ($role == 'Admin')
-    @endif
+    <h1 class="news__section--header_text">Recent News</h1>
     <div class="news">
       @php $articleCount = 0 @endphp
       @foreach ($articles as $article)
       @php $articleCount++ @endphp
       @if ($articleCount <= 2)
       <a class="article_list" href=" {{ url('/news', $article->slug) }}">
-        <img src="{{ asset('/images/' . $article->image) }}" alt="some dummy text" og:image>
-        <h1>{{ $article->title }}</h1>
+        <img src="{{ asset('/images/' . $article->image) }}" alt="{{ $article->title }} image" og:image>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
-        <p class="news__desc">{!! strip_tags(substr($article->body, 0, 100)) !!}...</p>
-        <p class="readMore">Read more...</p>
+        <h1>{{ $article->title }}</h1>
         <hr>
       </a>
         @endif
@@ -92,24 +89,10 @@
     </div>
   </div>
 
-  <div class="teams">
-
-    <h1>Our Teams</h1>
-
-@foreach ($teams as $team)
-  @if ($team->active == '1')
-    <a class="team" href="/team/{{ $team->slug }}" style="background-image: url({{ asset('images/' . $team->image) }}); background-repeat: no-repeat; background-size: cover;)">
-        <h3>{{ $team->name }}</h3>
-        <div class="teamTint"></div>
-    </a>
-  @endif
-@endforeach
-  </div>
-
   <div class="teamMatches">
     <div class="upcomingMatches">
-      <h1>Upcoming Matches</h1>
-      @php $matchCount = 0; @endphp
+      <h1 class="upcomingMatches--header_text">Upcoming Matches</h1>
+      {{-- @php $matchCount = 0; @endphp
       @foreach ($matches->sortBy('date') as $match)
         @php
             $matchDate = new DateTime($match['date']);
@@ -146,11 +129,28 @@
       @if ($matchCount == '0')
         @php $matchCount ++; @endphp
         <h4 style="font-family:'Lato'">No upcoming matches</h4>
-      @endif
+      @endif --}}
+      <div class="match_body">
+          <h1>27 Jun 2020    -
+                <a target="_blank" href="" style="color: #f9b633; text-decoration: none">View</a>
+          </h1>
+          <a href="/tournaments/"></a>
+            <div class="matchEnemy">
+              <div class="matchEnemy__quixz">
+                <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
+                <h6>Counter Strike</h6>
+              </div>
+              <h3>VS</h3>
+              <div class="matchEnemy__info">
+                <h6>Bitfix</h6>
+                  <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+              </div>
+            </div>
+      </div>
     </div>
 
     <div class="recentMatches">
-      <h1>Recent Matches</h1>
+      <h1 class="recentMatches--header_text">Recent Matches</h1>
       @php $matchCount = 0; @endphp
       @foreach ($matches->sortBy('date')->reverse() as $match)
         @php
@@ -166,13 +166,13 @@
                   <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                       @if ($match->link == '')
                       @else
-                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                        <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                       @endif
                   </h1>
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                     <div class="matchEnemy">
                       <div class="matchEnemy__quixz">
-                        <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                        <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                         <h6>{{ $match->team->name }}</h6>
                       </div>
                       <div class="matchMiddle">
@@ -194,37 +194,18 @@
     </div>
   </div>
 
-  <div class="upcomingTournaments">
-    <div class="title">
-      <h1>Tournaments</h1>
-      <a href="/tournaments" style="color: #F8B52A; text-decoration: none; font-family: Lato; font-size: .8rem; margin-top: -2rem">View All</a>
-    </div>
-    @php $tournCount = 0; @endphp
-    @foreach ($tournaments->sortBy('date') as $tourn)
-      @php
-        $tournDate = new DateTime($tourn['date']);
-        $date_now = new DateTime();
-      @endphp
-      @if ($tournCount < 4 && $tourn->finished == '2')
-        @php $tournCount ++ @endphp
-          <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
-            <img src="{{ asset('images/' . $tourn->image) }}" alt="">
-            <div class="tournamentInfoLeft">
-              <h2>{{ $tourn->name }}</h2>
-              <h3>{{ $tourn->team->name }}</h3>
-            </div>
-            <div class="tournamentInfoRight">
-              <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
-              <h3>{{ $tourn->getFinished() }}</h3>
-            </div>
-          </a>
-          @continue
+  <div class="teams">
+
+    <h1>Our Teams</h1>
+
+    @foreach ($teams as $team)
+      @if ($team->active == '1')
+        <a class="team" href="/team/{{ $team->slug }}" >
+            <h3>{{ $team->name }}</h3>
+            <div class="teamTint"></div>
+        </a>
       @endif
     @endforeach
-    @if ($tournCount == 0)
-      @php $tournCount ++ @endphp
-      <h4>No ongoing tournaments</h4>
-    @endif
   </div>
 
   <div class="twitch">

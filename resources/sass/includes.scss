@@ -3,11 +3,12 @@
 .header {
   height: 6em;
   width: 100%;
-  font-family: "Lato";
+  font-family: "Paralucent";
+  font-weight: 600;
   text-decoration: none;
-  background-color: $yellow;
+  background-color: #FFF;
   width: 100%;
-  color: $white;
+  color: $yellow;
   display: grid;
   grid-template-columns: 20% 15% 60% 5%;
   grid-template-rows: 6em;
@@ -39,7 +40,7 @@
       content: '';
       width: 100%;
       height: 2px;
-      background-color: #FFF;
+      background-color: #191212;
       position: absolute;
       bottom: 1.5rem;
     }
@@ -56,7 +57,7 @@
         content: '';
         width: 100%;
         height: 2px;
-        background-color: #FFF;
+        background-color: #191212;
         position: absolute;
         bottom: 1.5rem;
         transform: scaleX(0);
@@ -77,7 +78,7 @@
   }
 
   a {
-    color: $white;
+    color: #191212;
     text-decoration: none;
     padding-right: 1.5em;
     padding-left: 1.5em;
@@ -118,13 +119,13 @@
 
 .footer {
   height: auto;
-  background: #232323;
   color: $white;
   padding: 2rem;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  grid-row-gap: 3rem;
-  font-family: "Lato";
+  grid-row-gap: 1.5rem;
+  font-family: "Paralucent";
+  font-weight: 300;
   border-top: 1px solid #FFF;
 
   &--left {

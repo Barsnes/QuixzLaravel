@@ -67,7 +67,7 @@
         @if ($player->nationality != '')
           <img src="{{ asset('assets/blank.gif') }}" class="flag flag-{{ $player->nationality }}" />
         @endif
-        {{ $player->firstName }} <b style="color:#F8B52A">{{ $player->playerName }}</b> {{ $player->lastName }}
+        {{ $player->firstName }} <b style="color:#f9b633">{{ $player->playerName }}</b> {{ $player->lastName }}
       </h1>
     </div>
 
@@ -128,13 +128,13 @@
                 <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                     @if ($match->link == '')
                     @else
-                      <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                      <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                     @endif
                 </h1>
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                   <div class="matchEnemy">
                     <div class="matchEnemy__quixz">
-                      <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                      <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                       <h6>{{ $match->team->name }}</h6>
                     </div>
                     <h3>VS</h3>
@@ -152,7 +152,7 @@
       @endforeach
       @if ($matchCount == '0')
         @php $matchCount ++; @endphp
-        <h4 style="font-family:'Lato'">No upcoming matches</h4>
+        <h4 style="font-family:'Paralucent'; font-weight: 300">No upcoming matches</h4>
       @endif
     </div>
 
@@ -173,13 +173,13 @@
                   <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                       @if ($match->link == '')
                       @else
-                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                        <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                       @endif
                   </h1>
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                     <div class="matchEnemy">
                       <div class="matchEnemy__quixz">
-                        <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                        <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                         <h6>{{ $match->team->name }}</h6>
                       </div>
                       <div class="matchMiddle">
@@ -216,10 +216,8 @@
         @if ($articleCount <= 2)
           <a href=" {{ url('/news', $article->slug) }} " class="article_list">
             <img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image>
-            <h1>{{ $article->title }}</h1>
             <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
-            <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
-            <p>Read more...</p>
+            <h1>{{ $article->title }}</h1>
             <hr>
           </a>
         @endif

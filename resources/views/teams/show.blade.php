@@ -61,7 +61,7 @@
 @endsection
 
 @section('content')
-  <div class="teamHeader" style="background-image: url({{asset('images/' . $team->image) }});">
+  <div class="teamHeader">
   <h1>{{ $team->name }}
    </h1>
   </div>
@@ -75,7 +75,7 @@
         <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF" class="card">
           <img src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
           <div class="container">
-            <h2>{{ $player->firstName }} <b style="color: #F8B52A">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
+            <h2>{{ $player->firstName }} <b style="color: #f9b633">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
           </div>
         </a>
       @endif
@@ -98,13 +98,13 @@
                 <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                     @if ($match->link == '')
                     @else
-                      <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                      <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                     @endif
                 </h1>
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                   <div class="matchEnemy">
                     <div class="matchEnemy__quixz">
-                      <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                      <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                       <h6>{{ $match->team->name }}</h6>
                     </div>
                     <h3>VS</h3>
@@ -122,7 +122,7 @@
       @endforeach
       @if ($matchCount == '0')
         @php $matchCount ++; @endphp
-        <h4 style="font-family:'Lato'">No upcoming matches</h4>
+        <h4 style="font-family:'Paralucent'; font-weight: 300">No upcoming matches</h4>
       @endif
     </div>
 
@@ -143,13 +143,13 @@
                   <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                       @if ($match->link == '')
                       @else
-                        <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                        <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                       @endif
                   </h1>
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                     <div class="matchEnemy">
                       <div class="matchEnemy__quixz">
-                        <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                        <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                         <h6>{{ $match->team->name }}</h6>
                       </div>
                       <div class="matchMiddle">
@@ -172,42 +172,6 @@
   </div>
 @endif
 
-@if ($team->wins == '0' && $team->loss == '0')
-
-@else
-  <div class="winRatio">
-
-    <h1>Win/Loss Ratio</h1>
-
-    <div class="ratioText">
-
-      <h2>Wins <b>{{ $team->wins }} / {{ $team->loss }}</b> Losses</h2>
-      <h2>Win ratio:</h2> <h2 id="ratio"></h2>
-
-    </div>
-
-  </div>
-
-  <script type="text/javascript">
-
-    var ratio = ({{ $team->wins }} / ({{ $team->loss }} + {{ $team->wins }})) * 100;
-
-    document.getElementById("ratio").innerHTML = Math.round(ratio) + "%";
-
-  </script>
-@endif
-
-@if ($team->body == '')
-
-@else
-  <div class="teamAbout">
-    <h1>About the team</h1>
-    <div class="">
-        {!! $team->body !!}
-    </div>
-  </div>
-@endif
-
 @php $checkTourn = 0; @endphp
 @foreach ($team->tournament as $tourn)
   @php
@@ -218,31 +182,6 @@
     @php $checkTourn ++ @endphp
   @endif
 @endforeach
-
-@if ($checkTourn > 0)
-  <div class="upcomingTournaments">
-    <h1>Ongoing Tournaments</h1>
-    @foreach ($team->tournament->reverse() as $tourn)
-      @php
-        $date_now = date("d M Y"); // this format is string comparable
-        $tournDate = date('d M Y', strtotime($tourn->date));
-      @endphp
-      @if ($tourn->finished == '2')
-          <a class="tournamentBody" href="/tournaments/{{ $tourn->slug }}">
-            <img src="{{ asset('images/' . $tourn->image) }}" alt="">
-            <div class="tournamentInfoLeft">
-              <h2>{{ $tourn->name }}</h2>
-              <h3>{{ $tourn->team->name }}</h3>
-            </div>
-            <div class="tournamentInfoRight">
-              <h2>{{ date('d M Y', strtotime($tourn->date)) }}</h2>
-              <h3>Not Finished</h3>
-            </div>
-          </a>
-      @endif
-    @endforeach
-  </div>
-@endif
 
 @if ($team->article == '[]')
 
@@ -261,11 +200,9 @@
       @if ($articleCount <= 2)
         <a href=" {{ url('/news', $article->slug) }} " class="article_list">
           <img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image>
-          <h1>{{ $article->title }}</h1>
           <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
-          <p class="news__desc">{!! strip_tags(substr($article->body, 0, 60)) !!}...</p>
-          <p>Read more...</p>
-          <hr>
+          <h1>{{ $article->title }}</h1>
+          <hr />
         </a>
       @endif
     @endforeach

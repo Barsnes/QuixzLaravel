@@ -1,72 +1,43 @@
 /* Index */
 
 .background_top {
-  height: 80vh;
+  height: 60vh;
   background-image: url(../assets/image/backgrounds/header.png);
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
+  position: relative;
 
   h1 {
     text-align: center;
-    padding-top: 10%;
-    font-size: 5em;
+    padding-top: 8%;
+    font-size: 7em;
     text-shadow: 0 0 30px #000;
     margin: 0;
+    font-weight: 500;
   }
   span {
-    display: block;
     color: $yellow;
-    line-height: .5em;
+    font-weight: 300;
   }
 }
 
-.arrow {
+.sponsors-top {
   position: absolute;
-  font-size: 4em;
-  top: 70vh;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-
-  .arrow_button {
-    text-decoration: none;
-    color: $yellow;
-    text-shadow:  0 0 20px #000
-  }
-}
-
-.about {
-  height: 10rem;
-  background-color: $yellow;
-  position: relative;
+  bottom: 50px;
+  width: 50%;
+  margin: 0 25%;
   display: grid;
-  padding: 2rem 0;
-  grid-template-columns: 15% 1fr 1fr 2fr 15%;
+  grid-gap: 1rem;
 
-  img {
-    grid-column: 2 / 3;
-    height: 100%;
-    margin: auto;
-    margin-left: 0;
+  & img {
+    height: 70px;
+    width: auto;
   }
 
-  .about_text {
-    grid-column: 3 / 5;
+  & a {
     margin: auto;
-  }
-
-  h1 {
-    font-size: 2em;
-    margin: 0;
-    padding-bottom: .5rem;
-    margin: auto;
-  }
-
-  p {
-    font-family: "Lato";
-    font-size: 1em;
-    margin: auto;
+    grid-row: 1 / 2;
   }
 }
 
@@ -83,8 +54,7 @@
   grid-template-columns: repeat(2, calc(50% - .5rem));
   grid-gap: 1rem;
   width: 70%;
-  padding: 2rem 15% 3rem 15%;
-  background-color: #232323;
+  padding: 1rem 15% 0 15%;
   background-size: cover;
   background-position: center;
 
@@ -97,15 +67,23 @@
   width: 100%;
   grid-column: span 1;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 5rem repeat(3, 1fr);
   grid-gap: 1rem;
+
+  &--header_text {
+    grid-row: 1 / 2;
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+  }
 }
 
 .match_body {
-  background-color: $blue;
+  background-color: #FFF;
+  color: #121219;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-family: "Lato";
+  font-family: "Paralucent";
   padding: .2rem .4rem 1rem .4rem;
   grid-row-gap: .5rem;
 
@@ -178,67 +156,61 @@
 }
 
 .teams {
-  background-color: #232323;
   display: grid;
-  padding: 2rem 15% 2rem 15%;
+  padding: 1rem 15% 2rem 15%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: .5rem;
+  grid-template-rows: 80px auto;
+  grid-column-gap: .5rem;
+  grid-row-gap: 1rem;
   text-align: center;
 }
 
 .teams h1 {
   grid-column: 1 / 4;
-  font-size: 2rem;
+  grid-row: 2rem auto;
+  font-size: 4rem;
+  font-weight: 300;
   text-align: left;
+  margin: 0;
 }
 
 .team {
-  width: 100%;
-  height: 10rem;
-  color: #FFF;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #121219;
   text-decoration: none;
-  grid-column: span 1;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 3fr;
-  align-content: center;
-  box-shadow: 0 0 15px #00000000;
-  transform: scale(1);
-  transition: box-shadow 150ms ease;
-  position: relative;
 
-  & h3 {
-      position: relative;
-      z-index: 100;
-    }
+  height: 10rem;
+  grid-column: span 1;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
 
   &:hover {
-    box-shadow: 0 0 15px #00000070;
-    transform: scale(1.03);
-    transition: all 150ms ease;
 
-    & .teamTint {
-      opacity: 0;
-      transition: opacity 150ms ease;
+    & h3 {
+      text-decoration: underline;
     }
   }
 
-  & .teamTint {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $blue30;
-    opacity: 1;
-    transition: opacity 150ms ease;
-    z-index: 50;
-  }
+  & h3 {
+      margin: 0
+    }
 }
 
   @media screen and (max-width: 650px) {
+
+    .sponsors-top {
+      display: none
+    }
+
     .teams {
       display: grid;
       padding: 2rem 15%;
       grid-template-columns: 1fr;
+      grid-template-rows: auto;
       text-align: center;
     }
 
