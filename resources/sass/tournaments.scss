@@ -9,7 +9,7 @@
   grid-gap: 1rem;
   text-decoration: none;
   color: $white;
-  font-family: "Paralucent";
+  font-family: "Lato";
   cursor: pointer;
   transform: scale(1);
   transition: transform 150ms ease;
@@ -71,7 +71,7 @@ iframe {
   grid-template-columns: 2fr 1fr 1fr;
   grid-gap: 1rem;
   grid-template-rows: 15rem;
-  font-family: "Paralucent";
+  font-family: "Lato";
 
   & img {
     width: 80%;

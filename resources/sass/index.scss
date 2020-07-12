@@ -83,7 +83,7 @@
   color: #121219;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-family: "Paralucent";
+  font-family: "Lato";
   padding: .2rem .4rem 1rem .4rem;
   grid-row-gap: .5rem;
 
@@ -187,8 +187,14 @@
   justify-content: center;
   align-items: center;
   background-color: #FFF;
+  box-sizing: border-box;
+  border: 0px solid $yellow;
+
+  transition: border ease-in-out 100ms;
 
   &:hover {
+    border: 5px solid $yellow;
+    transition: border ease-in-out 100ms;
 
     & h3 {
       text-decoration: underline;

@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
               <a class="navbar-brand" href="{{ url('/') }}" style="color:#FFF">
-                <img src="{{ asset('/assets/image/logo/logo_500.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <img src="{{ asset('/assets/image/logo/mascot-500.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
                   {{ config('app.name', 'Quixz eSports') }}
               </a>
 

@@ -19,13 +19,19 @@
   <style>
 
     body {
-      background-color: #232323;
+      background-color: #121219;
     }
 
     .downloads {
       padding: 1rem 2rem;
       font-family: Lato;
       display: grid;
+    }
+
+    .downloads h1 {
+      font-family: "Teko";
+      font-size: 3rem;
+      margin: 0;
     }
 
     .downloads h6 {

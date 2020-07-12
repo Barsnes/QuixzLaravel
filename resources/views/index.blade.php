@@ -64,9 +64,6 @@
           <a target="_blank" href="{{ $sponsor->website }}"><img src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
         @endif
       @endforeach
-      <a target="_blank" href="https://syse.no"><img src="assets/image/syse.png" alt="Syse.no"></a>
-      <a target="_blank" href="https://syse.no"><img src="assets/image/syse.png" alt="Syse.no"></a>
-      <a target="_blank" href="https://syse.no"><img src="assets/image/syse.png" alt="Syse.no"></a>
     </div>
 
   </div>
@@ -92,7 +89,7 @@
   <div class="teamMatches">
     <div class="upcomingMatches">
       <h1 class="upcomingMatches--header_text">Upcoming Matches</h1>
-      {{-- @php $matchCount = 0; @endphp
+      @php $matchCount = 0; @endphp
       @foreach ($matches->sortBy('date') as $match)
         @php
             $matchDate = new DateTime($match['date']);
@@ -129,24 +126,7 @@
       @if ($matchCount == '0')
         @php $matchCount ++; @endphp
         <h4 style="font-family:'Lato'">No upcoming matches</h4>
-      @endif --}}
-      <div class="match_body">
-          <h1>27 Jun 2020    -
-                <a target="_blank" href="" style="color: #f9b633; text-decoration: none">View</a>
-          </h1>
-          <a href="/tournaments/"></a>
-            <div class="matchEnemy">
-              <div class="matchEnemy__quixz">
-                <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
-                <h6>Counter Strike</h6>
-              </div>
-              <h3>VS</h3>
-              <div class="matchEnemy__info">
-                <h6>Bitfix</h6>
-                  <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
-              </div>
-            </div>
-      </div>
+      @endif
     </div>
 
     <div class="recentMatches">

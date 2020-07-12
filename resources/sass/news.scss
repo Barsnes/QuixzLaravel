@@ -21,7 +21,7 @@
   grid-template-columns: calc(15% - 1rem) repeat(4, 1fr) calc(15% - 1rem);
   grid-template-rows: repeat(1, 1fr);
   padding: 1rem 0;
-  font-family: "Paralucent";
+  font-family: "Lato";
   margin: 0 auto;
   text-align: left;
 
@@ -100,7 +100,7 @@
 
 .article--body{
   height: auto;
-  font-family: "Paralucent";
+  font-family: "Lato";
   padding: 1em 15% 5rem 15%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -112,7 +112,7 @@
     text-decoration: none;
     height: auto;
     color: #121219;
-    font-family: "Paralucent";
+    font-family: "Lato";
     text-decoration: none;
 
     &:hover {
@@ -168,7 +168,7 @@
   color: #FFF;
   margin-bottom: 10em;
   min-height: 100vh;
-  font-family: "Paralucent";
+  font-family: "Lato";
 
 }
 
@@ -179,8 +179,9 @@
 }
 
 .article p {
-  font-family: "Paralucent";
-  font-weight: 200
+  font-family: "Lato";
+  font-weight: 200;
+  max-width: 70ch
 }
 
 .article a {
@@ -194,7 +195,7 @@
 }
 
 .article h5 {
-  font-family: "Paralucent";
+  font-family: "Lato";
   padding: 0;
   margin: 0 .1rem;
   color: $yellow;
