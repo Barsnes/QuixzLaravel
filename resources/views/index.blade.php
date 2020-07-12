@@ -101,13 +101,13 @@
                 <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                     @if ($match->link == '')
                     @else
-                      <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                      <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
                     @endif
                 </h1>
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                   <div class="matchEnemy">
                     <div class="matchEnemy__quixz">
-                      <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                      <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                       <h6>{{ $match->team->name }}</h6>
                     </div>
                     <h3>VS</h3>
