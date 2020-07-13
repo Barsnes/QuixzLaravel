@@ -108,11 +108,18 @@
   border-top: 1px solid #FFF;
   grid-template-columns: repeat(4, 1fr);
 
+  h3 {
+    margin: auto;
+    font-size: 2rem;
+  }
+
   & a {
     margin: auto;
 
     & img {
-      width: 100%;
+      width: auto;
+      max-height: 60px;
+      margin: auto;
     }
   }
 }
