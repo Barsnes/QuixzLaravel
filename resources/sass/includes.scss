@@ -35,6 +35,7 @@
 
   & .onSite {
     position: relative;
+    color: #191212;
 
     &:after {
       content: '';
@@ -61,16 +62,17 @@
         position: absolute;
         bottom: 1.5rem;
         transform: scaleX(0);
-        transform-origin: right;
+        transform-origin: center;
         transition: 300ms transform ease;
       }
 
       &:hover {
+        color: #191212;
 
         &:before {
           content: '';
           transform: scaleX(1);
-          transform-origin: left;
+          transform-origin: center;
           transition: 300ms transform ease;
         }
       }
@@ -78,7 +80,7 @@
   }
 
   a {
-    color: #191212;
+    color: #19121290;
     text-decoration: none;
     padding-right: 1.5em;
     padding-left: 1.5em;

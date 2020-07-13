@@ -33,12 +33,16 @@
   background-color: #FFF;
   font-family: "Lato";
   transform: scale(1);
-  transition: transform 150ms ease;
 
   &:hover {
+
     & h2 {
       text-decoration: underline;
     }
+  }
+
+  & img {
+    margin: auto;
   }
 
   & h2 {

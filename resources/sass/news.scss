@@ -44,8 +44,11 @@
   box-shadow: 0 0 15px #00000000;
   transform: scale(1);
   transition: all 150ms ease;
+  box-sizing: border-box;
+
 
   &:hover {
+
 
     & h1 {
         text-decoration: underline;
@@ -114,6 +117,7 @@
     color: #121219;
     font-family: "Lato";
     text-decoration: none;
+    box-sizing: border-box;
 
     &:hover {
       transition: all 150ms ease;
