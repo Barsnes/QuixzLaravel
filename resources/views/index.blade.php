@@ -5,20 +5,20 @@
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - Home">
   <meta itemprop="description" content="{{ $index->aboutContent }}">
-  <meta itemprop="image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta itemprop="image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://quixz.eu">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - Home">
   <meta property="og:description" content="{{ $index->aboutContent }}">
-  <meta property="og:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta property="og:image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@php echo Config::get('app.name'); @endphp - Home">
   <meta name="twitter:description" content="{{ $index->aboutContent }}">
-  <meta name="twitter:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta name="twitter:image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Google Strucutred Data -->
   <script type="application/ld+json">

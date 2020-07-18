@@ -5,20 +5,20 @@
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - {{ $player->name }}">
   <meta itemprop="description" content="{{ $player->name }} , a part of the management for Quixz Esports! Click if you want to learn more about {{ $player->name }}">
-  <meta itemprop="image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta itemprop="image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://quixz.eu">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - {{ $player->name }}">
   <meta property="og:description" content="{{ $player->name }} , a part of the management for Quixz Esports! Click if you want to learn more about {{ $player->name }}">
-  <meta property="og:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta property="og:image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@php echo Config::get('app.name'); @endphp - {{ $player->name }}">
   <meta name="twitter:description" content="{{ $player->name }} , a part of the management for Quixz Esports! Click if you want to learn more about {{ $player->name }}">
-  <meta name="twitter:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta name="twitter:image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Google Strucutred Data -->
   <script type="application/ld+json">
@@ -88,7 +88,7 @@
     @if ($player->instagram != NULL)
       <a href="{{ $player->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
     @endif
-    
+
     @if ($player->email != NULL)
       <a href="mailto:{{ $player->email }}" target="_blank"><i class="fas fa-envelope"></i></a>
     @endif
@@ -110,12 +110,12 @@
         color: #f6b42a;
         transition: color 200ms ease;
     }
-    
+
     a:hover {
         color: #FFFFFF;
         transition: color 200ms ease;
     }
-    
+
 </style>
 
 @endsection

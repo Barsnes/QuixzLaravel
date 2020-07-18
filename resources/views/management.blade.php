@@ -5,20 +5,20 @@
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - Management">
   <meta itemprop="description" content="The management of Quixz Esports, is what makes everthing go around. The founder is Tobias Barsnes, but he can't work alone. Click to learn more about all the other staff members!">
-  <meta itemprop="image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta itemprop="image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://quixz.eu">
   <meta property="og:type" content="website">
   <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - Management">
   <meta property="og:description" content="The management of Quixz Esports, is what makes everthing go around. The founder is Tobias Barsnes, but he can't work alone. Click to learn more about all the other staff members!">
-  <meta property="og:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta property="og:image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="@php echo Config::get('app.name'); @endphp - Management">
   <meta name="twitter:description" content="The management of Quixz Esports, is what makes everthing go around. The founder is Tobias Barsnes, but he can't work alone. Click to learn more about all the other staff members!">
-  <meta name="twitter:image" content="{{ asset('/assets/image/about/about_middle.png') }}">
+  <meta name="twitter:image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Google Strucutred Data -->
   <script type="application/ld+json">
