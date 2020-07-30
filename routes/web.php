@@ -58,7 +58,7 @@ Route::get('/discord', function(){
 });
 
 Route::get('/shop', function(){
-  $url = 'https://xoose.de/produkt-kategorie/quixz/';
+  $url = 'https://arma.gg/products/quixz-elite-jersey';
   return Redirect::to($url);
 });
 
