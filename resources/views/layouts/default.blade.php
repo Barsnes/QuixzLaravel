@@ -67,6 +67,7 @@
   <div class="footer--left">
     <ul>
       <li>Copyright © {{ date("Y") }} Quixz Esports All Rights Reserved.</li>
+      <li>Org. nr. <span style="color: #f9b633">925 369 667</span></li>
     </ul>
   </div>
 
