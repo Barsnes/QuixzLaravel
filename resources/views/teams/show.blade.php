@@ -36,7 +36,7 @@
    "name": "Quixz Esports",
    "legalName" : "Quixz Esports",
    "url": "https://quixz.eu",
-   "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
+   "logo": "https://quixz.eu/assets/image/logo/mascot-500.png",
    "foundingDate": "2015",
    "founders": [
    {
@@ -73,7 +73,7 @@
     @foreach ($team->player as $player)
       @if ($player->active == 'true')
         <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF" class="card">
-          <img src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
+          <img loading="lazy" src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
           <div class="container">
             <h2>{{ $player->firstName }} <b style="color: #f9b633">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
           </div>
@@ -104,16 +104,16 @@
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                   <div class="matchEnemy">
                     <div class="matchEnemy__quixz">
-                      <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
+                      <img loading="lazy" src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                       <h6>{{ $match->team->name }}</h6>
                     </div>
                     <h3>VS</h3>
                     <div class="matchEnemy__info">
                       <h6>{{ $match->enemy }}</h6>
                       @if ($match->enemyLogo != '')
-                        <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                        <img loading="lazy" src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
                       @else
-                        <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                        <img loading="lazy" src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
                       @endif
                     </div>
                   </div>
@@ -149,7 +149,7 @@
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
                     <div class="matchEnemy">
                       <div class="matchEnemy__quixz">
-                        <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
+                        <img loading="lazy" src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                         <h6>{{ $match->team->name }}</h6>
                       </div>
                       <div class="matchMiddle">
@@ -159,9 +159,9 @@
                       <div class="matchEnemy__info">
                         <h6>{{ $match->enemy }}</h6>
                         @if ($match->enemyLogo != '')
-                          <img src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
+                          <img loading="lazy" src=" {{ asset('/images/' . $match->enemyLogo) }} " alt="Logo of opposing team"></img>
                         @else
-                          <img src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
+                          <img loading="lazy" src=" {{ asset('/images/default_team_logo.png') }} " alt="Logo of opposing team"></img>
                         @endif
                       </div>
                     </div>
@@ -199,7 +199,7 @@
       @endphp
       @if ($articleCount <= 2)
         <a href=" {{ url('/news', $article->slug) }} " class="article_list">
-          <img src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image>
+          <img loading="lazy" src="{{ asset('/images/' . $article->image) }}" alt="A description" og:image>
           <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
           <h1>{{ $article->title }}</h1>
           <hr />

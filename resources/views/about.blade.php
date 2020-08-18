@@ -27,7 +27,7 @@
    "name": "Quixz Esports",
    "legalName" : "Quixz Esports",
    "url": "https://quixz.eu",
-   "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
+   "logo": "https://quixz.eu/assets/image/logo/mascot-500.png",
    "foundingDate": "2015",
    "founders": [
    {
@@ -74,7 +74,7 @@
   <div class="teamBody">
     @foreach ($players as $player)
       <a style="text-decoration:none; color:#FFF" class="card" href="/management/{{ $player->slug }}">
-        <img src="{{ asset('/images/' . $player->image) }}" alt="" style="width:100%">
+        <img loading="lazy" src="{{ asset('/images/' . $player->image) }}" alt="" style="width:100%">
         <div class="container">
           <h2 syle="text-decoration: none; color: #FFF">{{ $player->name }}</h2>
         </div>

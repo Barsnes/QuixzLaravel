@@ -27,7 +27,7 @@
    "name": "Quixz Esports",
    "legalName" : "Quixz Esports",
    "url": "https://quixz.eu",
-   "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
+   "logo": "https://quixz.eu/assets/image/logo/mascot-500.png",
    "foundingDate": "2015",
    "founders": [
    {
@@ -56,7 +56,7 @@
 <div class="player">
   <div class="player__profile">
     <div class="player_image">
-      <img src="{{ asset('images/' . $player->image) }}" alt="">
+      <img loading="lazy" src="{{ asset('images/' . $player->image) }}" alt="">
     </div>
 
   <div class="player_info">

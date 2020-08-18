@@ -57,7 +57,7 @@
   <h3>Sponsored by</h3>
   @foreach ($sponsors as $sponsor)
     @if ($sponsor->active != 0)
-      <a target="_blank" href="{{ $sponsor->website }}"><img src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
+      <a target="_blank" href="{{ $sponsor->website }}"><img loading="lazy" src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
     @endif
   @endforeach
 </div>
@@ -107,7 +107,7 @@
       <li><a class="fab fa-twitch" href="{{ $social->twitch }}" target="_blank"></a></li>
   </ul>
 
-    <img class="footer_logo" src="/assets/image/logo/logo-1000.png" alt="Quixz Esports logo">
+    <img loading="lazy" class="footer_logo" src="/assets/image/logo/logo-1000.png" alt="Quixz Esports logo">
 </div>
 
   <script type="text/javascript">

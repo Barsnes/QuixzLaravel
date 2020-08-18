@@ -13,7 +13,7 @@
       $articleCount ++;
     @endphp
       <a class="article--body__card" href=" {{ url('/news', $article->slug) }}">
-        <img src="{{ asset('/images/' . $article->image) }}" alt="some dummy text" og:image>
+        <img loading="lazy" src="{{ asset('/images/' . $article->image) }}" alt="some dummy text" og:image>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
         <h2>{{ $article->title }}</h2>
         @if ($articleCount == 1)

@@ -27,7 +27,7 @@
      "name": "Quixz Esports",
      "legalName" : "Quixz Esports",
      "url": "https://quixz.eu",
-     "logo": "https://quixz.eu/assets/image/logo/logo_2000.png",
+     "logo": "https://quixz.eu/assets/image/logo/mascot-500.png",
      "foundingDate": "2015",
      "founders": [
      {
@@ -53,7 +53,7 @@
 @section('content')
 
 <div class="article">
-  <img src="{{ asset('/images/' . $article->image) }}" alt="dummy text" og:image></img>
+  <img loading="lazy" src="{{ asset('/images/' . $article->image) }}" alt="dummy text" og:image></img>
 
   <h1>{{ $article->title }}</h1>
   <h5 style="font-size:.9em; color:#FFF; letter-spacing:1px">Written by {{ $article->author }}</h5>
