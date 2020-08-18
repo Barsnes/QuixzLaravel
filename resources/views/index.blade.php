@@ -5,6 +5,7 @@
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - Home">
   <meta itemprop="description" content="{{ $index->aboutContent }}">
+  <meta name="description">{{ $index->aboutContent }}</meta>
   <meta itemprop="image" content="{{ asset('/assets/image/about/seo_image.png') }}">
 
   <!-- Facebook Meta Tags -->
