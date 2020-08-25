@@ -2,17 +2,17 @@
 @section('title'){{ $article->title }}@endsection
 
   @section('seo')
-    <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - {{ $article->title }}">
-    <meta itemprop="description" content="{!! strip_tags(substr($article->body, 0, 80)) !!}... Click to read more">
-    <meta itemprop="image" content="{{ asset('/images/' . $article->image) }}">
-
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://quixz.eu">
     <meta property="og:type" content="website">
     <meta property="og:title" content="@php echo Config::get('app.name'); @endphp - {{ $article->title }}">
     <meta property="og:description" content="{!! strip_tags(substr($article->body, 0, 80)) !!}... Click to read more">
     <meta property="og:image" content="{{ asset('/images/' . $article->image) }}">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="@php echo Config::get('app.name'); @endphp - {{ $article->title }}">
+    <meta itemprop="description" content="{!! strip_tags(substr($article->body, 0, 80)) !!}... Click to read more">
+    <meta itemprop="image" content="{{ asset('/images/' . $article->image) }}">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
