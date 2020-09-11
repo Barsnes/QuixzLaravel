@@ -179,11 +179,10 @@
 
     <h1>Our Teams</h1>
 
-    @foreach ($teams as $team)
+    @foreach ($teams->reverse() as $team)
       @if ($team->active == '1')
         <a class="team" href="/team/{{ $team->slug }}" >
             <h3>{{ $team->name }}</h3>
-            <div class="teamTint"></div>
         </a>
       @endif
     @endforeach
