@@ -78,7 +78,7 @@
           <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
             <div class="matchEnemy">
               <div class="matchEnemy__quixz">
-                <img src="../assets/image/logo/logo_500.png" alt="Quixz Esports logo">
+                <img src="../assets/image/logo/mascot-500.png" alt="Quixz Esports logo">
                 <h6>{{ $match->team->name }}</h6>
               </div>
               <div class="matchMiddle">
