@@ -65,7 +65,7 @@
   <div class="footer--left">
     <ul>
       <li>Copyright © {{ date("Y") }} Quixz Esports All Rights Reserved.</li>
-      <li>Org. nr. <span style="color: #f9b633">925 369 667</span></li>
+      <li>Org. nr. <a href="https://w2.brreg.no/enhet/sok/detalj.jsp?orgnr=925369667">925 369 667</a></li>
     </ul>
   </div>
 
