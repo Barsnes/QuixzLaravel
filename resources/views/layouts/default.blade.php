@@ -52,7 +52,6 @@
 @yield('content')
 
 <div class="sponsors">
-  <h3>Sponsored by</h3>
   @foreach ($sponsors as $sponsor)
     @if ($sponsor->active != 0)
       <a target="_blank" href="{{ $sponsor->website }}"><img loading="lazy" src="{{ asset('images/' . $sponsor->image) }}" alt="{{ $sponsor->name }}"></a>
