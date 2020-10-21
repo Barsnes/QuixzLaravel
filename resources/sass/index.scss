@@ -32,8 +32,8 @@
   grid-gap: 1rem;
 
   & img {
-    height: 70px;
-    width: auto;
+    max-height: auto;
+    max-width: 100%;
   }
 
   & a {
