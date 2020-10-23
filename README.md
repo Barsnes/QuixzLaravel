@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/Barsnes/QuixzLaravel.svg?branch=master)](https://travis-ci.org/Barsnes/QuixzLaravel)
 
-# Quixz eSports
+# Quixz Esports
 
-This is the Github repo containing all source code for[ Quixz eSports website.](https://quixz.eu " Quixz eSports website.")
+This is the Github repo containing all source code for[ Quixz Esports website.](https://quixz.eu " Quixz eSports website.")
 
 
 ### Disclaimer
