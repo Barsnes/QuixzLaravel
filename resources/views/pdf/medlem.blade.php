@@ -7,7 +7,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 </head>
 
 <div class="">
-  <h1><img src="https://quixz.eu/assets/image/logo/mascot_500.png" alt="Quixz Logo">   Quixz eSports - Medlem</h1>
+  <h1><img src="https://quixz.eu/assets/image/logo/logo-1000.png" alt="Quixz Logo">   Quixz Esports - Medlem</h1>
 </div>
 
 <hr>
