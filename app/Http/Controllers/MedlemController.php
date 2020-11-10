@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Medlem;
 use App\Mail\nyttMedlem;
+use App\Mail\nyttMedlemTakk;
 use Mail;
 use PDF;
 
