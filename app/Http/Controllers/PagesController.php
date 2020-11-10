@@ -39,7 +39,7 @@ class PagesController extends Controller
   public function teams() {
     $teams = Team::get();
     $games = Game::get();
-      
+
     return view("teams")->with("teams", $teams)->withGames($games);
   }
 
@@ -75,7 +75,7 @@ class PagesController extends Controller
 
     // $article = Article::where('created_at', '=', $year)->get();
     $player = Player::where('playerName', '=', $slug)->first();
-      
+
     if ($player->active) {
         return view('players.show')->withPlayer($player);
     } else {
@@ -108,6 +108,11 @@ class PagesController extends Controller
 
     return view('management.show')->withPlayer($person);
   }
+
+  public function medlem() {
+    return view('forms.medlem');
+  }
+
 
   // Show Servers
   public function servers(){

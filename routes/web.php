@@ -16,6 +16,7 @@ Route::get('/teams', 'PagesController@teams');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/servers', 'PagesController@servers');
 Route::get('/tournaments', 'PagesController@tournaments');
+Route::get('/medlem', 'PagesController@medlem');
 
 Route::get('/downloads', 'PagesController@downloads');
 Route::get('/management', 'PagesController@management');
@@ -47,6 +48,8 @@ Route::resource('/admin/management', 'ManagementController');
 Route::resource('/admin/servers', 'ServerController');
 Route::resource('/admin/sponsors', 'SponsorsController');
 Route::resource('/admin/club', 'ClubFormController');
+Route::resource('/admin/medlem', 'MedlemController');
+
 
 Auth::routes();
 
