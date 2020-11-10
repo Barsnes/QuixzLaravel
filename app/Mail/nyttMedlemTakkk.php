@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class nyttMedlem extends Mailable
+class nyttMedlemTakk extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -22,6 +22,6 @@ class nyttMedlem extends Mailable
 
     public function build()
     {
-        return $this->view('emails.medlem')->withForm($this->form)->attach('pdf/' . $this->pdf);
+        return $this->view('emails.medlem-takk')->withForm($this->form)->attach('pdf/' . $this->pdf);
     }
 }
