@@ -80,7 +80,7 @@ class MedlemController extends Controller
              $form->save();
 
              Mail::to('board@quixz.eu')->send(new nyttMedlem($form));
-             Mail::to($email)->send(new nyttMedlem($form));
+             Mail::to($form->email)->send(new nyttMedlem($form));
 
              return back()->withSuccess('Information successfully sent!');
 
