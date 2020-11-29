@@ -69,7 +69,7 @@
     <div class="formButton">
       <div class="agreeButtons">
         <input required type="checkbox" name="agree" value="true">
-        <label for="agree"><span style="color:red">*</span>Jeg godtar <a href="https://drive.google.com/file/d/1Mn3IAMUErDNKdx0InBdyjgS1rOrYLfdO/view?usp=sharing" target="_blank">medlemskontrakten</a>.</label>
+        <label for="agree"><span style="color:red">*</span>Jeg godtar <a href="https://drive.google.com/file/d/1TymL0N5WoZQ0aXIFVrNEGB_vxeIPqVSh/view?usp=sharing" target="_blank">medlemskontrakten</a>.</label>
 
         <hr style="grid-column: 1 /3; width: 100%">
 

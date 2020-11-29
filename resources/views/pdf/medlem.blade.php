@@ -32,7 +32,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 
 <div class="agreeButtons">
   <input checked required type="checkbox" name="agree" value="true">
-  <label for="agree">Jeg har godtatt medlemskontrakten</label><br>
+  <label for="agree">Jeg har godtatt <a href="https://drive.google.com/file/d/1TymL0N5WoZQ0aXIFVrNEGB_vxeIPqVSh/view?usp=sharing">medlemskontrakten</a></label><br>
 </div>
 
 <style media="screen">
