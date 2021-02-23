@@ -41,7 +41,7 @@
         <li><a class="{{ (Request::is('about') || Request::is('about/*') ? 'onSite' : '') }}" href="/about">About</a></li>
         <li><a class="{{ (Request::is('news') || Request::is('news/*') ? 'onSite' : '') }}" href="/news">News</a></li>
         <li><a class="{{ (Request::is('teams') || Request::is('team/*') ? 'onSite' : '') }}" href="/teams">Teams</a></li>
-        <li><a target="_blank" href="/shop">Shop</a></li>
+        <li><a target="_blank" href="/store">Store</a></li>
         @if ($role == 'Admin' || $role == 'Player' || $role == 'Captain')
           <li><a href="/admin">Admin Dashboard</a></li>
         @endif
