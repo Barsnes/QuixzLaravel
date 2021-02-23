@@ -60,8 +60,8 @@ Route::get('/discord', function(){
   return Redirect::to($url);
 });
 
-Route::get('/shop', function(){
-  $url = 'https://arma.gg/products/quixz-elite-jersey';
+Route::get('/store', function(){
+  $url = 'https://store.quixz.eu';
   return Redirect::to($url);
 });
 
