@@ -69,6 +69,14 @@
 
   </div>
 
+  <div class="merch">
+    <a href="https://store.quixz.eu" target="_blank">
+      <div class="yellow-overlay"></div>
+      <img src="assets/image/merch/cover.png" />
+      <h2>Spring Collection</h2>
+    </a>
+  </div>
+
   <div class="news__section" id="news">
     <h1 class="news__section--header_text">Recent News</h1>
     <div class="news">
