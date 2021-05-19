@@ -71,9 +71,7 @@
 
   <div class="merch">
     <a href="https://store.quixz.eu" target="_blank">
-      <div class="yellow-overlay"></div>
       <img src="assets/image/merch/cover.png" />
-      <h2>Spring Collection</h2>
     </a>
   </div>
 
