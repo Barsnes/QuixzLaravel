@@ -69,12 +69,6 @@
 
   </div>
 
-  <div class="merch">
-    <a href="https://store.quixz.eu" target="_blank">
-      <img src="assets/image/merch/cover.png" />
-    </a>
-  </div>
-
   <div class="news__section" id="news">
     <h1 class="news__section--header_text">Recent News</h1>
     <div class="news">
@@ -86,7 +80,6 @@
         <img loading="lazy" src="{{ asset('/images/' . $article->image) }}" alt="{{ $article->title }} image" og:image>
         <h5>{{ date('d M Y', strtotime($article->created_at)) }}</h5>
         <h1>{{ $article->title }}</h1>
-        <hr>
       </a>
         @endif
       @endforeach
