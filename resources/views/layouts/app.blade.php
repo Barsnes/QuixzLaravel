@@ -50,7 +50,7 @@
                         @guest
                         @else
                           <li>
-                              <a class="navbar-brand" href="/admin" style="color:#f8b52a">
+                              <a class="navbar-brand" href="/admin" style="color:#FF5511">
                                   Dashboard
                               </a>
                           </li>

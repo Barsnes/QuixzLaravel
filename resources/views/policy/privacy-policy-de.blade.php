@@ -102,7 +102,7 @@ Datenschutzbehörde beschweren.</p>
 
     .policy a {
       text-decoration: none;
-      color: #F8B52A
+      color: #FF5511
     }
   </style>
 

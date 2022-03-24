@@ -1,254 +1,253 @@
 .tournamentBody {
-  background-color: $blue;
-  grid-column: span 1;
-  padding: .4rem;
-  height: 8rem;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1.5fr 5fr 2fr;
-  grid-gap: 1rem;
-  text-decoration: none;
-  color: $white;
-  font-family: "Lato";
-  cursor: pointer;
-  transform: scale(1);
-  transition: transform 150ms ease;
-
-  &:hover {
-    transform: scale(1.01);
+    background-color: $blue;
+    grid-column: span 1;
+    padding: 0.4rem;
+    height: 8rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1.5fr 5fr 2fr;
+    grid-gap: 1rem;
+    text-decoration: none;
+    color: $white;
+    font-family: "Lato";
+    cursor: pointer;
+    transform: scale(1);
     transition: transform 150ms ease;
-  }
 
-  & img {
-    height: 80%;
-    margin: auto;
-    margin-left: 0;
-  }
+    &:hover {
+        transform: scale(1.01);
+        transition: transform 150ms ease;
+    }
 
-  & h3 {
-    margin-bottom: 0;
-    font-size: .8rem;
-    color: $yellow;
-  }
+    & img {
+        height: 80%;
+        margin: auto;
+        margin-left: 0;
+    }
+
+    & h3 {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+        color: $yellow;
+    }
 }
 
 .upcomingTournaments {
-  background-color: #232323;
-  display: grid;
-  padding: 1rem 15%;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
-  grid-gap: 1rem;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
-
-  & .title {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  & h1 {
-    margin: 0;
-  }
-}
-
-.tournamentInfoRight {
-  text-align: right;
-}
-
-.media {
-  display: grid;
-  padding: 1rem 15%;
-  text-align: center;
-}
-
-iframe {
-  margin: auto;
-}
-
-.tournamentInfo {
-  display: grid;
-  padding: 1rem 17.5% 0 17.5%;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-gap: 1rem;
-  grid-template-rows: 15rem;
-  font-family: "Lato";
-
-  & img {
-    width: 80%;
-    margin: auto 0 auto auto;
-  }
-}
-
-.general {
-  grid-column: 1 / 2;
-  margin: auto 0;
-
-  & a {
-    text-decoration: none;
-    color: $yellow;
-  }
-}
-
-.additional {
-  grid-column: 2 / 3;
-  margin: auto 0;
-  text-align: right;
-
-  & a {
-    text-decoration: none;
-    color: $yellow;
-    text-align: right;
-  }
-}
-
-.buttonContainer, .tournamentPlacement {
-  grid-column: 1 / 4;
-  text-align: center;
-}
-
-.tournamentPlacement {
-  background-color: #FFF;
-  color: #121219
-}
-
-.buttonContainer a {
-  text-decoration: none;
-}
-
-.button {
-  border: 2px solid $yellow;
-  padding: .2rem .4rem;
-  background: #ffffff00;
-  -webkit-transition: background ease-in-out 150ms;
-  text-align: center;
-  color: #FFF;
-  width: 50%;
-  margin: auto;
-
-  &:hover {
-    background: $yellow;
-    color: #FFF;
-    -webkit-transition: background ease-in-out 150ms;
-  }
-}
-
-.matches {
-  padding: 1rem 15%;
-  font-family: Lato;
-  background-color: $yellow;
-  background-image: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  & h2 {
-    grid-column: 1 / 3;
-  }
-}
-
-
-@media screen and (max-width: 650px) {
-
-  .upcomingTournaments {
     background-color: #232323;
     display: grid;
-    padding: 1rem 5%;
+    padding: 1rem 15%;
     grid-template-rows: auto;
     grid-template-columns: 1fr;
     grid-gap: 1rem;
     padding-bottom: 5rem;
     padding-top: 5rem;
 
+    & .title {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
     & h1 {
-      font-size: 2rem;
+        margin: 0;
     }
-  }
+}
 
-  .tournamentBody {
-    background-color: $blue;
-    grid-column: span 1;
-    padding: .4rem;
-    height: 6rem;
+.tournamentInfoRight {
+    text-align: right;
+}
+
+.media {
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 1rem;
-    text-decoration: none;
-    color: $white;
-    font-family: Lato;
-    cursor: pointer;
-    transform: scale(1);
-    transition: transform 150ms ease;
+    padding: 1rem 15%;
+    text-align: center;
+}
 
-    &:hover {
-      transform: scale(1.01);
-      transition: transform 150ms ease;
-    }
+iframe {
+    margin: auto;
+}
+
+.tournamentInfo {
+    display: grid;
+    padding: 1rem 17.5% 0 17.5%;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 1rem;
+    grid-template-rows: 15rem;
+    font-family: "Lato";
 
     & img {
-      display: none;
+        width: 80%;
+        margin: auto 0 auto auto;
     }
+}
+
+.general {
+    grid-column: 1 / 2;
+    margin: auto 0;
+
+    & a {
+        text-decoration: none;
+        color: $yellow;
+    }
+}
+
+.additional {
+    grid-column: 2 / 3;
+    margin: auto 0;
+    text-align: right;
+
+    & a {
+        text-decoration: none;
+        color: $yellow;
+        text-align: right;
+    }
+}
+
+.buttonContainer,
+.tournamentPlacement {
+    grid-column: 1 / 4;
+    text-align: center;
+}
+
+.tournamentPlacement {
+    background-color: #fff;
+    color: #121219;
+}
+
+.buttonContainer a {
+    text-decoration: none;
+}
+
+.button {
+    border: 2px solid $yellow;
+    padding: 0.2rem 0.4rem;
+    background: #ffffff00;
+    -webkit-transition: background ease-in-out 150ms;
+    text-align: center;
+    color: #fff;
+    width: 50%;
+    margin: auto;
+
+    &:hover {
+        background: $yellow;
+        color: #fff;
+        -webkit-transition: background ease-in-out 150ms;
+    }
+}
+
+.matches {
+    padding: 1rem 15%;
+    font-family: Lato;
+    background-color: $yellow;
+    background-image: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
     & h2 {
-      font-size: 1rem;
+        grid-column: 1 / 3;
     }
-  }
+}
 
+@media screen and (max-width: 650px) {
+    .upcomingTournaments {
+        background-color: #232323;
+        display: grid;
+        padding: 1rem 5%;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
+
+        & h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .tournamentBody {
+        background-color: $blue;
+        grid-column: span 1;
+        padding: 0.4rem;
+        height: 6rem;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 1rem;
+        text-decoration: none;
+        color: $white;
+        font-family: Lato;
+        cursor: pointer;
+        transform: scale(1);
+        transition: transform 150ms ease;
+
+        &:hover {
+            transform: scale(1.01);
+            transition: transform 150ms ease;
+        }
+
+        & img {
+            display: none;
+        }
+
+        & h2 {
+            font-size: 1rem;
+        }
+    }
 
     .tournamentInfo {
-      padding: 1rem 5% 0 5%;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      text-align: left;
+        padding: 1rem 5% 0 5%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        text-align: left;
 
-      & img {
-        height: auto;
-        width: 80%;
-        margin: auto;
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-      }
+        & img {
+            height: auto;
+            width: 80%;
+            margin: auto;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
     }
 
     .general {
-      margin: 0;
-      grid-column: 1 / 3;
+        margin: 0;
+        grid-column: 1 / 3;
     }
 
     .additional {
-      grid-column: 1 / 2;
-      margin: auto 0;
-      text-align: left;
-      grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        margin: auto 0;
+        text-align: left;
+        grid-row: 2 / 3;
     }
 
-    .buttonContainer, .tournamentPlacement {
-      grid-column: 1 / 3;
-      text-align: center;
+    .buttonContainer,
+    .tournamentPlacement {
+        grid-column: 1 / 3;
+        text-align: center;
     }
 
     .button {
-      font-size: 1.5rem
+        font-size: 1.5rem;
     }
 
     .matches {
-      width: 90%;
-      padding: 1rem 5%;
-      font-family: Lato;
-      background-color: #F8B52A;
-      background-image: none
+        width: 90%;
+        padding: 1rem 5%;
+        font-family: Lato;
+        background-color: $yellow;
+        background-image: none;
     }
 
     .match {
-      width: 100%;
-      grid-template-columns: 1fr;
+        width: 100%;
+        grid-template-columns: 1fr;
     }
 
     iframe {
-      width: auto;
-      height: auto
+        width: auto;
+        height: auto;
     }
 
     .media {
-      padding: 1rem 5%;
+        padding: 1rem 5%;
     }
 }

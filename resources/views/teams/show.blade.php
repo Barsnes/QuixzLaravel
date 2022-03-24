@@ -75,7 +75,7 @@
         <a href="/player/{{ $player->playerName }}" style="text-decoration: none; color: #FFF" class="card">
           <img loading="lazy" src="{{ asset('images/' . $player->image) }}" alt="" style="width:100%">
           <div class="container">
-            <h2>{{ $player->firstName }} <b style="color: #f9b633">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
+            <h2>{{ $player->firstName }} <b style="color: #FF5511">"{{ $player->playerName }}"</b> {{ $player->lastName }}</h2>
           </div>
         </a>
       @endif
@@ -98,7 +98,7 @@
                 <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                     @if ($match->link == '')
                     @else
-                      <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
+                      <a target="_blank" href="{{ $match->link }}" style="color: #FF5511; text-decoration: none">View</a>
                     @endif
                 </h1>
                 <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
@@ -143,7 +143,7 @@
                   <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                       @if ($match->link == '')
                       @else
-                        <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
+                        <a target="_blank" href="{{ $match->link }}" style="color: #FF5511; text-decoration: none">View</a>
                       @endif
                   </h1>
                   <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>

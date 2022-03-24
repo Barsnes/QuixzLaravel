@@ -10,7 +10,7 @@
     <hr>
     <p><b>Name:</b> {{ $form->first_name }}
     @if (isset($form->player_name))
-        "<span style="color:#F8B52A">{{ $form->player_name }}</span>"
+        "<span style="color:#FF5511">{{ $form->player_name }}</span>"
     @endif {{ $form->last_name }}</p>
     <p><b>Email:</b> {{ $form->email }}</p>
     @if (isset($form->phone))

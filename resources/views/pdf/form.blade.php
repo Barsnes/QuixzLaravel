@@ -11,7 +11,7 @@
 <div class="">
   <p><b>Name:</b> {{ $first_name }}
   @if (isset($player_name))
-      "<span style="color:#F8B52A">{{ $player_name }}</span>"
+      "<span style="color:#FF5511">{{ $player_name }}</span>"
   @endif {{ $last_name }}</p>
   <p><b>Email:</b> {{ $email }}</p>
   @if (isset($phone))
@@ -80,7 +80,7 @@ To pay membership fee (Currently no membership fee is set)</label><br>
 
   a {
     text-decoration: none;
-    color: #F8B52A
+    color: #FF5511
   }
 
 </style>

@@ -1,26 +1,26 @@
 $yellow: #ff5511;
-$white: #FFF;
-$blue: #2B63AF;
+$white: #fff;
+$blue: #2b63af;
 
 $yellow60: #ff551160;
-$blue60: #2B63AF60;
+$blue60: #2b63af60;
 
-$blue30: #2B63AF30;
+$blue30: #2b63af30;
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Teko";
-  color: #FFF;
-  overflow-x: hidden;
-  background-color: #121219;
+    margin: 0;
+    padding: 0;
+    font-family: "Teko";
+    color: #fff;
+    overflow-x: hidden;
+    background-color: #222831;
 }
 
 *::selection {
-  background: $yellow;
-	color: $white;
+    background: $yellow;
+    color: $white;
 }
 *::-moz-selection {
-  background: $yellow;
-	color: $white;
+    background: $yellow;
+    color: $white;
 }

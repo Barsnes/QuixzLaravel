@@ -1,123 +1,123 @@
 .club {
-  min-height: 75vh;
+    min-height: 75vh;
 
-  & h1 {
-    margin-right: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 15%;
-    width: 50%;
-  }
+    & h1 {
+        margin-right: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 15%;
+        width: 50%;
+    }
 }
 
 .clubForm {
-  display: grid;
-  font-family: 'Lato';
-  grid-gap: 1rem;
-
-  & .alert {
-    width: calc(70% - 2rem);
-    margin: auto;
-    text-align: left;
-    padding: 1rem;
-    border-radius: 4px;
-  }
-
-  & .error {
-    background-color: #FA3E3E;
-  }
-
-  & .success {
-    background-color: #4BB543;
-  }
-
-  & .top {
-    width: 70%;
-    margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    font-family: "Lato";
     grid-gap: 1rem;
-    margin-bottom: 1rem;
-  }
 
-  & .bottom {
-    width: 70%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-  }
-
-  & label {
-    display: block;
-    margin-bottom: .4rem;
-  }
-
-  & input {
-    width: calc(100% - 1rem);
-    margin: auto auto auto 0;
-    border: 0;
-    border-radius: 5px;
-    height: 1rem;;
-    padding: .5rem;
-  }
-
-  & .formButton {
-    width: 70%;
-    margin: auto;
-    margin-top: 1rem;
-    display: grid;
-
-    & .agreeButtons {
-      display: grid;
-      grid-template-columns: 1fr 25fr;
-
-      & input {
-        display: inline-block;
+    & .alert {
+        width: calc(70% - 2rem);
         margin: auto;
-        margin-left: 0;
-      }
-
-      & label {
-        display: inline-block;
-        margin-bottom: .2rem;
-      }
+        text-align: left;
+        padding: 1rem;
+        border-radius: 4px;
     }
 
-    & p {
-      margin: 0;
-      margin-bottom: .5rem
+    & .error {
+        background-color: #fa3e3e;
     }
 
-    a {
-      text-decoration: none;
-      color: #F8B52A
+    & .success {
+        background-color: #4bb543;
     }
 
-    & .submitButton {
-      width: 8rem;
-      margin: 2rem auto;
-      height: 3rem;
-      background: none;
-      border: 1px solid $yellow;
-      border-radius: 0;
-      color: #FFF;
-      transition: background-color 150ms ease;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $yellow;
-        transition: background-color 150ms ease;
-      }
+    & .top {
+        width: 70%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        margin-bottom: 1rem;
     }
-  }
 
-  & select {
-    width: calc(100%);
-    margin: auto auto auto 0;
-    border: 0;
-    border-radius: 5px;
-    height: 2rem;
-    padding: .5rem;
-  }
+    & .bottom {
+        width: 70%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+
+    & label {
+        display: block;
+        margin-bottom: 0.4rem;
+    }
+
+    & input {
+        width: calc(100% - 1rem);
+        margin: auto auto auto 0;
+        border: 0;
+        border-radius: 5px;
+        height: 1rem;
+        padding: 0.5rem;
+    }
+
+    & .formButton {
+        width: 70%;
+        margin: auto;
+        margin-top: 1rem;
+        display: grid;
+
+        & .agreeButtons {
+            display: grid;
+            grid-template-columns: 1fr 25fr;
+
+            & input {
+                display: inline-block;
+                margin: auto;
+                margin-left: 0;
+            }
+
+            & label {
+                display: inline-block;
+                margin-bottom: 0.2rem;
+            }
+        }
+
+        & p {
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: $yellow;
+        }
+
+        & .submitButton {
+            width: 8rem;
+            margin: 2rem auto;
+            height: 3rem;
+            background: none;
+            border: 1px solid $yellow;
+            border-radius: 0;
+            color: #fff;
+            transition: background-color 150ms ease;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $yellow;
+                transition: background-color 150ms ease;
+            }
+        }
+    }
+
+    & select {
+        width: calc(100%);
+        margin: auto auto auto 0;
+        border: 0;
+        border-radius: 5px;
+        height: 2rem;
+        padding: 0.5rem;
+    }
 }

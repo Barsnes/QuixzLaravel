@@ -103,7 +103,7 @@ unterstützt ihn hierbei. (2) 1Der Vereinsvorsitzende vertritt den Verein nach a
 
     .policy a {
       text-decoration: none;
-      color: #F8B52A
+      color: #FF5511
     }
   </style>
 

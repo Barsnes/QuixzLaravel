@@ -139,8 +139,8 @@
 }
 
 .match_body {
-    background-color: #fff;
-    color: #121219;
+    background-color: #4c515a;
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-family: "Lato";
@@ -220,9 +220,8 @@
     display: grid;
     padding: 1rem 15% 2rem 15%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 80px auto;
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 1rem;
+    grid-template-rows: 80px 10rem 10rem;
+    gap: 1rem;
     text-align: center;
 }
 
@@ -238,7 +237,7 @@
 .team {
     font-size: 2rem;
     line-height: 2rem;
-    color: #121219;
+    color: #fff;
     text-decoration: none;
 
     height: 10rem;
@@ -247,7 +246,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: #4c515a;
     box-sizing: border-box;
     border: 0px solid $yellow;
 

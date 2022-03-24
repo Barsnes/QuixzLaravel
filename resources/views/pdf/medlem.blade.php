@@ -60,7 +60,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 
   a {
     text-decoration: none;
-    color: #F8B52A
+    color: #FF5511
   }
 
 </style>

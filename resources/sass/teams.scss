@@ -1,113 +1,110 @@
 .teamHeader {
-  width: 100%;
-  height: 5rem;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  display: grid;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    display: grid;
 
-  & h1 {
-    margin: auto;
-  }
+    & h1 {
+        margin: auto;
+    }
 }
 
 .teamBody {
-  padding: 2rem 15% 5rem 15%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
+    padding: 2rem 15% 5rem 15%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
 
-  & .title {
-    grid-column: 1 / 4;
-  }
+    & .title {
+        grid-column: 1 / 4;
+    }
 }
 
 .card {
-  grid-column: span 1;
-  display: grid;
-  grid-gap: .5rem;
-  padding: .5rem;
-  grid-template-columns: 1fr 2fr;
-  background-color: #FFF;
-  font-family: "Lato";
-  transform: scale(1);
+    grid-column: span 1;
+    display: grid;
+    grid-gap: 0.5rem;
+    padding: 0.5rem;
+    grid-template-columns: 1fr 2fr;
+    background-color: #4c515a;
+    color: #fff;
+    font-family: "Lato";
+    transform: scale(1);
 
-  &:hover {
+    &:hover {
+        & h2 {
+            text-decoration: underline;
+        }
+    }
+
+    & img {
+        margin: auto;
+    }
 
     & h2 {
-      text-decoration: underline;
+        font-size: 1rem;
+        color: #fff;
     }
-  }
-
-  & img {
-    margin: auto;
-  }
-
-  & h2 {
-    font-size: 1rem;
-    color: #121219;
-  }
 }
 
 .winRatio {
-  text-align: center;
-  font-family: "Lato";
-  background-color: #2B63AF;
-  margin: 0;
-  padding: 1rem;
+    text-align: center;
+    font-family: "Lato";
+    background-color: #4c515a;
+    margin: 0;
+    padding: 1rem;
 }
 
 .ratioText b {
-  color: #F8B52A;
+    color: $yellow;
 }
 
 .teamAbout {
-  font-family: Lato;
-  padding: 5rem 15% .1rem 15%;
-  margin: auto;
-  min-height: 15rem;
-  background-color: #232323;
+    font-family: Lato;
+    padding: 5rem 15% 0.1rem 15%;
+    margin: auto;
+    min-height: 15rem;
+    background-color: #232323;
 
-  & h1 {
-    font-family: Raleway
-  }
+    & h1 {
+        font-family: Raleway;
+    }
 }
 
 .teamGallery {
-  width: 100%;
-  min-height: 15rem;
-  font-family: Lato;
-  margin: auto;
+    width: 100%;
+    min-height: 15rem;
+    font-family: Lato;
+    margin: auto;
 
-  & h1 {
-    font-family: Raleway;
-  }
+    & h1 {
+        font-family: Raleway;
+    }
 }
 
 .teamImages {
-  width: 60%
+    width: 60%;
 }
 
 .teamArticles {
-  padding-top: 1rem;
+    padding-top: 1rem;
 
-  & .title {
-    padding-left: 15%;
-  }
+    & .title {
+        padding-left: 15%;
+    }
 }
 
 @media screen and (max-width: 650px) {
+    .teamBody {
+        padding: 2rem 5% 5rem 5%;
+        grid-template-columns: repeat(1, 1fr);
 
-  .teamBody {
-    padding: 2rem 5% 5rem 5%;
-    grid-template-columns: repeat(1, 1fr);
-
-    & .title {
-      grid-column: 1 / 2;
+        & .title {
+            grid-column: 1 / 2;
+        }
     }
-  }
-
-
 }

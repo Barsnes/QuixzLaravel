@@ -38,7 +38,7 @@
               <h1>{{ date('d M Y', strtotime($match->date)) }}    -
                   @if ($match->link == '')
                   @else
-                    <a target="_blank" href="{{ $match->link }}" style="color: #f9b633; text-decoration: none">View</a>
+                    <a target="_blank" href="{{ $match->link }}" style="color: #FF5511; text-decoration: none">View</a>
                   @endif
               </h1>
               <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
@@ -72,7 +72,7 @@
           <h1>{{ date('d M Y', strtotime($match->date)) }}    -
               @if ($match->link == '')
               @else
-                <a target="_blank" href="{{ $match->link }}" style="color: #F8B52A; text-decoration: none">View</a>
+                <a target="_blank" href="{{ $match->link }}" style="color: #FF5511; text-decoration: none">View</a>
               @endif
           </h1>
           <a href="/tournaments/{{ $match->tournament->slug }}">{{ $match->tournament->name }}</a>
