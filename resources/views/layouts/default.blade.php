@@ -78,7 +78,6 @@
       <li class="title">Links</li>
       <li><a href="/downloads">Downloads</a></li>
       <li><a href="/management">Management</a></li>
-      <li><a href="/servers">Servers</a></li>
     </ul>
   </div>
 

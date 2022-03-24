@@ -86,6 +86,7 @@ Datenschutzbehörde beschweren.</p>
       font-family: Lato;
       padding: 1rem;
       margin: auto;
+      background-color: black;
     }
 
     .policy p {

@@ -87,6 +87,7 @@ unterstützt ihn hierbei. (2) 1Der Vereinsvorsitzende vertritt den Verein nach a
       font-family: Lato;
       padding: 1rem;
       margin: auto;
+      background-color: black;
     }
 
     .policy p {

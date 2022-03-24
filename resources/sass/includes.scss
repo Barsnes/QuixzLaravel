@@ -108,6 +108,7 @@
     display: grid;
     border-top: 1px solid #fff;
     grid-template-columns: repeat(5, 1fr);
+    background-color: black;
 
     h3 {
         margin: auto;
@@ -128,6 +129,7 @@
 .footer {
     height: auto;
     color: $white;
+    background-color: black;
     padding: 2rem;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;

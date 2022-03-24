@@ -2,7 +2,7 @@
 @section('title', 'Teams')
 
 @section('content')
-  <div class="teams" style="min-height: 650px;">
+  <div class="teams page" style="min-height: 650px;">
     @foreach ($games as $game)
       @if ($game->active != '1')
         @continue

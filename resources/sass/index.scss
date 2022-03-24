@@ -139,7 +139,7 @@
 }
 
 .match_body {
-    background-color: #4c515a;
+    background-color: #202020;
     color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -223,6 +223,13 @@
     grid-template-rows: 80px 10rem 10rem;
     gap: 1rem;
     text-align: center;
+
+    &.page {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 10rem 10rem 10rem;
+        gap: 1rem;
+        text-align: center;
+    }
 }
 
 .teams h1 {
@@ -246,7 +253,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4c515a;
+    background-color: #202020;
     box-sizing: border-box;
     border: 0px solid $yellow;
 
