@@ -20,7 +20,8 @@
         "laravelcollective/html": "^6.3",
         "laravelium/feed": "^6.0",
         "spatie/laravel-feed": "^2.7",
-        "spatie/laravel-sitemap": "^5.8"
+        "spatie/laravel-sitemap": "^5.8",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
