@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Game;
-use App\Match;
-use App\Player;
-use App\Team;
-use App\User;
+use App\Models\Game;
+use App\Models\Match;
+use App\Models\Player;
+use App\Models\Team;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

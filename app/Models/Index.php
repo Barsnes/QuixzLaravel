@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class About extends Model
+class Index extends Model
 {
 }

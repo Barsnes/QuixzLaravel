@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Sponsor;
+use App\Models\Sponsor;
 use Auth;
 use Illuminate\Http\Request;
 use Image;

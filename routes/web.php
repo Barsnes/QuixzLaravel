@@ -16,7 +16,7 @@ use App\Http\Controllers\SponsorsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentMatchController;
 use App\Http\Controllers\TournamentsController;
-use App\Player;
+use App\Models\Player;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 

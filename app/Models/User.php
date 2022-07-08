@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -20,6 +20,6 @@ class User extends Authenticatable
 
     public function player()
     {
-        return $this->belongsTo(\App\Player::class);
+        return $this->belongsTo(\App\Models\Player::class);
     }
 }

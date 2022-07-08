@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,12 +8,12 @@ class Tournament extends Model
 {
     public function team()
     {
-        return $this->belongsTo(\App\Team::class);
+        return $this->belongsTo(\App\Models\Team::class);
     }
 
     public function match()
     {
-        return $this->hasMany(\App\Match::class);
+        return $this->hasMany(\App\Models\Match::class);
     }
 
     public function getFinished()
