@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ClubForm;
+use App\Models\ClubForm;
 use App\Mail\formSubmission;
 use Illuminate\Http\Request;
 use Mail;

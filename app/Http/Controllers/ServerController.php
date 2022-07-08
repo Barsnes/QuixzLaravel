@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Server;
-use App\Sponsor;
+use App\Models\Server;
+use App\Models\Sponsor;
 use Illuminate\Http\Request;
 
 class ServerController extends Controller

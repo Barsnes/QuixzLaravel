@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Management;
+use App\Models\Management;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

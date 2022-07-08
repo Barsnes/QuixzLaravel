@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
-use App\Article;
-use App\User;
-use App\Match;
-use App\Player;
-use App\Team;
-use App\Tournament;
-use App\Management;
-use App\Game;
-use App\Server;
+use App\Models\Article;
+use App\Models\User;
+use App\Models\Match;
+use App\Models\Player;
+use App\Models\Team;
+use App\Models\Tournament;
+use App\Models\Management;
+use App\Models\Game;
+use App\Models\Server;
 
 class PagesController extends Controller
 {

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\Team;
-use App\User;
+use App\Models\Article;
+use App\Models\Team;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

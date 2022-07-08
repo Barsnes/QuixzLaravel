@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Match;
-use App\Team;
+use App\Models\Match;
+use App\Models\Team;
 use Auth;
-use App\User;
+use App\Models\User;
 use Image;
-use App\Tournament;
+use App\Models\Tournament;
 
 use Illuminate\Http\Request;
 

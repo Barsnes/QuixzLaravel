@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Match;
-use App\Player;
-use App\Sponsor;
-use App\Team;
-use App\Tournament;
-use App\TournamentMatch;
-use App\User;
+use App\Models\Match;
+use App\Models\Player;
+use App\Models\Sponsor;
+use App\Models\Team;
+use App\Models\Tournament;
+use App\Models\TournamentMatch;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\nyttMedlem;
 use App\Mail\nyttMedlemTakk;
-use App\Medlem;
+use App\Models\Medlem;
 use Illuminate\Http\Request;
 use Mail;
 use PDF;

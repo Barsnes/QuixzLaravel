@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\ClubForm;
+use App\Models\ClubForm;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;

@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\User;
-use App\Article;
-use App\Match;
-use App\Player;
-use App\Team;
-use App\Tournament;
+use App\Models\User;
+use App\Models\Article;
+use App\Models\Match;
+use App\Models\Player;
+use App\Models\Team;
+use App\Models\Tournament;
 
 class HomeController extends Controller
 {

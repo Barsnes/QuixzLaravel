@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
   public function tournament(){
-    return $this->belongsTo(\App\Tournament::class);
+    return $this->belongsTo(\App\Models\Tournament::class);
   }
 
   public function team(){
-    return $this->belongsTo(\App\Team::class);
+    return $this->belongsTo(\App\Models\Team::class);
   }
 }

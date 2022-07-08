@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Index;
+use App\Models\Index;
 use DB;
 use Illuminate\Http\Request;
 

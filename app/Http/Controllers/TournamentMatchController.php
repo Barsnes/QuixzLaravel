@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Team;
-use App\Tournament;
-use App\TournamentMatch;
+use App\Models\Team;
+use App\Models\Tournament;
+use App\Models\TournamentMatch;
 use DB;
 use Illuminate\Http\Request;
 
