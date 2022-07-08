@@ -1,6 +1,23 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ClubFormController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ManagementController;
+use App\Http\Controllers\MatchController;
+use App\Http\Controllers\MedlemController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ServerController;
+use App\Http\Controllers\SponsorsController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TournamentMatchController;
+use App\Http\Controllers\TournamentsController;
 use App\Player;
+use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('sitemap', function () {
@@ -9,50 +26,50 @@ Route::get('sitemap', function () {
     return 'sitemap created';
 });
 
-Route::get('/', 'PagesController@home');
-Route::get('/index', 'PagesController@home');
-Route::get('/about', 'PagesController@about');
-Route::get('/teams', 'PagesController@teams');
-Route::get('/contact', 'PagesController@contact');
-Route::get('/servers', 'PagesController@servers');
-Route::get('/tournaments', 'PagesController@tournaments');
-Route::get('/medlem', 'PagesController@medlem');
+Route::get('/', [PagesController::class, 'home']);
+Route::get('/index', [PagesController::class, 'home']);
+Route::get('/about', [PagesController::class, 'about']);
+Route::get('/teams', [PagesController::class, 'teams']);
+Route::get('/contact', [PagesController::class, 'contact']);
+Route::get('/servers', [PagesController::class, 'servers']);
+Route::get('/tournaments', [PagesController::class, 'tournaments']);
+Route::get('/medlem', [PagesController::class, 'medlem']);
 
-Route::get('/downloads', 'PagesController@downloads');
-Route::get('/management', 'PagesController@management');
-Route::get('/privacy-policy-de', 'PagesController@policy_de');
-Route::get('/statutes-de', 'PagesController@statutes_de');
-Route::get('/form/club', 'ClubFormController@showForm');
+Route::get('/downloads', [PagesController::class, 'downloads']);
+Route::get('/management', [PagesController::class, 'management']);
+Route::get('/privacy-policy-de', [PagesController::class, 'policy_de']);
+Route::get('/statutes-de', [PagesController::class, 'statutes_de']);
+Route::get('/form/club', [ClubFormController::class, 'showForm']);
 
-Route::resource('/admin/news', 'ArticleController');
-Route::get('/news', 'PagesController@news');
-Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
-Route::get('/admin/users', 'AdminController@users');
+Route::resource('/admin/news', ArticleController::class);
+Route::get('/news', [PagesController::class, 'news']);
+Route::get('/news/{slug}', [PagesController::class, 'getSingle'])->name('article.single');
+Route::get('/admin/users', [AdminController::class, 'users']);
 
-Route::get('/player/{playerName}', ['as' => 'player.single', 'uses' => 'PagesController@getPlayer']);
+Route::get('/player/{playerName}', [PagesController::class, 'getPlayer'])->name('player.single');
 
-Route::get('/team/{slug}', ['as' => 'team.single', 'uses' => 'PagesController@getTeam']);
+Route::get('/team/{slug}', [PagesController::class, 'getTeam'])->name('team.single');
 
-Route::get('/tournaments/{slug}', ['as' => 'tournament.single', 'uses' => 'PagesController@getTournament']);
+Route::get('/tournaments/{slug}', [PagesController::class, 'getTournament'])->name('tournament.single');
 
-Route::get('/management/{slug}', ['as' => 'management.person', 'uses' => 'PagesController@getManagementPerson']);
+Route::get('/management/{slug}', [PagesController::class, 'getManagementPerson'])->name('management.person');
 
-Route::resource('/admin/matches', 'MatchController');
-Route::resource('/admin/players', 'PlayerController');
-Route::resource('/admin/teams', 'TeamController');
-Route::resource('/admin/tournaments', 'TournamentsController');
-Route::resource('/admin/about', 'AboutController');
-Route::resource('/admin/index', 'IndexController');
-Route::resource('/admin/tourn-match', 'TournamentMatchController');
-Route::resource('/admin/management', 'ManagementController');
-Route::resource('/admin/servers', 'ServerController');
-Route::resource('/admin/sponsors', 'SponsorsController');
-Route::resource('/admin/club', 'ClubFormController');
-Route::resource('/admin/medlem', 'MedlemController');
+Route::resource('/admin/matches', MatchController::class);
+Route::resource('/admin/players', PlayerController::class);
+Route::resource('/admin/teams', TeamController::class);
+Route::resource('/admin/tournaments', TournamentsController::class);
+Route::resource('/admin/about', AboutController::class);
+Route::resource('/admin/index', IndexController::class);
+Route::resource('/admin/tourn-match', TournamentMatchController::class);
+Route::resource('/admin/management', ManagementController::class);
+Route::resource('/admin/servers', ServerController::class);
+Route::resource('/admin/sponsors', SponsorsController::class);
+Route::resource('/admin/club', ClubFormController::class);
+Route::resource('/admin/medlem', MedlemController::class);
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/admin', [HomeController::class, 'index'])->name('home');
 
 Route::get('/discord', function () {
     $url = 'https://discord.gg/2GAhMZq';
