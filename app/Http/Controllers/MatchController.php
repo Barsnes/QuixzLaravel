@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Match;
+use App\Models\Matches;
 use App\Models\Team;
 use Auth;
 use App\Models\User;
@@ -18,7 +18,7 @@ class MatchController extends Controller
 
     public function index()
     {
-      $matches = Match::orderBy('date', 'ASC')->get()->reverse();
+      $matches = Matches::orderBy('date', 'ASC')->get()->reverse();
       return view('admin.matches')->withMatches($matches);
     }
 
@@ -84,7 +84,7 @@ class MatchController extends Controller
 
     public function edit($id)
     {
-      $match = Match::find($id);
+      $match = Matches::find($id);
       $teams = Team::get();
       $tournaments = Tournament::get();
 
@@ -107,7 +107,7 @@ class MatchController extends Controller
         ));
 
         // Store in DB
-        $match = Match::find($id);
+        $match = Matches::find($id);
 
         $match->name = $request->name;
         $match->enemy = $request->enemy;
@@ -135,7 +135,7 @@ class MatchController extends Controller
 
     public function destroy($id)
     {
-      Match::destroy($id);
+      Matches::destroy($id);
 
       return redirect('/admin');
     }

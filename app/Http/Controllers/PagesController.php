@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Auth;
 use App\Models\Article;
 use App\Models\User;
-use App\Models\Match;
+use App\Models\Matches;
 use App\Models\Player;
 use App\Models\Team;
 use App\Models\Tournament;
@@ -20,8 +20,8 @@ class PagesController extends Controller
 
   public function home() {
     $articles = Article::get()->reverse();
-    $matches = Match::orderBy('date', 'ASC')->get();;
-    $matchesReverse = Match::orderBy('date', 'ASC')->get()->reverse();
+    $matches = Matches::orderBy('date', 'ASC')->get();;
+    $matchesReverse = Matches::orderBy('date', 'ASC')->get()->reverse();
     $teams = Team::get();
     $games = Game::get();
     $tournaments = Tournament::get();

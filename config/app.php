@@ -55,7 +55,6 @@ return [
 
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Buglinjo\LaravelWebp\LaravelWebpServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
     ],

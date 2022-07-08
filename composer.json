@@ -9,9 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "andreasindal/laravel-markdown": "^3.1",
         "barryvdh/laravel-dompdf": "^1.0",
-        "buglinjo/laravel-webp": "^2.3",
         "doctrine/dbal": "^3.3",
         "intervention/image": "^2.7",
         "laravel/framework": "^8.83",

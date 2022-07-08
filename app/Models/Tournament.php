@@ -13,7 +13,7 @@ class Tournament extends Model
 
     public function match()
     {
-        return $this->hasMany(\App\Models\Match::class);
+        return $this->hasMany(\App\Models\Matches::class);
     }
 
     public function getFinished()
