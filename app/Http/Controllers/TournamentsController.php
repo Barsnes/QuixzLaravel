@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Match;
 use App\Player;
 use App\Sponsor;
@@ -59,7 +60,7 @@ class TournamentsController extends Controller
         $tourn->link = $request->link;
         $tourn->finished = $request->finished;
         $value = $tourn->name;
-        $tourn->slug = str_slug($value);
+        $tourn->slug = Str::slug($value);
 
         if ($request->hasFile('image')) {
             // image
@@ -118,7 +119,7 @@ class TournamentsController extends Controller
         $tourn->finished = $request->finished;
 
         $value = $tourn->name;
-        $tourn->slug = str_slug($value);
+        $tourn->slug = Str::slug($value);
 
         if ($request->hasFile('image')) {
             // image

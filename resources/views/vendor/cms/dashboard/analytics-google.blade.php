@@ -34,7 +34,7 @@
                     </thead>
                     @foreach (Analytics::fetchMostVisitedPages($period, 10) as $browser)
                         <tr>
-                            <td>{{ str_limit($browser['url'], 30) }}</td>
+                            <td>{{ Str::limit($browser['url'], 30) }}</td>
                             <td>{{ $browser['pageViews'] }}</td>
                         </tr>
                     @endforeach
@@ -49,7 +49,7 @@
                     </thead>
                     @foreach (Analytics::fetchTopReferrers($period, 10) as $referers)
                         <tr>
-                            <td>{{ str_limit($referers['url'], 30) }}</td>
+                            <td>{{ Str::limit($referers['url'], 30) }}</td>
                             <td>{{ $referers['pageViews'] }}</td>
                         </tr>
                     @endforeach

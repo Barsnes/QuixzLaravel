@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Game;
 use App\Match;
 use App\Player;
@@ -58,7 +59,7 @@ class TeamController extends Controller
             $team->game_id = $request->game_id;
 
             $value = $team->name;
-            $team->slug = str_slug($value);
+            $team->slug = Str::slug($value);
 
             if ($request->hasFile('image')) {
                 $image = $request->file('image');

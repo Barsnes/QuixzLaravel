@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Article;
 use App\Team;
 use App\User;
@@ -58,7 +59,7 @@ class ArticleController extends Controller
         $article->body = $request->body;
 
         $value = $article->title;
-        $article->slug = str_slug($value);
+        $article->slug = Str::slug($value);
 
         // image
         $image = $request->file('image');
@@ -113,7 +114,7 @@ class ArticleController extends Controller
         $article->body = $request->body;
 
         $value = $article->title;
-        $article->slug = str_slug($value);
+        $article->slug = Str::slug($value);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');

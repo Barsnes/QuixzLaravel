@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Management;
 use Auth;
 use Illuminate\Http\Request;
@@ -51,7 +52,7 @@ class ManagementController extends Controller
         $person->twitch = $request->twitch;
 
         $value = $person->name;
-        $person->slug = str_slug($value);
+        $person->slug = Str::slug($value);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
