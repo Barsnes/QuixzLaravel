@@ -8,12 +8,12 @@ class Tournament extends Model
 {
     public function team()
     {
-        return $this->belongsTo('App\Team');
+        return $this->belongsTo(\App\Team::class);
     }
 
     public function match()
     {
-        return $this->hasMany('App\Match');
+        return $this->hasMany(\App\Match::class);
     }
 
     public function getFinished()

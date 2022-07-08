@@ -20,6 +20,6 @@ class User extends Authenticatable
 
     public function player()
     {
-        return $this->belongsTo('App\Player');
+        return $this->belongsTo(\App\Player::class);
     }
 }

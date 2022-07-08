@@ -8,6 +8,6 @@ class Game extends Model
 {
     public function team()
     {
-        return $this->hasMany('App\Team');
+        return $this->hasMany(\App\Team::class);
     }
 }
