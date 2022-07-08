@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Mail\Welcome;
-use Mail;
 use App\Player;
 use App\Team;
+use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Mail;
 
 class RegisterController extends Controller
 {
     use RegistersUsers;
 
-      protected $redirectTo = '/admin';
+    protected $redirectTo = '/admin';
 
     public function __construct()
     {
@@ -38,6 +38,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user = $data;
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -49,9 +50,11 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function showRegistrationForm() {
-      $players = Player::all();
-      $teams = Team::get();
-      return view('auth.register', compact('players', 'teams'));
-  }
+    public function showRegistrationForm()
+    {
+        $players = Player::all();
+        $teams = Team::get();
+
+        return view('auth.register', compact('players', 'teams'));
+    }
 }

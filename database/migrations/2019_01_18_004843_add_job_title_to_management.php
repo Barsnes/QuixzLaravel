@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddJobTitleToManagement extends Migration
 {
@@ -14,7 +14,7 @@ class AddJobTitleToManagement extends Migration
     public function up()
     {
         Schema::table('management', function (Blueprint $table) {
-          $table->string('job_title')->after('body');
+            $table->string('job_title')->after('body');
         });
     }
 
@@ -26,7 +26,7 @@ class AddJobTitleToManagement extends Migration
     public function down()
     {
         Schema::table('management', function (Blueprint $table) {
-          $table->string('job_title');
+            $table->string('job_title');
         });
     }
 }

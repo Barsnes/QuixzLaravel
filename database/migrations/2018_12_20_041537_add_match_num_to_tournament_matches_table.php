@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddMatchNumToTournamentMatchesTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddMatchNumToTournamentMatchesTable extends Migration
     public function up()
     {
         Schema::table('tournament_matches', function (Blueprint $table) {
-          $table->integer('match_num')->after('tournament_id');
+            $table->integer('match_num')->after('tournament_id');
         });
     }
 

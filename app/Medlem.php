@@ -7,7 +7,5 @@ use Mail;
 
 class Medlem extends Model
 {
-
-  protected $table = 'medlem';
-
+    protected $table = 'medlem';
 }

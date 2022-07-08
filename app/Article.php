@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    public function team(){
-      return $this->belongsTo('App\Team');
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
     }
 }

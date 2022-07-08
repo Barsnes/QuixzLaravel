@@ -2,47 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Article;
 use App\Team;
-use Auth;
 use App\User;
+use Auth;
+use Illuminate\Http\Request;
 use Image;
 use WebP;
 
 class ArticleController extends Controller
 {
-
-  public function __construct() {
-    $this->middleware('admin');
-  }
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
 
     public function index()
     {
-      $articles = Article::get();
+        $articles = Article::get();
 
-      return view('admin.news')->withArticles($articles);
+        return view('admin.news')->withArticles($articles);
     }
 
     public function create()
     {
-      $categories = Team::get();
+        $categories = Team::get();
 
-      // $categories = $category->id + '=>' + $category->name;
+        // $categories = $category->id + '=>' + $category->name;
 
-      return view('news.create')->withCategories($categories);
+        return view('news.create')->withCategories($categories);
     }
 
     public function store(Request $request)
     {
-      // Validate data
-      $this->validate($request, array(
-          'title' => 'required|min:5|max:255|unique:articles,title',
-          'author' => 'required|min:5|max:255',
-          'image' => 'required|image',
-          'team_id' => '',
-          'body' => 'required',
-        ));
+        // Validate data
+        $this->validate($request, [
+            'title' => 'required|min:5|max:255|unique:articles,title',
+            'author' => 'required|min:5|max:255',
+            'image' => 'required|image',
+            'team_id' => '',
+            'body' => 'required',
+        ]);
 
         // Store in DB
         $article = new Article;
@@ -51,9 +51,9 @@ class ArticleController extends Controller
         $article->author = $request->author;
         $article->image = $request->image;
         if ($request->team_id == 'null') {
-          $article->team_id = '';
+            $article->team_id = '';
         } else {
-          $article->team_id = $request->team_id;
+            $article->team_id = $request->team_id;
         }
         $article->body = $request->body;
 
@@ -64,8 +64,8 @@ class ArticleController extends Controller
         $image = $request->file('image');
         $info = getimagesize($image);
         $extension = image_type_to_extension($info[2]);
-        $filename = time() . $extension;
-        $location = public_path('images/' . $filename);
+        $filename = time().$extension;
+        $location = public_path('images/'.$filename);
         Image::make($image)->resize(1200, 600)->save($location);
 
         $article->image = $filename;
@@ -78,9 +78,9 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-      $article = Article::find($id);
+        $article = Article::find($id);
 
-      return view('news.show', compact('article'));
+        return view('news.show', compact('article'));
     }
 
     public function edit($id)
@@ -93,22 +93,22 @@ class ArticleController extends Controller
 
     public function update(Request $request, $id)
     {
-      // Validate data
-      $this->validate($request, array(
-          'title' => 'required|min:5',
-          'author' => 'required|min:5',
-          'team_id' => '',
-          'body' => 'required',
-        ));
+        // Validate data
+        $this->validate($request, [
+            'title' => 'required|min:5',
+            'author' => 'required|min:5',
+            'team_id' => '',
+            'body' => 'required',
+        ]);
 
         $article = Article::find($id);
 
         $article->title = $request->title;
         $article->author = $request->author;
         if ($request->team_id == 'null') {
-          $article->team_id = '';
+            $article->team_id = '';
         } else {
-          $article->team_id = $request->team_id;
+            $article->team_id = $request->team_id;
         }
         $article->body = $request->body;
 
@@ -116,14 +116,14 @@ class ArticleController extends Controller
         $article->slug = str_slug($value);
 
         if ($request->hasFile('image')) {
-          $image = $request->file('image');
-          $info = getimagesize($image);
-          $extension = image_type_to_extension($info[2]);
-          $filename = time() . $extension;
-          $location = public_path('images/' . $filename);
-          Image::make($image)->resize(1200, 600)->save($location);
+            $image = $request->file('image');
+            $info = getimagesize($image);
+            $extension = image_type_to_extension($info[2]);
+            $filename = time().$extension;
+            $location = public_path('images/'.$filename);
+            Image::make($image)->resize(1200, 600)->save($location);
 
-          $article->image = $filename;
+            $article->image = $filename;
         }
 
         $article->save();
@@ -134,10 +134,8 @@ class ArticleController extends Controller
 
     public function destroy($id)
     {
-      Article::destroy($id);
+        Article::destroy($id);
 
-      return redirect('/news');
+        return redirect('/news');
     }
-
-
 }

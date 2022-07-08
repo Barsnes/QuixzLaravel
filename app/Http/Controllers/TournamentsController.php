@@ -2,50 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Match;
 use App\Player;
-use Auth;
-use App\User;
-use Image;
+use App\Sponsor;
 use App\Team;
 use App\Tournament;
 use App\TournamentMatch;
-use App\Sponsor;
-
+use App\User;
+use Auth;
+use Illuminate\Http\Request;
+use Image;
 
 class TournamentsController extends Controller
 {
-
-  public function __construct() {
-    $this->middleware('auth');
-  }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
-      $tournaments = Tournament::get();
-      return view('admin.tournaments')->withTournaments($tournaments);
+        $tournaments = Tournament::get();
+
+        return view('admin.tournaments')->withTournaments($tournaments);
     }
 
     public function create()
     {
-      $teams = Team::get();
-      return view('tournaments.create')->withTeams($teams);
+        $teams = Team::get();
+
+        return view('tournaments.create')->withTeams($teams);
     }
 
     public function store(Request $request)
     {
-      // Validate data
-      $this->validate($request, array(
-          'name' => 'required|min:5|max:255|unique:tournaments,name',
-          'image' => 'image',
-          'team_id' => 'required',
-          'date' => 'required',
-          'time' => '',
-          'format' => '',
-          'link' => '',
-          'finished' => 'required|integer',
-        ));
+        // Validate data
+        $this->validate($request, [
+            'name' => 'required|min:5|max:255|unique:tournaments,name',
+            'image' => 'image',
+            'team_id' => 'required',
+            'date' => 'required',
+            'time' => '',
+            'format' => '',
+            'link' => '',
+            'finished' => 'required|integer',
+        ]);
 
         // Store in DB
         $tourn = new Tournament;
@@ -60,17 +61,17 @@ class TournamentsController extends Controller
         $value = $tourn->name;
         $tourn->slug = str_slug($value);
 
-if ($request->hasFile('image')) {
-        // image
-        $image = $request->file('image');
-        $info = getimagesize($image);
-        $extension = image_type_to_extension($info[2]);
-        $filename = time() . $extension;
-        $location = public_path('images/' . $filename);
-        Image::make($image)->resize(300, 300)->save($location);
+        if ($request->hasFile('image')) {
+            // image
+            $image = $request->file('image');
+            $info = getimagesize($image);
+            $extension = image_type_to_extension($info[2]);
+            $filename = time().$extension;
+            $location = public_path('images/'.$filename);
+            Image::make($image)->resize(300, 300)->save($location);
 
-        $tourn->image = $filename;
-      }
+            $tourn->image = $filename;
+        }
         $tourn->save();
 
         // Redirect
@@ -79,29 +80,31 @@ if ($request->hasFile('image')) {
 
     public function show($id)
     {
-      $tournament = Tournament::find($id);
-      return view('tournaments.show')->withTournament($tournament);
+        $tournament = Tournament::find($id);
+
+        return view('tournaments.show')->withTournament($tournament);
     }
 
     public function edit($id)
     {
-      $tournament = Tournament::find($id);
-      return view('tournaments.edit')->withTournament($tournament);
+        $tournament = Tournament::find($id);
+
+        return view('tournaments.edit')->withTournament($tournament);
     }
 
     public function update(Request $request, $id)
     {
-      // Validate data
-      $this->validate($request, array(
-          'name' => 'required|min:5|max:255',
-          'image' => 'image',
-          'team_id' => 'required',
-          'date' => 'required',
-          'time' => '',
-          'format' => '',
-          'link' => '',
-          'finished' => 'required|integer',
-        ));
+        // Validate data
+        $this->validate($request, [
+            'name' => 'required|min:5|max:255',
+            'image' => 'image',
+            'team_id' => 'required',
+            'date' => 'required',
+            'time' => '',
+            'format' => '',
+            'link' => '',
+            'finished' => 'required|integer',
+        ]);
 
         // Store in DB
         $tourn = Tournament::find($id);
@@ -114,21 +117,20 @@ if ($request->hasFile('image')) {
         $tourn->link = $request->link;
         $tourn->finished = $request->finished;
 
-
         $value = $tourn->name;
         $tourn->slug = str_slug($value);
 
-if ($request->hasFile('image')) {
-        // image
-        $image = $request->file('image');
-        $info = getimagesize($image);
-        $extension = image_type_to_extension($info[2]);
-        $filename = time() . $extension;
-        $location = public_path('images/' . $filename);
-        Image::make($image)->resize(300, 300)->save($location);
+        if ($request->hasFile('image')) {
+            // image
+            $image = $request->file('image');
+            $info = getimagesize($image);
+            $extension = image_type_to_extension($info[2]);
+            $filename = time().$extension;
+            $location = public_path('images/'.$filename);
+            Image::make($image)->resize(300, 300)->save($location);
 
-        $tourn->image = $filename;
-      }
+            $tourn->image = $filename;
+        }
         $tourn->save();
 
         // Redirect
@@ -137,7 +139,8 @@ if ($request->hasFile('image')) {
 
     public function destroy($id)
     {
-      Tournament::destroy($id);
-      return redirect()->route('home');
+        Tournament::destroy($id);
+
+        return redirect()->route('home');
     }
 }
