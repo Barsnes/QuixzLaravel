@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Game;
 use App\Match;
 use App\Player;
@@ -10,6 +9,7 @@ use App\Team;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Image;
 
 class TeamController extends Controller

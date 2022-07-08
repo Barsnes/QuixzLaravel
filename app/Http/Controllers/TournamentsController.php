@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Match;
 use App\Player;
 use App\Sponsor;
@@ -12,6 +11,7 @@ use App\TournamentMatch;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Image;
 
 class TournamentsController extends Controller

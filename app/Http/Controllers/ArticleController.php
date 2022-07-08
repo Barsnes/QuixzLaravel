@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Article;
 use App\Team;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Image;
 use WebP;
 
