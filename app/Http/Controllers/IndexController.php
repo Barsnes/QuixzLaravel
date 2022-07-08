@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Index;
 use DB;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    
     public function __construct()
-  {
-      $this->middleware('admin');
-  }
+    {
+        $this->middleware('admin');
+    }
 
     public function index()
     {
-
     }
 
     public function create()
@@ -36,32 +34,32 @@ class IndexController extends Controller
 
     public function edit($id)
     {
-      $index = DB::table('index')->where('id', $id)->get()->get(0);
+        $index = DB::table('index')->where('id', $id)->get()->get(0);
 
-      return view('admin.index')->withIndex($index);
+        return view('admin.index')->withIndex($index);
     }
 
     public function update(Request $request)
     {
-      $this->validate($request, array(
-          'aboutContent' => 'required',
-          'youtube' => 'required',
-          'steam' => 'required',
-          'discord' => 'required',
-          'twitter' => 'required',
-          'facebook' => 'required',
-          'twitch' => 'required',
-        ));
+        $this->validate($request, [
+            'aboutContent' => 'required',
+            'youtube' => 'required',
+            'steam' => 'required',
+            'discord' => 'required',
+            'twitter' => 'required',
+            'facebook' => 'required',
+            'twitch' => 'required',
+        ]);
 
         DB::table('index')->where('id', '1')->update([
-          'aboutContent' => $request->aboutContent,
-          'youtube' => $request->youtube,
-          'steam' => $request->steam,
-          'discord' => $request->discord,
-          'twitter' => $request->twitter,
-          'facebook' => $request->facebook,
-          'twitch' => $request->twitch
-      ]);
+            'aboutContent' => $request->aboutContent,
+            'youtube' => $request->youtube,
+            'steam' => $request->steam,
+            'discord' => $request->discord,
+            'twitter' => $request->twitter,
+            'facebook' => $request->facebook,
+            'twitch' => $request->twitch,
+        ]);
 
         // Redirect
         return redirect()->route('home');
@@ -69,23 +67,23 @@ class IndexController extends Controller
 
     public function updateSM(Request $request, $id)
     {
-      $this->validate($request, array(
-          'youtube' => 'required',
-          'steam' => 'required',
-          'discord' => 'required',
-          'twitter' => 'required',
-          'facebook' => 'required',
-          'twitch' => 'required',
-        ));
+        $this->validate($request, [
+            'youtube' => 'required',
+            'steam' => 'required',
+            'discord' => 'required',
+            'twitter' => 'required',
+            'facebook' => 'required',
+            'twitch' => 'required',
+        ]);
 
         DB::table('index')->where('id', '1')->update([
-          'youtube' => $request->youtube,
-          'steam' => $request->steam,
-          'discord' => $request->discord,
-          'twitter' => $request->twitter,
-          'facebook' => $request->faceboom,
-          'twitch' => $request->twitch
-      ]);
+            'youtube' => $request->youtube,
+            'steam' => $request->steam,
+            'discord' => $request->discord,
+            'twitter' => $request->twitter,
+            'facebook' => $request->faceboom,
+            'twitch' => $request->twitch,
+        ]);
 
         // Redirect
         return redirect()->route('home');

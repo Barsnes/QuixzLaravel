@@ -36,7 +36,7 @@
                     <tbody>
                         @foreach($topPages as $url => $views)
                         <tr>
-                            <td>{{ str_limit($url, 30) }}</td>
+                            <td>{{ Str::limit($url, 30) }}</td>
                             <td class="text-right">{{ $views }}</td>
                         </tr>
                         @endforeach
@@ -53,7 +53,7 @@
                     <tbody>
                         @foreach($topReferers as $url => $views)
                         <tr>
-                            <td>{{ str_limit($url, 40) }}</td>
+                            <td>{{ Str::limit($url, 40) }}</td>
                             <td class="text-right">{{ $views }}</td>
                         </tr>
                         @endforeach

@@ -1,7 +1,12 @@
-<?php namespace App\Http\Middleware;
+<?php
+
+namespace App\Http\Middleware;
+
 use Closure;
 use Illuminate\Http\RedirectResponse;
-class IsAdmin {
+
+class IsAdmin
+{
     /**
      * Handle an incoming request.
      *
@@ -12,11 +17,10 @@ class IsAdmin {
     public function handle($request, Closure $next)
     {
         $user = $request->user();
-        if ($user && $user->role == 'Admin')
-        {
+        if ($user && $user->role == 'Admin') {
             return $next($request);
         }
-        
+
         return new RedirectResponse(url('/'));
     }
 }

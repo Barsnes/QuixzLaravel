@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use DB;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,10 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      view()->composer('layouts.default', function($view) {
-      $socialMedia = DB::table('index')->where('id', '1')->get()->get(0);
-      $view->withSocial($socialMedia);
-  });
+        view()->composer('layouts.default', function ($view) {
+            $socialMedia = DB::table('index')->where('id', '1')->get()->get(0);
+            $view->withSocial($socialMedia);
+        });
     }
 
     /**

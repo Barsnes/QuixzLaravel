@@ -49,5 +49,5 @@ return [
         'checkbox-inline'   => null,
         'radio'             => null,
         'radio-inline'      => null,
-    ]
+    ],
 ];

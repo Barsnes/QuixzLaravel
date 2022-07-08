@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddInfoToClubFormTable extends Migration
 {
@@ -23,7 +23,7 @@ class AddInfoToClubFormTable extends Migration
         });
     }
 
-     // first, last name; adress consisting of country, zip, city, street, number; email adress, date of birth as mandatory fields and have voluntary fields for steam uplay discord etc
+    // first, last name; adress consisting of country, zip, city, street, number; email adress, date of birth as mandatory fields and have voluntary fields for steam uplay discord etc
 
     /**
      * Reverse the migrations.

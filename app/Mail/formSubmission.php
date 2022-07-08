@@ -4,9 +4,9 @@ namespace App\Mail;
 
 use App\ClubForm;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class formSubmission extends Mailable
 {
@@ -16,14 +16,14 @@ class formSubmission extends Mailable
 
     public function __construct(ClubForm $form)
     {
-      $this->form = $form;
-      $this->pdf = $form->first_name . '-' . $form->last_name . '.pdf';
+        $this->form = $form;
+        $this->pdf = $form->first_name.'-'.$form->last_name.'.pdf';
 
-      $this->pdf_de = $form->first_name . '-' . $form->last_name . '_de' . '.pdf';
+        $this->pdf_de = $form->first_name.'-'.$form->last_name.'_de'.'.pdf';
     }
 
     public function build()
     {
-        return $this->view('emails.club_form')->withForm($this->form)->attach('pdf/' . $this->pdf)->attach('pdf/' . $this->pdf_de);
+        return $this->view('emails.club_form')->withForm($this->form)->attach('pdf/'.$this->pdf)->attach('pdf/'.$this->pdf_de);
     }
 }

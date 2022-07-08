@@ -7,7 +7,5 @@ use Mail;
 
 class ClubForm extends Model
 {
-
-  protected $table = 'club_form';
-
+    protected $table = 'club_form';
 }

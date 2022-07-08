@@ -13,7 +13,7 @@
         @foreach($items as $item)
             <item>
                 <title>{{ $item->title }}</title>
-                <link rel="alternate" href="{{ url(str_plural($module).'/'.$item->url) }}" />
+                <link rel="alternate" href="{{ url(Str::plural($module).'/'.$item->url) }}" />
                 <id>{{ url($item->id) }}</id>
                 <author>
                     <name>{{ optional($item)->author }}</name>

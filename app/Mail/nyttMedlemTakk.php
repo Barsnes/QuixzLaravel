@@ -4,9 +4,9 @@ namespace App\Mail;
 
 use App\Medlem;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class nyttMedlemTakk extends Mailable
 {
@@ -16,12 +16,12 @@ class nyttMedlemTakk extends Mailable
 
     public function __construct(Medlem $form)
     {
-      $this->form = $form;
-      $this->pdf = $form->first_name . '-' . $form->last_name . '.pdf';
+        $this->form = $form;
+        $this->pdf = $form->first_name.'-'.$form->last_name.'.pdf';
     }
 
     public function build()
     {
-        return $this->view('emails.medlem-takk')->withForm($this->form)->attach('pdf/' . $this->pdf);
+        return $this->view('emails.medlem-takk')->withForm($this->form)->attach('pdf/'.$this->pdf);
     }
 }
