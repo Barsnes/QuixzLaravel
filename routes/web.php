@@ -26,16 +26,16 @@ Route::get('/form/club', 'ClubFormController@showForm');
 
 Route::resource('/admin/news', 'ArticleController');
 Route::get('/news', 'PagesController@news');
-Route::get('/news/{slug}', ['as' => 'article.single', 'uses' => 'PagesController@getSingle']);
+Route::get('/news/{slug}', 'PagesController@getSingle')->name('article.single');
 Route::get('/admin/users', 'AdminController@users');
 
-Route::get('/player/{playerName}', ['as' => 'player.single', 'uses' => 'PagesController@getPlayer']);
+Route::get('/player/{playerName}', 'PagesController@getPlayer')->name('player.single');
 
-Route::get('/team/{slug}', ['as' => 'team.single', 'uses' => 'PagesController@getTeam']);
+Route::get('/team/{slug}', 'PagesController@getTeam')->name('team.single');
 
-Route::get('/tournaments/{slug}', ['as' => 'tournament.single', 'uses' => 'PagesController@getTournament']);
+Route::get('/tournaments/{slug}', 'PagesController@getTournament')->name('tournament.single');
 
-Route::get('/management/{slug}', ['as' => 'management.person', 'uses' => 'PagesController@getManagementPerson']);
+Route::get('/management/{slug}', 'PagesController@getManagementPerson')->name('management.person');
 
 Route::resource('/admin/matches', 'MatchController');
 Route::resource('/admin/players', 'PlayerController');
