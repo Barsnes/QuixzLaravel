@@ -1,23 +1,23 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ClubFormController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\MatchController;
 use App\Http\Controllers\MedlemController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ServerController;
 use App\Http\Controllers\SponsorsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TournamentMatchController;
 use App\Http\Controllers\TournamentsController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ClubFormController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PagesController;
-use Illuminate\Support\Facades\Route;
 use App\Player;
+use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 
 Route::get('sitemap', function () {
