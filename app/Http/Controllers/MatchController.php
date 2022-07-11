@@ -46,7 +46,7 @@ class MatchController extends Controller
         ));
 
         // Store in DB
-        $match = new Match;
+        $match = new Matches;
 
         $match->name = $request->name;
         $match->enemy = $request->enemy;
@@ -138,5 +138,11 @@ class MatchController extends Controller
       Matches::destroy($id);
 
       return redirect('/admin');
+    }
+
+    public function getMatch()
+    {
+      $match = Matches::orderBy('date', 'ASC')->first();
+      return response(200, $match);
     }
 }

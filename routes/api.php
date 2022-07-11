@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\RocketLeagueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/hello', function (Request $request) {
+    return response()->json([
+        'message' => 'Welcome to the API',
+        'status' => 'success',
+    ]);
 });
+
+Route::get('/rl/match', [RocketLeagueController::class, 'getMatch']);
+Route::post('/rl/match', [RocketLeagueController::class, 'saveMatch']);
+Route::post('/rl/match/score', [RocketLeagueController::class, 'updateScore']);
