@@ -21,6 +21,7 @@ Route::get('/hello', function (Request $request) {
     ]);
 });
 
-Route::get('/rl/match', [RocketLeagueController::class, 'getMatch']);
+Route::get('/rl/match/{id}', [RocketLeagueController::class, 'getMatch']);
 Route::post('/rl/match', [RocketLeagueController::class, 'saveMatch']);
-Route::post('/rl/match/score', [RocketLeagueController::class, 'updateScore']);
+Route::post('/rl/match/{id}', [RocketLeagueController::class, 'updateMatch']);
+Route::post('/rl/match/{id}/score', [RocketLeagueController::class, 'updateScore']);
