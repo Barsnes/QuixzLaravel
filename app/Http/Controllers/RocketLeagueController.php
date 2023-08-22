@@ -38,8 +38,8 @@ class RocketLeagueController extends Controller
     return $match;
   }
 
-  public function updateScore(Request $request) {
-    $match = RLMatches::orderBy('created_at', 'DESC')->first();
+  public function updateScore(Request $request, $id) {
+    $match = RLMatches::where('id', '=', $id)->first();
     $match->blue_team_score = $request->blue_team_score;
     $match->orange_team_score = $request->orange_team_score;
     $match->save();
