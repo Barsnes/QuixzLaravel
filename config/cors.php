@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:3000', 'https://quixz.eu', 'localhost:3000', 'https://quixz-overlays.netlify.app'],
+    'allowed_origins' => ['http://localhost:3000', 'https://quixz.eu', 'localhost:3000', 'https://quixz-overlays.netlify.app', 'https://overlay.rlnorway.no'],
 
     'allowed_origins_patterns' => [],
 
