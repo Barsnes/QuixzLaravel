@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\RLMatches;
+use Illuminate\Support\Facades\Http;
 
 class RocketLeagueController extends Controller
 {
@@ -45,5 +46,27 @@ class RocketLeagueController extends Controller
     $match->save();
 
     return $match;
+  }
+
+  public function getDivisionTable(Request $request, $division) {
+    $url = "https://www.gamer.no/api/paradise/v2/division/" . $division . "/signups";
+    $url2 = "https://www.gamer.no/api/paradise/v2/division/" . $division;
+
+    $response = Http::withHeaders([
+      'Authorization' => env('GAMER_KEY')
+    ])->get($url);
+
+    $signups = $response->json();
+
+    $response = Http::withHeaders([
+      'Authorization' => env('GAMER_KEY')
+    ])->get($url2);
+
+    $division = $response->json();
+
+    return response()->json([
+      'signups' => $signups,
+      'division' => $division
+    ]);
   }
 }

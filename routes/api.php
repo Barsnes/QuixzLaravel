@@ -25,3 +25,4 @@ Route::get('/rl/match/{id}', [RocketLeagueController::class, 'getMatch']);
 Route::post('/rl/match', [RocketLeagueController::class, 'saveMatch']);
 Route::post('/rl/match/{id}', [RocketLeagueController::class, 'updateMatch']);
 Route::post('/rl/match/{id}/score', [RocketLeagueController::class, 'updateScore']);
+Route::get('/rl/division/{division}', [RocketLeagueController::class, 'getDivisionTable']);
