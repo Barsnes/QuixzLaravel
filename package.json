@@ -37,7 +37,7 @@
         "node-sass": "^4.14.1",
         "speakingurl": "^14.0.1",
         "util": "^0.11.1",
-        "webpack": "^4.39.1"
+        "webpack": "^5.0.0"
     },
     "name": "QuixzLaravel",
     "description": "[![Build Status](https://travis-ci.org/Barsnes/QuixzLaravel.svg?branch=master)](https://travis-ci.org/Barsnes/QuixzLaravel)",

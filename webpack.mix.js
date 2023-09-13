@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/sass/app.scss', 'public/css');
+mix.sass("resources/sass/app.scss", "public/css").options({
+    processCssUrls: false,
+});
 
-/* mix.sass('resources/sass/master.scss', 'public/css/master.css').options({ processCssUrls: false }).version(); */
+/* mix.sass("resources/sass/master.scss", "public/css/master.css")
+    .options({ processCssUrls: false })
+    .version(); */
 
-mix.sass('resources/sass/master.scss', 'public/css/master.css').version();
+mix.sass("resources/sass/master.scss", "public/css/master.css")
+    .options({
+        processCssUrls: false,
+    })
+    .version();
